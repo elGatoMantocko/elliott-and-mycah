@@ -1,6 +1,6 @@
 load("@npm//rollup:index.bzl", "rollup")
 
-def app_bundle(name, srcs, deps, config = "", config_deps = [], bundle_prefix = "app", plugins = [], plugin_deps = [], sourcemaps = False):
+def app_bundle(name, srcs, deps, config = "", config_deps = [], bundle_prefix = "app", sourcemaps = False):
     """app_bundle runs rollup with outs
 
     Args:
@@ -10,18 +10,8 @@ def app_bundle(name, srcs, deps, config = "", config_deps = [], bundle_prefix = 
         config: rollup config to use
         config_deps: dependencies used in the rollup config
         bundle_prefix: prefix to add to the begining of the bundle name
-        plugins: plugins used in rollup configuration
-        plugin_deps: dependencies for plugins
         sourcemaps: bool to add sourcemaps
     """
-
-    plugin_args = []
-    plugin_deps = []
-    if plugins:
-        for plugin in plugins:
-            plugin_args.append("--plugin")
-            plugin_args.append(plugin)
-            plugin_deps.append("@npm//@rollup/plugin-" + plugin)
 
     input_files = []
     for src in srcs:
@@ -47,7 +37,7 @@ def app_bundle(name, srcs, deps, config = "", config_deps = [], bundle_prefix = 
         args = config_args + [
             "--file",
             "$(location " + output_file + ")",
-        ] + sourcemap_args + plugin_args + ["--"] + input_files,
-        data = srcs + deps + plugin_deps + config_data + config_deps,
+        ] + sourcemap_args + ["--"] + input_files,
+        data = srcs + deps + config_data + config_deps,
         visibility = ["//visibility:public"],
     )

@@ -5,7 +5,6 @@ ts_library(
     name = "ts_library",
     srcs = [
         "init.tsx",
-        "UserHeader.tsx",
     ],
     deps = [
         "//app/components:ts_library",
@@ -36,12 +35,17 @@ app_bundle(
         "@npm//@rollup/plugin-multi-entry",
         "@npm//@rollup/plugin-commonjs",
         "@npm//@rollup/plugin-node-resolve",
+        "@npm//@rollup/plugin-replace",
     ],
     deps = [
         "//:tsconfig.json",
         "@npm//@types/react",
         "@npm//@types/react-dom",
+        "@npm//@types/react-router-dom",
+        "@npm//@material-ui/core",
+        "@npm//@material-ui/icons",
         "@npm//react",
         "@npm//react-dom",
+        "@npm//react-router-dom",
     ],
 )

@@ -2,7 +2,11 @@ load("@npm//@bazel/typescript:index.bzl", "ts_library")
 
 filegroup(
     name = "source_files",
-    srcs = ["App.tsx"],
+    srcs = [
+        "App.tsx",
+        "CustomComponent.tsx",
+        "UserHeader.tsx"
+    ],
     visibility = ["//visibility:public"],
 )
 
@@ -11,7 +15,11 @@ ts_library(
     srcs = [":source_files"],
     deps = [
         "@npm//@types/react",
+        "@npm//@types/react-router-dom",
         "@npm//react",
+        "@npm//react-router-dom",
+        "@npm//@material-ui/core",
+        "@npm//@material-ui/icons",
     ],
     visibility = ["//visibility:public"],
 )
