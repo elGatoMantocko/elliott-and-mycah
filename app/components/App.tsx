@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import * as React from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
@@ -14,6 +14,7 @@ export const App = () => (
           <IconButton edge="start" color="inherit" aria-label="menu">
             <Menu />
           </IconButton>
+          <Typography>Mycah &amp; Elliott</Typography>
         </Toolbar>
       </AppBar>
     </Route>

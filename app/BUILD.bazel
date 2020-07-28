@@ -2,6 +2,7 @@ load("@npm//@bazel/typescript:index.bzl", "ts_library")
 load("@npm//eslint:index.bzl", "eslint")
 
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 
 # sources
 filegroup(
@@ -49,6 +50,16 @@ ts_library(
 
 nodejs_binary(
     name = "nodejs_binary",
+    data = [
+        ":ts_library",
+        "//app/bundle:app_bundle",
+    ],
+    entry_point = ":index.tsx",
+    visibility = ["//visibility:public"],
+)
+
+nodejs_image(
+    name = "nodejs_image",
     data = [
         ":ts_library",
         "//app/bundle:app_bundle",

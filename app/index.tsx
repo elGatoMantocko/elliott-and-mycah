@@ -10,7 +10,7 @@ startServer({
       path: '/*',
       handler: (req, res) => {
         res.render('default', {
-          title: 'test',
+          title: 'Mycah &amp; Elliott',
           body: <div id="root"></div>,
         });
       },
