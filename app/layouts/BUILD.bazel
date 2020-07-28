@@ -1,0 +1,7 @@
+filegroup(
+    name = "source_files",
+    srcs = [
+        "default.hbs",
+    ],
+    visibility = ["//visibility:public"],
+)

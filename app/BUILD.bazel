@@ -1,0 +1,59 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("@npm//eslint:index.bzl", "eslint")
+
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+
+# sources
+filegroup(
+    name = "source_files",
+    srcs = ["index.tsx"],
+)
+
+# lint all code
+eslint(
+    name = "eslint",
+    data = [
+        "//:.eslintrc",
+        "//app/components:source_files",
+        "//app/layouts:source_files",
+        "//app/server:source_files",
+        ":source_files",
+        "@npm//@typescript-eslint/eslint-plugin",
+        "@npm//@typescript-eslint/parser",
+        "@npm//eslint-config-prettier",
+        "@npm//eslint-plugin-prettier",
+        "@npm//eslint-plugin-react",
+        "@npm//eslint-plugin-react-hooks",
+        "@npm//eslint-plugin-simple-import-sort",
+        "@npm//prettier",
+        "@npm//typescript",
+    ],
+    args = ["**/*.tsx"],
+)
+
+ts_library(
+    name = "ts_library",
+    srcs = [":source_files"],
+    deps = [
+        "//app/components:ts_library",
+        "//app/server:ts_library",
+        "@npm//@types/node",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//@types/uuid",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//uuid",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+nodejs_binary(
+    name = "nodejs_binary",
+    data = [
+        ":ts_library",
+        "//app/bundle:app_bundle",
+    ],
+    entry_point = ":index.tsx",
+    visibility = ["//visibility:public"],
+)

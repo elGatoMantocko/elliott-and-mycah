@@ -1,0 +1,17 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+filegroup(
+    name = "source_files",
+    srcs = ["App.tsx"],
+    visibility = ["//visibility:public"],
+)
+
+ts_library(
+    name = "ts_library",
+    srcs = [":source_files"],
+    deps = [
+        "@npm//@types/react",
+        "@npm//react",
+    ],
+    visibility = ["//visibility:public"],
+)

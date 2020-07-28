@@ -1,0 +1,35 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+filegroup(
+    name = "source_files",
+    srcs = [
+        "index.tsx",
+        "types.tsx",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+ts_library(
+    name = "ts_library",
+    srcs = [":source_files"],
+    deps = [
+        "@npm//@types/consolidate",
+        "@npm//@types/express",
+        "@npm//@types/helmet",
+        "@npm//@types/node",
+        "@npm//@types/pino-http",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//consolidate",
+        "@npm//express",
+        "@npm//handlebars",
+        "@npm//helmet",
+        "@npm//pino-http",
+        "@npm//react",
+        "@npm//react-dom",
+    ],
+    data = [
+        "//app/layouts:source_files",
+    ],
+    visibility = ["//visibility:public"],
+)
