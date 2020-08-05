@@ -10,24 +10,12 @@ filegroup(
     srcs = ["index.tsx"],
 )
 
-# lint all code
 eslint(
     name = "eslint",
     data = [
         "//:.eslintrc",
-        "//app/components:source_files",
-        "//app/layouts:source_files",
-        "//app/server:source_files",
         ":source_files",
-        "@npm//@typescript-eslint/eslint-plugin",
-        "@npm//@typescript-eslint/parser",
-        "@npm//eslint-config-prettier",
-        "@npm//eslint-plugin-prettier",
-        "@npm//eslint-plugin-react",
-        "@npm//eslint-plugin-react-hooks",
-        "@npm//eslint-plugin-simple-import-sort",
-        "@npm//prettier",
-        "@npm//typescript",
+        "@npm//:node_modules",
     ],
     args = ["**/*.tsx"],
 )
@@ -37,14 +25,17 @@ ts_library(
     srcs = [":source_files"],
     deps = [
         "//app/server:ts_library",
+        "@npm//@types/minimist",
         "@npm//@types/node",
         "@npm//@types/react",
         "@npm//@types/react-dom",
         "@npm//@types/uuid",
+        "@npm//minimist",
         "@npm//react",
         "@npm//react-dom",
         "@npm//uuid",
     ],
+    tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
 )
 
@@ -52,7 +43,7 @@ nodejs_binary(
     name = "nodejs_binary",
     data = [
         ":ts_library",
-        "//app/bundle:app_bundle",
+        "//app/assets:webpack",
     ],
     entry_point = ":index.tsx",
     visibility = ["//visibility:public"],
@@ -62,7 +53,7 @@ nodejs_image(
     name = "nodejs_image",
     data = [
         ":ts_library",
-        "//app/bundle:app_bundle",
+        "//app/assets:webpack",
     ],
     entry_point = ":index.tsx",
     visibility = ["//visibility:public"],

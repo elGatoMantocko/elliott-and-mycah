@@ -1,4 +1,5 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("@npm//eslint:index.bzl", "eslint")
 
 filegroup(
     name = "source_files",
@@ -8,6 +9,16 @@ filegroup(
         "UserHeader.tsx"
     ],
     visibility = ["//visibility:public"],
+)
+
+eslint(
+    name = "eslint",
+    data = [
+        "//:.eslintrc",
+        ":source_files",
+        "@npm//:node_modules",
+    ],
+    args = ["**/*.tsx"],
 )
 
 ts_library(
@@ -21,5 +32,6 @@ ts_library(
         "@npm//@material-ui/core",
         "@npm//@material-ui/icons",
     ],
+    tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
 )

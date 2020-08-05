@@ -24,6 +24,7 @@ export const App = () => (
         <Redirect to="/home" />
       </Route>
       <Route path="/home">
+        <Box />
         <AppBar position="static">
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu">
@@ -32,11 +33,10 @@ export const App = () => (
           </Toolbar>
         </AppBar>
         <Container>
-          <Box>
-            <Typography variant="h1">Mycah &amp; Elliott</Typography>
-            <Divider />
-            <Typography variant="body1">We are going to have a wedding!</Typography>
-          </Box>
+          <Box />
+          <Typography variant="h1">Mycah &amp; Elliott</Typography>
+          <Divider />
+          <Typography variant="body1">We are going to have a wedding!</Typography>
         </Container>
       </Route>
     </Router>

@@ -1,3 +1,5 @@
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
 # Add rules here to build your software
 # See https://docs.bazel.build/versions/master/build-ref.html#BUILD_files
 
@@ -7,5 +9,23 @@
 #   See https://www.npmjs.com/package/@bazel/typescript#installation
 exports_files(
     ["tsconfig.json", ".eslintrc", "rollup.config.js"],
+    visibility = ["//:__subpackages__"],
+)
+
+ts_library(
+    name = "ts_library",
+    srcs = ["//:webpack.config.ts"],
+    deps = [
+        "@npm//@types/node",
+        "@npm//@types/webpack",
+        "@npm//path",
+        "@npm//webpack",
+    ],
+)
+
+filegroup(
+    name = "webpack.config.js",
+    srcs = [":ts_library"],
+    output_group = "es5_sources",
     visibility = ["//:__subpackages__"],
 )

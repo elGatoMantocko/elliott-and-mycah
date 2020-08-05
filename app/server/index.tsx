@@ -14,7 +14,7 @@ import { AppConfig } from './types';
  * @param {EnvOption[]} configs list of configs used to run
  * @return {Server} http server built by express
  */
-export function startServer({ port, paths, loggingOptions = {}, assetHost, staticRoot }: AppConfig) {
+export function startServer({ port, paths, loggingOptions = {}, staticRoot }: AppConfig) {
   const app = express();
 
   // put on your helmet
@@ -31,10 +31,8 @@ export function startServer({ port, paths, loggingOptions = {}, assetHost, stati
     engines.handlebars(file, Object.fromEntries(unreacted), cb);
   });
 
-  if (assetHost == null && staticRoot != null) {
-    // serve static assets
-    app.use(express.static(staticRoot));
-  }
+  // serve static assets
+  staticRoot && app.use(express.static(staticRoot));
 
   // setup logger given options
   if (typeof loggingOptions === 'function') {
