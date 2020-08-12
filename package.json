@@ -50,8 +50,8 @@
         "webpack-cli": "^3.3.12"
     },
     "scripts": {
-        "build": "bazel build //...",
-        "start": "bazel run //app:nodejs_image",
+        "build": "ibazel build //...",
+        "start": "ibazel run //app:nodejs_binary",
         "startPretty": "npm start | pino-pretty",
         "test": "bazel test //..."
     },
