@@ -6,7 +6,13 @@ filegroup(
     srcs = [
         "App.tsx",
         "CustomComponent.tsx",
-        "UserHeader.tsx"
+        "Hero.tsx",
+        "Menu.tsx",
+        "Modal.tsx",
+        "RsvpButton.tsx",
+        "Snax.tsx",
+        "UserHeader.tsx",
+        "RsvpForm.tsx",
     ],
     visibility = ["//visibility:public"],
 )
@@ -25,12 +31,12 @@ ts_library(
     name = "ts_library",
     srcs = [":source_files"],
     deps = [
+        "@npm//@material-ui/core",
+        "@npm//@material-ui/icons",
         "@npm//@types/react",
         "@npm//@types/react-router-dom",
         "@npm//react",
         "@npm//react-router-dom",
-        "@npm//@material-ui/core",
-        "@npm//@material-ui/icons",
     ],
     tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],

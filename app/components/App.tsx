@@ -1,53 +1,77 @@
-import { Box } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Fab from '@material-ui/core/Fab';
-import Link from '@material-ui/core/Link';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import * as React from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+
+import { Hero } from './Hero';
+import { Menu } from './Menu';
+import { Modal } from './Modal';
+import { RsvpButton } from './RsvpButton';
+import { RsvpForm } from './RsvpForm';
+import { Snax } from './Snax';
 
 const theme = createMuiTheme({
   spacing: (factor) => `${0.5 * factor}rem`,
+  palette: {
+    common: { black: '#000', white: '#fff' },
+    background: { paper: '#fff', default: '#fafafa' },
+    primary: {
+      light: 'rgba(139, 77, 174, 0.1)',
+      main: 'rgba(139, 77, 174, 0.66)',
+      dark: 'rgba(139, 77, 174, 1)',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: 'rgba(21, 95, 21, 0.15)',
+      main: 'rgba(21, 95, 21, 0.6)',
+      dark: 'rgba(21, 95, 21, 1)',
+      contrastText: '#fff',
+    },
+    error: {
+      light: '#e57373',
+      main: '#f44336',
+      dark: '#d32f2f',
+      contrastText: '#fff',
+    },
+    text: {
+      primary: 'rgba(0, 0, 0, 0.87)',
+      secondary: 'rgba(0, 0, 0, 0.54)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
+      hint: 'rgba(0, 0, 0, 0.38)',
+    },
+  },
 });
-const useStyles = makeStyles({ button: { backgroundColor: 'purple' } });
+
 export const App = () => {
-  const classes = useStyles();
+  const [showSnack, setShowSnack] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
+      <Menu />
       <Router>
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
+        <Route path="/wedding-party">
+          <Typography variant="h1">Poop doop!</Typography>
+        </Route>
         <Route path="/home">
-          <AppBar position="static" color="transparent" elevation={0}>
-            <Toolbar>
-              <Box width="100%" justifyContent="space-evenly" display="flex">
-                {['Wedding Party', 'Venue', 'Itinerary', 'Hotels'].map((linkName, i) => (
-                  <Box key={i} mx="1rem">
-                    <Typography>
-                      <Link href="#" onClick={(e: { preventDefault: () => void }) => e.preventDefault()}>
-                        {linkName}
-                      </Link>
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Toolbar>
-          </AppBar>
-          <Container maxWidth="md">
-            <Typography variant="h1">Mycah &amp; Elliott</Typography>
-            <Divider />
-            <Typography variant="body1">We are going to have a wedding!</Typography>
-            <Fab variant="extended" color="primary" className={classes.button}>
-              RSVP
-            </Fab>
-          </Container>
+          <Hero />
         </Route>
       </Router>
+      <RsvpButton onClick={() => setShowModal(true)} />
+      <Modal open={showModal} maxWidth="md" onClose={() => setShowModal(false)}>
+        <RsvpForm
+          onCancel={() => setShowModal(false)}
+          onSubmit={() => {
+            setShowSnack(true);
+            setShowModal(false);
+          }}
+        />
+      </Modal>
+      <Snax open={showSnack} onClose={() => setShowSnack(false)} message="Thanks for submitting your guest list!" />
     </ThemeProvider>
   );
 };
