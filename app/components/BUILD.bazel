@@ -3,17 +3,7 @@ load("@npm//eslint:index.bzl", "eslint")
 
 filegroup(
     name = "source_files",
-    srcs = [
-        "App.tsx",
-        "CustomComponent.tsx",
-        "Hero.tsx",
-        "Menu.tsx",
-        "Modal.tsx",
-        "RsvpButton.tsx",
-        "Snax.tsx",
-        "UserHeader.tsx",
-        "RsvpForm.tsx",
-    ],
+    srcs = glob(["*.tsx"]),
     visibility = ["//visibility:public"],
 )
 
@@ -37,6 +27,7 @@ ts_library(
         "@npm//@types/react-router-dom",
         "@npm//react",
         "@npm//react-router-dom",
+        "@npm//react-scroll-parallax",
     ],
     tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
