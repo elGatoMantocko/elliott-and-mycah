@@ -1,6 +1,5 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
 
-load("@npm//webpack-cli:index.bzl", webpack = "webpack_cli")
 load("@npm//eslint:index.bzl", "eslint")
 
 filegroup(
@@ -28,33 +27,6 @@ ts_library(
         "@npm//@types/react-dom",
         "@npm//react",
         "@npm//react-dom",
-    ],
-    tsconfig = "//:tsconfig.json",
-)
-
-filegroup(
-    name = "js_library",
-    srcs = [
-        ":ts_library",
-        "//app/components:ts_library",
-    ],
-    output_group = "es6_sources",
-)
-
-webpack(
-    name = "webpack",
-    outs = ["bundle.js"],
-    data = [
-        ":js_library",
-        "//:webpack.config.js",
-        "@npm//:node_modules",
-    ],
-    args = [
-        "$(locations //app/assets:js_library)",
-        "--config",
-        "$(location //:webpack.config.js)",
-        "-o",
-        "$@",
     ],
     visibility = ["//visibility:public"],
 )
