@@ -13,6 +13,7 @@ import { Modal } from './Modal';
 import { RsvpButton } from './RsvpButton';
 import { RsvpForm } from './RsvpForm';
 import { Snax } from './Snax';
+import { Venue } from './Venue';
 import { WeddingParty } from './WeddingParty';
 
 const theme = createMuiTheme({
@@ -62,10 +63,13 @@ export const App = () => {
           <Route path="/wedding-party">
             <WeddingParty></WeddingParty>
           </Route>
+          <Route path="/venue">
+            <Venue></Venue>
+          </Route>
           <Route path="/home">
             <Hero />
             <Banner imageSource="https://lh3.googleusercontent.com/HCGW66aQxET8RCmveRv9zgMwLL9LIWSZzzfSd_nRNFeSZzu39Inbz9NKjRgs0RjkF2tTd5JI-jJ3kw44JgEZa-6oDOupp4jhZboeNp18q8lVZ23pKiWz2fKXgbrzRKkE5Yz4IdQr3u5Lvj6lfNvE95R-UEj8epuZsICkreJCwUlrFNHQqFn0utQXof5zIllf4b5pMc_ObildESK5GwIZZy7W9q61pB_0ROwMuyTYus7Jeg-9wNzwEEQgZMDbUqMTLpcyCS39uuR16bXe8uzbl4OZO-fOOKiFL2wQn_Fd05cNTKBBisYG7VPZQPiP9Cx3_qIMQZu3NpQXZ8B4DejCM3nCpPyKfdJBnUv6wbdNknSI2qQfECA7mqglijgRQvGHEgOWx4w4Vcu4g0HFxgzn4DC-S5EgCVoOxw-oJ3RwUrJz9CTHJ1Xr_uvffURFiIOLPj-q_7_SCE9hkZ8bpikVYwyYXh8RGGkuo3P4DwC0U60SpPakPnSXrkH1f61JbbzHaQbwMrBnt715ofvYljTlTDcWeoMxNBUW_HVZBIh29T-ycj_FSPqsLKSteJjbMCJ13MlWc6w8dlnXhNgNqHfe5bXDikHZYJ9UkNzXIo6TaRJHADwT5Y3H2xiP-OQKnxlFg2N7kjzhEGXbDMgqI0OMdUV3_7ZUE5WuWU2Ri0u4rm5tFGyUwtmzEnHWODGwzQ=w955-h637-no?authuser=0" />
-            <Container maxWidth="md">
+            <Container maxWidth="sm">
               <Box paddingTop="2rem">
                 <Typography variant="h3" align="center" gutterBottom={true}>
                   Puppy Info

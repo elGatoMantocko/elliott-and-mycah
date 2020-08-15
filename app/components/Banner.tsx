@@ -7,7 +7,7 @@ export const Banner = (props: BannerProps) => (
     layers={[
       {
         image: props.imageSource,
-        amount: -1,
+        amount: -0.5,
       },
     ]}
     style={{
