@@ -21,6 +21,7 @@ ts_library(
     name = "ts_library",
     srcs = [":source_files"],
     deps = [
+        "//app/types:ts_library",
         "@npm//@material-ui/core",
         "@npm//@material-ui/icons",
         "@npm//@types/react",
@@ -30,6 +31,5 @@ ts_library(
         "@npm//react-scroll-parallax",
         "@npm//material-ui-image",
     ],
-    tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
 )

@@ -42,6 +42,5 @@ ts_library(
     data = [
         "//app/layouts:source_files",
     ],
-    tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
 )

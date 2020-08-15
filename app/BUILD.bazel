@@ -1,5 +1,6 @@
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
 load("@npm//eslint:index.bzl", "eslint")
+load("@npm//webpack-cli:index.bzl", webpack = "webpack_cli")
 
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
@@ -35,15 +36,41 @@ ts_library(
         "@npm//react-dom",
         "@npm//uuid",
     ],
-    tsconfig = "//:tsconfig.json",
     visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "js_library",
+    srcs = [
+        "//app/utils:ts_library",
+        "//app/components:ts_library",
+    ],
+    output_group = "es6_sources",
+)
+
+webpack(
+    name = "webpack",
+    outs = ["bundle.js"],
+    data = [
+        ":js_library",
+        "//:webpack.config.js",
+        "@npm//:node_modules",
+    ],
+    args = [
+        "$(locations :js_library)",
+        "--config",
+        "$(location //:webpack.config.js)",
+        "-o",
+        "$@",
+    ],
 )
 
 nodejs_binary(
     name = "nodejs_binary",
     data = [
         ":ts_library",
-        "//app/assets:webpack",
+        ":webpack",
+        "//app/assets/images:files",
     ],
     entry_point = ":index.tsx",
     visibility = ["//visibility:public"],
@@ -53,7 +80,8 @@ nodejs_image(
     name = "nodejs_image",
     data = [
         ":ts_library",
-        "//app/assets:webpack",
+        ":webpack",
+        "//app/assets/images:files",
     ],
     entry_point = ":index.tsx",
     visibility = ["//visibility:public"],
