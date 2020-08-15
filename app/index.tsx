@@ -7,7 +7,7 @@ startServer({
   port: 8080,
   paths: [
     {
-      path: ['/', '/home', '/wedding-party'],
+      path: ['/', '/home', '/wedding-party', '/venue'],
       handler: (_, res) => {
         res.render('default', {
           title: 'Mycah &amp; Elliott',
