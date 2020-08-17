@@ -42,8 +42,9 @@ ts_library(
 filegroup(
     name = "js_library",
     srcs = [
-        "//app/utils:ts_library",
         "//app/components:ts_library",
+        "//app/hooks:ts_library",
+        "//app/utils:ts_library",
     ],
     output_group = "es6_sources",
 )
