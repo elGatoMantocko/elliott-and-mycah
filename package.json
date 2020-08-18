@@ -37,6 +37,7 @@
         "helmet": "^4.1.0",
         "material-ui-image": "^3.2.3",
         "minimist": "^1.2.5",
+        "moment": "^2.27.0",
         "path": "^0.12.7",
         "pino-http": "^5.2.0",
         "prettier": "^2.0.5",

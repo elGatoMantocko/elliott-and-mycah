@@ -28,6 +28,7 @@ ts_library(
         "@npm//@types/react",
         "@npm//@types/react-router-dom",
         "@npm//material-ui-image",
+        "@npm//moment",
         "@npm//react",
         "@npm//react-router-dom",
         "@npm//react-scroll-parallax",

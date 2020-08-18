@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/useCustomTheme';
-import { Home } from './Home';
+import { About } from './About';
 import { Menu } from './Menu';
 import { Modal } from './Modal';
 import { RsvpButton } from './RsvpButton';
@@ -25,7 +25,7 @@ export const App = () => {
         <Menu />
         <Router>
           <Route exact path="/">
-            <Redirect to="/home" />
+            <Redirect to="/about" />
           </Route>
           <Route path="/wedding-party">
             <WeddingParty />
@@ -33,8 +33,8 @@ export const App = () => {
           <Route path="/venue">
             <Venue />
           </Route>
-          <Route path="/home">
-            <Home />
+          <Route path="/about">
+            <About />
           </Route>
         </Router>
         <RsvpButton onClick={() => setShowModal(true)} />
