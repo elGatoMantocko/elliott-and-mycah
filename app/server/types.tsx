@@ -10,9 +10,10 @@ type Route = {
 
 export type EnvOption<T> = T | ((env: Envrionment) => T);
 export type AppConfig = {
-  port: EnvOption<number>;
+  host: string;
+  port: number;
+  secure: boolean;
   paths: Route[];
   loggingOptions?: EnvOption<PinoOptions>;
-  assetHost?: string;
-  staticRoot?: string;
+  staticRoot: string;
 };

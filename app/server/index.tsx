@@ -10,11 +10,11 @@ import { AppConfig } from './types';
 
 /**
  * Function to do something stupid
- * @param {Envrionment} env environment to run in
- * @param {EnvOption[]} configs list of configs used to run
- * @return {Server} http server built by express
+ * @param env environment to run in
+ * @param configs list of configs used to run
+ * @return http server built by express
  */
-export function startServer({ port, paths, loggingOptions = {}, staticRoot }: AppConfig) {
+export function startServer({ host, port, secure, paths, loggingOptions = {}, staticRoot }: AppConfig) {
   const app = express();
 
   // put on your helmet
@@ -32,7 +32,7 @@ export function startServer({ port, paths, loggingOptions = {}, staticRoot }: Ap
   });
 
   // serve static assets
-  staticRoot && app.use(express.static(staticRoot));
+  staticRoot && app.use(express.static(staticRoot, {}));
 
   // setup logger given options
   if (typeof loggingOptions === 'function') {
@@ -45,5 +45,5 @@ export function startServer({ port, paths, loggingOptions = {}, staticRoot }: Ap
   paths.forEach(({ path, handler }) => app.get(path, handler));
 
   // listen on `port`
-  return app.listen(port, () => console.log(`server started at port http://localhost:${port}`));
+  return app.listen(port, host, () => console.log(`server started at http${secure ? 's' : ''}://${host}:${port}`));
 }

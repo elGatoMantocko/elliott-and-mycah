@@ -1,10 +1,10 @@
+
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
 load("@npm//eslint:index.bzl", "eslint")
 
 filegroup(
     name = "source_files",
     srcs = glob(["*.tsx"]),
-    visibility = ["//visibility:public"],
 )
 
 eslint(
@@ -21,17 +21,9 @@ ts_library(
     name = "ts_library",
     srcs = [":source_files"],
     deps = [
-        "//app/hooks:ts_library",
-        "//app/types:ts_library",
         "@npm//@material-ui/core",
-        "@npm//@material-ui/icons",
-        "@npm//@types/react",
-        "@npm//@types/react-router-dom",
-        "@npm//material-ui-image",
-        "@npm//moment",
+        "@npm//@types",
         "@npm//react",
-        "@npm//react-router-dom",
-        "@npm//react-scroll-parallax",
     ],
     visibility = ["//visibility:public"],
 )
