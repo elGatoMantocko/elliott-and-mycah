@@ -29,5 +29,5 @@ startServer({
   loggingOptions: {
     genReqId: () => uuidv4(),
   },
-  staticRoot: 'app',
+  staticRoot: 'dist',
 });

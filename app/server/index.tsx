@@ -18,7 +18,16 @@ export function startServer({ host, port, secure, paths, loggingOptions = {}, st
   const app = express();
 
   // put on your helmet
-  app.use(helmet());
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+          'img-src': '*',
+        },
+      },
+    }),
+  );
 
   app.set('views', path.resolve(__dirname, '..', 'layouts'));
   app.set('view engine', 'hbs');

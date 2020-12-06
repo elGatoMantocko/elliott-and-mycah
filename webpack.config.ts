@@ -3,6 +3,7 @@ import { Configuration } from 'webpack';
 const config: Configuration = {
   mode: 'production',
   devtool: 'inline-source-map',
+  entry: './app/utils/init.tsx',
   optimization: {
     providedExports: true,
     removeAvailableModules: true,
@@ -11,10 +12,26 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /.mjs$/,
-        type: 'javascript/auto',
+        test: /.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    filename: 'bundle.js',
   },
 };
 

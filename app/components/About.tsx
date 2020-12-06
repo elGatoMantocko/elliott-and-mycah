@@ -10,7 +10,7 @@ import { ResponsiveContainer } from './ResponsiveContainer';
 export const About = () => (
   <>
     <Hero />
-    <Banner imageSource="/assets/images/balcony.jpg">
+    <Banner imageSource="https://mantocko-public-assets.sfo2.digitaloceanspaces.com/images/balcony.jpg">
       <ResponsiveContainer fallback="md">
         <Countdown date={new Date(2021, 5, 12, 0, 0, 0)} />
       </ResponsiveContainer>
