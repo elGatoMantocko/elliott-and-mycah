@@ -18,10 +18,23 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # pushes to a private digital ocean registry
-  pushToDORegistry:
+  build_and_push:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
+
+        # install deps
+        - name: yarn install
+          uses: Borales/actions-yarn@v2.3.0
+          with:
+            cmd: install
+
+        # build project
+        - name: yarn build
+          uses: Borales/actions-yarn@v2.3.0
+          with:
+            cmd: build
+
         - name: Build image
           run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
