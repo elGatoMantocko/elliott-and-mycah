@@ -7,6 +7,6 @@ Dev
 You can start the app with `npm start` and there are no tests yet. :( *sad womp*
 
 Required tools:
-  - [Bazel](https://docs.bazel.build/versions/master/install.html)
   - [Docker](https://docs.docker.com/get-docker/)
   - Probably [nodejs/npm](https://nodejs.org/en/download/package-manager/)
+  - [Yarn](https://classic.yarnpkg.com/en/)

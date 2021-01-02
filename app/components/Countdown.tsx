@@ -1,32 +1,30 @@
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
 import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
 import * as moment from 'moment';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-type CounterCardProps = Readonly<{ value: number; unit: string }>;
-const CounterCard = ({ value }: CounterCardProps) => (
-  <Card raised>
-    <Box margin="0.5rem">
-      <Typography variant="h1">
-        {value < 10 ? '0' : ''}
-        {value}
-      </Typography>
-    </Box>
-  </Card>
-);
+import { ScriptTypography } from './ScriptTypography';
 
-type CountdownProps = Readonly<{ date: Date }>;
-export const Countdown = ({ date }: CountdownProps) => {
+type CounterCardProps = Readonly<{ value: number; unit: string }>;
+const CounterCard = ({ value, unit }: CounterCardProps) => (
+  <Box textAlign="center" margin="0.5rem" color="white">
+    <ScriptTypography variant="h1">
+      {value < 10 ? '0' : ''}
+      {value}
+    </ScriptTypography>
+    <ScriptTypography variant="h4">{unit}</ScriptTypography>
+  </Box>
+);
+type CountdownProps = Readonly<{ toDate: Date }>;
+export const Countdown = ({ toDate }: CountdownProps) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
   }, [time, setTime]);
 
-  const momentDate = moment(date);
+  const momentDate = moment(toDate);
 
   const days = momentDate.diff(time, 'days');
   const daysNormalized = momentDate.subtract(days, 'days');
