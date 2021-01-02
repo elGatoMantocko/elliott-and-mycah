@@ -49,7 +49,7 @@ jobs:
             doctl registry login
             docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:latest
             docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${GITHUB_SHA}
-            docker push -a registry.digitalocean.com/mantocko/$IMAGE_NAME
+            docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
   # This workflow contains a single job called "echo"
   echo:
