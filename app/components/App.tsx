@@ -1,54 +1,34 @@
 import { ThemeProvider } from '@material-ui/core/styles';
 import * as React from 'react';
-import { useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/useCustomTheme';
 import { About } from './About';
 import { Menu } from './Menu';
-import { Modal } from './Modal';
 import { RsvpButton } from './RsvpButton';
-import { RsvpForm } from './RsvpForm';
-import { Snax } from './Snax';
 import { Venue } from './Venue';
 import { WeddingParty } from './WeddingParty';
 
-export const App = () => {
-  const [showSnack, setShowSnack] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const theme = useCustomTheme();
-
-  return (
-    <ParallaxProvider>
-      <ThemeProvider theme={theme}>
+export const App = () => (
+  <ParallaxProvider>
+    <ThemeProvider theme={useCustomTheme()}>
+      <Router>
         <Menu />
-        <Router>
-          <Route exact path="/">
-            <Redirect to="/about" />
-          </Route>
-          <Route path="/wedding-party">
-            <WeddingParty />
-          </Route>
-          <Route path="/venue">
-            <Venue />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-        </Router>
-        <RsvpButton onClick={() => setShowModal(true)} />
-        <Modal open={showModal} onClose={() => setShowModal(false)}>
-          <RsvpForm
-            onCancel={() => setShowModal(false)}
-            onSubmit={() => {
-              setShowSnack(true);
-              setShowModal(false);
-            }}
-          />
-        </Modal>
-        <Snax open={showSnack} onClose={() => setShowSnack(false)} message="Thanks for submitting your guest list!" />
-      </ThemeProvider>
-    </ParallaxProvider>
-  );
-};
+        <Route exact path="/">
+          <Redirect to="/about" />
+        </Route>
+        <Route path="/wedding-party">
+          <WeddingParty />
+        </Route>
+        <Route path="/venue">
+          <Venue />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+      </Router>
+      <RsvpButton formUrl="https://forms.gle/JFwN8N6Peuv4GKgc6" />
+    </ThemeProvider>
+  </ParallaxProvider>
+);

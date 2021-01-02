@@ -3,7 +3,6 @@ import { Theme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import * as React from 'react';
 
-type ResponsiveContainerProps = Readonly<{ fallback?: false | 'xs' | 'sm' | 'md' | 'lg' | 'xl' }> & ContainerProps;
 /**
  * ```
  * // this will render a 'sm' container on md and up and full-width on small screens
@@ -11,7 +10,7 @@ type ResponsiveContainerProps = Readonly<{ fallback?: false | 'xs' | 'sm' | 'md'
  * ```
  * @param {ResponsiveContainerProps} param0 props to render the container
  */
-export const ResponsiveContainer = ({ children, fallback = 'sm' }: ResponsiveContainerProps) => {
+export const ResponsiveContainer = ({ maxWidth, ...containerProps }: ContainerProps) => {
   const isLargeScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.up('sm'));
-  return <Container maxWidth={isLargeScreen ? fallback : false}>{children}</Container>;
+  return <Container maxWidth={isLargeScreen ? maxWidth : false} {...containerProps} />;
 };

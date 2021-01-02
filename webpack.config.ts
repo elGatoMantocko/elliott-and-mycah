@@ -1,37 +1,63 @@
-import { Configuration } from 'webpack';
+import * as CopyPlugin from 'copy-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import { join } from 'path';
+import { Configuration, DefinePlugin } from 'webpack';
 
-const config: Configuration = {
-  mode: 'production',
-  devtool: 'inline-source-map',
-  entry: './app/utils/init.tsx',
-  optimization: {
-    providedExports: true,
-    removeAvailableModules: true,
-    usedExports: true,
+/**
+ * Function to generate a base webpack config
+ * @param mode to build webpack config for
+ */
+const factory = (mode = 'development'): Configuration => ({
+  mode: mode === 'production' || mode === 'development' ? mode : 'none',
+  devtool: 'source-map',
+  devServer: {
+    contentBase: [join('.', 'dist')],
+    historyApiFallback: true,
+    clientLogLevel: 'trace',
+    compress: true,
   },
+  plugins: [
+    new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
+    new HtmlWebpackPlugin({
+      template: 'app/index.html',
+      meta: {
+        viewport: {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1.0',
+        },
+      },
+      inject: 'body',
+      title: 'Mycah &amp; Elliott',
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'app/assets' }],
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /.tsx$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    modules: ['node_modules'],
+    extensions: ['.tsx', '.js'],
   },
   output: {
     filename: 'bundle.js',
+  },
+});
+
+const config: Configuration = {
+  ...factory(process.env['NODE_ENV']),
+  entry: './app/index.tsx',
+  optimization: {
+    providedExports: true,
+    removeAvailableModules: true,
+    usedExports: true,
   },
 };
 
