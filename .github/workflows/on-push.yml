@@ -18,7 +18,6 @@ jobs:
   # pushes to a private digital ocean registry
   build_and_push:
       runs-on: ubuntu-latest
-      if: github.ref === 'refs/heads/main'
       steps:
         - uses: actions/checkout@v2
 
