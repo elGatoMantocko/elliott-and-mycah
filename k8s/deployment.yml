@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elliott-and-mycah
+spec:
+  selector:
+    matchLabels:
+      app: elliott-and-mycah
+  template:
+    metadata:
+      labels:
+        app: elliott-and-mycah
+    spec:
+      containers:
+        - name: elliott-and-mycah
+          image: registry.digitalocean.com/mantocko/elliott-and-mycah
+          resources:
+            limits:
+              memory: '128Mi'
+              cpu: '500m'
+          ports:
+            - containerPort: 8080

@@ -2,11 +2,11 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,34 +17,47 @@ env:
 jobs:
   # pushes to a private digital ocean registry
   build_and_push:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-        # install deps
-        - name: Install yarn dependencies
-          uses: Borales/actions-yarn@v2.3.0
-          with:
-            cmd: install
+      # install deps
+      - name: Install yarn dependencies
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
 
-        # build project
-        - name: Build assets
-          uses: Borales/actions-yarn@v2.3.0
-          with:
-            cmd: build
+      # build project
+      - name: Build assets
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
 
-        - name: Build docker image
-          run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      - name: Build docker image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-        # Install doctl on the runner
-        - name: Install doctl
-          uses: digitalocean/action-doctl@v2
-          with:
-            token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      # Install doctl on the runner
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-        - name: push image to digitalocean
-          run: |
-            doctl registry login
-            docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:latest
-            docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${GITHUB_SHA}
-            docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
+      - name: Push image to DO
+        run: |
+          doctl registry login
+          docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:latest
+          docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
+          docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
+
+      - uses: Azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Deploy to DO kubernetes
+        uses: Azure/k8s-deploy@v1.3
+        with:
+          manifests: |
+            k8s/deployment.yml
+            k8s/service.yml
+          images: |
+            registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
