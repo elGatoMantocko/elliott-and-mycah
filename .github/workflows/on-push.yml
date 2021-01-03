@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build and deploy
 
 # Controls when the action will run.
 on:
@@ -52,7 +52,8 @@ jobs:
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
-      - uses: Azure/k8s-set-context@v1
+      - name: Update kubeconfig
+        uses: Azure/k8s-set-context@v1
         with:
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
