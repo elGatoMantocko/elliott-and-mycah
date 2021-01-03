@@ -1,9 +1,4 @@
-FROM ubuntu
-ARG env=production
+FROM fholzer/nginx-brotli
 
-RUN apt update && apt install -y curl nginx
-
-COPY nginx.conf /etc/nginx/sites-enabled
-COPY dist /var/www/html
-
-CMD nginx -g "daemon off;"
+COPY nginx.conf /etc/nginx/conf.d
+COPY dist /usr/share/nginx/html
