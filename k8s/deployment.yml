@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: elliott-and-mycah
+    spec:
       containers:
         - name: elliott-and-mycah
           image: registry.digitalocean.com/mantocko/elliott-and-mycah
