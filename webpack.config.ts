@@ -26,6 +26,7 @@ const factory = (mode = 'development'): Configuration => ({
           content: 'width=device-width, initial-scale=1.0',
         },
       },
+      scriptLoading: 'defer',
       inject: 'body',
       title: 'Mycah &amp; Elliott',
     }),
