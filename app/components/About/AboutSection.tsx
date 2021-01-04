@@ -36,7 +36,7 @@ export const AboutSection = ({
   imageAlt,
   variant = 'row',
 }: AboutSectionProps) => {
-  const isLargeScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.up('sm'));
+  const isLargeScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.up('md'));
   return (
     <Box pb={1} display="flex" flexDirection={variant}>
       <Box maxWidth={isLargeScreen ? '50%' : undefined} mx={1} px={1} mt={3}>

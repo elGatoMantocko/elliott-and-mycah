@@ -3,7 +3,7 @@ import * as React from 'react';
 import { PropsWithChildren } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
-type BannerProps = PropsWithChildren<{ imageSource: string; style?: unknown }>;
+type BannerProps = PropsWithChildren<{ imageSource: string; style?: React.CSSProperties }>;
 export const Banner = ({ imageSource: image, style, children }: BannerProps) => (
   <ParallaxBanner layers={[{ image, amount: -0.5 }]} style={style}>
     {children && (

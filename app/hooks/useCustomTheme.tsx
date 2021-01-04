@@ -15,13 +15,13 @@ export const useCustomTheme = () => {
           background: { paper: '#fff', default: '#fafafa' },
           primary: {
             light: 'rgba(139, 77, 174, 0.1)',
-            main: 'rgba(139, 77, 174, 0.66)',
+            main: 'rgba(139, 77, 174, 1)',
             dark: 'rgba(139, 77, 174, 1)',
             contrastText: '#fff',
           },
           secondary: {
             light: 'rgba(21, 95, 21, 0.15)',
-            main: 'rgba(21, 95, 21, 0.6)',
+            main: 'rgba(21, 95, 21, 1)',
             dark: 'rgba(21, 95, 21, 1)',
             contrastText: '#fff',
           },

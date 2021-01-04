@@ -1,3 +1,4 @@
+import { Theme, useMediaQuery } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import * as React from 'react';
 
@@ -7,14 +8,21 @@ import { ScriptTypography } from '../ScriptTypography';
 import { AboutSection } from './AboutSection';
 import { Banner } from './Banner';
 
+const useBannerStyles = (): React.CSSProperties => {
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+  return isSmallScreen ? { height: '80vh' } : {};
+};
+
 export const About = () => (
   <>
-    <Banner imageSource="/images/balcony.jpg">
+    <Banner imageSource="/images/balcony.jpg" style={useBannerStyles()}>
       <ResponsiveContainer maxWidth="md">
         <Box display="flex">
           <Box color="white" mx="auto" mb={1}>
-            <ScriptTypography variant="h1">Mycah &amp; Elliott</ScriptTypography>
-            <ScriptTypography variant="h2" color="textSecondary">
+            <ScriptTypography variant="h1" component="h1" align="center">
+              Mycah &amp; Elliott
+            </ScriptTypography>
+            <ScriptTypography variant="h2" component="h2" color="textSecondary">
               <Box display="flex" flexWrap="wrap">
                 <Box mx="auto">
                   <em>6/12/21</em>
