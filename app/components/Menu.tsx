@@ -12,9 +12,9 @@ export const Menu = () => {
   const { location } = useHistory();
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <ResponsiveContainer>
-        <Toolbar>
-          <Box display="flex" justifyContent="space-between" width="100%">
+      <ResponsiveContainer disableGutters>
+        <Toolbar disableGutters>
+          <Box display="flex" justifyContent="space-between" width="100%" px={1}>
             <ScriptTypography>
               <Link href="/about" color={location.pathname === '/about' ? 'secondary' : 'primary'}>
                 About

@@ -10,7 +10,7 @@ import { Banner } from './Banner';
 
 const useBannerStyles = (): React.CSSProperties => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
-  return isSmallScreen ? { height: '80vh' } : {};
+  return isSmallScreen ? { height: '650px' } : {};
 };
 
 export const About = () => (

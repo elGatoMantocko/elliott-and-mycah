@@ -6,7 +6,7 @@ import * as React from 'react';
 /**
  * ```
  * // this will render a 'sm' container on md and up and full-width on small screens
- * <ResponsiveContainer fallback="sm">hello world</ResponsiveContainer>
+ * <ResponsiveContainer maxWidth="sm">hello world</ResponsiveContainer>
  * ```
  * @param {ResponsiveContainerProps} param0 props to render the container
  */
