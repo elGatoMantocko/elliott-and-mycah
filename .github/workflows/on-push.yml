@@ -60,5 +60,6 @@ jobs:
           manifests: |
             k8s/deployment.yml
             k8s/service.yml
+            k8s/ingress.yml
           images: |
             registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
