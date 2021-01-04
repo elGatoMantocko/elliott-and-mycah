@@ -13,7 +13,9 @@ const CounterCard = ({ value, unit }: CounterCardProps) => (
       {value < 10 ? '0' : ''}
       {value}
     </ScriptTypography>
-    <ScriptTypography variant="h4">{unit}</ScriptTypography>
+    <ScriptTypography variant="h4" component="h2">
+      {unit}
+    </ScriptTypography>
   </Box>
 );
 type CountdownProps = Readonly<{ toDate: Date }>;
