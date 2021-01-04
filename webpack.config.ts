@@ -28,7 +28,6 @@ const factory = (mode = 'development'): Configuration => ({
       },
       scriptLoading: 'defer',
       inject: 'body',
-      title: 'Mycah &amp; Elliott',
     }),
     new CopyPlugin({
       patterns: [{ from: 'app/assets' }],

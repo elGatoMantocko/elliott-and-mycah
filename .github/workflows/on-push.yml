@@ -58,11 +58,14 @@ jobs:
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
         with:
+          kubectl-version: '1.19.6'
+          # letsencrypt-staging may not be necessary unless I want to do more testing
           manifests: |
             k8s/deployment.yml
             k8s/service.yml
             k8s/ingress.yml
             k8s/letsencrypt-prod.yml
             k8s/letsencrypt-staging.yml
+          # this does a string replace on the image name with this image tag
           images: |
             registry.digitalocean.com/mantocko/${{ env.IMAGE_NAME }}:${{ github.sha }}
