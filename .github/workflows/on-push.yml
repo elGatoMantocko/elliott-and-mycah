@@ -64,4 +64,4 @@ jobs:
             k8s/letsencrypt-prod.yml
             k8s/letsencrypt-staging.yml
           images: |
-            registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
+            registry.digitalocean.com/mantocko/${IMAGE_NAME}:${{ github.sha }}
