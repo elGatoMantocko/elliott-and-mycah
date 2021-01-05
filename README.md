@@ -1,5 +1,9 @@
 # Mycah and Elliott's wedding site!
 
+- https://elliottandmycah.com
+- https://mycahandelliott.com
+- https://wedding.elgatomantocko.com
+
 Just a basic site with mostly static content for us to play around with various tech. :)
 
 ## Dev
