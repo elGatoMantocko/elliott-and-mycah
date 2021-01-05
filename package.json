@@ -9,6 +9,8 @@
   "devDependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@react-google-maps/api": "^2.0.2",
     "@types/copy-webpack-plugin": "^6.3.0",
     "@types/node": "^14.14.16",
     "@types/react": "^17.0.0",
@@ -28,7 +30,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "html-webpack-plugin": "^4.5.0",
-    "material-ui-image": "^3.3.0",
     "minimist": "^1.2.5",
     "moment": "^2.29.1",
     "path": "^0.12.7",
@@ -50,7 +51,5 @@
     "build": "npx webpack -c webpack.config.ts",
     "dev": "npx webpack serve"
   },
-  "dependencies": {
-    "@material-ui/lab": "^4.0.0-alpha.57"
-  }
+  "dependencies": {}
 }

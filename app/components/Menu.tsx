@@ -57,21 +57,15 @@ export const Menu = () => {
               <ActiveLink href="/wedding-party">
                 <ScriptTypography>Wedding Party</ScriptTypography>
               </ActiveLink>
-              <ScriptTypography>
-                <ActiveLink href="/venue">
-                  <ScriptTypography>Venue</ScriptTypography>
-                </ActiveLink>
-              </ScriptTypography>
-              <ScriptTypography>
-                <ActiveLink href="/registry">
-                  <ScriptTypography>Registry</ScriptTypography>
-                </ActiveLink>
-              </ScriptTypography>
-              <ScriptTypography>
-                <ActiveLink href="/accomodations">
-                  <ScriptTypography>Accomodations</ScriptTypography>
-                </ActiveLink>
-              </ScriptTypography>
+              <ActiveLink href="/venue">
+                <ScriptTypography>Venue</ScriptTypography>
+              </ActiveLink>
+              <ActiveLink href="/registry">
+                <ScriptTypography>Registry</ScriptTypography>
+              </ActiveLink>
+              <ActiveLink href="/accomodations">
+                <ScriptTypography>Accomodations</ScriptTypography>
+              </ActiveLink>
             </Box>
           </Hidden>
           <Hidden mdUp>
