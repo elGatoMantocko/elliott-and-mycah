@@ -5,9 +5,9 @@ import * as React from 'react';
 
 const useFabStyles = makeStyles((theme) => ({
   root: {
-    position: 'sticky',
+    position: 'fixed',
     margin: theme.spacing(4),
-    bottom: theme.spacing(4),
+    bottom: 0,
   },
 }));
 

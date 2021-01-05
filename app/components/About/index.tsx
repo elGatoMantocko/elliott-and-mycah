@@ -1,5 +1,6 @@
-import { Theme, useMediaQuery } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import { Theme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import * as React from 'react';
 
 import { Countdown } from '../Countdown';

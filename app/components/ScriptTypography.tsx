@@ -5,7 +5,7 @@ import * as React from 'react';
 
 const useScriptStyles = makeStyles((theme) => ({
   root: {
-    fontFamily: 'Lucian Schoenschrift CAT',
+    fontFamily: '"Lucian Schoenschrift CAT", serif',
     fontSize: ({ variant }: TypographyProps) =>
       (variant &&
         variant !== 'inherit' &&
