@@ -81,11 +81,7 @@ export const Menu = () => {
               onChange={(_, value) => push(value)}
             >
               <BottomNavigationAction icon={<HomeIcon />} label="Home" value="/" />
-              <BottomNavigationAction
-                icon={<GroupIcon />}
-                label="Wedding Party"
-                value="/wedding-party"
-              />
+              <BottomNavigationAction icon={<GroupIcon />} label="Party" value="/wedding-party" />
               <BottomNavigationAction icon={<DirectionsBoatIcon />} label="Venue" value="/venue" />
               <BottomNavigationAction
                 icon={<ShoppingCartIcon />}
