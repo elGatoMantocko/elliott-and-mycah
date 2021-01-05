@@ -40,7 +40,7 @@ export const AboutSection = ({
   return (
     <Box pb={1} display="flex" flexDirection={variant}>
       <Box maxWidth={isLargeScreen ? '50%' : undefined} mx={1} px={1} mt={3}>
-        <ScriptTypography variant="h3" align="center">
+        <ScriptTypography variant="h3" align="center" color="secondary">
           {title}
         </ScriptTypography>
         <Typography gutterBottom align="center">

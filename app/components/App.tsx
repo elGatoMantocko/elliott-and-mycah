@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@material-ui/core/styles';
 import * as React from 'react';
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/useCustomTheme';
@@ -16,16 +16,13 @@ export const App = () => (
       <Router>
         <Menu />
         <Route exact path="/">
-          <Redirect to="/about" />
+          <About />
         </Route>
         <Route path="/wedding-party">
           <WeddingParty />
         </Route>
         <Route path="/venue">
           <Venue />
-        </Route>
-        <Route path="/about">
-          <About />
         </Route>
       </Router>
       <RsvpButton formUrl="https://forms.gle/JFwN8N6Peuv4GKgc6" />

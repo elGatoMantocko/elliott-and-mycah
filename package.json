@@ -1,7 +1,11 @@
 {
-  "name": "elliott_and_mycah",
+  "name": "elliott-and-mycah",
+  "author": {
+    "name": "Elliott",
+    "email": "emantock@gmail.com"
+  },
   "version": "0.1.0",
-  "private": true,
+  "license": "ISC",
   "devDependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -23,7 +27,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "material-ui-image": "^3.3.0",
     "minimist": "^1.2.5",
@@ -47,5 +50,7 @@
     "build": "npx webpack -c webpack.config.ts",
     "dev": "npx webpack serve"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.57"
+  }
 }
