@@ -56,7 +56,7 @@ jobs:
           KUBE_CONFIG="${KUBE_CONFIG//'%'/'%25'}"
           KUBE_CONFIG="${KUBE_CONFIG//$'\n'/'%0A'}"
           KUBE_CONFIG="${KUBE_CONFIG//$'\r'/'%0D'}"
-          echo "::set-output name=content::$KUBE_CONFIG
+          echo "::set-output name=content::$KUBE_CONFIG"
         id: do-kubeconfig
 
       - name: k8s set context
