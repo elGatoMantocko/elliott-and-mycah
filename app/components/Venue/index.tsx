@@ -4,7 +4,7 @@ import Collapse from '@material-ui/core/Collapse';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import { Theme } from '@material-ui/core/styles';
-import makeStyles from '@material-ui/core/styles/makeStyles';
+import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { GoogleMap } from '@react-google-maps/api';
@@ -77,7 +77,10 @@ export const Venue = () => {
         </Collapse>
         <Hidden mdUp>
           <IconButton onClick={() => setHideButtons(!hideButtons)}>
-            <ExpandMore classes={useExpandButtonStyles({ expanded: !hideButtons })} />
+            <ExpandMore
+              className="material-icons"
+              classes={useExpandButtonStyles({ expanded: !hideButtons })}
+            />
           </IconButton>
         </Hidden>
         <GoogleMap

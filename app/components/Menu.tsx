@@ -50,38 +50,38 @@ const MobileMenu = () => {
     <>
       <Box position="fixed" bottom="0" right="0" margin={3} zIndex={1000}>
         <Fab color="secondary" onClick={() => setOpen(true)}>
-          <MenuIcon />
+          <MenuIcon className="material-icons" />
         </Fab>
       </Box>
       <Drawer anchor="bottom" open={open} onClose={() => setOpen(false)}>
         <List>
           <ListItemLink href="/">
             <ListItemIcon>
-              <HomeIcon />
+              <HomeIcon className="material-icons" />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItemLink>
           <ListItemLink href="/wedding-party">
             <ListItemIcon>
-              <GroupIcon />
+              <GroupIcon className="material-icons" />
             </ListItemIcon>
             <ListItemText primary="Wedding Party" />
           </ListItemLink>
           <ListItemLink href="/venue">
             <ListItemIcon>
-              <DirectionsBoatIcon />
+              <DirectionsBoatIcon className="material-icons" />
             </ListItemIcon>
             <ListItemText primary="Venue" />
           </ListItemLink>
           <ListItemLink href="/registry">
             <ListItemIcon>
-              <ShoppingCartIcon />
+              <ShoppingCartIcon className="material-icons" />
             </ListItemIcon>
             <ListItemText primary="Registry" />
           </ListItemLink>
           <ListItemLink href="/accomodations">
             <ListItemIcon>
-              <HotelIcon />
+              <HotelIcon className="material-icons" />
             </ListItemIcon>
             <ListItemText primary="Accomodations" />
           </ListItemLink>

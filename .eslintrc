@@ -27,6 +27,12 @@
     "simple-import-sort/imports": "error",
     "sort-imports": "off",
     "import/order": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"]
+      }
+    ]
   }
 }
