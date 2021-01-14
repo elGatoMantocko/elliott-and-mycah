@@ -28,15 +28,6 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-      - name: Save kubeconfig
-        run: echo "::set-output name=kube_config::$(doctl k8s cluster kubeconfig show mantocko-dev)"
-        id: do-kubeconfig
-
-      - name: k8s set context
-        uses: Azure/k8s-set-context@v1
-        with:
-          kubeconfig: ${{ steps.do-kubeconfig.outputs.kube_config }}
-
       # install deps
       - name: Install yarn dependencies
         uses: Borales/actions-yarn@v2.3.0
@@ -58,6 +49,17 @@ jobs:
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:latest
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
+
+      - name: Save kubeconfig
+        run: |
+          KUBE_CONFIG=$(doctl k8s cluster kubeconfig show mantocko-dev)
+          echo "::set-output name=content::$KUBE_CONFIG"
+        id: do-kubeconfig
+
+      - name: k8s set context
+        uses: Azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ steps.do-kubeconfig.outputs.content }}
 
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
