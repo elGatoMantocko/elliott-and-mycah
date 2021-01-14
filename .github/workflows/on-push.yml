@@ -52,14 +52,19 @@ jobs:
 
       - name: Save kubeconfig
         run: |
-          KUBE_CONFIG=$(doctl k8s cluster kubeconfig show mantocko-dev)
-          echo "::set-output name=content::$KUBE_CONFIG"
+          KUBE_CONFIG=$(cat << EOF
+          $(doctl k8s cluster kubeconfig show mantocko-dev)
+          EOF
+          )
+          echo "KUBE_CONFIG<<EOF" >> $GITHUB_ENV
+          echo "$KUBE_CONFIG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
         id: do-kubeconfig
 
       - name: k8s set context
         uses: Azure/k8s-set-context@v1
         with:
-          kubeconfig: ${{ steps.do-kubeconfig.outputs.content }}
+          kubeconfig: ${{ env.KUBE_CONFIG }}
 
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
