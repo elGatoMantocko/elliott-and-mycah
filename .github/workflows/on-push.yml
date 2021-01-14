@@ -50,8 +50,15 @@ jobs:
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
-      - name: Update kubeconfig
+      # These two steps are a hack to get this working, we should ideally get the context
+      #   here and set it in the same step.
+      - name: Save kubeconfig
         run: doctl k8s cluster kubeconfig save mantocko-dev
+
+      - name: k8s set context
+        uses: Azure/k8s-set-context@v1
+        with:
+          context: do-sfo2-mantocko-dev
 
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
