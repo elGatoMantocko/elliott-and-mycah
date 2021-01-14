@@ -50,7 +50,7 @@ jobs:
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
-      - name: Add $KUBE_CONFIG to $GITHUB_ENV
+      - name: Get DO kubeconfig
         run: |
           KUBE_CONFIG=$(doctl k8s cluster kubeconfig show mantocko-dev)
           KUBE_CONFIG="${KUBE_CONFIG//'%'/'%25'}"
