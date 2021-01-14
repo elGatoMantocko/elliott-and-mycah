@@ -11,32 +11,12 @@ import { GoogleMap } from '@react-google-maps/api';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { ResponsiveContainer } from './ResponsiveContainer';
+import { ResponsiveContainer } from '../ResponsiveContainer';
+import { poi } from './pointsOfInterest';
 
 const useGetMapStyles = (): React.CSSProperties => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
   return { width: '100%', height: isSmallScreen ? '75vh' : 800 };
-};
-
-enum Location {
-  Home = 'home',
-  YachtClub = 'yacht-club',
-  HamptonInn = 'hampton-inn',
-  PanPacificHotel = 'pan-pacific-hotel',
-  SeaTacAirport = 'sea-tac',
-}
-
-type MapArgs = {
-  position: google.maps.ReadonlyLatLngLiteral;
-  label: string | JSX.Element;
-  description?: string | JSX.Element;
-  zoom?: number;
-  mapTypeId?: 'satellite' | 'roadmap';
-  heading?: number;
-};
-
-type PointsOfInterest = {
-  [name in Location]: MapArgs;
 };
 
 const useExpandButtonStyles = makeStyles({
@@ -45,37 +25,6 @@ const useExpandButtonStyles = makeStyles({
     transform: props.expanded ? 'initial' : 'rotate(-180deg)',
   }),
 });
-
-const poi: PointsOfInterest = {
-  [Location.Home]: {
-    position: { lat: 47.487688475492966, lng: -122.3529181906647 },
-    zoom: 20.5,
-    label: 'Mantock Household',
-    description: 'This is where Mycah, Elliott, and Ellie live!',
-    mapTypeId: 'satellite',
-    heading: 270,
-  },
-  [Location.YachtClub]: {
-    position: { lat: 47.64540544645757, lng: -122.30839522102245 },
-    zoom: 17,
-    label: 'Seattle Yacht Club',
-  },
-  [Location.HamptonInn]: {
-    position: { lat: 47.62613719101338, lng: -122.34673533018191 },
-    zoom: 19,
-    label: 'Hampton Inn',
-  },
-  [Location.PanPacificHotel]: {
-    position: { lat: 47.618412587882325, lng: -122.33747379246103 },
-    zoom: 18.5,
-    label: 'Pan Pacific Hotel',
-  },
-  [Location.SeaTacAirport]: {
-    position: { lat: 47.45111485957373, lng: -122.3067614522024 },
-    zoom: 13,
-    label: 'SeaTac Airport',
-  },
-};
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
@@ -102,23 +51,26 @@ export const Venue = () => {
       <Box mb={9}>
         <Collapse collapsedHeight={70} in={hideButtons}>
           <Box display="flex" width="100%" justifyContent="space-between" flexWrap="wrap">
-            {Object.entries(poi).map(([key, mapArgs]) => (
+            {Object.entries(poi).map(([key, { position, mapTypeId, zoom, heading, label }]) => (
               <Button
                 key={key}
                 classes={buttonClasses}
                 variant="contained"
                 fullWidth={isSmallScreen}
                 onClick={() => {
+                  // this is a hack to fix the map remounting whenever the dom refreshes
+                  setCenter(position);
                   if (map != null) {
-                    setCenter(mapArgs.position);
-                    map.panTo(mapArgs.position);
-                    map.setMapTypeId(mapArgs.mapTypeId || 'roadmap');
-                    mapArgs.zoom && map.setZoom(isSmallScreen ? mapArgs.zoom * 0.95 : mapArgs.zoom);
-                    mapArgs.heading && map.setHeading(mapArgs.heading);
+                    map.panTo(position);
+                    map.setMapTypeId(mapTypeId || 'roadmap');
+
+                    // becuase of mobile dimensions, zoom looks funky on smaller screens
+                    zoom && map.setZoom(isSmallScreen ? zoom * 0.95 : zoom);
+                    heading && map.setHeading(heading);
                   }
                 }}
               >
-                {mapArgs.label}
+                {label}
               </Button>
             ))}
           </Box>
