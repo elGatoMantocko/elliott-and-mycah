@@ -51,9 +51,7 @@ jobs:
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
       - name: Update kubeconfig
-        uses: Azure/k8s-set-context@v1
-        with:
-          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+        run: doctl k8s cluster kubeconfig save mantocko-dev
 
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
