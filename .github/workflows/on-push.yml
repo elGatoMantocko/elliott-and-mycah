@@ -50,21 +50,19 @@ jobs:
           docker tag $IMAGE_NAME registry.digitalocean.com/mantocko/$IMAGE_NAME:${{ github.sha }}
           docker push registry.digitalocean.com/mantocko/$IMAGE_NAME
 
-      - name: Save kubeconfig
+      - name: Add $KUBE_CONFIG to $GITHUB_ENV
         run: |
-          KUBE_CONFIG=$(cat << EOF
-          $(doctl k8s cluster kubeconfig show mantocko-dev)
-          EOF
-          )
-          echo "KUBE_CONFIG<<EOF" >> $GITHUB_ENV
-          echo "$KUBE_CONFIG" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          KUBE_CONFIG=$(doctl k8s cluster kubeconfig show mantocko-dev)
+          KUBE_CONFIG="${KUBE_CONFIG//'%'/'%25'}"
+          KUBE_CONFIG="${KUBE_CONFIG//$'\n'/'%0A'}"
+          KUBE_CONFIG="${KUBE_CONFIG//$'\r'/'%0D'}"
+          echo "::set-output name=content::$KUBE_CONFIG
         id: do-kubeconfig
 
       - name: k8s set context
         uses: Azure/k8s-set-context@v1
         with:
-          kubeconfig: ${{ env.KUBE_CONFIG }}
+          kubeconfig: ${{ steps.do-kubeconfig.outputs.content }}
 
       - name: Deploy to DO kubernetes
         uses: Azure/k8s-deploy@v1.3
