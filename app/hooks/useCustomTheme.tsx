@@ -14,8 +14,6 @@ export const useCustomTheme = () => {
         },
         palette: {
           type: prefersDarkMode ? 'dark' : 'light',
-          common: { black: '#000', white: '#fff' },
-          background: { paper: '#fff', default: '#fafafa' },
           primary: {
             light: 'rgba(139, 77, 174, 0.1)',
             main: 'rgba(139, 77, 174, 1)',
