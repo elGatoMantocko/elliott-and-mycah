@@ -77,10 +77,7 @@ export const Venue = () => {
         </Collapse>
         <Hidden mdUp>
           <IconButton onClick={() => setHideButtons(!hideButtons)}>
-            <ExpandMore
-              className="material-icons"
-              classes={useExpandButtonStyles({ expanded: !hideButtons })}
-            />
+            <ExpandMore classes={useExpandButtonStyles({ expanded: !hideButtons })} />
           </IconButton>
         </Hidden>
         <GoogleMap
