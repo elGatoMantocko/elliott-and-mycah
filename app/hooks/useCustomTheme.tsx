@@ -1,11 +1,8 @@
-import { createMuiTheme, Theme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { useMemo } from 'react';
 
-export const useCustomTheme = () => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-  const theme: Theme = useMemo(
+export const useCustomTheme = () =>
+  useMemo(
     () =>
       createMuiTheme({
         spacing: (factor) => `${0.5 * factor}rem`,
@@ -13,7 +10,7 @@ export const useCustomTheme = () => {
           fontFamily: ['Roboto Slab', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
         },
         palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
+          type: 'light',
           primary: {
             light: 'rgba(139, 77, 174, 0.1)',
             main: 'rgba(139, 77, 174, 1)',
@@ -34,8 +31,5 @@ export const useCustomTheme = () => {
           },
         },
       }),
-    [prefersDarkMode],
+    [],
   );
-
-  return theme;
-};
