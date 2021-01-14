@@ -1,6 +1,8 @@
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Box from '@material-ui/core/Box';
 import Fab from '@material-ui/core/Fab';
 import { makeStyles } from '@material-ui/core/styles';
-import ReplyIcon from '@material-ui/icons/Reply';
 import * as React from 'react';
 
 const useFabStyles = makeStyles((theme) => ({
@@ -21,7 +23,9 @@ export const RsvpButton = ({ formUrl }: RsvpButtonProps) => (
     href={formUrl}
     target="blank"
   >
-    <ReplyIcon />
     RSVP
+    <Box ml={1} position="relative" top={-1}>
+      <FontAwesomeIcon size="sm" icon={faExternalLinkAlt} />
+    </Box>
   </Fab>
 );

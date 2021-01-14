@@ -56,7 +56,7 @@ const poi: PointsOfInterest = {
   },
   [Location.PanPacificHotel]: {
     position: { lat: 47.618412587882325, lng: -122.33747379246103 },
-    zoom: 18.25,
+    zoom: 18.5,
     label: 'Pan Pacific Hotel',
   },
   [Location.SeaTacAirport]: {
