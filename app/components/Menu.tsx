@@ -1,27 +1,26 @@
 import AppBar from '@material-ui/core/AppBar';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
+import Drawer from '@material-ui/core/Drawer';
+import Fab from '@material-ui/core/Fab';
 import Hidden from '@material-ui/core/Hidden';
 import Link, { LinkProps } from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import DirectionsBoatIcon from '@material-ui/icons/DirectionsBoat';
 import GroupIcon from '@material-ui/icons/Group';
 import HomeIcon from '@material-ui/icons/Home';
 import HotelIcon from '@material-ui/icons/Hotel';
+import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import * as React from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useState } from 'react';
+import { useLocation } from 'react-router';
 
 import { ResponsiveContainer } from './ResponsiveContainer';
 import { ScriptTypography } from './ScriptTypography';
-
-const useBottomNavigationStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-});
 
 type Colors =
   | 'inherit'
@@ -41,15 +40,63 @@ const ActiveLink = ({
   return <Link {...linkProps} color={pathname === linkProps.href ? activeColor : inactiveColor} />;
 };
 
-export const Menu = () => {
-  const { push } = useHistory();
-  const { pathname } = useLocation();
+const ListItemLink = (props: ListItemProps<'a', { button?: true }>) => (
+  <ListItem button component="a" {...props} />
+);
 
+const MobileMenu = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
-      <ResponsiveContainer disableGutters>
-        <Toolbar>
-          <Hidden smDown>
+    <>
+      <Box position="fixed" bottom="0" right="0" margin={3} zIndex={1000}>
+        <Fab color="secondary" onClick={() => setOpen(true)}>
+          <MenuIcon />
+        </Fab>
+      </Box>
+      <Drawer anchor="bottom" open={open} onClose={() => setOpen(false)}>
+        <List>
+          <ListItemLink href="/">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemLink>
+          <ListItemLink href="/wedding-party">
+            <ListItemIcon>
+              <GroupIcon />
+            </ListItemIcon>
+            <ListItemText primary="Wedding Party" />
+          </ListItemLink>
+          <ListItemLink href="/venue">
+            <ListItemIcon>
+              <DirectionsBoatIcon />
+            </ListItemIcon>
+            <ListItemText primary="Venue" />
+          </ListItemLink>
+          <ListItemLink href="/registry">
+            <ListItemIcon>
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Registry" />
+          </ListItemLink>
+          <ListItemLink href="/accomodations">
+            <ListItemIcon>
+              <HotelIcon />
+            </ListItemIcon>
+            <ListItemText primary="Accomodations" />
+          </ListItemLink>
+        </List>
+      </Drawer>
+    </>
+  );
+};
+
+export const Menu = () => (
+  <>
+    <Hidden smDown>
+      <AppBar position="static" color="transparent" elevation={0}>
+        <ResponsiveContainer disableGutters>
+          <Toolbar>
             <Box display="flex" justifyContent="space-between" width="100%" px={1}>
               <ActiveLink href="/">
                 <img src="/images/eandm.jpg" alt="E + M logo" />
@@ -67,26 +114,12 @@ export const Menu = () => {
                 <ScriptTypography>Accomodations</ScriptTypography>
               </ActiveLink>
             </Box>
-          </Hidden>
-          <Hidden mdUp>
-            <BottomNavigation
-              classes={useBottomNavigationStyles()}
-              value={pathname}
-              onChange={(_, value) => push(value)}
-            >
-              <BottomNavigationAction icon={<HomeIcon />} label="Home" value="/" />
-              <BottomNavigationAction icon={<GroupIcon />} label="Party" value="/wedding-party" />
-              <BottomNavigationAction icon={<DirectionsBoatIcon />} label="Venue" value="/venue" />
-              <BottomNavigationAction
-                icon={<ShoppingCartIcon />}
-                label="Registry"
-                value="/registry"
-              />
-              <BottomNavigationAction icon={<HotelIcon />} label="Hotels" value="/accomodations" />
-            </BottomNavigation>
-          </Hidden>
-        </Toolbar>
-      </ResponsiveContainer>
-    </AppBar>
-  );
-};
+          </Toolbar>
+        </ResponsiveContainer>
+      </AppBar>
+    </Hidden>
+    <Hidden mdUp>
+      <MobileMenu />
+    </Hidden>
+  </>
+);
