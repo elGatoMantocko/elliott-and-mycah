@@ -1,3 +1,4 @@
+import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { LoadScript } from '@react-google-maps/api';
@@ -15,16 +16,18 @@ export const App = () => (
   <ParallaxProvider>
     <ThemeProvider theme={useCustomTheme()}>
       <LoadScript googleMapsApiKey="AIzaSyApT_xNp9ePgFYEfdlpw_JJXZG70U1MzXM">
-        <Paper elevation={0}>
+        <Paper elevation={0} square>
           <Router>
             <Menu />
+            <Box position="fixed" bottom="0" left="0" m={4} zIndex={1000}>
+              <RsvpButton formUrl="https://forms.gle/ZExa265AVjhf1t9p8" />
+            </Box>
             {routes.map(({ href, content, underConstruction }, i) => (
               <Route key={i} exact path={href}>
                 {underConstruction ? 'Under construction!' : content}
               </Route>
             ))}
           </Router>
-          <RsvpButton formUrl="https://forms.gle/ZExa265AVjhf1t9p8" />
         </Paper>
       </LoadScript>
     </ThemeProvider>

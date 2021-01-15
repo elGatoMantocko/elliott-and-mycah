@@ -3908,11 +3908,6 @@ react-scroll-parallax@^2.3.5:
   dependencies:
     prop-types "^15.5.10"
 
-react-swipeable@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-6.0.1.tgz#14246e798c25a00da3279632a87811411756f652"
-  integrity sha512-69nonicgjT4ofeHxZSpjuz37BoIiWMEbUYkX0mdTCY2mX1U53XDzDUIOVKRg6vVBNGL+pxYjbRzmylXWORh1xQ==
-
 react-transition-group@^4.4.0:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"
@@ -4894,7 +4889,7 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-webpack-cli@^4.2.0:
+webpack-cli@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-4.3.1.tgz#87a7873bc9c6a4708aa657759274b691e72a04a8"
   integrity sha512-/F4+9QNZM/qKzzL9/06Am8NXIkGV+/NqQ62Dx7DSqudxxpAgBqYn6V7+zp+0Y7JuWksKUbczRY3wMTd+7Uj6OA==
@@ -4986,7 +4981,7 @@ webpack-sources@^2.1.1:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@^5.10.0:
+webpack@^5.14.0:
   version "5.14.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.14.0.tgz#cdfe9286d14ddc2bb348afabc1d910d166f3c47f"
   integrity sha512-PFtfqXIKT6EG+k4L7d9whUPacN2XvxlUMc8NAQvN+sF9G8xPQqrCDGDiXbAdyGNz+/OP6ioxnUKybBBZ1kp/2A==
