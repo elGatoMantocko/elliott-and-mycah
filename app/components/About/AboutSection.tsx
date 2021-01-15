@@ -1,22 +1,11 @@
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
-import { makeStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import * as React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
-
-const useScriptTypographyStyles = makeStyles((theme) => {
-  const type =
-    theme.palette.type === 'dark' ? 'light' : theme.palette.type === 'light' ? 'dark' : 'main';
-  return {
-    root: {
-      color: theme.palette.secondary[type],
-    },
-  };
-});
 
 type AboutSectionProps = {
   /**
@@ -51,7 +40,7 @@ export const AboutSection = ({
   return (
     <Box pb={1} display="flex" flexDirection={variant}>
       <Box maxWidth={isLargeScreen ? '50%' : undefined} mx={1} px={1} mt={3}>
-        <ScriptTypography classes={useScriptTypographyStyles()} variant="h3" align="center">
+        <ScriptTypography color="secondary" variant="h3" align="center">
           {title}
         </ScriptTypography>
         <Typography gutterBottom align="center">

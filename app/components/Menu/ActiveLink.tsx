@@ -7,16 +7,10 @@ const useLinkColorStyles = makeStyles((theme) => {
   const { pathname } = useLocation();
   return {
     root: {
-      color: ({ disabled, href }: { disabled?: boolean; href: string }) => {
-        const variant = pathname === href ? 'primary' : 'secondary';
-        const mode =
-          theme.palette.type === 'dark'
-            ? 'light'
-            : theme.palette.type === 'light'
-            ? 'dark'
-            : 'main';
-        return disabled ? theme.palette.text.disabled : theme.palette[variant][mode];
-      },
+      color: ({ disabled, href }: { disabled?: boolean; href: string }) =>
+        disabled
+          ? theme.palette.text.disabled
+          : theme.palette[pathname === href ? 'primary' : 'secondary'].main,
     },
   };
 });
