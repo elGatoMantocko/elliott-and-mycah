@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { LoadScript } from '@react-google-maps/api';
 import * as React from 'react';
+import GithubCorner from 'react-github-corner';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -35,6 +36,10 @@ export const App = () => (
               </Route>
             ))}
           </Router>
+          <GithubCorner
+            href="https://github.com/elGatoMantocko/elliott-and-mycah"
+            target="_blank"
+          />
         </Paper>
       </LoadScript>
     </ThemeProvider>

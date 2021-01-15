@@ -25,6 +25,10 @@ const factory = (mode = 'development'): Configuration => ({
           name: 'viewport',
           content: 'width=device-width, initial-scale=1.0',
         },
+        description: {
+          name: 'description',
+          content: 'Celebrate the wedding of Elliott and Mycah on June 12, 2021.',
+        },
       },
       scriptLoading: 'defer',
       inject: 'body',
