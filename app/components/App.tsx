@@ -30,8 +30,8 @@ export const App = () => (
             <Box position="fixed" bottom="0" left="0" m={4} zIndex={1000}>
               <RsvpButton formUrl="https://forms.gle/ZExa265AVjhf1t9p8" />
             </Box>
-            {routes.map(({ href, content, underConstruction }, i) => (
-              <Route key={i} exact path={href}>
+            {routes.map(({ href, content, underConstruction }) => (
+              <Route key={href} exact path={href}>
                 {underConstruction ? 'Under construction!' : content}
               </Route>
             ))}

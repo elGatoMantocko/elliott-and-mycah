@@ -1,3 +1,6 @@
+import Typography from '@material-ui/core/Typography';
+import * as React from 'react';
+
 type MapArgs = {
   position: google.maps.ReadonlyLatLngLiteral;
   label: string | JSX.Element;
@@ -30,6 +33,14 @@ export const poi: PointsOfInterest = {
   },
   [Location.YachtClub]: {
     position: { lat: 47.64540544645757, lng: -122.30839522102245 },
+    description: (
+      <>
+        <Typography>
+          Both our ceremony and reception will be held at Seattle Yacht Club located at:
+        </Typography>
+        <Typography gutterBottom>1807 E. Hamlin St., Seattle, WA 98112</Typography>
+      </>
+    ),
     zoom: 17,
     label: 'Seattle Yacht Club',
   },
