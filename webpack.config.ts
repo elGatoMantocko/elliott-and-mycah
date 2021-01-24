@@ -51,7 +51,7 @@ const factory = (mode = 'development'): Configuration => ({
     extensions: ['.tsx', '.js'],
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name]-[hash:8].js',
   },
 });
 
