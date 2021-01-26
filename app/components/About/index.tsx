@@ -3,6 +3,10 @@ import { Theme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import * as React from 'react';
 
+import * as balcony from '../../images/balcony.jpg';
+import * as ellie from '../../images/ellie_and_rainier.jpg';
+import * as onTheHill from '../../images/on_the_hill.jpg';
+import * as oneKnee from '../../images/one_knee.jpg';
 import { Countdown } from '../Countdown';
 import { ResponsiveContainer } from '../ResponsiveContainer';
 import { ScriptTypography } from '../ScriptTypography';
@@ -13,10 +17,7 @@ export const About = () => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
   return (
     <>
-      <Banner
-        imageSource="/images/balcony.jpg"
-        style={isSmallScreen ? { height: 650 } : { minHeight: 650 }}
-      >
+      <Banner imageSource={balcony} style={isSmallScreen ? { height: 650 } : { minHeight: 650 }}>
         <ResponsiveContainer maxWidth="md">
           <Box display="flex">
             <Box color="white" mx="auto" mb={1}>
@@ -49,7 +50,7 @@ export const About = () => {
               framed by Mendenhall Glacier, a turquoise lake, and a glacier-fed waterfall. Elliott
               asked our tour guide to take a photo of us and after a few snapshots, got down on one
               knee to pop the question."
-            imageSource="/images/one_knee.jpg"
+            imageSource={oneKnee}
             imageAlt="Elliott pops the question in front of the Mendenhall glacier"
           />
           <AboutSection
@@ -58,7 +59,7 @@ export const About = () => {
                 friends until our final year when we had our first date at a farm to table
                 restaurant in downtown Lafayette."
             variant="row-reverse"
-            imageSource="/images/on_the_hill.jpg"
+            imageSource={onTheHill}
             imageAlt="Mycah and Elliott attend a Slayter concert on the hill"
           />
           <AboutSection
@@ -67,7 +68,7 @@ export const About = () => {
             August 2018, we moved to Seattle, WA. We lived in the South Lake Union area until we
             bought our house in Burien in September 2019. In May 2019, we added our chocolate lab,
             Ellie, to our family."
-            imageSource="/images/ellie_and_rainier.jpg"
+            imageSource={ellie}
             imageAlt="Ellie strikes a pose in front of 14000ft Mt. Rainier"
           />
         </Box>

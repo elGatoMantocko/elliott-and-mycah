@@ -5,6 +5,7 @@ import MapIcon from '@material-ui/icons/Map';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import * as React from 'react';
 
+import * as logo from '../../images/eandm.jpg';
 import { About } from '../About';
 import { Venue } from '../Venue';
 import { WeddingParty } from '../WeddingParty';
@@ -21,7 +22,7 @@ type Route = {
 export const routes: Route[] = [
   {
     href: '/',
-    label: <img src="/images/eandm.jpg" alt="E + M logo" />,
+    label: <img src={logo} alt="E + M logo" />,
     alt: 'Home',
     icon: <HomeIcon />,
     content: <About />,

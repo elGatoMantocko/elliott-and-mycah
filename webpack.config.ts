@@ -20,6 +20,7 @@ const factory = (mode = 'development'): Configuration => ({
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
+      favicon: 'app/assets/favicon.ico',
       meta: {
         viewport: {
           name: 'viewport',
@@ -34,7 +35,8 @@ const factory = (mode = 'development'): Configuration => ({
       inject: 'body',
     }),
     new CopyPlugin({
-      patterns: [{ from: 'app/assets' }],
+      // favicon gets included in the HTMLWebpackPlugin
+      patterns: ['app/assets/Lucian Schoenschrift CAT.ttf', 'app/assets/robots.txt'],
     }),
   ],
   module: {
@@ -44,14 +46,15 @@ const factory = (mode = 'development'): Configuration => ({
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /.jpg$/,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
     modules: ['node_modules'],
     extensions: ['.tsx', '.js'],
-  },
-  output: {
-    filename: '[name]-[hash:8].js',
   },
 });
 
