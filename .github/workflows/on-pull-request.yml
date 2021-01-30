@@ -27,4 +27,8 @@ jobs:
         with:
           cmd: build
 
-      # TODO: Add tests
+      # run tests
+      - name: Run tests
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: test

@@ -41,6 +41,12 @@ jobs:
         with:
           cmd: build
 
+      # test project
+      - name: Build assets
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: test
+
       - name: Build docker image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 

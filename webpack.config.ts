@@ -56,9 +56,12 @@ const factory = (mode = 'development'): Configuration => ({
     modules: ['node_modules'],
     extensions: ['.tsx', '.js'],
   },
+  output: {
+    filename: '[name]-[contenthash].js',
+  },
 });
 
-const config: Configuration = {
+export const config: Configuration = {
   ...factory(process.env['NODE_ENV']),
   entry: './app/index.tsx',
   optimization: {
@@ -68,4 +71,4 @@ const config: Configuration = {
   },
 };
 
-module.exports = config;
+export default config;
