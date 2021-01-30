@@ -27,9 +27,6 @@ jobs:
         with:
           cmd: build
 
-      # setup chromedriver
-      - uses: nanasess/setup-chromedriver@master
-
       # run tests
       - name: Run tests
         uses: Borales/actions-yarn@v2.3.0
