@@ -42,7 +42,7 @@ jobs:
           cmd: build
 
       # test project
-      - name: Build assets
+      - name: Run karma tests
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: test
