@@ -13,7 +13,6 @@ on:
 
 env:
   IMAGE_NAME: elliott-and-mycah
-  NODE_ENV: production
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,29 +22,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+
+      # install deps
+      - name: Install yarn dependencies
+        run: yarn install
+
+      # build project
+      - name: Build assets
+        env:
+          NODE_ENV: production
+        run: yarn build
+
+      # run tests
+      - name: Run tests
+        run: yarn test
+
       # Install doctl on the runner
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-      # install deps
-      - name: Install yarn dependencies
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-
-      # build project
-      - name: Build assets
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: build
-
-      # test project
-      - name: Run karma tests
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: test
 
       - name: Build docker image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
