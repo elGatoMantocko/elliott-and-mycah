@@ -27,6 +27,9 @@ jobs:
         with:
           cmd: build
 
+      - name: Print env
+        run: env
+
       # run tests
       - name: Run tests
         uses: Borales/actions-yarn@v2.3.0

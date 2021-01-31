@@ -41,6 +41,9 @@ jobs:
         with:
           cmd: build
 
+      - name: Print env
+        run: env
+
       # test project
       - name: Run karma tests
         uses: Borales/actions-yarn@v2.3.0
