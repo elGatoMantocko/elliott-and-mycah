@@ -14,24 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
 
       # install deps
       - name: Install yarn dependencies
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
+        run: yarn install
 
       # build project
       - name: Build assets
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: build
+        run: yarn build
 
       - name: Print env
         run: env
 
       # run tests
       - name: Run tests
-        uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: test
+        run: yarn test
