@@ -1,5 +1,4 @@
 import Box from '@material-ui/core/Box';
-import Hidden from '@material-ui/core/Hidden';
 import { Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -38,7 +37,7 @@ export const AboutSection = ({
 }: AboutSectionProps) => {
   const isLargeScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.up('md'));
   return (
-    <Box pb={1} display="flex" flexDirection={variant}>
+    <Box pb={1} display="flex" flexDirection={isLargeScreen ? variant : 'column'}>
       <Box maxWidth={isLargeScreen ? '50%' : undefined} mx={1} px={1} mt={3}>
         <ScriptTypography color="secondary" variant="h3" align="center">
           {title}
@@ -48,15 +47,18 @@ export const AboutSection = ({
         </Typography>
       </Box>
       {imageSource && (
-        <Hidden smDown>
-          <Box maxWidth="50%" my="auto" mx={1} px={1}>
-            <img
-              style={{ maxWidth: '100%', borderRadius: '1rem' }}
-              src={imageSource}
-              alt={imageAlt}
-            />
-          </Box>
-        </Hidden>
+        <Box
+          maxWidth={isLargeScreen ? '50%' : undefined}
+          mt={2}
+          mx={isLargeScreen ? 1 : 'auto'}
+          px={1}
+        >
+          <img
+            style={{ maxWidth: '100%', maxHeight: '60vh', borderRadius: '1rem' }}
+            src={imageSource}
+            alt={imageAlt}
+          />
+        </Box>
       )}
     </Box>
   );

@@ -44,7 +44,7 @@ export const Countdown = ({ toDate }: CountdownProps) => {
   delta -= minutes * 60;
 
   // what's left is seconds
-  const seconds = Math.floor(delta % 60); // in theory the modulus is not required
+  const seconds = Math.floor(delta) % 60; // in theory the modulus is not required
 
   return (
     <Box display="flex" justifyContent="space-around" width="100%">
