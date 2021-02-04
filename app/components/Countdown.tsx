@@ -1,6 +1,5 @@
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
-import * as moment from 'moment';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -26,18 +25,26 @@ export const Countdown = ({ toDate }: CountdownProps) => {
     setInterval(() => setTime(new Date()), 1000);
   }, [time, setTime]);
 
-  const momentDate = moment(toDate);
+  // total difference in seconds
+  // This SO link saves us ~300KB of `moment` in the bundle
+  // https://stackoverflow.com/questions/13903897/javascript-return-number-of-days-hours-minutes-seconds-between-two-dates
+  // get total seconds between the times
+  let delta = Math.abs(toDate.getTime() - Date.now()) / 1000;
 
-  const days = momentDate.diff(time, 'days');
-  const daysNormalized = momentDate.subtract(days, 'days');
+  // calculate (and subtract) whole days
+  const days = Math.floor(delta / 86400);
+  delta -= days * 86400;
 
-  const hours = daysNormalized.diff(time, 'hours');
-  const hoursNormalized = daysNormalized.subtract(hours, 'hours');
+  // calculate (and subtract) whole hours
+  const hours = Math.floor(delta / 3600) % 24;
+  delta -= hours * 3600;
 
-  const minutes = hoursNormalized.diff(time, 'minutes');
-  const minutesNormalized = hoursNormalized.subtract(minutes, 'minutes');
+  // calculate (and subtract) whole minutes
+  const minutes = Math.floor(delta / 60) % 60;
+  delta -= minutes * 60;
 
-  const seconds = minutesNormalized.diff(time, 'seconds');
+  // what's left is seconds
+  const seconds = Math.floor(delta % 60); // in theory the modulus is not required
 
   return (
     <Box display="flex" justifyContent="space-around" width="100%">

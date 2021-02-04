@@ -2,6 +2,7 @@ import * as CopyPlugin from 'copy-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { Configuration, DefinePlugin } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 /**
  * Function to generate a base webpack config
@@ -17,6 +18,7 @@ const factory = (mode = 'development'): Configuration => ({
     compress: true,
   },
   plugins: [
+    new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
@@ -41,15 +43,8 @@ const factory = (mode = 'development'): Configuration => ({
   ],
   module: {
     rules: [
-      {
-        test: /.tsx$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /.jpg$/,
-        type: 'asset/resource',
-      },
+      { test: /.tsx$/, use: 'ts-loader' },
+      { test: /.jpg$/, type: 'asset/resource' },
     ],
   },
   resolve: {
@@ -67,7 +62,6 @@ export const config: Configuration = {
   optimization: {
     providedExports: true,
     removeAvailableModules: true,
-    usedExports: true,
   },
 };
 
