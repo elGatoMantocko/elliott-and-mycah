@@ -13,12 +13,34 @@ spec:
         - mycahandelliott.com
         - wedding.elgatomantocko.com
       secretName: elliott-and-mycah-tls
-  defaultBackend:
-    service:
-      name: elliott-and-mycah
-      port:
-        number: 80
   rules:
     - host: 'elliottandmycah.com'
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: elliott-and-mycah
+                port:
+                  number: 80
     - host: 'mycahandelliott.com'
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: elliott-and-mycah
+                port:
+                  number: 80
     - host: 'wedding.elgatomantocko.com'
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: elliott-and-mycah
+                port:
+                  number: 80
