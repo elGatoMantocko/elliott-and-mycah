@@ -5,6 +5,7 @@ import * as austin from '../../images/headshots/austin.webp';
 import * as billbo from '../../images/headshots/billbo.webp';
 import * as brent from '../../images/headshots/brent.webp';
 import * as chris from '../../images/headshots/chris.webp';
+import * as paige from '../../images/headshots/paige.webp';
 import * as rob from '../../images/headshots/rob.webp';
 import { ResponsiveContainer } from '../ResponsiveContainer';
 import { ScriptTypography } from '../ScriptTypography';
@@ -21,24 +22,28 @@ export const WeddingParty = () => (
           <Box width="16.5rem">
             <PartyMember
               name="Billy Shank"
-              description="Billy makes sure to use all of the beans."
+              description="Billy makes sure to use all of the beans. Lives in South Bend, Indiana."
               imgSrc={billbo}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Austin Sims"
-              description="Friend of the groom and a fellow man of of the Trombone."
+              description="Friend of the groom and a fellow man of of the Trombone. Lives in Chicago, Illinois."
               imgSrc={austin}
             />
           </Box>
           <Box width="16.5rem">
-            <PartyMember name="Rob Mantock" description="Brother of the groom." imgSrc={rob} />
+            <PartyMember
+              name="Rob Mantock"
+              description="Some guy. Lives in Indianapolis, Indiana."
+              imgSrc={rob}
+            />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Brent Mathis"
-              description="Close friend of the bride and groom and really likes beer."
+              description="Close friend of the bride and groom and beer santa. Lives in St. Louis, Missouri"
               imgSrc={brent}
             />
           </Box>
@@ -53,7 +58,7 @@ export const WeddingParty = () => (
             <PartyMember
               name="Paige Ubel"
               description="Friend of the bride. Lives in Fishers, Indiana."
-              imgSrc=""
+              imgSrc={paige}
             />
           </Box>
           <Box width="16.5rem">
