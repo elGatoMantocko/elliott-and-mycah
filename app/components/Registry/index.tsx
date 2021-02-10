@@ -1,6 +1,6 @@
-import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 import * as React from 'react';
 
 import * as amazon from '../../images/logos/amazon.webp';
