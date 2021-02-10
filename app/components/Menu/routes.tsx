@@ -5,7 +5,7 @@ import MapIcon from '@material-ui/icons/Map';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import * as React from 'react';
 
-import * as logo from '../../images/eandm.jpg';
+import * as logo from '../../images/eandm.webp';
 import { About } from '../About';
 import { Venue } from '../Venue';
 import { WeddingParty } from '../WeddingParty';
@@ -32,7 +32,6 @@ export const routes: Route[] = [
     label: 'Wedding Party',
     icon: <GroupIcon />,
     content: <WeddingParty />,
-    underConstruction: true,
   },
   { href: '/venue', label: 'Venue Map', icon: <MapIcon />, content: <Venue /> },
   {

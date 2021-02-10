@@ -44,7 +44,7 @@ const factory = (mode = 'development'): Configuration => ({
   module: {
     rules: [
       { test: /.tsx$/, use: 'ts-loader' },
-      { test: /.jpg$/, type: 'asset/resource' },
+      { test: /.(jpe?g|webp|png|gif|svg)$/, type: 'asset/resource' },
     ],
   },
   resolve: {

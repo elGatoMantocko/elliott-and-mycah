@@ -3,10 +3,10 @@ import { Theme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import * as React from 'react';
 
-import * as balcony from '../../images/balcony.jpg';
-import * as ellie from '../../images/ellie_and_rainier.jpg';
-import * as onTheHill from '../../images/on_the_hill.jpg';
-import * as oneKnee from '../../images/one_knee.jpg';
+import * as balcony from '../../images/balcony.webp';
+import * as ellie from '../../images/ellie_and_rainier.webp';
+import * as onTheHill from '../../images/on_the_hill.webp';
+import * as oneKnee from '../../images/one_knee.webp';
 import { Countdown } from '../Countdown';
 import { ResponsiveContainer } from '../ResponsiveContainer';
 import { ScriptTypography } from '../ScriptTypography';
