@@ -2,6 +2,7 @@ import Box from '@material-ui/core/Box';
 import * as React from 'react';
 
 import * as austin from '../../images/headshots/austin.webp';
+import * as becca from '../../images/headshots/becca.webp';
 import * as billbo from '../../images/headshots/billbo.webp';
 import * as brent from '../../images/headshots/brent.webp';
 import * as chris from '../../images/headshots/chris.webp';
@@ -72,7 +73,7 @@ export const WeddingParty = () => (
             <PartyMember
               name="Rebecca Wiser"
               description="Friend of the bride. Lives in Greenwood, Indiana."
-              imgSrc=""
+              imgSrc={becca}
             />
           </Box>
           <Box width="16.5rem">
