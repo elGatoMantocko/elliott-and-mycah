@@ -30,24 +30,18 @@ jobs:
       - name: Install yarn dependencies
         run: yarn install
 
-      # build project
-      - name: Build assets
-        env:
-          NODE_ENV: production
-        run: yarn build
-
       # run tests
       - name: Run tests
         run: yarn test
+
+      - name: Build docker image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       # Install doctl on the runner
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-      - name: Build docker image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Push image to DO
         run: |
