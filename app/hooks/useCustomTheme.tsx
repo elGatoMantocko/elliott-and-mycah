@@ -6,9 +6,6 @@ export const useCustomTheme = () =>
     () =>
       createMuiTheme({
         spacing: (factor) => `${0.5 * factor}rem`,
-        typography: {
-          fontFamily: ['Roboto Slab', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
-        },
         palette: {
           // TODO: play with dark mode but this site is designed for light mode
           type: 'light',

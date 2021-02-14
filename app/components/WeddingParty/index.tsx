@@ -7,6 +7,7 @@ import * as billbo from '../../images/headshots/billbo.webp';
 import * as brent from '../../images/headshots/brent.webp';
 import * as chris from '../../images/headshots/chris.webp';
 import * as gina from '../../images/headshots/gina.webp';
+import * as kat from '../../images/headshots/kat.webp';
 import * as paige from '../../images/headshots/paige.webp';
 import * as rob from '../../images/headshots/rob.webp';
 import { ResponsiveContainer } from '../ResponsiveContainer';
@@ -24,28 +25,32 @@ export const WeddingParty = () => (
           <Box width="16.5rem">
             <PartyMember
               name="Paige Ubel"
-              description="Friend of the bride. Lives in Fishers, Indiana."
+              description="Friend of the bride."
+              location="Fishers, Indiana"
               imgSrc={paige}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Kat Martin"
-              description="Friend of the bride. Lives in Seoul, South Korea."
-              imgSrc=""
+              description="Friend of the bride."
+              location="Seoul, South Korea"
+              imgSrc={kat}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Rebecca Wiser"
-              description="Friend of the bride. Lives in Greenwood, Indiana."
+              description="Friend of the bride."
+              location="Greenwood, Indiana"
               imgSrc={becca}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Gina Sapienza"
-              description="Friend of the bride. Lives in Chicago, Illinois."
+              description="Friend of the bride."
+              location="Chicago, Illinois"
               imgSrc={gina}
             />
           </Box>
@@ -59,28 +64,32 @@ export const WeddingParty = () => (
           <Box width="16.5rem">
             <PartyMember
               name="Billy Shank"
-              description="Billy makes sure to use all of the beans. Lives in South Bend, Indiana."
+              description="Uses all of the beans."
+              location="South Bend, Indiana"
               imgSrc={billbo}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Austin Sims"
-              description="Friend of the groom and a fellow man of of the Trombone. Lives in Chicago, Illinois."
+              description="A fellow man of of the Trombone."
+              location="Chicago, Illinois"
               imgSrc={austin}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Rob Mantock"
-              description="Some guy. Lives in Indianapolis, Indiana."
+              description="Some guy."
+              location="Indianapolis, Indiana"
               imgSrc={rob}
             />
           </Box>
           <Box width="16.5rem">
             <PartyMember
               name="Brent Mathis"
-              description="Close friend of the bride and groom and beer santa. Lives in St. Louis, Missouri"
+              description="Beer santa."
+              location="St. Louis, Missouri"
               imgSrc={brent}
             />
           </Box>
@@ -94,7 +103,8 @@ export const WeddingParty = () => (
           <Box mx="auto" width="16.5rem">
             <PartyMember
               name="Chris Jacobus"
-              description="Close friend of the bride and groom. Lives in Kent, Washington."
+              description="Close friend of the bride and groom."
+              location="Kent, Washington"
               imgSrc={chris}
             />
           </Box>

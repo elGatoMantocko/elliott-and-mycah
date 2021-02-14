@@ -42,23 +42,10 @@ export const About = () => {
       <ResponsiveContainer maxWidth="md">
         <Box paddingTop="2rem" mb={isSmallScreen ? 12 : 0}>
           <AboutSection
-            title="Engagement"
-            body="In August 2019, we took an Alaskan cruise. While ported in Juneau, AK, we had planned
-              to hike to a view of Mendenhall glacier followed by a humpback whale watching tour.
-              After nearly missing the bus ride to the glacier, losing our group as soon as we
-              arrived, and with the rain pouring down, we hiked a mile and half to a gravel beach
-              framed by Mendenhall Glacier, a turquoise lake, and a glacier-fed waterfall. Elliott
-              asked our tour guide to take a photo of us and after a few snapshots, got down on one
-              knee to pop the question."
-            imageSource={oneKnee}
-            imageAlt="Elliott pops the question in front of the Mendenhall glacier"
-          />
-          <AboutSection
             title="How we met"
             body="We met through the band program while attending Purdue University. We remained
                 friends until our final year when we had our first date at a farm to table
                 restaurant in downtown Lafayette."
-            variant="row-reverse"
             imageSource={onTheHill}
             imageAlt="Mycah and Elliott attend a Slayter concert on the hill"
           />
@@ -69,7 +56,20 @@ export const About = () => {
             bought our house in Burien in September 2019. In May 2019, we added our chocolate lab,
             Ellie, to our family."
             imageSource={ellie}
+            variant="row-reverse"
             imageAlt="Ellie strikes a pose in front of 14000ft Mt. Rainier"
+          />
+          <AboutSection
+            title="Engagement"
+            body="In August 2019, we took an Alaskan cruise. While ported in Juneau, AK, we had planned
+              to hike to a view of Mendenhall glacier followed by a humpback whale watching tour.
+              After nearly missing the bus ride to the glacier, losing our group as soon as we
+              arrived, and with the rain pouring down, we hiked a mile and half to a gravel beach
+              framed by Mendenhall Glacier, a turquoise lake, and a glacier-fed waterfall. Elliott
+              asked our tour guide to take a photo of us and after a few snapshots, got down on one
+              knee to pop the question."
+            imageSource={oneKnee}
+            imageAlt="Elliott pops the question in front of the Mendenhall glacier"
           />
         </Box>
       </ResponsiveContainer>
