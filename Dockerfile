@@ -21,5 +21,3 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /usr/share/nginx/html
 
 COPY --from=build /usr/src/app/dist ./
-
-CMD [ "nginx", "-g", "daemon off;"]
