@@ -49,7 +49,12 @@ export const Menu = () => {
         <Drawer anchor="bottom" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <List>
             {routes.map(({ href, icon, label, alt, underConstruction }, i) => (
-              <ListItemLink key={i} href={href} disabled={underConstruction}>
+              <ListItemLink
+                key={i}
+                href={href}
+                disabled={underConstruction}
+                onClick={() => setDrawerOpen(false)}
+              >
                 <ListItemIcon>{icon}</ListItemIcon>
                 <ListItemText primary={typeof label === 'string' ? label : alt} />
               </ListItemLink>
