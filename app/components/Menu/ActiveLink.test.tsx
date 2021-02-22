@@ -11,7 +11,6 @@ describe('<ActiveLink>', () => {
 
     const link = await waitFor(() => screen.getByText('Some test link'));
     expect(link).to.exist;
-    expect(link.hasAttribute('href')).to.be.true;
-    expect(link.getAttribute('href')).to.equal('/test');
+    expect(link.hasAttribute('href')).to.be.false;
   });
 });
