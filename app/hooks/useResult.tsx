@@ -72,7 +72,7 @@ export const useResult = <T,>(request: () => Promise<T>) => {
 
 export const useCallableResult = <TRequest extends readonly unknown[], TResponse>(
   request: (...args: TRequest) => Promise<TResponse>,
-) => {
+): [Result<TResponse, Error>, (...args: TRequest) => void, () => void] => {
   const [result, setResult] = useState<Result<TResponse, Error>>(notStarted);
   const call = useCallback((...args: TRequest) => {
     setResult(pending);

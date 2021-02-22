@@ -39,7 +39,7 @@ const factory = (mode = 'development'): Configuration => ({
       mode,
       clientsClaim: true,
       skipWaiting: true,
-      exclude: [/.html$/g], // don't precache the html
+      exclude: [/.html$/g, /.js.map$/g], // don't precache the html or sourcemaps
     }),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),

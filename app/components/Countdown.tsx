@@ -23,13 +23,13 @@ export const Countdown = ({ toDate }: CountdownProps) => {
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
-  }, [time, setTime]);
+  }, [setTime]);
 
   // total difference in seconds
   // This SO link saves us ~300KB of `moment` in the bundle
   // https://stackoverflow.com/questions/13903897/javascript-return-number-of-days-hours-minutes-seconds-between-two-dates
   // get total seconds between the times
-  let delta = Math.abs(toDate.getTime() - Date.now()) / 1000;
+  let delta = Math.abs(toDate.getTime() - time.getTime()) / 1000;
 
   // calculate (and subtract) whole days
   const days = Math.floor(delta / 86400);
