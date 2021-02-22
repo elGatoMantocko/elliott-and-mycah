@@ -22,16 +22,16 @@ export const ServiceWorkerRegistration = ({ src }: ServiceWorkerRegistrationProp
       <Snackbar
         open={loadedSnackOpen}
         message={
-          <Box display="flex" flexGrow="1">
-            <Box my="auto">Service worker loaded!</Box>
-            <Box ml={2}>
+          <Box display="flex" flexGrow="1" width="100%">
+            <Box mr={1} my="auto">
               <ThumbUpIcon />
             </Box>
+            <Box my="auto">Service worker loaded!</Box>
           </Box>
         }
         color="primary"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        autoHideDuration={3000}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        autoHideDuration={1500}
         onClose={() => setLoadedSnack(false)}
       />
       ;
