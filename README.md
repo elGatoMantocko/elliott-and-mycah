@@ -6,6 +6,8 @@
 
 Just a basic site with mostly static content for us to play around with various tech. :)
 
+BUTTS
+
 ## Dev
 
 You can start the app with `yarn dev` and there are no tests yet. :( _sad womp_
