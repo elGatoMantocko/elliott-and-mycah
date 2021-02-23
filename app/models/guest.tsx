@@ -10,4 +10,4 @@ export type Guest = {
   foodChoice?: 'chicken' | 'fish' | 'veg';
 };
 
-export type Guests = Map<string, Guest>;
+export type Guests = Map<string, Guest>; // use map because order is specific
