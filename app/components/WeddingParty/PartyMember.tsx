@@ -7,11 +7,10 @@ type PartyMemberProps = {
   description?: string;
   location?: string;
   imgSrc: string;
-  imgAlt?: string;
 };
-export const PartyMember = ({ name, description, location, imgSrc, imgAlt }: PartyMemberProps) => (
+export const PartyMember = ({ name, description, location, imgSrc }: PartyMemberProps) => (
   <Box m={3}>
-    <img src={imgSrc} alt={imgAlt} style={{ maxWidth: '100%' }} />
+    <img src={imgSrc} alt={name} style={{ maxWidth: '100%' }} />
     <Typography variant="h6" component="h1" align="center">
       {name}
     </Typography>
