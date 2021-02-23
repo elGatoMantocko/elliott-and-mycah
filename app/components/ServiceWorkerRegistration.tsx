@@ -18,23 +18,20 @@ export const ServiceWorkerRegistration = ({ src }: ServiceWorkerRegistrationProp
     setLoadedSnack(true);
   });
   return (
-    <>
-      <Snackbar
-        open={loadedSnackOpen}
-        message={
-          <Box display="flex" flexGrow="1" width="100%">
-            <Box mr={1} my="auto">
-              <ThumbUpIcon />
-            </Box>
-            <Box my="auto">Service worker loaded!</Box>
+    <Snackbar
+      open={loadedSnackOpen}
+      message={
+        <Box display="flex" flexGrow="1" width="100%">
+          <Box mr={1} my="auto">
+            <ThumbUpIcon />
           </Box>
-        }
-        color="primary"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        autoHideDuration={1500}
-        onClose={() => setLoadedSnack(false)}
-      />
-      ;
-    </>
+          <Box my="auto">Service worker loaded!</Box>
+        </Box>
+      }
+      color="primary"
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      autoHideDuration={1500}
+      onClose={() => setLoadedSnack(false)}
+    />
   );
 };
