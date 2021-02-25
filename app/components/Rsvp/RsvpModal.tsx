@@ -46,7 +46,10 @@ export const RsvpModal = ({
 }: RsvpModalProps) => (
   <Dialog
     {...dialogProps}
-    fullWidth={useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'))}
+    fullWidth={
+      useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm')) ||
+      dialogProps.fullWidth === true
+    }
   >
     <DialogTitle disableTypography>
       <Typography variant="h4" gutterBottom align="center">
