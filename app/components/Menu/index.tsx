@@ -1,5 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 import Drawer from '@material-ui/core/Drawer';
 import Fab from '@material-ui/core/Fab';
 import Hidden from '@material-ui/core/Hidden';
@@ -7,15 +8,17 @@ import List from '@material-ui/core/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
+import HomeIcon from '@material-ui/icons/Home';
+import HotelIcon from '@material-ui/icons/Hotel';
 import MenuIcon from '@material-ui/icons/Menu';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { ResponsiveContainer } from '../ResponsiveContainer';
+import { Rsvp } from '../Rsvp';
 import { ScriptTypography } from '../ScriptTypography';
 import { ActiveLink } from './ActiveLink';
 import { ListItemLink } from './ListItemLink';
-import { routes } from './routes';
 
 export const Menu = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -23,21 +26,33 @@ export const Menu = () => {
     <>
       <Hidden smDown>
         <AppBar position="static" color="transparent" elevation={0}>
-          <ResponsiveContainer disableGutters>
+          <Container>
             <Toolbar>
-              <Box display="flex" justifyContent="space-between" width="100%" px={1}>
-                {routes.map(({ href, label, underConstruction }, i) => (
-                  <ActiveLink key={i} href={href} disabled={underConstruction}>
-                    {typeof label === 'string' ? (
-                      <ScriptTypography>{label}</ScriptTypography>
-                    ) : (
-                      label
-                    )}
-                  </ActiveLink>
-                ))}
+              <Box>
+                <ActiveLink href="/us">
+                  <ScriptTypography>About us</ScriptTypography>
+                </ActiveLink>
+              </Box>
+              <Box ml={6}>
+                <ActiveLink href="/wedding">
+                  <ScriptTypography>Wedding</ScriptTypography>
+                </ActiveLink>
+              </Box>
+              <Box ml={6}>
+                <ActiveLink href="/registry" disabled>
+                  <ScriptTypography>Registry</ScriptTypography>
+                </ActiveLink>
+              </Box>
+              <Box ml={6}>
+                <ActiveLink href="/accomodations" disabled>
+                  <ScriptTypography>Accomodations</ScriptTypography>
+                </ActiveLink>
+              </Box>
+              <Box ml="auto" my="auto" mr={4}>
+                <Rsvp />
               </Box>
             </Toolbar>
-          </ResponsiveContainer>
+          </Container>
         </AppBar>
       </Hidden>
       <Hidden mdUp>
@@ -48,17 +63,30 @@ export const Menu = () => {
         </Box>
         <Drawer anchor="bottom" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <List>
-            {routes.map(({ href, icon, label, alt, underConstruction }, i) => (
-              <ListItemLink
-                key={i}
-                href={href}
-                disabled={underConstruction}
-                onClick={() => setDrawerOpen(false)}
-              >
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={typeof label === 'string' ? label : alt} />
-              </ListItemLink>
-            ))}
+            <ListItemLink href="/us" onClick={() => setDrawerOpen(false)}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary="About us" />
+            </ListItemLink>
+            <ListItemLink href="/wedding" onClick={() => setDrawerOpen(false)}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Wedding" />
+            </ListItemLink>
+            <ListItemLink href="/registry" onClick={() => setDrawerOpen(false)} disabled>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Registry" />
+            </ListItemLink>
+            <ListItemLink href="/accomodations" onClick={() => setDrawerOpen(false)} disabled>
+              <ListItemIcon>
+                <HotelIcon />
+              </ListItemIcon>
+              <ListItemText primary="Accomodations" />
+            </ListItemLink>
           </List>
         </Drawer>
       </Hidden>

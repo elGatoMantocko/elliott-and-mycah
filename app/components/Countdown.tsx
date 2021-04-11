@@ -7,7 +7,7 @@ import { ScriptTypography } from './ScriptTypography';
 
 type CounterCardProps = Readonly<{ value: number; unit: string }>;
 const CounterCard = ({ value, unit }: CounterCardProps) => (
-  <Box textAlign="center" margin="0.5rem" color="white">
+  <Box textAlign="center" margin="0.5rem">
     <ScriptTypography variant="h1">
       {value < 10 ? '0' : ''}
       {value}

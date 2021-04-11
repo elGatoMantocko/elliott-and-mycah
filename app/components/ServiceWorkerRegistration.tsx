@@ -7,8 +7,11 @@ import { useState } from 'react';
 import { useResultState } from '../hooks/useResult';
 import { useServiceWorker } from '../hooks/useServiceWorker';
 
-type ServiceWorkerRegistrationProps = { src: string };
-export const ServiceWorkerRegistration = ({ src }: ServiceWorkerRegistrationProps) => {
+type ServiceWorkerRegistrationProps = { src: string; hideSnackbar?: boolean };
+export const ServiceWorkerRegistration = ({
+  src,
+  hideSnackbar,
+}: ServiceWorkerRegistrationProps) => {
   const [loadedSnackOpen, setLoadedSnack] = useState(false);
   useResultState(useServiceWorker(src)).useValue(() => {
     // For those curious
@@ -19,7 +22,7 @@ export const ServiceWorkerRegistration = ({ src }: ServiceWorkerRegistrationProp
   });
   return (
     <Snackbar
-      open={loadedSnackOpen}
+      open={loadedSnackOpen && !hideSnackbar}
       message={
         <Box display="flex" flexGrow="1" width="100%">
           <Box mr={1} my="auto">

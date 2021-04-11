@@ -8,7 +8,8 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import * as React from 'react';
 import { v4 as uuid } from 'uuid';
 
-import { RsvpActionTypes, useRsvpReducer } from '../../reducers/useRsvpReducer';
+import { useRsvpReducer } from './reducer';
+import { RsvpActionTypes } from './reducer/actions';
 import { RsvpButton } from './RsvpButton';
 import { RsvpModal } from './RsvpModal';
 
@@ -23,12 +24,10 @@ export const Rsvp = () => {
   const [state, dispatch] = useRsvpReducer(new Map([[uuid(), { firstName: '', lastName: '' }]]));
   return (
     <>
-      <Box position="fixed" bottom="0" left="0" m={4} zIndex={1000}>
-        <RsvpButton onClick={() => dispatch({ type: RsvpActionTypes.ShowRsvpModal })} />
-      </Box>
+      <RsvpButton onClick={() => dispatch({ type: RsvpActionTypes.ShowRsvpModal })} />
       <RsvpModal
         maxWidth="md"
-        open={state.showRsvpModal}
+        open={!!state.showRsvpModal}
         guests={state.guests}
         yesNo={state.yesNo}
         loading={state.loading}
@@ -49,7 +48,7 @@ export const Rsvp = () => {
         onClose={() => dispatch({ type: RsvpActionTypes.HideRsvpModal })}
       />
       <Snackbar
-        open={state.showSuccessSnack}
+        open={!!state.showSuccessSnack}
         autoHideDuration={8000}
         onClose={() => dispatch({ type: RsvpActionTypes.HideSubmitSuccessSnack })}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}

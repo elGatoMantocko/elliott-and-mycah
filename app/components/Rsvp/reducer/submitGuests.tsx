@@ -1,5 +1,5 @@
-import { Guests } from '../models/guest';
-import { RsvpActions, RsvpActionTypes } from './useRsvpReducer';
+import { Guests } from '../../../models/guest';
+import { RsvpActions, RsvpActionTypes } from './actions';
 
 export async function* submitGuests(guests: Guests, yesNo?: boolean): AsyncGenerator<RsvpActions> {
   yield { type: RsvpActionTypes.Loading, payload: true };
