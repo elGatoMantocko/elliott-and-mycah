@@ -79,9 +79,13 @@ export const GuestFields = ({ guest, onUpdateGuest, onRemoveGuest }: GuestFields
           <MenuItem disabled value="">
             <em>Food choice</em>
           </MenuItem>
-          <MenuItem value="chicken">Chicken</MenuItem>
-          <MenuItem value="fish">Fish</MenuItem>
-          <MenuItem value="veg">Vegetarian</MenuItem>
+          <MenuItem value="fish">Crab Stuffed Salmon</MenuItem>
+          <MenuItem value="chicken">
+            Pancetta Chicken &ndash; <em>GF</em>
+          </MenuItem>
+          <MenuItem value="veg">
+            Spinach Tortellini &ndash; <em>V</em>
+          </MenuItem>
         </Select>
       </FoodChoiceControl>
       <Box display="flex" my="auto">
