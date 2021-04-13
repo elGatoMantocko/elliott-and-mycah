@@ -21,6 +21,7 @@ import { Banner } from '../Banner';
 import { Countdown } from '../Countdown';
 import { PartyMember } from '../PartyMember';
 import { ScriptTypography } from '../ScriptTypography';
+import { MenuOptionCard } from './MenuOptionCard';
 
 const useGetMapStyles = (): React.CSSProperties => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
@@ -37,19 +38,16 @@ export const Wedding = () => {
         style={isSmallScreen ? { height: '50vh' } : { minHeight: 650 }}
         imageSource={yachtClubLawn}
       />
+      <Container maxWidth="md">
+        <Countdown toDate={new Date(2021, 5, 12, 0, 0, 0)} />
+      </Container>
       <Container>
         <Box display="flex" flexWrap="wrap" justifyContent="space-around" mt={4}>
           <Box mb={2} textAlign="center" px={1} width={isSmallScreen ? '100%' : '40%'}>
-            <ScriptTypography align="center" variant="h1">
+            <ScriptTypography align="center" variant="h2">
               The Seattle Yacht Club
             </ScriptTypography>
-            <ScriptTypography
-              align="center"
-              variant="h2"
-              component="h2"
-              color="textSecondary"
-              gutterBottom
-            >
+            <ScriptTypography align="center" variant="h3" color="textSecondary" gutterBottom>
               <em>6/12/21</em>
             </ScriptTypography>
             <Typography variant="body1" gutterBottom>
@@ -77,7 +75,34 @@ export const Wedding = () => {
         </Box>
       </Container>
       <Container maxWidth="md">
-        <Countdown toDate={new Date(2021, 5, 12, 0, 0, 0)} />
+        <Box mt={4}>
+          <ScriptTypography align="center" variant="h2">
+            Reception meal options
+          </ScriptTypography>
+          <Box
+            display="flex"
+            justifyContent="space-around"
+            flexWrap={isSmallScreen ? 'wrap' : 'nowrap'}
+          >
+            <MenuOptionCard
+              name="Crab Stuffed Salmon"
+              description="Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables"
+            />
+            <MenuOptionCard
+              name="Pancetta Chicken"
+              description={
+                <>
+                  Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal
+                  Vegetables - <em>Gluten Free</em>
+                </>
+              }
+            />
+            <MenuOptionCard
+              name="Spinach Tortellini"
+              description="Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables"
+            />
+          </Box>
+        </Box>
       </Container>
       <Container maxWidth="lg">
         <Box mt={4}>

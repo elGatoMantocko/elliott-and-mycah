@@ -31,7 +31,7 @@ export const App = () => (
           <Router>
             <Menu />
             <Route exact path="/">
-              <Redirect to="/wedding" />
+              <Redirect to="/us" />
             </Route>
             <Route exact path="/us">
               <About />
