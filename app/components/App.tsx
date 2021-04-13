@@ -12,6 +12,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { useCustomTheme } from '../hooks/useCustomTheme';
 import { About } from './About';
 import { Menu } from './Menu';
+import { Registry } from './Registry';
 import { Rsvp } from './Rsvp';
 import { ServiceWorkerRegistration } from './ServiceWorkerRegistration';
 import { Wedding } from './Wedding';
@@ -39,7 +40,7 @@ export const App = () => (
               <Wedding />
             </Route>
             <Route exact path="/registry">
-              <></>
+              <Registry />
             </Route>
             <Route exact path="/accomodations">
               <></>

@@ -22,6 +22,7 @@ import { ListItemLink } from './ListItemLink';
 
 export const Menu = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const closeDrawer = () => setDrawerOpen(false);
   return (
     <>
       <Hidden smDown>
@@ -39,7 +40,7 @@ export const Menu = () => {
                 </ActiveLink>
               </Box>
               <Box ml={6}>
-                <ActiveLink href="/registry" disabled>
+                <ActiveLink href="/registry">
                   <ScriptTypography>Registry</ScriptTypography>
                 </ActiveLink>
               </Box>
@@ -61,27 +62,27 @@ export const Menu = () => {
             <MenuIcon />
           </Fab>
         </Box>
-        <Drawer anchor="bottom" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <Drawer anchor="bottom" open={drawerOpen} onClose={closeDrawer}>
           <List>
-            <ListItemLink href="/us" onClick={() => setDrawerOpen(false)}>
+            <ListItemLink href="/us" onClick={closeDrawer}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="About us" />
             </ListItemLink>
-            <ListItemLink href="/wedding" onClick={() => setDrawerOpen(false)}>
+            <ListItemLink href="/wedding" onClick={closeDrawer}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="Wedding" />
             </ListItemLink>
-            <ListItemLink href="/registry" onClick={() => setDrawerOpen(false)} disabled>
+            <ListItemLink href="/registry" onClick={closeDrawer}>
               <ListItemIcon>
                 <ShoppingCartIcon />
               </ListItemIcon>
               <ListItemText primary="Registry" />
             </ListItemLink>
-            <ListItemLink href="/accomodations" onClick={() => setDrawerOpen(false)} disabled>
+            <ListItemLink href="/accomodations" onClick={closeDrawer} disabled>
               <ListItemIcon>
                 <HotelIcon />
               </ListItemIcon>
