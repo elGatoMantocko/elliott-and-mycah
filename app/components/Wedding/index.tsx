@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { GoogleMap } from '@react-google-maps/api';
 import * as React from 'react';
-import { useState } from 'react';
 
 import * as austin from '../../images/headshots/austin.webp';
 import * as becca from '../../images/headshots/becca.webp';
@@ -30,7 +29,6 @@ const useGetMapStyles = (): React.CSSProperties => {
 
 export const Wedding = () => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
-  const [, setMap] = useState<google.maps.Map>();
   return (
     <>
       <Banner
@@ -63,7 +61,6 @@ export const Wedding = () => {
           </Box>
           <Box px={1} width={isSmallScreen ? '100%' : '40%'}>
             <GoogleMap
-              onLoad={setMap}
               center={{
                 lat: 47.6453105466125,
                 lng: -122.30854550197377,

@@ -22,7 +22,8 @@ export const Countdown = ({ toDate }: CountdownProps) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    setInterval(() => setTime(new Date()), 1000);
+    const id = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(id);
   }, [setTime]);
 
   // total difference in seconds

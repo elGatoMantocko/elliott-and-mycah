@@ -52,14 +52,16 @@ export const Registry = () => (
           </Link>
         </Box>
       </Box>
-      <Typography gutterBottom align="center">
-        Items can be shipped to our home address:
-      </Typography>
-      <Typography variant="body2" align="center">
-        12817 14th Ave SW
-        <br />
-        Burien, WA 98146
-      </Typography>
+      <Box mb={10}>
+        <Typography gutterBottom align="center">
+          Items can be shipped to our home address:
+        </Typography>
+        <Typography variant="body2" align="center">
+          12817 14th Ave SW
+          <br />
+          Burien, WA 98146
+        </Typography>
+      </Box>
     </Container>
   </>
 );
