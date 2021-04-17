@@ -30,7 +30,7 @@ export const Registry = () => (
         <Box maxWidth="11rem" my="auto" py={4} px={1.5}>
           <Link
             target="_blank"
-            href="https://www.crateandbarrel.com/gift-registry/registrant-list/6196320"
+            href="https://www.crateandbarrel.com/gift-registry/mycah-davis-and-elliott-mantock/r6196320"
           >
             <img style={{ width: '100%' }} src={crateAndBarrel} />
           </Link>
