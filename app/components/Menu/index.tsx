@@ -45,7 +45,7 @@ export const Menu = () => {
                 </ActiveLink>
               </Box>
               <Box ml={6}>
-                <ActiveLink href="/accomodations" disabled>
+                <ActiveLink href="/accomodations">
                   <ScriptTypography>Accomodations</ScriptTypography>
                 </ActiveLink>
               </Box>
@@ -82,7 +82,7 @@ export const Menu = () => {
               </ListItemIcon>
               <ListItemText primary="Registry" />
             </ListItemLink>
-            <ListItemLink href="/accomodations" onClick={closeDrawer} disabled>
+            <ListItemLink href="/accomodations" onClick={closeDrawer}>
               <ListItemIcon>
                 <HotelIcon />
               </ListItemIcon>
