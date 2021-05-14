@@ -94,7 +94,7 @@ export const RsvpModal = ({
       </FormGroup>
       {error != null && (
         <Alert severity="error" onClose={onDismissError}>
-          <AlertTitle>We encountered an error!</AlertTitle>
+          <AlertTitle>Oops! We encountered an error!</AlertTitle>
           <Typography>{error.message}</Typography>
         </Alert>
       )}

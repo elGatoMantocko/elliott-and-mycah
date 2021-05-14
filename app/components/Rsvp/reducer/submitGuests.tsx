@@ -12,6 +12,11 @@ export async function* submitGuests(guests: Guests, yesNo?: boolean): AsyncGener
         'Content-Type': 'application/json',
       },
       body,
+    }).then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      return res;
     });
 
     yield { type: RsvpActionTypes.HideRsvpModal };
