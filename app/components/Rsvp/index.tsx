@@ -20,6 +20,13 @@ const SuccessSnackbarContent = withStyles({
   },
 })(SnackbarContent);
 
+const DeclinedSnackbarContent = withStyles({
+  root: {
+    color: '#fff',
+    backgroundColor: green[700],
+  },
+})(SnackbarContent);
+
 export const Rsvp = () => {
   const [state, dispatch] = useRsvpReducer(new Map([[uuid(), { firstName: '', lastName: '' }]]));
   return (
@@ -50,7 +57,7 @@ export const Rsvp = () => {
       <Snackbar
         open={!!state.showSuccessSnack}
         autoHideDuration={8000}
-        onClose={() => dispatch({ type: RsvpActionTypes.HideSubmitSuccessSnack })}
+        onClose={() => dispatch({ type: RsvpActionTypes.HideSnack })}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
         <SuccessSnackbarContent
@@ -61,6 +68,24 @@ export const Rsvp = () => {
               </Box>
               <Box my="auto">
                 <Typography>You&apos;re on the guest list</Typography>
+              </Box>
+            </Box>
+          }
+        />
+      </Snackbar>
+      <Snackbar
+        open={!!state.showDeclinedSnack}
+        autoHideDuration={8000}
+        onClose={() => dispatch({ type: RsvpActionTypes.HideSnack })}
+      >
+        <DeclinedSnackbarContent
+          message={
+            <Box display="flex">
+              <Box my="auto" mr={2}>
+                <ThumbUpIcon />
+              </Box>
+              <Box my="auto">
+                <Typography>Thank you for submitting your response!</Typography>
               </Box>
             </Box>
           }

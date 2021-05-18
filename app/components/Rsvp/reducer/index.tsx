@@ -88,12 +88,18 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
     }
     return [state, fromAsyncIterable(submitGuests(state.guests, state.yesNo))];
   }
-  if (
-    action.type === RsvpActionTypes.ShowSubmitSuccessSnack ||
-    action.type === RsvpActionTypes.HideSubmitSuccessSnack
-  ) {
+
+  if (action.type === RsvpActionTypes.ShowSubmitSuccessSnack) {
+    return [{ ...state, showSuccessSnack: true }, Effects.none()];
+  }
+
+  if (action.type === RsvpActionTypes.ShowDeclinedSnack) {
+    return [{ ...state, showDeclinedSnack: true }, Effects.none()];
+  }
+
+  if (action.type === RsvpActionTypes.HideSnack) {
     return [
-      { ...state, showSuccessSnack: action.type === RsvpActionTypes.ShowSubmitSuccessSnack },
+      { ...state, showSuccessSnack: undefined, showDeclinedSnack: undefined },
       Effects.none(),
     ];
   }

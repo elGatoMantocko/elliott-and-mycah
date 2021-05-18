@@ -7,7 +7,8 @@ export enum RsvpActionTypes {
   SubmitGuests = 'submit-guests',
 
   ShowSubmitSuccessSnack = 'show-submit-success-snack',
-  HideSubmitSuccessSnack = 'hide-submit-success-snack',
+  ShowDeclinedSnack = 'show-declined-snack',
+  HideSnack = 'hide-snackbar',
 
   ShowRsvpModal = 'show-rsvp-modal',
   HideRsvpModal = 'hide-rsvp-modal',
@@ -26,8 +27,10 @@ type UpdateGuest = {
 };
 
 type SubmitGuests = { type: RsvpActionTypes.SubmitGuests };
+
 type ShowSubmitSuccessSnack = { type: RsvpActionTypes.ShowSubmitSuccessSnack };
-type HideSubmitSuccessSnack = { type: RsvpActionTypes.HideSubmitSuccessSnack };
+type ShowDeclinedSnack = { type: RsvpActionTypes.ShowDeclinedSnack };
+type HideSnack = { type: RsvpActionTypes.HideSnack };
 
 type ShowRsvpModal = { type: RsvpActionTypes.ShowRsvpModal };
 type HideRsvpModal = { type: RsvpActionTypes.HideRsvpModal };
@@ -45,7 +48,8 @@ export type RsvpActions =
   | SetYesNo
   | SubmitGuests
   | ShowSubmitSuccessSnack
-  | HideSubmitSuccessSnack
+  | ShowDeclinedSnack
+  | HideSnack
   | ShowRsvpModal
   | HideRsvpModal
   | ActionLoading

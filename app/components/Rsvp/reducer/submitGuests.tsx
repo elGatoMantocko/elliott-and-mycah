@@ -20,7 +20,11 @@ export async function* submitGuests(guests: Guests, yesNo?: boolean): AsyncGener
     });
 
     yield { type: RsvpActionTypes.HideRsvpModal };
-    yield { type: RsvpActionTypes.ShowSubmitSuccessSnack };
+    if (yesNo) {
+      yield { type: RsvpActionTypes.ShowSubmitSuccessSnack };
+    } else {
+      yield { type: RsvpActionTypes.ShowDeclinedSnack };
+    }
   } catch (payload) {
     yield { type: RsvpActionTypes.Error, payload };
   }
