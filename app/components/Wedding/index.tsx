@@ -37,7 +37,7 @@ export const Wedding = () => {
         imageSource={yachtClubLawn}
       />
       <Container maxWidth="md">
-        <Countdown toDate={new Date(2021, 5, 12, 0, 0, 0)} />
+        <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
       </Container>
       <Container>
         <Box display="flex" flexWrap="wrap" justifyContent="space-around" mt={4}>
@@ -46,7 +46,7 @@ export const Wedding = () => {
               The Seattle Yacht Club
             </ScriptTypography>
             <ScriptTypography align="center" variant="h3" color="textSecondary" gutterBottom>
-              <em>6/12/21</em>
+              <em>6/12/21 @ 4pm</em>
             </ScriptTypography>
             <Typography variant="body1" gutterBottom>
               Both our ceremony and reception will be held at the following address:
