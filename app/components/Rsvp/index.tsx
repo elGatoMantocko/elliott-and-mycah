@@ -36,7 +36,7 @@ export const Rsvp = () => {
         maxWidth="md"
         open={!!state.showRsvpModal}
         guests={state.guests}
-        yesNo={state.yesNo}
+        isAttending={state.isAttending}
         loading={state.loading}
         error={state.error}
         onAddGuest={() =>

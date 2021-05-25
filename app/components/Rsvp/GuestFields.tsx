@@ -16,7 +16,7 @@ import { Guest, isValidFoodChoice } from '../../models/guest';
 
 const NameField = withStyles((theme) => ({
   root: {
-    width: ({ fullWidth }: TextFieldProps) => (fullWidth === true ? '100%' : theme.spacing(20)),
+    width: ({ fullWidth }: TextFieldProps) => (fullWidth === true ? '100%' : theme.spacing(24)),
     marginRight: ({ fullWidth }: TextFieldProps) =>
       fullWidth === true ? undefined : theme.spacing(1),
     marginTop: ({ fullWidth }: TextFieldProps) =>
@@ -26,7 +26,7 @@ const NameField = withStyles((theme) => ({
 
 const FoodChoiceControl = withStyles((theme) => ({
   root: {
-    width: ({ fullWidth }: FormControlProps) => (fullWidth === true ? '100%' : theme.spacing(16)),
+    width: ({ fullWidth }: FormControlProps) => (fullWidth === true ? '100%' : theme.spacing(20)),
     marginRight: ({ fullWidth }: FormControlProps) =>
       fullWidth === true ? undefined : theme.spacing(1),
     marginTop: ({ fullWidth }: FormControlProps) =>
@@ -42,10 +42,16 @@ const ErrorIconButton = withStyles((theme) => ({
 
 type GuestFieldsProps = {
   guest: Guest;
+  foodChoiceDisabled: boolean;
   onUpdateGuest: (g: Partial<Guest>) => void;
   onRemoveGuest?: () => void;
 };
-export const GuestFields = ({ guest, onUpdateGuest, onRemoveGuest }: GuestFieldsProps) => {
+export const GuestFields = ({
+  guest,
+  foodChoiceDisabled,
+  onUpdateGuest,
+  onRemoveGuest,
+}: GuestFieldsProps) => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
   return (
     <Box display="flex" mb={1} flexDirection={isSmallScreen === true ? 'column' : 'row'}>
@@ -67,7 +73,12 @@ export const GuestFields = ({ guest, onUpdateGuest, onRemoveGuest }: GuestFields
         onChange={(e) => onUpdateGuest({ lastName: e.target.value })}
         required
       />
-      <FoodChoiceControl size="small" fullWidth={isSmallScreen} required>
+      <FoodChoiceControl
+        disabled={foodChoiceDisabled}
+        size="small"
+        fullWidth={isSmallScreen}
+        required
+      >
         <Select
           displayEmpty
           variant="outlined"

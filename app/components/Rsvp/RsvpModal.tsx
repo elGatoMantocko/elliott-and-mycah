@@ -41,7 +41,7 @@ const useRadioGroupStyles = makeStyles({
 
 type RsvpModalProps = {
   guests: Guests;
-  yesNo: boolean;
+  isAttending: boolean;
   loading?: boolean;
   error?: Error;
   onClose?: () => void;
@@ -54,7 +54,7 @@ type RsvpModalProps = {
 } & Omit<DialogProps, 'onClose'>;
 export const RsvpModal = ({
   guests,
-  yesNo,
+  isAttending,
   loading,
   error,
   onClose,
@@ -84,7 +84,7 @@ export const RsvpModal = ({
           <RadioGroup
             name="yesNo"
             classes={useRadioGroupStyles()}
-            value={yesNo}
+            value={isAttending}
             onChange={(e) => onUpdateYesNo(e.target.value === 'true')}
           >
             <FormControlLabel value={true} control={<Radio />} label="Yes" />
@@ -108,6 +108,7 @@ export const RsvpModal = ({
           {i > 0 && <Typography variant="subtitle2">Guest {i}</Typography>}
           <GuestFields
             guest={g}
+            foodChoiceDisabled={!isAttending}
             onRemoveGuest={i === 0 ? undefined : () => onRemoveGuest(id)}
             onUpdateGuest={(partialGuest) => onUpdateGuest(id, partialGuest)}
           />

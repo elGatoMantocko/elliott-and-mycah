@@ -1,7 +1,7 @@
 import { Guests } from '../../../models/guest';
 
 export type State = {
-  yesNo: boolean;
+  isAttending: boolean;
   guests: Guests;
   showRsvpModal?: boolean;
   showSuccessSnack?: boolean;

@@ -6,6 +6,12 @@ import { RsvpActions, RsvpActionTypes } from './actions';
 import { State } from './state';
 import { submitGuests } from './submitGuests';
 
+/**
+ * A reducer to manage and configure the RSVP state and effects available to components.
+ * @param {State} state The current RSVP reducer state
+ * @param {RsvpActions} action An action deployed to the reducer
+ * @returns state effect pair resolved by further reducer actions
+ */
 export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
   // loading and error state handlers
   if (action.type === RsvpActionTypes.Loading) {
@@ -52,7 +58,7 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
 
   // set the attendance status to yes or no
   if (action.type === RsvpActionTypes.SetYesNo) {
-    return [{ ...state, yesNo: action.payload }, Effects.none()];
+    return [{ ...state, isAttending: action.payload }, Effects.none()];
   }
 
   // submit and it's actions
@@ -76,7 +82,7 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
           }),
         ];
       }
-      if (guest.foodChoice == null) {
+      if (guest.foodChoice == null && !!state.isAttending) {
         return [
           state,
           Effects.action({
@@ -86,7 +92,7 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
         ];
       }
     }
-    return [state, fromAsyncIterable(submitGuests(state.guests, state.yesNo))];
+    return [state, fromAsyncIterable(submitGuests(state.guests, state.isAttending))];
   }
 
   if (action.type === RsvpActionTypes.ShowSubmitSuccessSnack) {
@@ -120,7 +126,7 @@ export const useRsvpReducer = (initialGuests: Guests) =>
   useElmish<Reducer<State, RsvpActions>>(rsvpReducer, () => [
     {
       guests: initialGuests,
-      yesNo: true,
+      isAttending: true,
     },
     Effects.none(),
   ]);
