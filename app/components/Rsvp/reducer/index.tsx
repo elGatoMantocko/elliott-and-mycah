@@ -1,4 +1,5 @@
 import { Effects, Reducer, useElmish } from 'react-use-elmish';
+import { v4 as uuid } from 'uuid';
 
 import { fromAsyncIterable } from '../../../effects/fromAsyncIterable';
 import { Guests } from '../../../models/guest';
@@ -59,6 +60,14 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
   // set the attendance status to yes or no
   if (action.type === RsvpActionTypes.SetYesNo) {
     return [{ ...state, isAttending: action.payload }, Effects.none()];
+  }
+
+  // clears the collection of guests from the guests state
+  if (action.type === RsvpActionTypes.ClearGuests) {
+    return [
+      { ...state, guests: new Map([[uuid(), { firstName: '', lastName: '' }]]), isAttending: true },
+      Effects.none(),
+    ];
   }
 
   // submit and it's actions

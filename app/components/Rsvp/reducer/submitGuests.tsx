@@ -36,6 +36,8 @@ export async function* submitGuests(
     } else {
       yield { type: RsvpActionTypes.ShowDeclinedSnack };
     }
+
+    yield { type: RsvpActionTypes.ClearGuests };
   } catch (payload) {
     yield { type: RsvpActionTypes.Error, payload };
   }

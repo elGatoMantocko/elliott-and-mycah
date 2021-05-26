@@ -5,6 +5,7 @@ export enum RsvpActionTypes {
   RemoveGuest = 'remove-guest',
   UpdateGuest = 'update-guest',
   SubmitGuests = 'submit-guests',
+  ClearGuests = 'clear-guests',
 
   ShowSubmitSuccessSnack = 'show-submit-success-snack',
   ShowDeclinedSnack = 'show-declined-snack',
@@ -25,6 +26,7 @@ type UpdateGuest = {
   type: RsvpActionTypes.UpdateGuest;
   payload: { id: string; guest: Partial<Guest> };
 };
+type ClearGuestsAction = { type: RsvpActionTypes.ClearGuests };
 
 type SubmitGuests = { type: RsvpActionTypes.SubmitGuests };
 
@@ -45,6 +47,7 @@ export type RsvpActions =
   | AddGuestAction
   | RemoveGuestAction
   | UpdateGuest
+  | ClearGuestsAction
   | SetYesNo
   | SubmitGuests
   | ShowSubmitSuccessSnack
