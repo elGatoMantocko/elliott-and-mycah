@@ -18,7 +18,7 @@ const useScriptStyles = makeStyles((theme) => ({
 }));
 
 export const ScriptTypography: OverridableComponent<TypographyTypeMap> = <
-  C extends React.ElementType = TypographyTypeMap['defaultComponent']
+  C extends React.ElementType = TypographyTypeMap['defaultComponent'],
 >(
   props: OverrideProps<TypographyTypeMap<unknown, C>, C>,
 ) => <Typography {...props} classes={useScriptStyles(props)} />;

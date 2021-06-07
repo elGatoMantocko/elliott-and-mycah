@@ -1,6 +1,25 @@
 import { Guests } from '../../../models/guest';
 import { RsvpActions, RsvpActionTypes } from './actions';
 
+const addGuests = async (guests: Guests, isAttending?: boolean) => {
+  const body = JSON.stringify(
+    Array.from(guests.values()).map((g) => ({ ...g, yesNo: !!isAttending })),
+  );
+
+  return await fetch('https://sheet.best/api/sheets/4976d0ec-48c2-40ef-b4d3-740560714fb1', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body,
+  }).then((res) => {
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    return res;
+  });
+};
+
 /**
  * A reducer effect that yields actions related to submitting guests to the google sheet.
  * @param {Guests} guests A collection of guests to add an RSVP status for
@@ -13,22 +32,7 @@ export async function* submitGuests(
 ): AsyncGenerator<RsvpActions> {
   yield { type: RsvpActionTypes.Loading, payload: true };
   try {
-    const body = JSON.stringify(
-      Array.from(guests.values()).map((g) => ({ ...g, yesNo: !!isAttending })),
-    );
-
-    await fetch('https://sheet.best/api/sheets/4976d0ec-48c2-40ef-b4d3-740560714fb1', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body,
-    }).then((res) => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-      return res;
-    });
+    await addGuests(guests, isAttending);
 
     yield { type: RsvpActionTypes.HideRsvpModal };
     if (isAttending) {

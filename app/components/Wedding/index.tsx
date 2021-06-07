@@ -18,9 +18,9 @@ import * as rob from '../../images/headshots/rob.webp';
 import * as yachtClubLawn from '../../images/yacht_club_lawn.webp';
 import { Banner } from '../Banner';
 import { Countdown } from '../Countdown';
-import { PartyMember } from '../PartyMember';
 import { ScriptTypography } from '../ScriptTypography';
 import { MenuOptionCard } from './MenuOptionCard';
+import { PartyMember } from './PartyMember';
 
 const useGetMapStyles = (): React.CSSProperties => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
