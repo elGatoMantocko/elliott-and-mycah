@@ -45,10 +45,6 @@ jobs:
           NODE_ENV: development
         run: yarn install
 
-      # lint project
-      - name: Lint
-        run: yarn lint
-
       # build project
       - name: Build assets
         env:
