@@ -1,10 +1,10 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { useMemo } from 'react';
 
 export const useCustomTheme = () =>
   useMemo(
     () =>
-      createMuiTheme({
+      createTheme({
         spacing: (factor) => `${0.5 * factor}rem`,
         palette: {
           // TODO: play with dark mode but this site is designed for light mode

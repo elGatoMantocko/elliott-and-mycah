@@ -23,32 +23,29 @@ const useValue = <T, V>(result: Result<T, V>, then: (v: T) => void) =>
     if (result.state === ResultState.Value) {
       then(result.value);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
+  }, [result, then]);
 
-const useCatch = <V, E>(result: Result<V, E>, then: (e: E) => void) =>
+const useCatch = <V, E>(result: Result<V, E>, then: (e: E) => void) => {
   useEffect(() => {
     if (result.state === ResultState.Error) {
       then(result.value);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
+  }, [result, then]);
+};
 
 const usePending = <V, E>(result: Result<V, E>, then: () => void) =>
   useEffect(() => {
     if (result.state === ResultState.Pending) {
       then();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
+  }, [result, then]);
 
 const useNotStarted = <V, E>(result: Result<V, E>, then: () => void) =>
   useEffect(() => {
     if (result.state === ResultState.NotStarted) {
       then();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
+  }, [result, then]);
 
 export const useResultState = <V, E>(result: Result<V, E>) => ({
   useValue: (then: (v: V) => void) => useValue(result, then),
@@ -64,9 +61,7 @@ export const useResult = <T,>(request: () => Promise<T>) => {
     request()
       .then((t) => setResult(state(ResultState.Value, t)))
       .catch((err) => setResult(state(ResultState.Error, err)));
-    // ignore `request` as it as a potential to be an arrow function (new'd up every time)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [request]);
   return result;
 };
 
@@ -74,13 +69,14 @@ export const useCallableResult = <TRequest extends readonly unknown[], TResponse
   request: (...args: TRequest) => Promise<TResponse>,
 ): [Result<TResponse, Error>, (...args: TRequest) => void, () => void] => {
   const [result, setResult] = useState<Result<TResponse, Error>>(notStarted);
-  const call = useCallback((...args: TRequest) => {
-    setResult(pending);
-    request(...args)
-      .then((t) => setResult(state(ResultState.Value, t)))
-      .catch((err) => setResult(state(ResultState.Error, err)));
-    // ignore `request` as it as a potential to be an arrow function (new'd up every time)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const call = useCallback(
+    (...args: TRequest) => {
+      setResult(pending);
+      request(...args)
+        .then((t) => setResult(state(ResultState.Value, t)))
+        .catch((err) => setResult(state(ResultState.Error, err)));
+    },
+    [request],
+  );
   return [result, call, () => setResult(notStarted)];
 };

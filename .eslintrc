@@ -1,14 +1,17 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "google",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jsdoc/recommended"
   ],
   "plugins": [
     "@typescript-eslint",
     "react-hooks",
-    "simple-import-sort"
+    "simple-import-sort",
+    "jsdoc"
   ],
   "parserOptions": {
     "ecmaVersion": 2021,
@@ -39,6 +42,14 @@
       {
         "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*", "!@material-ui/core/colors/*"]
       }
-    ]
+    ],
+
+    // these rules are deprecated https://eslint.org/docs/rules/valid-jsdoc
+    "valid-jsdoc": "off",
+    "require-jsdoc": "off",
+
+    // I'm using typescript so these aren't necessary and only cause issues in imports
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns-type": "off"
   }
 }

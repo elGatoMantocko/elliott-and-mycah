@@ -9,6 +9,7 @@ import { submitGuests } from './submitGuests';
 
 /**
  * A reducer to manage and configure the RSVP state and effects available to components.
+ *
  * @param {State} state The current RSVP reducer state
  * @param {RsvpActions} action An action deployed to the reducer
  * @returns state effect pair resolved by further reducer actions

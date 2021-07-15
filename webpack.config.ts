@@ -7,7 +7,9 @@ import { GenerateSW } from 'workbox-webpack-plugin';
 
 /**
  * Function to generate a base webpack config
+ *
  * @param mode to build webpack config for
+ * @returns a base webpack config
  */
 const factory = (mode = 'development'): Configuration => ({
   mode: mode === 'production' || mode === 'development' ? mode : 'none',

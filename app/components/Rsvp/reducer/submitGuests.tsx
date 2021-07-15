@@ -22,8 +22,10 @@ const addGuests = async (guests: Guests, isAttending?: boolean) => {
 
 /**
  * A reducer effect that yields actions related to submitting guests to the google sheet.
+ *
  * @param {Guests} guests A collection of guests to add an RSVP status for
  * @param {boolean} isAttending Flag designating whether a guest is attending or not
+ * @yields {RsvpActions} Various actions this generator provides.
  * @returns {AsyncGenerator<RsvpActions>} An async generator that yields RSVP reducer actions
  */
 export async function* submitGuests(
