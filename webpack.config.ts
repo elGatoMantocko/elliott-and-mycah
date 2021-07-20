@@ -1,7 +1,7 @@
 import * as CopyPlugin from 'copy-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
-import { Configuration, DefinePlugin } from 'webpack';
+import { Configuration, DefinePlugin, WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
 
@@ -11,16 +11,8 @@ import { GenerateSW } from 'workbox-webpack-plugin';
  * @param mode to build webpack config for
  * @returns a base webpack config
  */
-const factory = (mode = 'development'): Configuration => ({
-  mode: mode === 'production' || mode === 'development' ? mode : 'none',
-  devtool: 'source-map',
-  devServer: {
-    contentBase: [join('.', 'dist')],
-    historyApiFallback: true,
-    clientLogLevel: 'trace',
-    compress: true,
-  },
-  plugins: [
+const factory = (mode = 'development'): Configuration => {
+  const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
       template: 'app/index.html',
       favicon: 'app/assets/favicon.ico',
@@ -37,33 +29,49 @@ const factory = (mode = 'development'): Configuration => ({
       scriptLoading: 'defer',
       inject: 'body',
     }),
-    new GenerateSW({
-      mode,
-      clientsClaim: true,
-      skipWaiting: true,
-      exclude: [/.html$/g, /.js.map$/g], // don't precache the html or sourcemaps
-    }),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
     new CopyPlugin({
       // favicon gets included in the HTMLWebpackPlugin
       patterns: ['app/assets/Lucian Schoenschrift CAT.ttf', 'app/assets/robots.txt'],
     }),
-  ],
-  module: {
-    rules: [
-      { test: /.tsx$/, use: 'ts-loader' },
-      { test: /.(jpe?g|webp|png|gif|svg)$/, type: 'asset/resource' },
-    ],
-  },
-  resolve: {
-    modules: ['node_modules'],
-    extensions: ['.tsx', '.js'],
-  },
-  output: {
-    filename: '[name]-[contenthash].js',
-  },
-});
+  ];
+
+  mode !== 'development' &&
+    plugins.push(
+      new GenerateSW({
+        mode,
+        clientsClaim: true,
+        skipWaiting: true,
+        exclude: [/.html$/g, /.js.map$/g], // don't precache the html or sourcemaps
+      }),
+    );
+
+  return {
+    mode: mode === 'production' || mode === 'development' ? mode : 'none',
+    devtool: 'source-map',
+    devServer: {
+      contentBase: [join('.', 'dist')],
+      historyApiFallback: true,
+      clientLogLevel: 'trace',
+      compress: true,
+    },
+    plugins,
+    module: {
+      rules: [
+        { test: /.tsx$/, use: 'ts-loader' },
+        { test: /.(jpe?g|webp|png|gif|svg)$/, type: 'asset/resource' },
+      ],
+    },
+    resolve: {
+      modules: ['node_modules'],
+      extensions: ['.tsx', '.js'],
+    },
+    output: {
+      filename: '[name]-[contenthash].js',
+    },
+  };
+};
 
 export const config: Configuration = {
   ...factory(process.env['NODE_ENV']),

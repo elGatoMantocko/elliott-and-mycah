@@ -18,14 +18,14 @@ type Result<T, U> =
 const pending: State<ResultState.Pending> = state(ResultState.Pending);
 const notStarted: State<ResultState.NotStarted> = state(ResultState.NotStarted);
 
-const useValue = <T, V>(result: Result<T, V>, then: (v: T) => void) =>
+const useValue = <V, E, T extends (v: V) => void>(result: Result<V, E>, then: T) =>
   useEffect(() => {
     if (result.state === ResultState.Value) {
       then(result.value);
     }
   }, [result, then]);
 
-const useCatch = <V, E>(result: Result<V, E>, then: (e: E) => void) => {
+const useCatch = <V, E, T extends (e: E) => void>(result: Result<V, E>, then: T) => {
   useEffect(() => {
     if (result.state === ResultState.Error) {
       then(result.value);
@@ -33,25 +33,34 @@ const useCatch = <V, E>(result: Result<V, E>, then: (e: E) => void) => {
   }, [result, then]);
 };
 
-const usePending = <V, E>(result: Result<V, E>, then: () => void) =>
+const usePending = <V, E, T extends () => void>(result: Result<V, E>, then: T) =>
   useEffect(() => {
     if (result.state === ResultState.Pending) {
       then();
     }
   }, [result, then]);
 
-const useNotStarted = <V, E>(result: Result<V, E>, then: () => void) =>
+const useNotStarted = <V, E, T extends () => void>(result: Result<V, E>, then: T) =>
   useEffect(() => {
     if (result.state === ResultState.NotStarted) {
       then();
     }
   }, [result, then]);
 
-export const useResultState = <V, E>(result: Result<V, E>) => ({
-  useValue: (then: (v: V) => void) => useValue(result, then),
-  useCatch: (then: (v: E) => void) => useCatch(result, then),
-  usePending: (then: () => void) => usePending(result, then),
-  useNotStarted: (then: () => void) => useNotStarted(result, then),
+export const useResultState = <
+  V,
+  E,
+  VFunc extends (v: V) => void,
+  EFunc extends (e: E) => void,
+  PFunc extends () => void,
+  NSFunc extends () => void,
+>(
+  result: Result<V, E>,
+) => ({
+  useValue: (then: VFunc) => useValue(result, then),
+  useCatch: (then: EFunc) => useCatch(result, then),
+  usePending: (then: PFunc) => usePending(result, then),
+  useNotStarted: (then: NSFunc) => useNotStarted(result, then),
 });
 
 export const useResult = <T,>(request: () => Promise<T>) => {
