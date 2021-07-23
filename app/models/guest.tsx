@@ -1,3 +1,5 @@
+import { UUIDv4 } from './uuid';
+
 export const isValidFoodChoice = (
   foodChoice: unknown,
 ): foodChoice is 'chicken' | 'fish' | 'veg' => {
@@ -5,9 +7,10 @@ export const isValidFoodChoice = (
 };
 
 export type Guest = {
+  id: UUIDv4;
   firstName: string;
   lastName: string;
   foodChoice?: 'chicken' | 'fish' | 'veg';
 };
 
-export type Guests = Map<string, Guest>; // use map because order is specific
+export type Guests = Guest[];

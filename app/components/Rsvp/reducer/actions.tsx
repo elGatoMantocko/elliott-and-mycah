@@ -1,4 +1,5 @@
 import { Guest } from '../../../models/guest';
+import { UUIDv4 } from '../../../models/uuid';
 
 export enum RsvpActionTypes {
   AddGuest = 'add-new-guest',
@@ -20,11 +21,11 @@ export enum RsvpActionTypes {
   Loading = 'guest-action-loading',
 }
 
-type AddGuestAction = { type: RsvpActionTypes.AddGuest; payload: { guest: Guest; id: string } };
-type RemoveGuestAction = { type: RsvpActionTypes.RemoveGuest; payload: { id: string } };
+type AddGuestAction = { type: RsvpActionTypes.AddGuest; payload: Guest };
+type RemoveGuestAction = { type: RsvpActionTypes.RemoveGuest; payload: UUIDv4 };
 type UpdateGuest = {
   type: RsvpActionTypes.UpdateGuest;
-  payload: { id: string; guest: Partial<Guest> };
+  payload: { id: UUIDv4 } & Partial<Guest>;
 };
 type ClearGuestsAction = { type: RsvpActionTypes.ClearGuests };
 

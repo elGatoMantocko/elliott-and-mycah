@@ -22,6 +22,7 @@ import AlertTitle from '@material-ui/lab/AlertTitle';
 import * as React from 'react';
 
 import { Guest, Guests } from '../../models/guest';
+import { UUIDv4 } from '../../models/uuid';
 import { GuestFields } from './GuestFields';
 
 const useCloseButtonStyles = makeStyles((theme) => ({
@@ -46,8 +47,8 @@ type RsvpModalProps = {
   error?: Error;
   onClose?: () => void;
   onAddGuest: () => void;
-  onRemoveGuest: (id: string) => void;
-  onUpdateGuest: (id: string, guest: Partial<Guest>) => void;
+  onRemoveGuest: (id: UUIDv4) => void;
+  onUpdateGuest: (guest: { id: UUIDv4 } & Partial<Guest>) => void;
   onUpdateYesNo: (yesNo: boolean) => void;
   onSubmitGuests: () => void;
   onDismissError: () => void;
@@ -103,14 +104,14 @@ export const RsvpModal = ({
       </IconButton>
     </DialogTitle>
     <DialogContent>
-      {Array.from(guests.entries()).map(([id, g], i) => (
-        <span key={id}>
+      {guests.map((g, i) => (
+        <span key={g.id}>
           {i > 0 && <Typography variant="subtitle2">Guest {i}</Typography>}
           <GuestFields
             guest={g}
             foodChoiceDisabled={!isAttending}
-            onRemoveGuest={i === 0 ? undefined : () => onRemoveGuest(id)}
-            onUpdateGuest={(partialGuest) => onUpdateGuest(id, partialGuest)}
+            onRemoveGuest={i === 0 ? undefined : () => onRemoveGuest(g.id)}
+            onUpdateGuest={(partialGuest) => onUpdateGuest({ ...g, ...partialGuest })}
           />
         </span>
       ))}

@@ -1,5 +1,4 @@
 import { Effects, Reducer, useElmish } from 'react-use-elmish';
-import { v4 as uuid } from 'uuid';
 
 import { fromAsyncIterable } from '../../../effects/fromAsyncIterable';
 import { Guests } from '../../../models/guest';
@@ -10,8 +9,8 @@ import { submitGuests } from './submitGuests';
 /**
  * A reducer to manage and configure the RSVP state and effects available to components.
  *
- * @param {State} state The current RSVP reducer state
- * @param {RsvpActions} action An action deployed to the reducer
+ * @param state The current RSVP reducer state
+ * @param action An action deployed to the reducer
  * @returns state effect pair resolved by further reducer actions
  */
 export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
@@ -31,16 +30,17 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
 
   // crud on guests
   if (action.type === RsvpActionTypes.AddGuest) {
-    state.guests.set(action.payload.id, action.payload.guest);
-    return [{ ...state, guests: new Map(state.guests.entries()) }, Effects.none()];
+    return [{ ...state, guests: [...state.guests, action.payload] }, Effects.none()];
   }
   if (action.type === RsvpActionTypes.RemoveGuest) {
-    state.guests.delete(action.payload.id);
-    return [{ ...state, guests: new Map(state.guests.entries()) }, Effects.none()];
+    return [
+      { ...state, guests: [...state.guests.filter(({ id }) => id !== action.payload)] },
+      Effects.none(),
+    ];
   }
   if (action.type === RsvpActionTypes.UpdateGuest) {
-    const guest = state.guests.get(action.payload.id);
-    if (guest == null) {
+    const guestIndex = state.guests.findIndex(({ id }) => id === action.payload.id);
+    if (guestIndex === -1) {
       return [
         state,
         Effects.action({
@@ -49,12 +49,17 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
         }),
       ];
     }
+
     return [
-      state,
-      Effects.action({
-        type: RsvpActionTypes.AddGuest,
-        payload: { id: action.payload.id, guest: { ...guest, ...action.payload.guest } },
-      }),
+      {
+        ...state,
+        guests: [
+          ...state.guests.slice(0, guestIndex),
+          { ...state.guests[guestIndex], ...action.payload },
+          ...state.guests.slice(guestIndex + 1),
+        ],
+      },
+      Effects.none(),
     ];
   }
 
@@ -66,7 +71,11 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
   // clears the collection of guests from the guests state
   if (action.type === RsvpActionTypes.ClearGuests) {
     return [
-      { ...state, guests: new Map([[uuid(), { firstName: '', lastName: '' }]]), isAttending: true },
+      {
+        ...state,
+        guests: [],
+        isAttending: true,
+      },
       Effects.none(),
     ];
   }

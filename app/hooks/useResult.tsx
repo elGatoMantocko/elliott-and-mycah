@@ -63,6 +63,12 @@ export const useResultState = <
   useNotStarted: (then: NSFunc) => useNotStarted(result, then),
 });
 
+/**
+ * Function to get a result from an asynchronous function.
+ *
+ * @param request asynchronous function to map to a result state
+ * @returns result state object
+ */
 export const useResult = <T,>(request: () => Promise<T>) => {
   const [result, setResult] = useState<Result<T, Error>>(notStarted);
   useEffect(() => {
