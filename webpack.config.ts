@@ -5,13 +5,28 @@ import { Configuration, DefinePlugin, WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
 
+type Config = {
+  devtool?: string | false;
+  mode?: 'development' | 'production' | 'none';
+  noOutput?: boolean;
+  noSW?: boolean;
+};
 /**
  * Function to generate a base webpack config
  *
- * @param mode to build webpack config for
- * @returns a base webpack config
+ * @param config configuration object that abstracts webpack config
+ * @param config.devtool to use for sourcemaps/dev utils (defaults to 'source-map')
+ * @param config.mode mode to build the webpack bundle in (defaults to 'production')
+ * @param config.noOutput if true, no output will be generated (defaults to false)
+ * @param config.noSW if true, service-worker is not included in the bundle (defaults to false)
+ * @returns webpack config
  */
-const factory = (mode = 'development'): Configuration => {
+export const factory = ({
+  devtool = 'source-map',
+  mode = 'production',
+  noOutput = false,
+  noSW = false,
+}: Config): Configuration => {
   const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
       template: 'app/index.html',
@@ -37,7 +52,7 @@ const factory = (mode = 'development'): Configuration => {
     }),
   ];
 
-  mode !== 'development' &&
+  !noSW &&
     plugins.push(
       new GenerateSW({
         mode,
@@ -48,8 +63,8 @@ const factory = (mode = 'development'): Configuration => {
     );
 
   return {
-    mode: mode === 'production' || mode === 'development' ? mode : 'none',
-    devtool: 'source-map',
+    mode,
+    devtool,
     devServer: {
       contentBase: [join('.', 'dist')],
       historyApiFallback: true,
@@ -64,17 +79,43 @@ const factory = (mode = 'development'): Configuration => {
       ],
     },
     resolve: {
-      modules: ['node_modules'],
-      extensions: ['.tsx', '.js'],
+      modules: ['node_modules', './app'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    output: {
-      filename: '[name]-[contenthash].js',
-    },
+    output: !noOutput ? { filename: '[name]-[contenthash].js' } : undefined,
   };
 };
 
+enum BuildMode {
+  Prod = 'production',
+  Dev = 'development',
+  None = 'none',
+}
+const getEnvMode = (mode?: string): BuildMode | undefined => {
+  switch (mode) {
+    case BuildMode.Prod:
+    case BuildMode.Dev:
+    case BuildMode.None:
+      return mode;
+    default:
+      return undefined;
+  }
+};
+
+const checkEnvFlag = (flag: string): boolean | undefined => {
+  if (process.env[flag] != null) {
+    return Boolean(process.env[flag]);
+  }
+  return;
+};
+
 export const config: Configuration = {
-  ...factory(process.env['NODE_ENV']),
+  ...factory({
+    devtool: process.env['WEBPACK_DEV_TOOL'],
+    mode: getEnvMode(process.env['WEBPACK_MODE']),
+    noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
+    noSW: checkEnvFlag('WEBPACK_NO_SERVICE_WORKER'),
+  }),
   entry: './app/index.tsx',
   optimization: {
     providedExports: true,

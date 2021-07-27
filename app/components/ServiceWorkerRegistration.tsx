@@ -4,7 +4,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 
-import { useResultState } from '../hooks/useResult';
+import { fromResult } from '../hooks/useResult';
 import { useServiceWorker } from '../hooks/useServiceWorker';
 
 type ServiceWorkerRegistrationProps = { src: string; hideSnackbar?: boolean };
@@ -13,7 +13,7 @@ export const ServiceWorkerRegistration = ({
   hideSnackbar,
 }: ServiceWorkerRegistrationProps) => {
   const [loadedSnackOpen, setLoadedSnack] = useState(false);
-  useResultState(useServiceWorker(src)).useValue(
+  fromResult(useServiceWorker(src)).useValue(
     useCallback(() => {
       // For those curious
       console.log(

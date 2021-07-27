@@ -1,13 +1,10 @@
 import Box from '@material-ui/core/Box';
-import FormControl from '@material-ui/core/FormControl';
-import { FormControlProps } from '@material-ui/core/FormControl';
+import FormControl, { FormControlProps } from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { withStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import { TextFieldProps } from '@material-ui/core/TextField';
+import { Theme, withStyles } from '@material-ui/core/styles';
+import TextField, { TextFieldProps } from '@material-ui/core/TextField';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import RemoveIcon from '@material-ui/icons/Remove';
 import * as React from 'react';
