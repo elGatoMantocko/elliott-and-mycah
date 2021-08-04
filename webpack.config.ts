@@ -6,9 +6,21 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
 
 type Config = {
+  /**
+   * To use for sourcemaps/dev utils (defaults to 'source-map')
+   */
   devtool?: string | false;
+  /**
+   * Mode to build the webpack bundle in (defaults to 'production')
+   */
   mode?: 'development' | 'production' | 'none';
+  /**
+   * if true, no output will be generated (defaults to false)
+   */
   noOutput?: boolean;
+  /**
+   * if true, service worker is not included in the bundle (defaults to false)
+   */
   noSW?: boolean;
 };
 /**
@@ -112,7 +124,7 @@ const checkEnvFlag = (flag: string): boolean | undefined => {
 export const config: Configuration = {
   ...factory({
     devtool: process.env['WEBPACK_DEV_TOOL'],
-    mode: getEnvMode(process.env['WEBPACK_MODE']),
+    mode: getEnvMode(process.env['WEBPACK_MODE'] ?? process.env['NODE_ENV']),
     noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
     noSW: checkEnvFlag('WEBPACK_NO_SERVICE_WORKER'),
   }),

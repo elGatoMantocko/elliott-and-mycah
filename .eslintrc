@@ -16,7 +16,8 @@
     "react-hooks",
     "simple-import-sort",
     "jsdoc",
-    "import"
+    "import",
+    "material-ui"
   ],
   "parserOptions": {
     "ecmaVersion": 2021,

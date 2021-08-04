@@ -12,6 +12,7 @@ COPY ./tsconfig.json ./
 COPY ./webpack.config.ts ./
 
 ENV NODE_ENV=production
+ENV WEBPACK_MODE=production
 RUN npx webpack --config webpack.config.ts
 
 FROM nginx
