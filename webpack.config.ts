@@ -78,9 +78,9 @@ export const factory = ({
     mode,
     devtool,
     devServer: {
-      contentBase: [join('.', 'dist')],
+      static: { directory: join('.', 'dist') },
       historyApiFallback: true,
-      clientLogLevel: 'trace',
+      client: { logging: 'info' },
       compress: true,
     },
     plugins,
