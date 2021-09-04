@@ -24,15 +24,8 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '15'
-
-      # install deps
-      - name: Install yarn dependencies
-        run: yarn install
-
-      # run tests
-      - name: Run tests
-        run: yarn test
+          node-version: '16'
+          cache: 'yarn'
 
       - name: Build docker image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME

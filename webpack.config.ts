@@ -78,9 +78,9 @@ export const factory = ({
     mode,
     devtool,
     devServer: {
-      contentBase: [join('.', 'dist')],
+      static: { directory: join('.', 'dist') },
       historyApiFallback: true,
-      clientLogLevel: 'trace',
+      client: { logging: 'info' },
       compress: true,
     },
     plugins,
@@ -103,6 +103,12 @@ enum BuildMode {
   Dev = 'development',
   None = 'none',
 }
+/**
+ * Function to map an environment to a `BuildMode`.
+ *
+ * @param mode coerce this to a `BuildMode` enum
+ * @returns enum describing the build mode
+ */
 const getEnvMode = (mode?: string): BuildMode | undefined => {
   switch (mode) {
     case BuildMode.Prod:
@@ -114,6 +120,12 @@ const getEnvMode = (mode?: string): BuildMode | undefined => {
   }
 };
 
+/**
+ * Function to check a boolean env flag.
+ *
+ * @param flag name of the flag to check
+ * @returns boolean if the flag exists or undefined
+ */
 const checkEnvFlag = (flag: string): boolean | undefined => {
   if (process.env[flag] != null) {
     return Boolean(process.env[flag]);
@@ -123,7 +135,7 @@ const checkEnvFlag = (flag: string): boolean | undefined => {
 
 export const config: Configuration = {
   ...factory({
-    devtool: process.env['WEBPACK_DEV_TOOL'],
+    devtool: process.env['WEBPACK_DEV_TOOL'] ?? 'source-map',
     mode: getEnvMode(process.env['WEBPACK_MODE'] ?? process.env['NODE_ENV']),
     noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
     noSW: checkEnvFlag('WEBPACK_NO_SERVICE_WORKER'),
