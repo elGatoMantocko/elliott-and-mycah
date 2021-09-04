@@ -43,8 +43,14 @@ export async function* submitGuests(
 
     yield { type: RsvpActionTypes.ClearGuests };
   } catch (payload) {
-    yield { type: RsvpActionTypes.Error, payload };
+    if (payload instanceof Error) {
+      yield { type: RsvpActionTypes.Error, payload };
+    } else if (typeof payload === 'string') {
+      yield { type: RsvpActionTypes.Error, payload: new Error(payload) };
+    } else {
+      yield { type: RsvpActionTypes.Error, payload: new Error('An unexpected error occurred.') };
+    }
+  } finally {
+    yield { type: RsvpActionTypes.Loading, payload: false };
   }
-  yield { type: RsvpActionTypes.Loading, payload: false };
-  return;
 }
