@@ -7,8 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import * as React from 'react';
 
-import { uuid } from '../../models/uuid';
-import { useRsvpReducer } from './reducer';
+import { useRsvp } from './Provider';
 import { RsvpActionTypes } from './reducer/actions';
 import { RsvpButton } from './RsvpButton';
 import { RsvpModal } from './RsvpModal';
@@ -28,30 +27,12 @@ const DeclinedSnackbarContent = withStyles({
 })(SnackbarContent);
 
 export const Rsvp = () => {
-  const [state, dispatch] = useRsvpReducer([{ id: uuid(), firstName: '', lastName: '' }]);
+  const [state, dispatch] = useRsvp();
+
   return (
     <>
-      <RsvpButton onClick={() => dispatch({ type: RsvpActionTypes.ShowRsvpModal })} />
-      <RsvpModal
-        maxWidth="md"
-        open={!!state.showRsvpModal}
-        guests={state.guests}
-        isAttending={state.isAttending}
-        loading={state.loading}
-        error={state.error}
-        onAddGuest={() =>
-          dispatch({
-            type: RsvpActionTypes.AddGuest,
-            payload: { id: uuid(), firstName: '', lastName: '' },
-          })
-        }
-        onRemoveGuest={(payload) => dispatch({ type: RsvpActionTypes.RemoveGuest, payload })}
-        onUpdateGuest={(payload) => dispatch({ type: RsvpActionTypes.UpdateGuest, payload })}
-        onUpdateYesNo={(payload) => dispatch({ type: RsvpActionTypes.SetYesNo, payload })}
-        onSubmitGuests={() => dispatch({ type: RsvpActionTypes.SubmitGuests })}
-        onDismissError={() => dispatch({ type: RsvpActionTypes.Error })}
-        onClose={() => dispatch({ type: RsvpActionTypes.HideRsvpModal })}
-      />
+      <RsvpButton />
+      <RsvpModal />
       <Snackbar
         open={!!state.showSuccessSnack}
         autoHideDuration={8000}
