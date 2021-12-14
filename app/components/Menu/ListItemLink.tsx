@@ -1,6 +1,6 @@
 import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
 import * as React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 
 export const ListItemLink = ({
   disabled,
@@ -8,7 +8,8 @@ export const ListItemLink = ({
   onClick,
   children,
 }: ListItemProps<'a', { button?: true }>) => {
-  const { push } = useHistory();
+  const navigateTo = useNavigate();
+
   return (
     <ListItem
       button
@@ -18,7 +19,7 @@ export const ListItemLink = ({
         if (disabled === true) {
           return e.preventDefault();
         }
-        href != null && push(href);
+        href != null && navigateTo(href);
         onClick != null && onClick(e);
       }}
     >

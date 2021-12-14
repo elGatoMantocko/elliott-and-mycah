@@ -1,7 +1,7 @@
 import Link, { LinkProps } from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import * as React from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 const useLinkColorStyles = makeStyles({
   root: {
@@ -13,8 +13,9 @@ type ActiveLinkProps = {
   disabled?: boolean;
 } & LinkProps;
 export const ActiveLink = ({ disabled = false, ...linkProps }: ActiveLinkProps) => {
-  const { push } = useHistory();
+  const navigateTo = useNavigate();
   const { pathname } = useLocation();
+
   return (
     <Link
       {...linkProps}
@@ -26,7 +27,7 @@ export const ActiveLink = ({ disabled = false, ...linkProps }: ActiveLinkProps) 
         if (disabled) {
           return e.preventDefault();
         }
-        linkProps.href != null && push(linkProps.href);
+        linkProps.href != null && navigateTo(linkProps.href);
       }}
     />
   );

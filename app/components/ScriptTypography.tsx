@@ -1,3 +1,5 @@
+// we want the types from this but the actual component doesn't exist in mui
+// eslint-disable-next-line import/no-unresolved
 import { OverridableComponent, OverrideProps } from '@material-ui/core/OverridableComponent';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography, { TypographyProps, TypographyTypeMap } from '@material-ui/core/Typography';
