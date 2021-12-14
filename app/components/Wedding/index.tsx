@@ -1,9 +1,9 @@
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import { Theme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import { Theme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { GoogleMap } from '@react-google-maps/api';
 import * as React from 'react';
 
@@ -23,12 +23,12 @@ import { MenuOptionCard } from './MenuOptionCard';
 import { PartyMember } from './PartyMember';
 
 const useGetMapStyles = (): React.CSSProperties => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
   return { width: '100%', height: isSmallScreen ? '75vh' : 500 };
 };
 
 export const Wedding = () => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
   return (
     <>
       <Banner

@@ -56,7 +56,7 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*", "!@material-ui/core/colors/*"]
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*", "!@mui/material/colors/*"]
       }
     ],
 

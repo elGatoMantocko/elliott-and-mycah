@@ -1,17 +1,17 @@
-import AppBar from '@material-ui/core/AppBar';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Drawer from '@material-ui/core/Drawer';
-import Fab from '@material-ui/core/Fab';
-import Hidden from '@material-ui/core/Hidden';
-import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Toolbar from '@material-ui/core/Toolbar';
-import HomeIcon from '@material-ui/icons/Home';
-import HotelIcon from '@material-ui/icons/Hotel';
-import MenuIcon from '@material-ui/icons/Menu';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import HomeIcon from '@mui/icons-material/Home';
+import HotelIcon from '@mui/icons-material/Hotel';
+import MenuIcon from '@mui/icons-material/Menu';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Drawer from '@mui/material/Drawer';
+import Fab from '@mui/material/Fab';
+import Hidden from '@mui/material/Hidden';
+import List from '@mui/material/List';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -23,9 +23,10 @@ import { ListItemLink } from './ListItemLink';
 export const Menu = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const closeDrawer = () => setDrawerOpen(false);
+
   return (
     <>
-      <Hidden smDown>
+      <Hidden mdDown>
         <AppBar position="static" color="transparent" elevation={0}>
           <Container>
             <Toolbar>

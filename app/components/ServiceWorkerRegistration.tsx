@@ -1,6 +1,6 @@
-import Box from '@material-ui/core/Box';
-import Snackbar from '@material-ui/core/Snackbar';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import Box from '@mui/material/Box';
+import Snackbar from '@mui/material/Snackbar';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 

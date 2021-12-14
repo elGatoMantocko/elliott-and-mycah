@@ -1,5 +1,5 @@
-import Link, { LinkProps } from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import Link, { LinkProps } from '@mui/material/Link';
+import makeStyles from '@mui/styles/makeStyles';
 import * as React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 

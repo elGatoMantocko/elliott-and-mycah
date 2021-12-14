@@ -1,5 +1,5 @@
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
@@ -22,6 +22,7 @@ type AboutSectionProps = {
    */
   imageAlt?: string;
 };
+
 export const Section = ({ title, body, imageSource, imageAlt }: AboutSectionProps) => (
   <Box display="flex" flexDirection="column" pb={1} maxWidth={470}>
     <Box mx={1} px={1} mt={3}>

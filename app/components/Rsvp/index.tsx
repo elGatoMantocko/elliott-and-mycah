@@ -1,10 +1,10 @@
-import Box from '@material-ui/core/Box';
-import green from '@material-ui/core/colors/green';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import Box from '@mui/material/Box';
+import green from '@mui/material/colors/green';
+import Snackbar from '@mui/material/Snackbar';
+import SnackbarContent from '@mui/material/SnackbarContent';
+import Typography from '@mui/material/Typography';
+import withStyles from '@mui/styles/withStyles';
 import * as React from 'react';
 
 import { useRsvp } from './Provider';

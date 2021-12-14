@@ -1,24 +1,25 @@
-import { FormLabel } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
-import IconButton from '@material-ui/core/IconButton';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import AddIcon from '@material-ui/icons/Add';
-import CloseIcon from '@material-ui/icons/Close';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import Alert from '@material-ui/lab/Alert';
-import AlertTitle from '@material-ui/lab/AlertTitle';
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Alert from '@mui/lab/Alert';
+import AlertTitle from '@mui/lab/AlertTitle';
+import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
+import FormLabel from '@mui/material/FormLabel';
+import IconButton from '@mui/material/IconButton';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import { Theme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import makeStyles from '@mui/styles/makeStyles';
 import * as React from 'react';
 
 import { uuid } from '../../models/uuid';
@@ -49,9 +50,9 @@ export const RsvpModal = () => {
       maxWidth="md"
       open={!!state.showRsvpModal}
       onClose={() => dispatch({ type: RsvpActionTypes.HideRsvpModal })}
-      fullScreen={useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'))}
+      fullScreen={useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'))}
     >
-      <DialogTitle disableTypography>
+      <DialogTitle>
         <Typography variant="h4" gutterBottom>
           <em>RSVP</em>
         </Typography>
@@ -80,6 +81,7 @@ export const RsvpModal = () => {
         <IconButton
           classes={useCloseButtonStyles()}
           onClick={() => dispatch({ type: RsvpActionTypes.HideRsvpModal })}
+          size="large"
         >
           <CloseIcon />
         </IconButton>
@@ -108,7 +110,6 @@ export const RsvpModal = () => {
       </DialogContent>
       <DialogActions>
         <Button
-          color="primary"
           variant="outlined"
           startIcon={<AddIcon />}
           disabled={state.loading}
@@ -122,7 +123,6 @@ export const RsvpModal = () => {
           Add guest
         </Button>
         <Button
-          color="primary"
           variant="contained"
           startIcon={state.loading ? <CircularProgress size={20} /> : <PlayArrowIcon />}
           disabled={state.loading}

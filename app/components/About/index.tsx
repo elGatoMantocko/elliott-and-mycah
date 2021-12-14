@@ -1,7 +1,7 @@
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import { Theme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { Theme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import * as React from 'react';
 
 import * as ellie from '../../images/ellie_and_rainier.webp';
@@ -13,7 +13,8 @@ import { ScriptTypography } from '../ScriptTypography';
 import { Section } from './Section';
 
 export const About = () => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
+
   return (
     <>
       <Banner

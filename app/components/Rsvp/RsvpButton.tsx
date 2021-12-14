@@ -1,5 +1,5 @@
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
 import * as React from 'react';
 
 import { useRsvpDispatch } from './Provider';

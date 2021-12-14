@@ -1,5 +1,5 @@
-import Box from '@material-ui/core/Box';
-import Hidden from '@material-ui/core/Hidden';
+import Box from '@mui/material/Box';
+import Hidden from '@mui/material/Hidden';
 import * as React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
@@ -24,10 +24,10 @@ export const Countdown = ({ toDate }: CountdownProps) => {
   return (
     <Box display="flex" justifyContent="space-around" width="100%">
       <CounterCard value={days} unit="days" />
-      <Hidden xsDown>
+      <Hidden smDown>
         <CounterCard value={hours} unit="hours" />
         <CounterCard value={minutes} unit="minutes" />
-        <Hidden smDown>
+        <Hidden mdDown>
           <CounterCard value={seconds} unit="seconds" />
         </Hidden>
       </Hidden>

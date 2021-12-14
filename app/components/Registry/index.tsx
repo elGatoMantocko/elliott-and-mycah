@@ -1,7 +1,7 @@
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
 import * as amazon from '../../images/logos/amazon.webp';

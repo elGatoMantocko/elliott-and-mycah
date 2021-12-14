@@ -1,12 +1,13 @@
-import Box from '@material-ui/core/Box';
-import FormControl, { FormControlProps } from '@material-ui/core/FormControl';
-import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import { Theme, withStyles } from '@material-ui/core/styles';
-import TextField, { TextFieldProps } from '@material-ui/core/TextField';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import RemoveIcon from '@material-ui/icons/Remove';
+import RemoveIcon from '@mui/icons-material/Remove';
+import Box from '@mui/material/Box';
+import FormControl, { FormControlProps } from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import { Theme } from '@mui/material/styles';
+import TextField, { TextFieldProps } from '@mui/material/TextField';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import withStyles from '@mui/styles/withStyles';
 import * as React from 'react';
 
 import { Guest, isValidFoodChoice } from '../../models/guest';
@@ -49,7 +50,7 @@ export const GuestFields = ({
   onUpdateGuest,
   onRemoveGuest,
 }: GuestFieldsProps) => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
   return (
     <Box display="flex" mb={1} flexDirection={isSmallScreen === true ? 'column' : 'row'}>
       <NameField

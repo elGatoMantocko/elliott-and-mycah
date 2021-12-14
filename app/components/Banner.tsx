@@ -1,4 +1,4 @@
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import * as React from 'react';
 import { PropsWithChildren } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
@@ -11,6 +11,7 @@ type BannerProps = PropsWithChildren<{
   offset?: number;
   style?: React.CSSProperties;
 }>;
+
 export const Banner = ({
   imageSource: image,
   offset: amount = 1,
