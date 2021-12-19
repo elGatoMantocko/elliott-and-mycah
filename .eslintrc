@@ -26,16 +26,6 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack.config.ts",
-        "env": {
-          "WEBPACK_MODE": "development",
-          "WEBPACK_NO_OUTPUT": true,
-          "WEBPACK_NO_SERVICE_WORKER": true
-        }
-      }
     }
   },
   "rules": {

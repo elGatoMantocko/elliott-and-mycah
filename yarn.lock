@@ -2153,15 +2153,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/copy-webpack-plugin@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "@types/copy-webpack-plugin@npm:10.1.0"
-  dependencies:
-    copy-webpack-plugin: "*"
-  checksum: c5012e9725beb34bc07ca47f5861ee0770f0c76fe04e8878142ba5d12aa91c6d330ec777378eb65ff5fbb5f05863a2b1b935318db0f3f2e754c126b181645adf
-  languageName: node
-  linkType: hard
-
 "@types/cors@npm:^2.8.12":
   version: 2.8.12
   resolution: "@types/cors@npm:2.8.12"
@@ -2346,10 +2337,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@types/node@npm:17.0.0"
-  checksum: 30970a70c2eb78dbe80613d73243c255aaa9ce057d9e8595069ca0aef0363db0af45dc0d35f445cc804576a99df2970c170130663d76cd60319b779872e92ad6
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "@types/node@npm:17.0.1"
+  checksum: 16a5aa2778e1e49443d272f0da20af66c143337ddb14d9f36d5e7eb1e11ebbf195769d3d495ec5456ec94fe3d0e703c5df1ac279a05c7dc2a1220474467c1103
   languageName: node
   linkType: hard
 
@@ -3938,7 +3929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-webpack-plugin@npm:*, copy-webpack-plugin@npm:10.2.0":
+"copy-webpack-plugin@npm:10.2.0":
   version: 10.2.0
   resolution: "copy-webpack-plugin@npm:10.2.0"
   dependencies:
@@ -4459,12 +4450,11 @@ __metadata:
     "@react-google-maps/api": ^2.7.0
     "@testing-library/react": ^12.1.2
     "@types/chai": ^4.3.0
-    "@types/copy-webpack-plugin": ^10.1.0
     "@types/google.maps": ^3.47.2
     "@types/karma": ^6.3.1
     "@types/karma-webpack": ^2.0.10
     "@types/mocha": ^9.0.0
-    "@types/node": ^17.0.0
+    "@types/node": ^17.0.1
     "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
     "@types/react-router": ^5.1.17
@@ -4478,12 +4468,12 @@ __metadata:
     "@typescript-eslint/parser": ^5.7.0
     chai: ^4.3.4
     copy-webpack-plugin: 10.2.0
-    eslint: ^8.4.1
+    eslint: ^8.5.0
     eslint-config-google: ^0.14.0
     eslint-config-prettier: ^8.3.0
     eslint-import-resolver-webpack: ^0.13.2
     eslint-plugin-import: ^2.25.3
-    eslint-plugin-jsdoc: ^37.2.4
+    eslint-plugin-jsdoc: ^37.3.0
     eslint-plugin-material-ui: ^1.0.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.27.1
@@ -4502,8 +4492,8 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-github-corner: ^2.5.0
-    react-router: ^6.2.0
-    react-router-dom: ^6.2.0
+    react-router: ^6.2.1
+    react-router-dom: ^6.2.1
     react-scroll-parallax: ^2.4.1
     react-use-elmish: ^1.0.0
     ts-loader: ^9.2.6
@@ -4813,9 +4803,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:^37.2.4":
-  version: 37.2.4
-  resolution: "eslint-plugin-jsdoc@npm:37.2.4"
+"eslint-plugin-jsdoc@npm:^37.3.0":
+  version: 37.3.0
+  resolution: "eslint-plugin-jsdoc@npm:37.3.0"
   dependencies:
     "@es-joy/jsdoccomment": 0.13.0
     comment-parser: 1.3.0
@@ -4828,7 +4818,7 @@ __metadata:
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: e756f1ba39fb229b14d95db879a73315f695e629df87c0284f444b430041e4a4826e00c424a903f186aef0f68bacfd4829b7ca906cc82a382204d1631576389f
+  checksum: 3431c2aa6903edce725d9cbb93acbde58c92e90162785d87745dcfd3640b5096c8674e78a311c5952785ed30ce1d7c58adafdf3c6dc7130b9199559f6b9d350e
   languageName: node
   linkType: hard
 
@@ -4941,9 +4931,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.4.1":
-  version: 8.4.1
-  resolution: "eslint@npm:8.4.1"
+"eslint@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "eslint@npm:8.5.0"
   dependencies:
     "@eslint/eslintrc": ^1.0.5
     "@humanwhocodes/config-array": ^0.9.2
@@ -4985,7 +4975,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: d962cd7cd0f68ddc2412f47154b8992ad3af987cf47fa6e60e51a2b7d32a91f934388f7d29e2c45b16b7ac69f0d220d0a483189ec6ba43a8a480110c34f158f9
+  checksum: c1a9e26070520a308cc30b62ba0d37d5b115ed23987a93219819537bdea9398e6ebe57c27d97be36ecc83b5162c72e82ecb0a9e5b44b7992980f9be90eb5c4b3
   languageName: node
   linkType: hard
 
@@ -5698,12 +5688,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"history@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "history@npm:5.1.0"
+"history@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "history@npm:5.2.0"
   dependencies:
     "@babel/runtime": ^7.7.6
-  checksum: c978710a188ee5ad5d2acf55721c77e27469578c891a66311e71e8920d1390d14476e39a6db07e0ab0f5f8d594f1f62eb55a1059c7549cde7795a36367df5869
+  checksum: 2c6a05aa86793e0a0857013457f34474c17f81a012c6bdb00bf30862389ac6a8c2df113d82176f67af2fd534ea9dc4e1218470c5526355b6fc1aefcc971f2eb2
   languageName: node
   linkType: hard
 
@@ -8037,27 +8027,27 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "react-router-dom@npm:6.2.0"
+"react-router-dom@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "react-router-dom@npm:6.2.1"
   dependencies:
-    history: ^5.1.0
-    react-router: 6.2.0
+    history: ^5.2.0
+    react-router: 6.2.1
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: a4d04b41f7edae1d0a118ff37b241859ed7d614e957c3b175511c215f5991acbfab5f01ae0e7ec41eba544d06c883dab649d6d9e82007ee79d4c32539e0aeccf
+  checksum: fa0edc69fddf0cb1313bcb3dbd5eb2b2ff24a75ee03ba928995e16a6a251585750f91d966612e868eb68a5aebc4a5240be40fd96c4acf1d8d48d33f54ad3f4e2
   languageName: node
   linkType: hard
 
-"react-router@npm:6.2.0, react-router@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "react-router@npm:6.2.0"
+"react-router@npm:6.2.1, react-router@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "react-router@npm:6.2.1"
   dependencies:
-    history: ^5.1.0
+    history: ^5.2.0
   peerDependencies:
     react: ">=16.8"
-  checksum: 84267e3218e5b44cf6039e0e08873f596bf0fc03753da59adcb41cc26f365cf28acc9a03c3b60161d7fec3bf9b70f634b613c6b8a7299e381b61c13cdfc02c13
+  checksum: 081a89237ab4f32195d1f2173bc4b3d95637cd6942a4d1a9e90d4ac8c80faa95528255ca2ec44c1e88c1b369e712c4ca74cba5ae3acef6fc30a51a62805b95a4
   languageName: node
   linkType: hard
 
