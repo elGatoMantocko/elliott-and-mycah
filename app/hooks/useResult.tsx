@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { DependencyList, useCallback, useEffect, useState } from 'react';
 
 import { State, state } from '../models/state';
 import { useStaticCallback } from './useStaticCallback';
@@ -8,19 +8,16 @@ export enum ResultState {
   Pending = 'pending',
   Value = 'value',
   Error = 'error',
-  Cancelled = 'cancelled',
 }
 
 type Result<T, U> =
   | State<ResultState.NotStarted>
   | State<ResultState.Pending>
-  | State<ResultState.Cancelled>
   | State<ResultState.Value, T>
   | State<ResultState.Error, U>;
 
 const pending: State<ResultState.Pending> = state(ResultState.Pending);
 const notStarted: State<ResultState.NotStarted> = state(ResultState.NotStarted);
-const cancelled: State<ResultState.Cancelled> = state(ResultState.Cancelled);
 
 const useValue = <V, E, T extends (v: V) => void>(result: Result<V, E>, then: T) => {
   const cb = useStaticCallback(then);
@@ -74,51 +71,100 @@ export const fromResult = <
   useNotStarted: (then: NSFunc) => useNotStarted(result, then),
 });
 
+type UseResultValue<C extends () => Promise<unknown>> = C extends () => Promise<infer CResult>
+  ? CResult
+  : never;
+
 /**
  * Function to get a result from an asynchronous function.
  *
  * @param request asynchronous function to map to a result state
+ * @param deps list of deps used in the request
  * @returns result state object
  */
-export const useResult = <T,>(request: () => Promise<T>) => {
-  const [result, setResult] = useState<Result<T, Error>>(notStarted);
+export const useResult = <C extends () => Promise<unknown>, CValue extends UseResultValue<C>>(
+  request: C extends () => Promise<CValue> ? C : never,
+  deps: DependencyList,
+) => {
+  const [result, setResult] = useState<Result<CValue, Error>>(notStarted);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const requestCb = useCallback(request, deps);
+
   useEffect(() => {
-    setResult(pending);
-    request()
-      .then((t) => setResult(state(ResultState.Value, t)))
-      .catch((err) => setResult(state(ResultState.Error, err)));
-  }, [request]);
+    let isSubscribed = true;
+
+    isSubscribed && setResult(pending);
+    requestCb()
+      .then((t) => isSubscribed && setResult(state(ResultState.Value, t)))
+      .catch((err) => isSubscribed && setResult(state(ResultState.Error, err)));
+
+    return () => {
+      isSubscribed = false;
+    };
+  }, [requestCb]);
   return result;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {};
+type Callable<CArgs extends readonly unknown[], CResult> = (...args: CArgs) => Promise<CResult>;
+
+type CallableArgs<C extends Callable<readonly unknown[], unknown>> = C extends (
+  ...args: infer CArgs
+) => Promise<unknown>
+  ? CArgs
+  : never;
+
+type CallableResponse<C extends Callable<readonly unknown[], unknown>> = C extends (
+  ...args: readonly unknown[]
+) => Promise<infer CValue>
+  ? CValue
+  : never;
 
 /**
  * Hook to get a callable function that sets the result state. Can be reset to `not-started`
- *  with the 3rd option in the tuple, and cancelled with the 4th.
+ *  with the 3rd option in the tuple.
  *
  * @param request function to call
- * @returns tuple representing the [result-state, callable, reset, cancel] options
+ * @returns tuple representing the `[result-state, callable, reset]` options
  */
-export const useCallableResult = <TRequest extends readonly unknown[], TResponse>(
-  request: (...args: TRequest) => Promise<TResponse>,
-): [Result<TResponse, Error>, (...args: TRequest) => void, () => void, () => void] => {
-  const [result, setResult] = useState<Result<TResponse, Error>>(notStarted);
-  const [cancel, setCancel] = useState<() => void>(noop);
-  const call = useCallback(
-    (...args: TRequest) => {
-      setResult(pending);
-      const cancellable = new Promise<void>((_res, rej) => setCancel(rej));
+export const useCallableResult = <
+  C extends Callable<readonly unknown[], unknown>,
+  CArgs extends CallableArgs<C>,
+  CResponse extends CallableResponse<C>,
+>(
+  request: C extends (...args: CArgs) => Promise<CResponse> ? C : never,
+): [Result<CResponse, Error>, (...args: CArgs) => void, () => void] => {
+  const [result, setResult] = useState<Result<CResponse, Error>>(notStarted);
 
-      Promise.race([
-        cancellable,
-        request(...args)
-          .then((t) => setResult(state(ResultState.Value, t)))
-          .catch((err) => setResult(state(ResultState.Error, err))),
-      ]).catch(() => setResult(cancelled));
+  const call = useCallback(
+    async (...args: CArgs) => {
+      setResult(pending);
+
+      try {
+        const t = await request(...args);
+
+        setResult(state(ResultState.Value, t));
+      } catch (err) {
+        if (err instanceof Error) {
+          setResult(state(ResultState.Error, err));
+        } else if (typeof err === 'string') {
+          setResult(state(ResultState.Error, new Error(err)));
+        } else if (typeof err === 'object') {
+          setResult(
+            state(
+              ResultState.Error,
+              new Error(`encountered error in useCallableResult: ${JSON.stringify(err)}`),
+            ),
+          );
+        } else {
+          setResult(
+            state(ResultState.Error, new Error('encountered unknown error in useCallableResult')),
+          );
+        }
+      }
     },
     [request],
   );
-  return [result, call, () => setResult(notStarted), cancel];
+
+  return [result, call, () => setResult(notStarted)];
 };

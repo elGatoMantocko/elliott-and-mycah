@@ -51,8 +51,9 @@ export const GuestFields = ({
   onRemoveGuest,
 }: GuestFieldsProps) => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
+
   return (
-    <Box display="flex" mb={1} flexDirection={isSmallScreen === true ? 'column' : 'row'}>
+    <Box display="flex" mb={1} flexDirection={isSmallScreen === true ? 'column' : 'row'} pt={1}>
       <NameField
         fullWidth={isSmallScreen}
         label="First Name"

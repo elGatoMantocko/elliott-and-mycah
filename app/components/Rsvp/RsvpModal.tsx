@@ -1,8 +1,8 @@
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import Alert from '@mui/lab/Alert';
-import AlertTitle from '@mui/lab/AlertTitle';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Dialog from '@mui/material/Dialog';
@@ -11,7 +11,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import IconButton from '@mui/material/IconButton';
 import Radio from '@mui/material/Radio';
@@ -42,6 +41,11 @@ const useRadioGroupStyles = makeStyles({
   },
 });
 
+enum GuestAttendance {
+  Yes = 'yes',
+  No = 'no',
+}
+
 export const RsvpModal = () => {
   const [state, dispatch] = useRsvp();
 
@@ -53,25 +57,26 @@ export const RsvpModal = () => {
       fullScreen={useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'))}
     >
       <DialogTitle>
-        <Typography variant="h4" gutterBottom>
-          <em>RSVP</em>
-        </Typography>
-        <FormGroup>
-          <FormControl component="fieldset">
-            <FormLabel>Will you attend on 6/12/2021?</FormLabel>
-            <RadioGroup
-              name="yesNo"
-              classes={useRadioGroupStyles()}
-              value={state.isAttending}
-              onChange={(e) =>
-                dispatch({ type: RsvpActionTypes.SetYesNo, payload: e.target.value === 'true' })
-              }
-            >
-              <FormControlLabel value={true} control={<Radio />} label="Yes" />
-              <FormControlLabel value={false} control={<Radio />} label="No" />
-            </RadioGroup>
-          </FormControl>
-        </FormGroup>
+        <em>RSVP</em>
+      </DialogTitle>
+      <DialogContent>
+        <FormControl component="fieldset">
+          <FormLabel>Will you attend on 6/12/2021?</FormLabel>
+          <RadioGroup
+            name="yesNo"
+            classes={useRadioGroupStyles()}
+            defaultValue={GuestAttendance.Yes}
+            onChange={(e) =>
+              dispatch({
+                type: RsvpActionTypes.SetYesNo,
+                payload: e.target.value === GuestAttendance.Yes,
+              })
+            }
+          >
+            <FormControlLabel value={GuestAttendance.Yes} control={<Radio />} label="Yes" />
+            <FormControlLabel value={GuestAttendance.No} control={<Radio />} label="No" />
+          </RadioGroup>
+        </FormControl>
         {state.error != null && (
           <Alert severity="error" onClose={() => dispatch({ type: RsvpActionTypes.Error })}>
             <AlertTitle>Oops! We encountered an error!</AlertTitle>
@@ -85,10 +90,10 @@ export const RsvpModal = () => {
         >
           <CloseIcon />
         </IconButton>
-      </DialogTitle>
+      </DialogContent>
       <DialogContent>
         {state.guests.map((g, i) => (
-          <span key={g.id}>
+          <React.Fragment key={g.id}>
             {i > 0 && <Typography variant="subtitle2">Guest {i}</Typography>}
             <GuestFields
               guest={g}
@@ -105,7 +110,7 @@ export const RsvpModal = () => {
                 })
               }
             />
-          </span>
+          </React.Fragment>
         ))}
       </DialogContent>
       <DialogActions>
