@@ -13,6 +13,7 @@ export const ServiceWorkerRegistration = ({
   hideSnackbar,
 }: ServiceWorkerRegistrationProps) => {
   const [loadedSnackOpen, setLoadedSnack] = useState(false);
+
   fromResult(useServiceWorker(src)).useValue(
     useCallback(() => {
       // For those curious
@@ -22,6 +23,7 @@ export const ServiceWorkerRegistration = ({
       setLoadedSnack(true);
     }, []),
   );
+
   return (
     <Snackbar
       open={loadedSnackOpen && !hideSnackbar}

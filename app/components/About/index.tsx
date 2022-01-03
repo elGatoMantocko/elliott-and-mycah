@@ -4,10 +4,10 @@ import { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import * as React from 'react';
 
-import * as ellie from '../../images/ellie_and_rainier.webp';
-import * as elliottAndMycah from '../../images/elliottandmycah.webp';
-import * as onTheHill from '../../images/on_the_hill.webp';
-import * as oneKnee from '../../images/one_knee.webp';
+import ellie from '../../images/ellie_and_rainier.webp';
+import elliottAndMycah from '../../images/elliottandmycah.webp';
+import onTheHill from '../../images/on_the_hill.webp';
+import oneKnee from '../../images/one_knee.webp';
 import { Banner } from '../Banner';
 import { ScriptTypography } from '../ScriptTypography';
 import { Section } from './Section';

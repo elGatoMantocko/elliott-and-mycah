@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/namespace
 import * as CopyPlugin from 'copy-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
@@ -86,7 +87,16 @@ export const factory = ({
     plugins,
     module: {
       rules: [
-        { test: /.tsx$/, use: 'ts-loader' },
+        {
+          test: /\.(ts|js)x?$/i,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            },
+          },
+        },
         { test: /.(jpe?g|webp|png|gif|svg)$/, type: 'asset/resource' },
       ],
     },

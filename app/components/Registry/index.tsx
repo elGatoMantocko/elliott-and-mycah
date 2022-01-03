@@ -4,10 +4,10 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-import * as amazon from '../../images/logos/amazon.webp';
-import * as crateAndBarrel from '../../images/logos/crate_and_barrel.webp';
-import * as macys from '../../images/logos/macys.webp';
-import * as williamsSanoma from '../../images/logos/williams_sonoma.webp';
+import amazon from '../../images/logos/amazon.webp';
+import crateAndBarrel from '../../images/logos/crate_and_barrel.webp';
+import macys from '../../images/logos/macys.webp';
+import williamsSanoma from '../../images/logos/williams_sonoma.webp';
 
 export const Registry = () => (
   <>
