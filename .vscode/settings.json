@@ -1,22 +1,45 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.packageManager": "yarn",
+  "npm.packageManager": "yarn",
+  "files.eol": "\n",
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    },
-    "eslint.packageManager": "yarn",
-    "npm.packageManager": "yarn",
-    "files.eol": "\n",
-    "eslint.validate": ["typescript", "typescriptreact"],
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        }
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        }
-    },
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "cSpell.words": [
+    "becca",
+    "Beurre",
+    "billbo",
+    "Burien",
+    "Dungeness",
+    "Elmish",
+    "headshots",
+    "Mantock",
+    "Mendenhall",
+    "Mycah",
+    "Overridable",
+    "Pancetta",
+    "precache",
+    "Rebecca",
+    "Sapienza",
+    "Schoenschrift",
+    "Slayter",
+    "sonoma",
+    "truetype",
+    "Ubel",
+    "webp"
+  ]
 }

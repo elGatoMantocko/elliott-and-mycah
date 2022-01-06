@@ -7,7 +7,7 @@ import * as React from 'react';
 import amazon from '../../images/logos/amazon.webp';
 import crateAndBarrel from '../../images/logos/crate_and_barrel.webp';
 import macys from '../../images/logos/macys.webp';
-import williamsSanoma from '../../images/logos/williams_sonoma.webp';
+import williamsSonoma from '../../images/logos/williams_sonoma.webp';
 
 export const Registry = () => (
   <>
@@ -40,7 +40,7 @@ export const Registry = () => (
             target="_blank"
             href="https://www.williams-sonoma.com/registry/gvbzch695m/registry-list.html?removed=true"
           >
-            <img style={{ width: '100%' }} src={williamsSanoma} />
+            <img style={{ width: '100%' }} src={williamsSonoma} />
           </Link>
         </Box>
         <Box maxWidth="11rem" my="auto" py={4} px={1.5}>

@@ -60,8 +60,8 @@ export const factory = ({
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
     new CopyPlugin({
-      // favicon gets included in the HTMLWebpackPlugin
-      patterns: ['app/assets/Lucian Schoenschrift CAT.ttf', 'app/assets/robots.txt'],
+      // favicon gets included in the HTMLWebpackPlugin and font is imported in the theme
+      patterns: ['app/assets/robots.txt'],
     }),
   ];
 
@@ -97,7 +97,7 @@ export const factory = ({
             },
           },
         },
-        { test: /.(jpe?g|webp|png|gif|svg)$/, type: 'asset/resource' },
+        { test: /.(jpe?g|webp|png|gif|svg|ttf)$/, type: 'asset/resource' },
       ],
     },
     resolve: {

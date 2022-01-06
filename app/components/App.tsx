@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import Hidden from '@mui/material/Hidden';
 import Paper from '@mui/material/Paper';
 import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material/styles';
@@ -16,6 +17,7 @@ import { Menu } from './Menu';
 import { Registry } from './Registry';
 import { Rsvp } from './Rsvp';
 import { RsvpProvider } from './Rsvp/Provider';
+import { ScrollToTop } from './ScrollToTop';
 import { ServiceWorkerRegistration } from './ServiceWorkerRegistration';
 import { Wedding } from './Wedding';
 
@@ -34,10 +36,12 @@ export const App = () => (
   <ParallaxProvider>
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={useCustomTheme()}>
+        <CssBaseline />
         <LoadScript googleMapsApiKey="AIzaSyApT_xNp9ePgFYEfdlpw_JJXZG70U1MzXM">
           <Paper classes={usePaperStyles()} elevation={0} square>
             <RsvpProvider>
               <Router>
+                <ScrollToTop />
                 <Menu />
                 <Routes>
                   <Route path="/" element={<Navigate to="/us" />} />

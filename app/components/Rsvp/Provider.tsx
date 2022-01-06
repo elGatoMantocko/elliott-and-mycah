@@ -34,7 +34,7 @@ const RsvpReducerContext = createContext<ElmishContext<RsvpReducer>>([
  * @returns react element wrapped in the rsvp reducer context
  */
 export const RsvpProvider = ({ children }: PropsWithChildren<unknown>) => {
-  // inititalize the reducer and return the provider
+  // initialize the reducer and return the provider
   return (
     <RsvpReducerContext.Provider
       value={useRsvpReducer([{ id: uuid(), firstName: '', lastName: '' }])}

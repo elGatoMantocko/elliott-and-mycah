@@ -104,7 +104,7 @@ export const Wedding = () => {
       <Container maxWidth="lg">
         <Box mt={4}>
           <ScriptTypography variant="h2" align="center">
-            Bridemaids
+            Bridesmaids
           </ScriptTypography>
           <Box display="flex" justifyContent="space-around" flexWrap="wrap">
             <Box width="16.5rem">
