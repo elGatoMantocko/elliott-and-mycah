@@ -1,3 +1,5 @@
+import 'webpack-dev-server';
+
 // eslint-disable-next-line import/namespace
 import * as CopyPlugin from 'copy-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
