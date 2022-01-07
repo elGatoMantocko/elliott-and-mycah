@@ -1,15 +1,16 @@
 import { Add as AddIcon } from '@mui/icons-material';
-import { Fab } from '@mui/material';
+import { Fab, FabProps } from '@mui/material';
 import * as React from 'react';
 
 import { useRsvpDispatch } from './Provider';
 import { RsvpActionTypes } from './reducer/actions';
 
-export const RsvpButton = () => {
+export const RsvpButton = (props: FabProps) => {
   const dispatch = useRsvpDispatch();
 
   return (
     <Fab
+      {...props}
       variant="extended"
       color="primary"
       size="large"

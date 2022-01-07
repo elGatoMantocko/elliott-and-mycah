@@ -1,6 +1,6 @@
 import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { Box, Snackbar, SnackbarContent, Typography } from '@mui/material';
-import green from '@mui/material/colors/green';
+import { green } from '@mui/material/colors';
 import { withStyles } from '@mui/styles';
 import * as React from 'react';
 
@@ -28,7 +28,7 @@ export const Rsvp = () => {
 
   return (
     <>
-      <RsvpButton />
+      <RsvpButton disabled />
       <RsvpModal />
       <Snackbar
         open={!!state.showSuccessSnack}
