@@ -1,10 +1,7 @@
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import Box from '@mui/material/Box';
+import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
+import { Box, Snackbar, SnackbarContent, Typography } from '@mui/material';
 import green from '@mui/material/colors/green';
-import Snackbar from '@mui/material/Snackbar';
-import SnackbarContent from '@mui/material/SnackbarContent';
-import Typography from '@mui/material/Typography';
-import withStyles from '@mui/styles/withStyles';
+import { withStyles } from '@mui/styles';
 import * as React from 'react';
 
 import { useRsvp } from './Provider';

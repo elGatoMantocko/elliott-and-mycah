@@ -1,9 +1,6 @@
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Hidden from '@mui/material/Hidden';
-import Paper from '@mui/material/Paper';
-import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import { Box, CssBaseline, Hidden, Paper, StyledEngineProvider, Theme } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { LoadScript } from '@react-google-maps/api';
 import * as React from 'react';
 import GithubCorner from 'react-github-corner';

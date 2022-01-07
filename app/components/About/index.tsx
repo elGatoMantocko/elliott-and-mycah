@@ -1,7 +1,4 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { Theme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Box, Container, Theme, useMediaQuery } from '@mui/material';
 import * as React from 'react';
 
 import ellie from '../../images/ellie_and_rainier.webp';

@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box';
-import Hidden from '@mui/material/Hidden';
+import { Box, Hidden } from '@mui/material';
 import * as React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
@@ -12,9 +11,7 @@ const CounterCard = ({ value, unit }: CounterCardProps) => (
       {value < 10 ? '0' : ''}
       {value}
     </ScriptTypography>
-    <ScriptTypography variant="h4" component="h2">
-      {unit}
-    </ScriptTypography>
+    <ScriptTypography variant="h4">{unit}</ScriptTypography>
   </Box>
 );
 type CountdownProps = Readonly<{ toDate: Date }>;

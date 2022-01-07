@@ -1,6 +1,5 @@
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import Box from '@mui/material/Box';
-import Snackbar from '@mui/material/Snackbar';
+import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
+import { Box, Snackbar } from '@mui/material';
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 

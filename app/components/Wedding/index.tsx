@@ -1,9 +1,4 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
-import { Theme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Box, Container, Link, Theme, Typography, useMediaQuery } from '@mui/material';
 import { GoogleMap } from '@react-google-maps/api';
 import * as React from 'react';
 

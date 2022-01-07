@@ -1,17 +1,21 @@
-import HomeIcon from '@mui/icons-material/Home';
-import HotelIcon from '@mui/icons-material/Hotel';
-import MenuIcon from '@mui/icons-material/Menu';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Drawer from '@mui/material/Drawer';
-import Fab from '@mui/material/Fab';
-import Hidden from '@mui/material/Hidden';
-import List from '@mui/material/List';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Toolbar from '@mui/material/Toolbar';
+import {
+  Home as HomeIcon,
+  Hotel as HotelIcon,
+  Menu as MenuIcon,
+  ShoppingCart as ShoppingCartIcon,
+} from '@mui/icons-material';
+import {
+  AppBar,
+  Box,
+  Container,
+  Drawer,
+  Fab,
+  Hidden,
+  List,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+} from '@mui/material';
 import * as React from 'react';
 import { useState } from 'react';
 

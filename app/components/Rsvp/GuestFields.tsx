@@ -1,13 +1,17 @@
-import RemoveIcon from '@mui/icons-material/Remove';
-import Box from '@mui/material/Box';
-import FormControl, { FormControlProps } from '@mui/material/FormControl';
-import IconButton from '@mui/material/IconButton';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { Theme } from '@mui/material/styles';
-import TextField, { TextFieldProps } from '@mui/material/TextField';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import withStyles from '@mui/styles/withStyles';
+import { Remove as RemoveIcon } from '@mui/icons-material';
+import {
+  Box,
+  FormControl,
+  FormControlProps,
+  IconButton,
+  MenuItem,
+  Select,
+  TextField,
+  TextFieldProps,
+  Theme,
+  useMediaQuery,
+} from '@mui/material';
+import { withStyles } from '@mui/styles';
 import * as React from 'react';
 
 import { Guest, isValidFoodChoice } from '../../models/guest';

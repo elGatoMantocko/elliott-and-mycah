@@ -1,4 +1,4 @@
-import ListItem, { ListItemProps } from '@mui/material/ListItem';
+import { ListItem, ListItemProps } from '@mui/material';
 import * as React from 'react';
 import { useNavigate } from 'react-router';
 

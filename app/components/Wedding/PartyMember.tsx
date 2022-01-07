@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 import * as React from 'react';
 
 type PartyMemberProps = {

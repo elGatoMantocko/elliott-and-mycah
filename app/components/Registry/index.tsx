@@ -1,7 +1,4 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
+import { Box, Container, Link, Typography } from '@mui/material';
 import * as React from 'react';
 
 import amazon from '../../images/logos/amazon.webp';
