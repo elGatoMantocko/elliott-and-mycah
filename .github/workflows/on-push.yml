@@ -69,6 +69,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
+          mask-aws-account-id: 'false'
 
       - name: Copy app assets (exclude index.html)
         run: aws s3 sync s3://${{ env.BUCKET_NAME }} dist --acl public-read --follow-symlinks --delete --exclude "index.html"
