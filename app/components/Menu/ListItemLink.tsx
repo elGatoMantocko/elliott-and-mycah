@@ -1,18 +1,12 @@
-import { ListItem, ListItemProps } from '@mui/material';
+import { ListItemButton, ListItemButtonProps } from '@mui/material';
 import * as React from 'react';
 import { useNavigate } from 'react-router';
 
-export const ListItemLink = ({
-  disabled,
-  href,
-  onClick,
-  children,
-}: ListItemProps<'a', { button?: true }>) => {
+export const ListItemLink = ({ disabled, href, onClick, children }: ListItemButtonProps<'a'>) => {
   const navigateTo = useNavigate();
 
   return (
-    <ListItem
-      button
+    <ListItemButton
       disabled={disabled}
       component="a"
       onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -24,6 +18,6 @@ export const ListItemLink = ({
       }}
     >
       {children}
-    </ListItem>
+    </ListItemButton>
   );
 };

@@ -106,20 +106,6 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends UseRe
   return result;
 };
 
-type Callable<CArgs extends readonly unknown[], CResult> = (...args: CArgs) => Promise<CResult>;
-
-type CallableArgs<C extends Callable<readonly unknown[], unknown>> = C extends (
-  ...args: infer CArgs
-) => Promise<unknown>
-  ? CArgs
-  : never;
-
-type CallableResponse<C extends Callable<readonly unknown[], unknown>> = C extends (
-  ...args: readonly unknown[]
-) => Promise<infer CValue>
-  ? CValue
-  : never;
-
 /**
  * Hook to get a callable function that sets the result state. Can be reset to `not-started`
  *  with the 3rd option in the tuple.
@@ -127,12 +113,8 @@ type CallableResponse<C extends Callable<readonly unknown[], unknown>> = C exten
  * @param request function to call
  * @returns tuple representing the `[result-state, callable, reset]` options
  */
-export const useCallableResult = <
-  C extends Callable<readonly unknown[], unknown>,
-  CArgs extends CallableArgs<C>,
-  CResponse extends CallableResponse<C>,
->(
-  request: C extends (...args: CArgs) => Promise<CResponse> ? C : never,
+export const useCallableResult = <CArgs extends unknown[], CResponse>(
+  request: (...args: CArgs) => Promise<CResponse>,
 ): [Result<CResponse, Error>, (...args: CArgs) => void, () => void] => {
   const [result, setResult] = useState<Result<CResponse, Error>>(notStarted);
 
