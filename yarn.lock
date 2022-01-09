@@ -4929,6 +4929,7 @@ __metadata:
     "@babel/runtime": ^7.16.7
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
+    "@jest/types": ^27.4.2
     "@mui/icons-material": ^5.2.5
     "@mui/material": ^5.2.7
     "@mui/styles": ^5.2.3
@@ -4970,6 +4971,7 @@ __metadata:
     generate-robotstxt: ^8.0.3
     html-webpack-plugin: ^5.5.0
     jest: ^27.4.7
+    jest-junit: ^13.0.0
     path: ^0.12.7
     prettier: ^2.5.1
     puppeteer: ^13.0.1
@@ -7221,6 +7223,18 @@ __metadata:
     pretty-format: ^27.4.6
     throat: ^6.0.1
   checksum: d9b05405708161b90c2e9add00ee3c62b154b0f839bc50f034ae8369921956bb16cec428e46ae3b8074a3aeded6cb02f770161d7453f1a183b1abac17dae43f7
+  languageName: node
+  linkType: hard
+
+"jest-junit@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "jest-junit@npm:13.0.0"
+  dependencies:
+    mkdirp: ^1.0.4
+    strip-ansi: ^6.0.1
+    uuid: ^8.3.2
+    xml: ^1.0.1
+  checksum: d3a1bf6e98250837d1a9939cd54f29a7bd4fb835af30e92d0d544300fbe634eb86d2b018c79a7a35b123d933bf3e6c96ba13c0161cdefbf66fc3ab771707572e
   languageName: node
   linkType: hard
 
@@ -11599,6 +11613,13 @@ resolve@^2.0.0-next.3:
   version: 3.0.0
   resolution: "xml-name-validator@npm:3.0.0"
   checksum: b3ac459afed783c285bb98e4960bd1f3ba12754fd4f2320efa0f9181ca28928c53cc75ca660d15d205e81f92304419afe94c531c7cfb3e0649aa6d140d53ecb0
+  languageName: node
+  linkType: hard
+
+"xml@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "xml@npm:1.0.1"
+  checksum: 11b5545ef3f8fec3fa29ce251f50ad7b6c97c103ed4d851306ec23366f5fa4699dd6a942262df52313a0cd1840ab26256da253c023bad3309d8ce46fe6020ca0
   languageName: node
   linkType: hard
 

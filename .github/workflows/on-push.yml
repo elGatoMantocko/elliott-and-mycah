@@ -17,6 +17,8 @@ env:
 permissions:
   id-token: write
   contents: read
+  checks: write
+  pull-requests: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -57,7 +59,16 @@ jobs:
         run: yarn lint
 
       - name: Run yarn tests
+        env:
+          CI: "true"
         run: yarn test
+
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: test-results/**/*.xml
+          comment_mode: off
 
       - name: Build webapp
         run: yarn build
