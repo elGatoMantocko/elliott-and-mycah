@@ -53,6 +53,9 @@ jobs:
           steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install
 
+      - name: Run lint
+        run: yarn lint
+
       - name: Run yarn tests
         run: yarn test
 

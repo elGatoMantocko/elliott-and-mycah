@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
-import React from 'react';
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 type BannerProps = PropsWithChildren<{

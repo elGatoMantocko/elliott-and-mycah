@@ -65,7 +65,7 @@
   "scripts": {
     "build": "webpack -c webpack.config.ts",
     "dev": "WEBPACK_MODE=development WEBPACK_NO_SERVICE_WORKER=true webpack serve",
-    "lint": "eslint webpack.config.ts app/**/*.tsx app/**/*.ts",
+    "lint": "eslint webpack.config.ts app/**/*.tsx",
     "test": "jest -c jest.config.json",
     "clean": "rm -rf dist",
     "nuke": "rm -rf node_modules dist"
