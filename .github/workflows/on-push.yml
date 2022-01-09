@@ -18,7 +18,8 @@ permissions:
   id-token: write
   contents: read
   checks: write
-  pull-requests: write
+  # we need to add pull-requests: write permission if we are going to open this for PRs
+  # pull-requests: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -68,6 +69,7 @@ jobs:
         if: always()
         with:
           files: test-results/**/*.xml
+          # we don't need comment mode because this only runs on main for now
           comment_mode: off
 
       - name: Build webapp
