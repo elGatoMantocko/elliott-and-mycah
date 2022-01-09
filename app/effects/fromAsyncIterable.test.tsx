@@ -11,9 +11,11 @@ const testIterator = {
   },
 };
 
+type TestActions = 'foo' | 'bar' | 'baz' | 'test';
+
 it('should dispatch effects for a useElmish pattern', async () => {
   const { result, waitForNextUpdate } = renderHook(() =>
-    useElmish<Reducer<string, string>>(
+    useElmish<Reducer<string, TestActions>>(
       (state, action) => {
         if (action === 'foo' || action === 'bar' || action === 'baz') {
           return [state + action, Effects.none()];
@@ -31,6 +33,7 @@ it('should dispatch effects for a useElmish pattern', async () => {
   // after the initial render we should just get ''
   expect(result.current[0]).toEqual('');
 
+  // dispatching this action will yield 3 other actions
   await act(() => result.current[1]('test'));
   await waitForNextUpdate();
   expect(result.current[0]).toEqual('foobarbaz');
