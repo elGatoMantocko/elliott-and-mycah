@@ -23,7 +23,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import * as React from 'react';
+import React from 'react';
 
 import { uuid } from '../../models/uuid';
 import { GuestFields } from './GuestFields';

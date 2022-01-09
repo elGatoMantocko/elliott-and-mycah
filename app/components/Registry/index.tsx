@@ -1,5 +1,5 @@
 import { Box, Container, Link, Typography } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
 import amazon from '../../images/logos/amazon.webp';
 import crateAndBarrel from '../../images/logos/crate_and_barrel.webp';

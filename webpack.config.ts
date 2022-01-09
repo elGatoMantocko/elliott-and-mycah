@@ -1,12 +1,12 @@
 import 'webpack-dev-server';
 
-// eslint-disable-next-line import/namespace
-import * as CopyPlugin from 'copy-webpack-plugin';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { Configuration, DefinePlugin, WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
+
+import RobotsTextWebpackPlugin from './build/RobotsTextWebpackPlugin';
 
 type Config = {
   /**
@@ -59,12 +59,10 @@ export const factory = ({
       scriptLoading: 'defer',
       inject: 'body',
     }),
+    // default config will emit a basic robots.txt file to the dist
+    new RobotsTextWebpackPlugin(),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
-    new CopyPlugin({
-      // favicon gets included in the HTMLWebpackPlugin and font is imported in the theme
-      patterns: ['app/assets/robots.txt'],
-    }),
   ];
 
   !noSW &&

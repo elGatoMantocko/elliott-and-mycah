@@ -1,5 +1,5 @@
 import { Box, Hidden } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
 import { useCountdown } from './useCountdown';

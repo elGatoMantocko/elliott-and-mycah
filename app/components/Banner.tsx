@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 import { PropsWithChildren } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 

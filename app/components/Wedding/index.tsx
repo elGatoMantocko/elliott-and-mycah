@@ -1,6 +1,6 @@
 import { Box, Container, Link, Theme, Typography, useMediaQuery } from '@mui/material';
 import { GoogleMap } from '@react-google-maps/api';
-import * as React from 'react';
+import React from 'react';
 
 import austin from '../../images/headshots/austin.webp';
 import becca from '../../images/headshots/becca.webp';

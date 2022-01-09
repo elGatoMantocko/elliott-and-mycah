@@ -1,7 +1,6 @@
 import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { Box, Snackbar } from '@mui/material';
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { fromResult } from '../hooks/useResult';
 import { useServiceWorker } from '../hooks/useServiceWorker';

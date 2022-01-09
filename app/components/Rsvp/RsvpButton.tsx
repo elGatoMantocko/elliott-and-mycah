@@ -1,6 +1,6 @@
 import { Add as AddIcon } from '@mui/icons-material';
 import { Fab, FabProps } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
 import { useRsvpDispatch } from './Provider';
 import { RsvpActionTypes } from './reducer/actions';

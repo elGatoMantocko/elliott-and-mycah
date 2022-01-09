@@ -12,7 +12,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { withStyles } from '@mui/styles';
-import * as React from 'react';
+import React from 'react';
 
 import { Guest, isValidFoodChoice } from '../../models/guest';
 

@@ -1,6 +1,6 @@
 import { Typography, TypographyProps } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import * as React from 'react';
+import React from 'react';
 
 const useScriptStyles = makeStyles((theme) => ({
   root: {

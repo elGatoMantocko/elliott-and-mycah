@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { createContext, PropsWithChildren, useContext } from 'react';
+import React, { createContext, PropsWithChildren, useContext } from 'react';
 import { Dispatch, Reducer, ReducerAction, ReducerState } from 'react-use-elmish';
 
 import { uuid } from '../../models/uuid';

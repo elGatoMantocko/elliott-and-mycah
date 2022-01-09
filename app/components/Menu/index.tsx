@@ -16,8 +16,7 @@ import {
   ListItemText,
   Toolbar,
 } from '@mui/material';
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { Rsvp } from '../Rsvp';
 import { ScriptTypography } from '../ScriptTypography';

@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import * as React from 'react';
+import React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
 

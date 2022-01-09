@@ -1,5 +1,5 @@
 import { Box, Container, Link, Typography } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
 export const Accommodations = () => (
   <Container maxWidth="sm">

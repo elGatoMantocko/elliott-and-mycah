@@ -2,7 +2,7 @@ import { Box, CssBaseline, Hidden, Paper, StyledEngineProvider, Theme } from '@m
 import { ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { LoadScript } from '@react-google-maps/api';
-import * as React from 'react';
+import React from 'react';
 import GithubCorner from 'react-github-corner';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';

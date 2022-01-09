@@ -2,7 +2,7 @@ import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { Box, Snackbar, SnackbarContent, Typography } from '@mui/material';
 import { green } from '@mui/material/colors';
 import { withStyles } from '@mui/styles';
-import * as React from 'react';
+import React from 'react';
 
 import { useRsvp } from './Provider';
 import { RsvpActionTypes } from './reducer/actions';

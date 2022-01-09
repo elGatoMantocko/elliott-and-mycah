@@ -1,5 +1,5 @@
 import { Box, Container, Theme, useMediaQuery } from '@mui/material';
-import * as React from 'react';
+import React from 'react';
 
 import ellie from '../../images/ellie_and_rainier.webp';
 import elliottAndMycah from '../../images/elliottandmycah.webp';
