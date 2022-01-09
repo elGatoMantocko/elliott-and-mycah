@@ -65,12 +65,13 @@
     "workbox-webpack-plugin": "^6.4.2"
   },
   "scripts": {
+    "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.js",
     "build": "webpack -c webpack.config.ts",
+    "clean": "rm -rf dist test-results",
     "dev": "WEBPACK_MODE=development WEBPACK_NO_SERVICE_WORKER=true webpack serve",
     "lint": "eslint webpack.config.ts app/**/*.tsx",
-    "test": "jest -c jest.config.ts",
-    "clean": "rm -rf dist",
-    "nuke": "rm -rf node_modules dist"
+    "nuke": "rm -rf node_modules dist",
+    "test": "jest -c jest.config.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
