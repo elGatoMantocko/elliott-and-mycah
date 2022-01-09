@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScriptTypography /> should render 1`] = `"<p class=\\"makeStyles-root-1 makeStyles-root-2 MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root\\">Test copy</p>"`;
