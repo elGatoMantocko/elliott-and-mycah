@@ -113,7 +113,7 @@ export const Wedding = () => {
                   }
             }
           >
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Paige Ubel"
                 description="Friend of the bride."
@@ -121,7 +121,7 @@ export const Wedding = () => {
                 imgSrc={paige}
               />
             </Box>
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Rebecca Wiser"
                 description="Friend of the bride."
@@ -129,7 +129,7 @@ export const Wedding = () => {
                 imgSrc={becca}
               />
             </Box>
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Gina Sapienza"
                 description="Friend of the bride."
@@ -154,7 +154,7 @@ export const Wedding = () => {
                   }
             }
           >
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Billy Shank"
                 description="Uses all of the beans."
@@ -162,7 +162,7 @@ export const Wedding = () => {
                 imgSrc={billbo}
               />
             </Box>
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Austin Sims"
                 description="A fellow man of of the Trombone."
@@ -170,7 +170,7 @@ export const Wedding = () => {
                 imgSrc={austin}
               />
             </Box>
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Rob Mantock"
                 description="Some guy."
@@ -178,7 +178,7 @@ export const Wedding = () => {
                 imgSrc={rob}
               />
             </Box>
-            <Box minWidth="16.5rem">
+            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
               <PartyMember
                 name="Brent Mathis"
                 description="Beer santa."
