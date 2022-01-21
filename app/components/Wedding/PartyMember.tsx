@@ -9,7 +9,15 @@ type PartyMemberProps = {
 };
 export const PartyMember = ({ name, description, location, imgSrc }: PartyMemberProps) => (
   <Box m={3}>
-    <img src={imgSrc} alt={name} style={{ maxWidth: '100%' }} />
+    <Box
+      sx={(theme) => ({
+        display: 'flex',
+        borderRadius: '50%',
+        boxShadow: theme.shadows[5],
+      })}
+    >
+      <img src={imgSrc} alt={name} style={{ maxWidth: '100%' }} />
+    </Box>
     <Typography variant="h6" component="h1" align="center">
       {name}
     </Typography>

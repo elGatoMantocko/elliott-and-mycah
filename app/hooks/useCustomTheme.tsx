@@ -10,10 +10,8 @@ export const useCustomTheme = () =>
         components: {
           MuiCssBaseline: {
             styleOverrides: `
-              #root {
-                display: flex;
-                width: 100%;
-                height: 100%;
+              html, body, #root {
+                min-height: 100vh;
               }
 
               @font-face {
@@ -45,7 +43,7 @@ export const useCustomTheme = () =>
             light: '#e57373',
             main: '#f44336',
             dark: '#d32f2f',
-            contrastText: '#fff',
+            contrastText: '#000',
           },
         },
       }),

@@ -33,12 +33,18 @@ export const Section = ({ title, body, imageSource, imageAlt }: AboutSectionProp
       </Typography>
     </Box>
     {imageSource && (
-      <Box mt={2} mx="auto" px={1} maxWidth={400}>
-        <img
-          style={{ maxWidth: '100%', maxHeight: '60vh', borderRadius: '1rem' }}
-          src={imageSource}
-          alt={imageAlt}
-        />
+      <Box sx={{ mt: 2, mx: 'auto', px: 1 }}>
+        <Box
+          sx={(theme) => ({
+            display: 'flex',
+            maxHeight: '60vh',
+            borderRadius: theme.spacing(2),
+            overflow: 'hidden',
+            boxShadow: theme.shadows[5],
+          })}
+        >
+          <img style={{ maxWidth: '100%' }} src={imageSource} alt={imageAlt} />
+        </Box>
       </Box>
     )}
   </Box>

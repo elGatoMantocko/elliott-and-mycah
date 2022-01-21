@@ -1,6 +1,5 @@
 import { Box, CssBaseline, Hidden, Paper, StyledEngineProvider, Theme } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
 import { LoadScript } from '@react-google-maps/api';
 import React from 'react';
 import GithubCorner from 'react-github-corner';
@@ -23,19 +22,13 @@ declare module '@mui/styles/defaultTheme' {
   interface DefaultTheme extends Theme {}
 }
 
-const usePaperStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-});
-
 export const App = () => (
   <ParallaxProvider>
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={useCustomTheme()}>
         <CssBaseline />
         <LoadScript googleMapsApiKey="AIzaSyApT_xNp9ePgFYEfdlpw_JJXZG70U1MzXM">
-          <Paper classes={usePaperStyles()} elevation={0} square>
+          <Paper sx={{ width: '100%' }} elevation={0} square>
             <RsvpProvider>
               <Router>
                 <ScrollToTop />

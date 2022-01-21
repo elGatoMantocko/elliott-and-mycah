@@ -21,7 +21,7 @@ export const About = () => {
       />
       <Container maxWidth="md">
         <Box display="flex">
-          <Box mx="auto" my={3}>
+          <Box sx={{ mx: 'auto', my: 3 }}>
             <ScriptTypography variant="h1" align="center">
               Mycah &amp; Elliott
             </ScriptTypography>
