@@ -5016,7 +5016,7 @@ __metadata:
     eslint-import-resolver-webpack: ^0.13.2
     eslint-plugin-import: ^2.25.4
     eslint-plugin-jest: ^25.7.0
-    eslint-plugin-jsdoc: ^37.6.2
+    eslint-plugin-jsdoc: ^37.6.3
     eslint-plugin-material-ui: ^1.0.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.28.0
@@ -5039,7 +5039,7 @@ __metadata:
     ts-node: ^10.4.0
     typescript: ^4.5.5
     uuid: ^8.3.2
-    webpack: ^5.66.0
+    webpack: ^5.67.0
     webpack-bundle-analyzer: ^4.5.0
     webpack-cli: ^4.9.1
     webpack-dev-server: ^4.7.3
@@ -5355,9 +5355,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:^37.6.2":
-  version: 37.6.2
-  resolution: "eslint-plugin-jsdoc@npm:37.6.2"
+"eslint-plugin-jsdoc@npm:^37.6.3":
+  version: 37.6.3
+  resolution: "eslint-plugin-jsdoc@npm:37.6.3"
   dependencies:
     "@es-joy/jsdoccomment": ~0.17.0
     comment-parser: 1.3.0
@@ -5369,7 +5369,7 @@ __metadata:
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: 94a85f55a72a9617f39fde1855c695245f09d400e060baa7dce941de1f8c77f9a65322f6a6cdd554f7b6d1f25bf88aedf441ce142018d9f67ac6b76668af50f2
+  checksum: 4c18f7c08ed9bb85bb843485b528c8e565b445d1b1317b848dd0b27ba9fa8b8f8f6464dedf6895130febc542b2c2af7da9bedcdc7b47490803116c8711f23af7
   languageName: node
   linkType: hard
 
@@ -11206,16 +11206,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"webpack-sources@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "webpack-sources@npm:3.2.2"
-  checksum: cc81f1f1bfd1c25c7a565598850294b515bcccf7974d0249b4a0c8c607307866ce3f9e8cdef1c74d5facfb0d993944c499cfd4b7c8f52d01359b6671cc5823d4
+"webpack-sources@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "webpack-sources@npm:3.2.3"
+  checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
   languageName: node
   linkType: hard
 
-"webpack@npm:^5, webpack@npm:^5.66.0":
-  version: 5.66.0
-  resolution: "webpack@npm:5.66.0"
+"webpack@npm:^5, webpack@npm:^5.67.0":
+  version: 5.67.0
+  resolution: "webpack@npm:5.67.0"
   dependencies:
     "@types/eslint-scope": ^3.7.0
     "@types/estree": ^0.0.50
@@ -11240,13 +11240,13 @@ resolve@^2.0.0-next.3:
     tapable: ^2.1.1
     terser-webpack-plugin: ^5.1.3
     watchpack: ^2.3.1
-    webpack-sources: ^3.2.2
+    webpack-sources: ^3.2.3
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 5a44664a840fd64c5383aa78847b205ae0b42b607f85ee1d6a568617a210c1b9caab1822bce40a89a3b5eb0f626a83fb5fe2055c638aa230897bf224030d28e8
+  checksum: a7f810a5e1d4d78b533ca0caf42fa889839326073cedd3ac8e59e5c4890ca864ab0265fa5b2608715746ff3e34cbfaf4f15d56a92bc3f717a2f5c13202d58b6c
   languageName: node
   linkType: hard
 
