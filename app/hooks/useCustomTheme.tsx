@@ -45,6 +45,10 @@ export const useCustomTheme = () =>
             dark: '#d32f2f',
             contrastText: '#000',
           },
+          action: {
+            disabled: 'rgba(159, 159, 159, 1)',
+            disabledBackground: 'rgba(226, 226, 226, 1)',
+          },
         },
       }),
     [],
