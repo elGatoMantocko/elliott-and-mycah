@@ -29,7 +29,7 @@ export const Rsvp = () => {
 
   return (
     <>
-      <RsvpButton />
+      <RsvpButton disabled />
       <RsvpModal />
       <Snackbar
         open={!!state.showSuccessSnack}

@@ -150,7 +150,7 @@ export const config: Configuration = {
     noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
     noSW: checkEnvFlag('WEBPACK_NO_SERVICE_WORKER'),
   }),
-  entry: './app/index.tsx',
+  entry: './app/index.ts',
   optimization: {
     providedExports: true,
     removeAvailableModules: true,

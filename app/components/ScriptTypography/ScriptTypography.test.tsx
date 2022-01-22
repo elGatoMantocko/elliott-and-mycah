@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { ScriptTypography } from '.';
+import { ScriptTypography } from './ScriptTypography';
 
 describe('<ScriptTypography />', () => {
   it('should render', () => {
