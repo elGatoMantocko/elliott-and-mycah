@@ -26,9 +26,10 @@ import { makeStyles } from '@mui/styles';
 import React from 'react';
 
 import { uuid } from '../../models/uuid';
+import { useElmishContext } from '../ElmishProvider';
 import { GuestFields } from './GuestFields';
-import { useRsvp } from './Provider';
-import { RsvpActionTypes } from './reducer/actions';
+import { RsvpActions, RsvpActionTypes } from './reducer/actions';
+import { State } from './reducer/state';
 
 const useCloseButtonStyles = makeStyles((theme) => ({
   root: {
@@ -51,7 +52,7 @@ enum GuestAttendance {
 }
 
 export const RsvpModal = () => {
-  const [state, dispatch] = useRsvp();
+  const [state, dispatch] = useElmishContext<State, RsvpActions>();
 
   return (
     <Dialog

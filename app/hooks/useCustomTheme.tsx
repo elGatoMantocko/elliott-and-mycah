@@ -46,6 +46,7 @@ export const useCustomTheme = () =>
             contrastText: '#000',
           },
           action: {
+            // default disabled has a lot of opacity and that's stupid
             disabled: 'rgba(159, 159, 159, 1)',
             disabledBackground: 'rgba(226, 226, 226, 1)',
           },

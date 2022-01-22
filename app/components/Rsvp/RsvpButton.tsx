@@ -2,11 +2,11 @@ import { Add as AddIcon } from '@mui/icons-material';
 import { Fab, FabProps } from '@mui/material';
 import React from 'react';
 
-import { useRsvpDispatch } from './Provider';
-import { RsvpActionTypes } from './reducer/actions';
+import { useDispatch } from '../ElmishProvider';
+import { RsvpActions, RsvpActionTypes } from './reducer/actions';
 
 export const RsvpButton = (props: FabProps) => {
-  const dispatch = useRsvpDispatch();
+  const dispatch = useDispatch<RsvpActions>();
 
   return (
     <Fab

@@ -1,7 +1,6 @@
-import { Effects, Reducer, useElmish } from 'react-use-elmish';
+import { Effects, Reducer, StateEffectPair } from 'react-use-elmish';
 
 import { fromAsyncIterable } from '../../../effects/fromAsyncIterable';
-import { Guests } from '../../../models/guest';
 import { RsvpActions, RsvpActionTypes } from './actions';
 import { State } from './state';
 import { submitGuests } from './submitGuests';
@@ -13,7 +12,10 @@ import { submitGuests } from './submitGuests';
  * @param action An action deployed to the reducer
  * @returns state effect pair resolved by further reducer actions
  */
-export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
+export const rsvpReducer: Reducer<State, RsvpActions> = (
+  state,
+  action,
+): StateEffectPair<State, RsvpActions> => {
   // loading and error state handlers
   if (action.type === RsvpActionTypes.Loading) {
     if (action.payload === state.loading) {
@@ -140,12 +142,3 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (state, action) => {
   }
   return [state, Effects.none()];
 };
-
-export const useRsvpReducer = (initialGuests: Guests) =>
-  useElmish<Reducer<State, RsvpActions>>(rsvpReducer, () => [
-    {
-      guests: initialGuests,
-      isAttending: true,
-    },
-    Effects.none(),
-  ]);

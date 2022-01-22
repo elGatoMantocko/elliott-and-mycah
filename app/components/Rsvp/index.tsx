@@ -4,8 +4,9 @@ import { green } from '@mui/material/colors';
 import { withStyles } from '@mui/styles';
 import React from 'react';
 
-import { useRsvp } from './Provider';
-import { RsvpActionTypes } from './reducer/actions';
+import { useElmishContext } from '../ElmishProvider';
+import { RsvpActions, RsvpActionTypes } from './reducer/actions';
+import { State } from './reducer/state';
 import { RsvpButton } from './RsvpButton';
 import { RsvpModal } from './RsvpModal';
 
@@ -24,11 +25,11 @@ const DeclinedSnackbarContent = withStyles({
 })(SnackbarContent);
 
 export const Rsvp = () => {
-  const [state, dispatch] = useRsvp();
+  const [state, dispatch] = useElmishContext<State, RsvpActions>();
 
   return (
     <>
-      <RsvpButton disabled />
+      <RsvpButton />
       <RsvpModal />
       <Snackbar
         open={!!state.showSuccessSnack}
