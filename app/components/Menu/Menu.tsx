@@ -1,4 +1,5 @@
 import {
+  Camera as CameraIcon,
   Home as HomeIcon,
   Hotel as HotelIcon,
   Menu as MenuIcon,
@@ -39,6 +40,11 @@ export const Menu = () => {
                 </ActiveLink>
               </Box>
               <Box ml={6}>
+                <ActiveLink href="/pictures">
+                  <ScriptTypography>Pictures</ScriptTypography>
+                </ActiveLink>
+              </Box>
+              <Box ml={6}>
                 <ActiveLink href="/wedding">
                   <ScriptTypography>Wedding</ScriptTypography>
                 </ActiveLink>
@@ -73,6 +79,12 @@ export const Menu = () => {
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="About us" />
+            </ListItemLink>
+            <ListItemLink href="/pictures" onClick={closeDrawer}>
+              <ListItemIcon>
+                <CameraIcon />
+              </ListItemIcon>
+              <ListItemText primary="Pictures" />
             </ListItemLink>
             <ListItemLink href="/wedding" onClick={closeDrawer}>
               <ListItemIcon>

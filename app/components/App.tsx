@@ -13,6 +13,7 @@ import { About } from './About';
 import { Accommodations } from './Accommodations';
 import { ElmishProvider } from './ElmishProvider';
 import { Menu } from './Menu';
+import { Pictures } from './Pictures';
 import { Registry } from './Registry';
 import { Rsvp } from './Rsvp';
 import { rsvpReducer } from './Rsvp/reducer';
@@ -48,6 +49,7 @@ export const App = () => (
                   <Route path="/wedding" element={<Wedding />} />
                   <Route path="/registry" element={<Registry />} />
                   <Route path="/accommodations" element={<Accommodations />} />
+                  <Route path="/pictures" element={<Pictures />} />
                 </Routes>
               </Router>
               <GithubCorner
