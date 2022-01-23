@@ -10,6 +10,8 @@ import dockside from './me (135 of 828).jpg';
 import laughingWithBoats from './me (137 of 828).jpg';
 import laughingTogether from './me (142 of 828).jpg';
 import brushingHerHair from './me (166 of 828).jpg';
+import touchingHands from './me (210 of 828).jpg';
+import mantocks from './me (211 of 828).jpg';
 import downTheAisle from './me (429 of 828).jpg';
 
 export const pictureSources = [
@@ -26,4 +28,6 @@ export const pictureSources = [
   laughingWithBoats,
   laughingTogether,
   brushingHerHair,
+  touchingHands,
+  mantocks,
 ];
