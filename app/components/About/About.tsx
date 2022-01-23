@@ -14,20 +14,17 @@ export const About = () => {
 
   return (
     <>
-      <Banner
-        imageSource={elliottAndMycah}
-        offset={0.3}
-        style={isSmallScreen ? { height: '90vh' } : { minHeight: 650 }}
-      />
-      <Container maxWidth="md">
-        <Box display="flex">
-          <Box sx={{ mx: 'auto', my: 3 }}>
-            <ScriptTypography variant="h1" align="center">
-              Mycah &amp; Elliott
-            </ScriptTypography>
+      <Banner imageSource={elliottAndMycah} speed={-30} height={isSmallScreen ? '90vh' : 650}>
+        <Container maxWidth="md">
+          <Box display="flex">
+            <Box sx={{ mx: 'auto', my: 3, color: 'white' }}>
+              <ScriptTypography variant="h1" align="center">
+                Mycah &amp; Elliott
+              </ScriptTypography>
+            </Box>
           </Box>
-        </Box>
-      </Container>
+        </Container>
+      </Banner>
       <Container>
         <Box
           pt={4}

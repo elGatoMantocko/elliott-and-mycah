@@ -10,8 +10,10 @@ import dockside from './me (135 of 828).jpg';
 import laughingWithBoats from './me (137 of 828).jpg';
 import laughingTogether from './me (142 of 828).jpg';
 import brushingHerHair from './me (166 of 828).jpg';
+import downTheAisle from './me (429 of 828).jpg';
 
 export const pictureSources = [
+  downTheAisle,
   eyesClosed,
   focusOnHer,
   tapOnTheShoulder,

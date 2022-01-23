@@ -3885,6 +3885,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bezier-easing@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "bezier-easing@npm:2.1.0"
+  checksum: ec22666b5385979b3e7a63eaf2631395b1be5beb3aed4f14cc70ae9eb09032082584f7e3eec045e4c122466987ed7e159f5b39f82b8a9870cd55e75b0d55a7d5
+  languageName: node
+  linkType: hard
+
 "big.js@npm:^5.2.2":
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
@@ -5034,7 +5041,7 @@ __metadata:
     react-github-corner: ^2.5.0
     react-router: ^6.2.1
     react-router-dom: ^6.2.1
-    react-scroll-parallax: ^2.4.3
+    react-scroll-parallax: ^3.0.0
     react-use-elmish: ^1.0.0
     ts-node: ^10.4.0
     typescript: ^4.5.5
@@ -8777,6 +8784,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"parallax-controller@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "parallax-controller@npm:1.3.0"
+  dependencies:
+    bezier-easing: ^2.1.0
+  checksum: 3adcfc11d3fbbfb0759f07936f0149633e0b2c69671823b2dc6b17c8292c3e08b0cd4ce502a4202175123646a7cf2dfa49e57083dcc30bba34f81d8e948ee74b
+  languageName: node
+  linkType: hard
+
 "param-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "param-case@npm:3.0.4"
@@ -9047,7 +9063,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.10, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -9239,15 +9255,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-scroll-parallax@npm:^2.4.3":
-  version: 2.4.3
-  resolution: "react-scroll-parallax@npm:2.4.3"
+"react-scroll-parallax@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "react-scroll-parallax@npm:3.0.0"
   dependencies:
-    prop-types: ^15.5.10
+    parallax-controller: ^1.3.0
   peerDependencies:
-    react: ^16.3.0-0 || >=17.0.1
-    react-dom: ^16.3.0-0 || >=17.0.1
-  checksum: f2ddfeb585876ebf701a152b9aaa82e154f9e6ed5d0fe583b8d5c28bcde6b901f415a13e4cb9753869caa9635d73bd2264e65868effa78fa612fddf220d12695
+    react: ^16.8.0-0 || >=17.0.1
+    react-dom: ^16.8.0-0 || >=17.0.1
+  checksum: dd433ab78ddce8350e14861b50a865d785836545586ae8a42b65fe5e7e39a9998c691fc7edc8635a36ace85569d4210b8aa0a30c37941f3c8c8ed13f45891f2c
   languageName: node
   linkType: hard
 

@@ -10,7 +10,7 @@ import chris from '../../images/headshots/chris.webp';
 import gina from '../../images/headshots/gina.webp';
 import paige from '../../images/headshots/paige.webp';
 import rob from '../../images/headshots/rob.webp';
-import yachtClubLawn from '../../images/yacht_club_lawn.webp';
+import yachtClub from '../../images/wedding-pics/me (202 of 828).jpg';
 import { Banner } from '../Banner';
 import { Countdown } from '../Countdown';
 import { ScriptTypography } from '../ScriptTypography';
@@ -28,9 +28,10 @@ export const Wedding = () => {
   return (
     <>
       <Banner
-        offset={0.3}
-        style={isSmallScreen ? { height: '50vh' } : { minHeight: 650 }}
-        imageSource={yachtClubLawn}
+        speed={-30}
+        height={isSmallScreen ? '90vh' : 650}
+        expanded={false}
+        imageSource={yachtClub}
       />
       <Container maxWidth="md">
         <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
