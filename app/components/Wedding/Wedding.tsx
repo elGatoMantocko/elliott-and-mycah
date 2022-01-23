@@ -2,14 +2,7 @@ import { Box, Container, Link, Theme, Typography, useMediaQuery } from '@mui/mat
 import { GoogleMap } from '@react-google-maps/api';
 import React from 'react';
 
-import austin from '../../images/headshots/austin.webp';
-import becca from '../../images/headshots/becca.webp';
-import billbo from '../../images/headshots/billbo.webp';
-import brent from '../../images/headshots/brent.webp';
-import chris from '../../images/headshots/chris.webp';
-import gina from '../../images/headshots/gina.webp';
-import paige from '../../images/headshots/paige.webp';
-import rob from '../../images/headshots/rob.webp';
+import { austin, becca, billbo, brent, chris, gina, paige, rob } from '../../images/headshots';
 import yachtClub from '../../images/wedding-pics/me (202 of 828).jpg';
 import { Banner } from '../Banner';
 import { Countdown } from '../Countdown';
@@ -28,9 +21,8 @@ export const Wedding = () => {
   return (
     <>
       <Banner
-        speed={-30}
+        translateY={[-15, 15]}
         height={isSmallScreen ? '90vh' : 650}
-        expanded={false}
         imageSource={yachtClub}
       />
       <Container maxWidth="md">

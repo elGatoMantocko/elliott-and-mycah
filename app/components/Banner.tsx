@@ -1,26 +1,16 @@
 import { Box } from '@mui/material';
+import type { ParallaxElementConfig } from 'parallax-controller';
 import React, { CSSProperties, PropsWithChildren } from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 type BannerProps = PropsWithChildren<
-  {
-    imageSource: string;
-    speed?: number;
-    expanded?: boolean;
-  } & Pick<CSSProperties, 'height' | 'aspectRatio'>
+  { imageSource: string } & Pick<CSSProperties, 'height'> & ParallaxElementConfig
 >;
 
-export const Banner = ({
-  imageSource: image,
-  speed = -20,
-  expanded,
-  height,
-  aspectRatio,
-  children,
-}: BannerProps) => (
+export const Banner = ({ height, imageSource: image, children, ...layerConfig }: BannerProps) => (
   <Box sx={{ height }}>
-    <ParallaxBanner layers={[{ image, speed, expanded }]} style={{ height: '100%', aspectRatio }}>
-      {children && (
+    <ParallaxBanner layers={[{ image, ...layerConfig }]} style={{ height: '100%' }}>
+      {children != null && (
         <Box
           sx={{
             position: 'absolute',

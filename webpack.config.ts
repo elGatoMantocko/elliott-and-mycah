@@ -1,6 +1,7 @@
 import 'webpack-dev-server';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import { join } from 'path';
 import { Configuration, DefinePlugin, WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -154,6 +155,23 @@ export const config: Configuration = {
   optimization: {
     providedExports: true,
     removeAvailableModules: true,
+    minimizer: [
+      // magic `...` to extend other plugins (DO NOT GET RID OF THIS, or you lose `TerserWebpackPlugin`)
+      '...',
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            // Lossy optimization with custom option
+            plugins: [
+              ['gifsicle', { interlaced: true }],
+              ['mozjpeg', { progressive: true, quality: 40 }],
+              ['pngquant', { optimizationLevel: 5 }],
+            ],
+          },
+        },
+      }),
+    ],
   },
 };
 
