@@ -20,7 +20,7 @@ import { rsvpReducer } from './Rsvp/reducer';
 import { RsvpActions } from './Rsvp/reducer/actions';
 import { State } from './Rsvp/reducer/state';
 import { ScrollToTop } from './ScrollToTop';
-import { ServiceWorkerRegistration } from './ServiceWorkerRegistration';
+import { ServiceWorkerUnregistration } from './ServiceWorker';
 import { Wedding } from './Wedding';
 
 export const App = () => (
@@ -61,7 +61,7 @@ export const App = () => (
                   <Rsvp />
                 </Box>
               </Hidden>
-              <ServiceWorkerRegistration src="/service-worker.js" hideSnackbar />
+              <ServiceWorkerUnregistration hideSnackbar />
             </ElmishProvider>
           </Paper>
         </LoadScript>

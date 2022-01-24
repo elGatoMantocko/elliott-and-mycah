@@ -1,45 +1,23 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Box, Container, Dialog, IconButton, Theme, useMediaQuery } from '@mui/material';
+import { Box, Container, Dialog, Grid, IconButton } from '@mui/material';
 import React, { useState } from 'react';
 
 import { pictureSources } from '../../images/wedding-pics';
+import { ImageRenderer } from './ImageRenderer';
 
 export const Pictures = () => {
   const [inspectPicture, setInspectPicture] = useState<string>();
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
 
   return (
     <>
-      <Container>
-        <Box
-          sx={(theme) => ({
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            mt: theme.spacing(6),
-            mb: theme.spacing(12),
-          })}
-        >
+      <Container sx={(theme) => ({ mt: theme.spacing(6), mb: theme.spacing(12) })}>
+        <Grid container spacing={3} justifyContent="space-around">
           {pictureSources.map((src) => (
-            <Box key={src} sx={{ mt: 'auto', mb: 'auto' }}>
-              <Box
-                sx={(theme) => ({
-                  mt: theme.spacing(3),
-                  display: 'flex',
-                  overflow: 'hidden',
-                  borderRadius: theme.shape.borderRadius,
-                  boxShadow: theme.shadows[5],
-                })}
-              >
-                <img
-                  src={src}
-                  style={{ width: !isSmallScreen ? '20vw' : '40vw', cursor: 'pointer' }}
-                  onClick={() => setInspectPicture(src)}
-                />
-              </Box>
-            </Box>
+            <Grid key={src} item>
+              <ImageRenderer src={src} onClick={() => setInspectPicture(src)} />
+            </Grid>
           ))}
-        </Box>
+        </Grid>
       </Container>
       <Dialog
         open={inspectPicture != null}

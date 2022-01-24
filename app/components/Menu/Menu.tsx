@@ -1,10 +1,4 @@
-import {
-  Camera as CameraIcon,
-  Home as HomeIcon,
-  Hotel as HotelIcon,
-  Menu as MenuIcon,
-  ShoppingCart as ShoppingCartIcon,
-} from '@mui/icons-material';
+import { Camera as CameraIcon, Home as HomeIcon, Menu as MenuIcon } from '@mui/icons-material';
 import {
   AppBar,
   Box,
@@ -49,16 +43,6 @@ export const Menu = () => {
                   <ScriptTypography>Wedding</ScriptTypography>
                 </ActiveLink>
               </Box>
-              <Box ml={6}>
-                <ActiveLink href="/registry">
-                  <ScriptTypography>Registry</ScriptTypography>
-                </ActiveLink>
-              </Box>
-              <Box ml={6}>
-                <ActiveLink href="/accommodations">
-                  <ScriptTypography>Accommodations</ScriptTypography>
-                </ActiveLink>
-              </Box>
               <Box ml="auto" my="auto" mr={4}>
                 <Rsvp />
               </Box>
@@ -91,18 +75,6 @@ export const Menu = () => {
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="Wedding" />
-            </ListItemLink>
-            <ListItemLink href="/registry" onClick={closeDrawer}>
-              <ListItemIcon>
-                <ShoppingCartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Registry" />
-            </ListItemLink>
-            <ListItemLink href="/accommodations" onClick={closeDrawer}>
-              <ListItemIcon>
-                <HotelIcon />
-              </ListItemIcon>
-              <ListItemText primary="Accommodations" />
             </ListItemLink>
           </List>
         </Drawer>
