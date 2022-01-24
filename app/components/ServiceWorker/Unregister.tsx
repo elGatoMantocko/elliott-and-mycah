@@ -11,9 +11,10 @@ type ServiceWorkerUnregistrationProps = {
 export const ServiceWorkerUnregistration = ({ hideSnackbar }: ServiceWorkerUnregistrationProps) => {
   const [loadedSnackOpen, setLoadedSnack] = useState(false);
 
-  fromResult(useUnregisterServiceWorkers()).useValue(() => {
+  fromResult(useUnregisterServiceWorkers()).useValue((didUnregister) => {
     // For those curious
-    console.log('I no longer want a service worker.');
+    didUnregister && location.reload();
+    console.log('Thanks for uninstalling the SW, I no longer want it.');
     setLoadedSnack(true);
   });
 
