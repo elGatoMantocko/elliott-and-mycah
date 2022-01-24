@@ -13,7 +13,6 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 
-import { Rsvp } from '../Rsvp';
 import { ScriptTypography } from '../ScriptTypography';
 import { ActiveLink } from './ActiveLink';
 import { ListItemLink } from './ListItemLink';
@@ -42,9 +41,6 @@ export const Menu = () => {
                 <ActiveLink href="/wedding">
                   <ScriptTypography>Wedding</ScriptTypography>
                 </ActiveLink>
-              </Box>
-              <Box ml="auto" my="auto" mr={4}>
-                <Rsvp />
               </Box>
             </Toolbar>
           </Container>

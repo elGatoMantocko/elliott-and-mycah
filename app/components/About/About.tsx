@@ -1,10 +1,10 @@
 import { Box, Container, Theme, useMediaQuery } from '@mui/material';
 import React from 'react';
 
-import ellie from '../../images/ellie_and_rainier.webp';
+import ellie from '../../images/ellie_and_rainier.jpg';
 import elliottAndMycah from '../../images/elliottandmycah.webp';
-import onTheHill from '../../images/on_the_hill.webp';
-import oneKnee from '../../images/one_knee.webp';
+import onTheHill from '../../images/on_the_hill.jpg';
+import oneKnee from '../../images/one_knee.jpg';
 import { Banner } from '../Banner';
 import { ScriptTypography } from '../ScriptTypography';
 import { Section } from './Section';

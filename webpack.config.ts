@@ -165,7 +165,7 @@ export const config: Configuration = {
             // Lossy optimization with custom option
             plugins: [
               ['gifsicle', { interlaced: true }],
-              ['mozjpeg', { progressive: true, quality: 40 }],
+              ['mozjpeg', { progressive: true, quality: 25 }],
               ['pngquant', { optimizationLevel: 5 }],
             ],
           },
