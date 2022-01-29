@@ -6,6 +6,6 @@ import { ScriptTypography } from './ScriptTypography';
 describe('<ScriptTypography />', () => {
   it('should render', () => {
     const el = render(<ScriptTypography>Test copy</ScriptTypography>);
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 });

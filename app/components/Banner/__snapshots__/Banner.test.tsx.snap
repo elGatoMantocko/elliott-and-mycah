@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a <Banner /> 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-1gnsnpc"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+    >
+      <div
+        data-testid="layer-0"
+        style="background-image: url(test-file); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render a <Banner>{child}</Banner> 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-si6xzh"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+    >
+      <div
+        data-testid="layer-0"
+        style="background-image: url(test-image); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+      />
+      <div
+        class="MuiBox-root css-ald1q4"
+      >
+        <p>
+          Hello world
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

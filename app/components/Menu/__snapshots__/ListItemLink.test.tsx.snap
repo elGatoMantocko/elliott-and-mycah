@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ListItemLink /> should render a disabled link 1`] = `"<a class=\\"MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root\\" tabindex=\\"-1\\" role=\\"button\\" aria-disabled=\\"true\\">Test</a>"`;
+exports[`<ListItemLink /> should render a disabled link 1`] = `
+<div>
+  <a
+    aria-disabled="true"
+    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+    role="button"
+    tabindex="-1"
+  >
+    Test
+  </a>
+</div>
+`;
 
-exports[`<ListItemLink /> should render a link 1`] = `"<a class=\\"MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root\\" tabindex=\\"0\\" role=\\"button\\">Test<span class=\\"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root\\"></span></a>"`;
+exports[`<ListItemLink /> should render a link 1`] = `
+<div>
+  <a
+    class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+    role="button"
+    tabindex="0"
+  >
+    Test
+    <span
+      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+    />
+  </a>
+</div>
+`;

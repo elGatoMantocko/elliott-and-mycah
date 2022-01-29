@@ -7,7 +7,7 @@ import { ListItemLink } from './ListItemLink';
 describe('<ListItemLink />', () => {
   it('should render a link', () => {
     const el = render(<ListItemLink href="/test">Test</ListItemLink>, { wrapper: MemoryRouter });
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 
   it('should render a disabled link', () => {
@@ -17,6 +17,6 @@ describe('<ListItemLink />', () => {
       </ListItemLink>,
       { wrapper: MemoryRouter },
     );
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 });

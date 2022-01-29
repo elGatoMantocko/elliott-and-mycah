@@ -10,7 +10,7 @@ describe('<ActiveLink>', () => {
       wrapper: MemoryRouter,
     });
 
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 
   it('should render disabled link', () => {
@@ -23,7 +23,7 @@ describe('<ActiveLink>', () => {
       },
     );
 
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 
   it('should render active on the current path', () => {
@@ -31,6 +31,6 @@ describe('<ActiveLink>', () => {
       wrapper: MemoryRouter,
     });
 
-    expect(el.container.innerHTML).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot();
   });
 });
