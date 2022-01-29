@@ -31,7 +31,23 @@ import realFriends from './me (301 of 828).jpg';
 import bridesmaids from './me (310 of 828).jpg';
 import matronOfHonor from './me (313 of 828).jpg';
 import strings from './me (322 of 828).jpg';
+import aisleGreggAndDede from './me (350 of 828).jpg';
+import mycahApproach from './me (364 of 828).jpg';
+import beginHandoff from './me (374 of 828).jpg';
+import firstTouch from './me (379 of 828).jpg';
+import handshake from './me (381 of 828).jpg';
+import laughingHandoff from './me (382 of 828).jpg';
+import atTheAltar from './me (385 of 828).jpg';
+import hisLaughOnTheAltar from './me (388 of 828).jpg';
+import herLaughOnTheAltar from './me (400 of 828).jpg';
+import altarTogether from './me (405 of 828).jpg';
+import bridalParty from './me (406 of 828).jpg';
+import herRing from './me (410 of 828).jpg';
+import hisRing from './me (415 of 828).jpg';
+import kissTheBride from './me (421 of 828).jpg';
+import kissTheBridePortrait from './me (422 of 828).jpg';
 import downTheAisle from './me (429 of 828).jpg';
+import oneKissForTheRoad from './me (431 of 828).jpg';
 
 export const pictureSources = [
   downTheAisle,
@@ -68,4 +84,20 @@ export const pictureSources = [
   realFriends,
   matronOfHonor,
   strings,
+  aisleGreggAndDede,
+  mycahApproach,
+  beginHandoff,
+  handshake,
+  firstTouch,
+  laughingHandoff,
+  atTheAltar,
+  herLaughOnTheAltar,
+  hisLaughOnTheAltar,
+  altarTogether,
+  bridalParty,
+  herRing,
+  hisRing,
+  kissTheBride,
+  kissTheBridePortrait,
+  oneKissForTheRoad,
 ];
