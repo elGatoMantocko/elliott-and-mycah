@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 /**
  * A component that when mounted will force the window to scroll to the top of the page
@@ -8,11 +7,6 @@ import { useLocation } from 'react-router-dom';
  * @returns empty JSX
  */
 export const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
+  useScrollToTop();
   return null;
 };

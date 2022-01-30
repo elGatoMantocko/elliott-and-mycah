@@ -1,4 +1,4 @@
-import { Dispatch } from 'react-use-elmish';
+import type { Dispatch } from 'react-use-elmish';
 
 /**
  * We can leverage the fact that `() => void` can extend `() => Promise<void>`.
@@ -15,9 +15,7 @@ type AsyncEffect<Action> = Array<(dispatch: Dispatch<Action>) => Promise<void>>;
  * @param iterator async iterable that can iterate over a set of actions
  * @returns effect for a given actions
  */
-export const fromAsyncIterable = <Action,>(
-  iterator: AsyncIterable<Action>,
-): AsyncEffect<Action> => {
+export const fromAsyncIterable = <Action>(iterator: AsyncIterable<Action>): AsyncEffect<Action> => {
   return [
     async (dispatch) => {
       for await (const action of iterator) {
