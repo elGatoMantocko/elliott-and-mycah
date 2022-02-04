@@ -3,7 +3,7 @@ import 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import { join } from 'path';
-import { Configuration, DefinePlugin, WebpackPluginInstance } from 'webpack';
+import { Configuration, DefinePlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
 
@@ -64,6 +64,7 @@ export const factory = ({
     new RobotsTextWebpackPlugin(),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
     new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
+    new ProgressPlugin(),
   ];
 
   !noSW &&
@@ -91,12 +92,7 @@ export const factory = ({
         {
           test: /\.(ts|js)x?$/i,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-            },
-          },
+          use: { loader: 'babel-loader' },
         },
         { test: /.(jpe?g|webp|png|gif|svg|ttf)$/, type: 'asset/resource' },
       ],
