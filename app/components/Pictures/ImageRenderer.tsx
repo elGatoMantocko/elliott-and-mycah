@@ -28,7 +28,7 @@ export const ImageRenderer = ({ onError, ...imageProps }: ImageRendererProps) =>
           overflow: 'hidden',
           borderRadius: theme.shape.borderRadius,
           boxShadow: theme.shadows[5],
-          maxWidth: isSmallScreen ? '100%' : '30vw',
+          maxWidth: isSmallScreen ? '100%' : 420,
         })}
       >
         {!isLoaded || !inView ? (
