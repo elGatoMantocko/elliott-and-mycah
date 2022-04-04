@@ -15,7 +15,7 @@ type TestActions = 'foo' | 'bar' | 'baz' | 'test';
 
 describe('fromAsyncIterable', () => {
   it('should dispatch effects for a useElmish pattern', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = renderHook(() =>
       useElmish<Reducer<string, TestActions>>(
         (state, action) => {
           if (action === 'foo' || action === 'bar' || action === 'baz') {
@@ -36,7 +36,6 @@ describe('fromAsyncIterable', () => {
 
     // dispatching this action will yield 3 other actions
     await act(() => result.current[1]('test'));
-    await waitForNextUpdate();
     expect(result.current[0]).toEqual('foobarbaz');
   });
 

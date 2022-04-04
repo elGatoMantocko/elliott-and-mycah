@@ -22,7 +22,7 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 
 import { uuid } from '../../models/uuid';
@@ -31,21 +31,6 @@ import { GuestFields } from './GuestFields';
 import { RsvpActions, RsvpActionTypes } from './reducer/actions';
 import { State } from './reducer/state';
 
-const useCloseButtonStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.text.secondary,
-    position: 'absolute',
-    top: theme.spacing(1),
-    right: theme.spacing(1),
-  },
-}));
-
-const useRadioGroupStyles = makeStyles({
-  root: {
-    flexDirection: 'row',
-  },
-});
-
 enum GuestAttendance {
   Yes = 'yes',
   No = 'no',
@@ -53,6 +38,7 @@ enum GuestAttendance {
 
 export const RsvpModal = () => {
   const [state, dispatch] = useElmishContext<State, RsvpActions>();
+  const theme = useTheme();
 
   return (
     <Dialog
@@ -69,7 +55,9 @@ export const RsvpModal = () => {
           <FormLabel>Will you attend on 6/12/2021?</FormLabel>
           <RadioGroup
             name="yesNo"
-            classes={useRadioGroupStyles()}
+            sx={{
+              flexDirection: 'row',
+            }}
             defaultValue={GuestAttendance.Yes}
             onChange={(e) =>
               dispatch({
@@ -89,7 +77,12 @@ export const RsvpModal = () => {
           </Alert>
         )}
         <IconButton
-          classes={useCloseButtonStyles()}
+          sx={{
+            color: theme.palette.text.secondary,
+            position: 'absolute',
+            top: theme.spacing(1),
+            right: theme.spacing(1),
+          }}
           onClick={() => dispatch({ type: RsvpActionTypes.HideRsvpModal })}
           size="large"
         >

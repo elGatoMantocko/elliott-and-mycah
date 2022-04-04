@@ -3,7 +3,7 @@
 exports[`<ActiveLink> should render a link 1`] = `
 <div>
   <a
-    class="MuiTypography-root MuiTypography-inherit makeStyles-root-1 makeStyles-root-2 MuiLink-root MuiLink-underlineAlways css-142y51d-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-16xlzhx-MuiTypography-root-MuiLink-root"
   >
     Some test link
   </a>
@@ -13,7 +13,7 @@ exports[`<ActiveLink> should render a link 1`] = `
 exports[`<ActiveLink> should render active on the current path 1`] = `
 <div>
   <a
-    class="MuiTypography-root MuiTypography-inherit makeStyles-root-5 makeStyles-root-6 MuiLink-root MuiLink-underlineAlways css-1iwtne7-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1btypaa-MuiTypography-root-MuiLink-root"
   >
     Some test link
   </a>
@@ -23,7 +23,7 @@ exports[`<ActiveLink> should render active on the current path 1`] = `
 exports[`<ActiveLink> should render disabled link 1`] = `
 <div>
   <a
-    class="MuiTypography-root MuiTypography-inherit makeStyles-root-3 makeStyles-root-4 MuiLink-root MuiLink-underlineNone css-1xfwc5g-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-4xwktl-MuiTypography-root-MuiLink-root"
   >
     Some test link
   </a>

@@ -1,13 +1,6 @@
 import { Link, LinkProps } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
-
-const useLinkColorStyles = makeStyles({
-  root: {
-    cursor: ({ disabled }: { disabled?: boolean }) => (disabled === true ? 'default' : 'pointer'),
-  },
-});
 
 type ActiveLinkProps = {
   disabled?: boolean;
@@ -19,9 +12,11 @@ export const ActiveLink = ({ disabled = false, ...linkProps }: ActiveLinkProps) 
   return (
     <Link
       {...linkProps}
+      sx={{
+        cursor: disabled ? 'default' : 'pointer',
+      }}
       href={undefined}
       color={disabled ? 'textSecondary' : pathname === linkProps.href ? 'primary' : 'secondary'}
-      classes={useLinkColorStyles({ disabled })}
       underline={disabled ? 'none' : undefined}
       onClick={(e: React.MouseEvent) => {
         if (disabled) {

@@ -1,27 +1,24 @@
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
 
-const useMenuOptionStyles = makeStyles({
-  root: {
-    height: '100%',
-  },
-});
-
-const useMenuOptionTitleStyles = makeStyles({
-  root: {
-    lineHeight: 1,
-  },
-});
-
 type MenuOptionCardProps = { name: string | JSX.Element; description: string | JSX.Element };
 export const MenuOptionCard = ({ name, description }: MenuOptionCardProps) => (
   <Box mx={1} my={1} maxWidth={330}>
-    <Card classes={useMenuOptionStyles()}>
+    <Card
+      sx={{
+        height: '100%',
+      }}
+    >
       <CardContent>
-        <ScriptTypography classes={useMenuOptionTitleStyles()} gutterBottom variant="h4">
+        <ScriptTypography
+          sx={{
+            lineHeight: 1,
+          }}
+          gutterBottom
+          variant="h4"
+        >
           {name}
         </ScriptTypography>
         <Divider />

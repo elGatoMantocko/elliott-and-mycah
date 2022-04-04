@@ -3,7 +3,7 @@
 exports[`<ScriptTypography /> should render 1`] = `
 <div>
   <p
-    class="makeStyles-root-1 makeStyles-root-2 MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
   >
     Test copy
   </p>

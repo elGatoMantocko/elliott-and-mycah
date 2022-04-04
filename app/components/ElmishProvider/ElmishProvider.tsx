@@ -36,10 +36,10 @@ export const ElmishProvider = <State, Actions>({
   initializer,
   children,
 }: PropsWithChildren<ElmishProviderProps<State, Actions>>) => {
-  const [store, dispatch] = useElmish(reducer, initializer);
+  const ctx = useElmish(reducer, initializer);
 
   // initialize the reducer and return the provider
-  return <ElmishContext.Provider value={[store, dispatch]}>{children}</ElmishContext.Provider>;
+  return <ElmishContext.Provider value={ctx}>{children}</ElmishContext.Provider>;
 };
 
 /**

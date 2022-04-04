@@ -4,7 +4,7 @@ exports[`<ListItemLink /> should render a disabled link 1`] = `
 <div>
   <a
     aria-disabled="true"
-    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
     role="button"
     tabindex="-1"
   >
@@ -16,7 +16,7 @@ exports[`<ListItemLink /> should render a disabled link 1`] = `
 exports[`<ListItemLink /> should render a link 1`] = `
 <div>
   <a
-    class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+    class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
     role="button"
     tabindex="0"
   >

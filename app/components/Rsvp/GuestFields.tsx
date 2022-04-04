@@ -2,45 +2,17 @@ import { Remove as RemoveIcon } from '@mui/icons-material';
 import {
   Box,
   FormControl,
-  FormControlProps,
   IconButton,
   MenuItem,
   Select,
   TextField,
-  TextFieldProps,
   Theme,
   useMediaQuery,
 } from '@mui/material';
-import { withStyles } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 
 import { Guest, isValidFoodChoice } from '../../models/guest';
-
-const NameField = withStyles((theme) => ({
-  root: {
-    width: ({ fullWidth }: TextFieldProps) => (fullWidth === true ? '100%' : theme.spacing(24)),
-    marginRight: ({ fullWidth }: TextFieldProps) =>
-      fullWidth === true ? undefined : theme.spacing(1),
-    marginTop: ({ fullWidth }: TextFieldProps) =>
-      fullWidth === true ? theme.spacing(1) : undefined,
-  },
-}))(TextField);
-
-const FoodChoiceControl = withStyles((theme) => ({
-  root: {
-    width: ({ fullWidth }: FormControlProps) => (fullWidth === true ? '100%' : theme.spacing(20)),
-    marginRight: ({ fullWidth }: FormControlProps) =>
-      fullWidth === true ? undefined : theme.spacing(1),
-    marginTop: ({ fullWidth }: FormControlProps) =>
-      fullWidth === true ? theme.spacing(1) : undefined,
-  },
-}))(FormControl);
-
-const ErrorIconButton = withStyles((theme) => ({
-  root: {
-    color: theme.palette.error.main,
-  },
-}))(IconButton);
 
 type GuestFieldsProps = {
   guest: Guest;
@@ -55,10 +27,16 @@ export const GuestFields = ({
   onRemoveGuest,
 }: GuestFieldsProps) => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
+  const theme = useTheme();
 
   return (
     <Box display="flex" mb={1} flexDirection={isSmallScreen === true ? 'column' : 'row'} pt={1}>
-      <NameField
+      <TextField
+        sx={{
+          width: isSmallScreen ? '100%' : theme.spacing(24),
+          marginRight: isSmallScreen ? undefined : theme.spacing(1),
+          marginTop: isSmallScreen ? theme.spacing(1) : undefined,
+        }}
         fullWidth={isSmallScreen}
         label="First Name"
         variant="outlined"
@@ -67,7 +45,7 @@ export const GuestFields = ({
         onChange={(e) => onUpdateGuest({ firstName: e.target.value })}
         required
       />
-      <NameField
+      <TextField
         fullWidth={isSmallScreen}
         label="Last Name"
         variant="outlined"
@@ -76,7 +54,12 @@ export const GuestFields = ({
         onChange={(e) => onUpdateGuest({ lastName: e.target.value })}
         required
       />
-      <FoodChoiceControl
+      <FormControl
+        sx={{
+          width: isSmallScreen ? '100%' : theme.spacing(20),
+          marginRight: isSmallScreen ? undefined : theme.spacing(1),
+          marginTop: isSmallScreen ? theme.spacing(1) : undefined,
+        }}
         disabled={foodChoiceDisabled}
         size="small"
         fullWidth={isSmallScreen}
@@ -101,11 +84,18 @@ export const GuestFields = ({
             Spinach Tortellini &ndash; <em>V</em>
           </MenuItem>
         </Select>
-      </FoodChoiceControl>
+      </FormControl>
       <Box display="flex" my="auto">
-        <ErrorIconButton size="small" disabled={onRemoveGuest == null} onClick={onRemoveGuest}>
+        <IconButton
+          sx={{
+            color: theme.palette.error.main,
+          }}
+          size="small"
+          disabled={onRemoveGuest == null}
+          onClick={onRemoveGuest}
+        >
           <RemoveIcon />
-        </ErrorIconButton>
+        </IconButton>
       </Box>
     </Box>
   );
