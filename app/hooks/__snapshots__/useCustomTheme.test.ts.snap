@@ -43,8 +43,10 @@ Object {
   "direction": "ltr",
   "mixins": Object {
     "toolbar": Object {
-      "@media (min-width:0px) and (orientation: landscape)": Object {
-        "minHeight": 48,
+      "@media (min-width:0px)": Object {
+        "@media (orientation: landscape)": Object {
+          "minHeight": 48,
+        },
       },
       "@media (min-width:600px)": Object {
         "minHeight": 64,
@@ -56,6 +58,7 @@ Object {
     "action": Object {
       "activatedOpacity": 0.12,
       "active": "rgba(0, 0, 0, 0.54)",
+      "activeChannel": "0 0 0",
       "disabled": "rgba(159, 159, 159, 1)",
       "disabledBackground": "rgba(226, 226, 226, 1)",
       "disabledOpacity": 0.38,
@@ -99,6 +102,8 @@ Object {
       "A200": "#eeeeee",
       "A400": "#bdbdbd",
       "A700": "#616161",
+      "dark": "#616161",
+      "darkChannel": "97 97 97",
     },
     "info": Object {
       "contrastText": "#fff",
@@ -128,7 +133,9 @@ Object {
     "text": Object {
       "disabled": "rgba(0, 0, 0, 0.38)",
       "primary": "rgba(0, 0, 0, 0.87)",
+      "primaryChannel": "0 0 0",
       "secondary": "rgba(0, 0, 0, 0.6)",
+      "secondaryChannel": "0 0 0",
     },
     "tonalOffset": 0.2,
     "warning": Object {

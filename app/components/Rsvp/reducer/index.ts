@@ -23,6 +23,7 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (
     }
     return [{ ...state, loading: action.payload }, Effects.none()];
   }
+
   if (action.type === RsvpActionTypes.Error) {
     if (action.payload === state.error) {
       return [state, Effects.none()];
@@ -34,12 +35,14 @@ export const rsvpReducer: Reducer<State, RsvpActions> = (
   if (action.type === RsvpActionTypes.AddGuest) {
     return [{ ...state, guests: [...state.guests, action.payload] }, Effects.none()];
   }
+
   if (action.type === RsvpActionTypes.RemoveGuest) {
     return [
       { ...state, guests: [...state.guests.filter(({ id }) => id !== action.payload)] },
       Effects.none(),
     ];
   }
+
   if (action.type === RsvpActionTypes.UpdateGuest) {
     const guestIndex = state.guests.findIndex(({ id }) => id === action.payload.id);
     if (guestIndex === -1) {
