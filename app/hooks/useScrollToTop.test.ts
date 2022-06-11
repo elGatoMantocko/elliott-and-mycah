@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 import { MemoryRouter, useNavigate } from 'react-router';
 
 import { useScrollToTop } from './useScrollToTop';

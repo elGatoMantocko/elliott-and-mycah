@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 
-export const useCountdown = (toDate: Date) => {
+const secondsInAYear = 31536000;
+const secondsInADay = 86400;
+
+interface CountdownDeltas {
+  years: number;
+  days: number;
+}
+
+export const useCountdown = (toDate: Date): CountdownDeltas => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -14,20 +22,12 @@ export const useCountdown = (toDate: Date) => {
   // get total seconds between the times
   let delta = Math.abs(toDate.getTime() - time.getTime()) / 1000;
 
+  const years = Math.floor(delta / secondsInAYear);
+  delta -= years * secondsInAYear;
+
   // calculate (and subtract) whole days
-  const days = Math.floor(delta / 86400);
-  delta -= days * 86400;
+  const days = Math.floor(delta / secondsInADay) % 365;
+  delta -= days * secondsInADay;
 
-  // calculate (and subtract) whole hours
-  const hours = Math.floor(delta / 3600) % 24;
-  delta -= hours * 3600;
-
-  // calculate (and subtract) whole minutes
-  const minutes = Math.floor(delta / 60) % 60;
-  delta -= minutes * 60;
-
-  // what's left is seconds
-  const seconds = Math.floor(delta) % 60; // in theory the modulus is not required
-
-  return { days, hours, minutes, seconds };
+  return { years, days };
 };
