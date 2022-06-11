@@ -1,8 +1,8 @@
 import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { Box, Snackbar } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { fromResult } from '../../hooks/useResult';
+import { ResultState } from '../../hooks/useResult';
 import { useServiceWorker } from '../../hooks/useServiceWorker';
 
 type ServiceWorkerRegistrationProps = {
@@ -15,13 +15,21 @@ export const ServiceWorkerRegistration = ({
 }: ServiceWorkerRegistrationProps) => {
   const [loadedSnackOpen, setLoadedSnack] = useState(false);
 
-  fromResult(useServiceWorker(src)).useValue(() => {
-    // For those curious
-    console.log(
-      'Just an FYI, I only use the SW to precache assets because React and MUI are both really big.',
-    );
-    setLoadedSnack(true);
-  });
+  const swResult = useServiceWorker(src);
+
+  useEffect(() => {
+    if (swResult.state === ResultState.Value) {
+      // For those curious
+      console.log(
+        'Just an FYI, I only use the SW to precache assets because React and MUI are both really big.',
+      );
+      setLoadedSnack(true);
+    }
+
+    if (swResult.state === ResultState.Error) {
+      console.error(`I'm sorry you have to deal with my shit: ${swResult.value}`);
+    }
+  }, [swResult]);
 
   return (
     <Snackbar

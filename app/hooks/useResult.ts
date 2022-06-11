@@ -1,7 +1,6 @@
 import { DependencyList, useCallback, useEffect, useState } from 'react';
 
 import { State, state } from '../models/state';
-import { useStaticCallback } from './useStaticCallback';
 
 export enum ResultState {
   NotStarted = 'not-started',
@@ -18,49 +17,6 @@ type Result<T, U> =
 
 const pending: State<ResultState.Pending> = state(ResultState.Pending);
 const notStarted: State<ResultState.NotStarted> = state(ResultState.NotStarted);
-
-const useValue = <V, T extends (v: V) => void>(result: Result<V, unknown>, then: T) => {
-  const cb = useStaticCallback(then);
-  useEffect(() => {
-    if (result.state === ResultState.Value) {
-      cb(result.value);
-    }
-  }, [result, cb]);
-};
-
-const useCatch = <E, T extends (e: E) => void>(result: Result<unknown, E>, then: T) => {
-  const cb = useStaticCallback(then);
-  useEffect(() => {
-    if (result.state === ResultState.Error) {
-      cb(result.value);
-    }
-  }, [result, cb]);
-};
-
-const usePending = <T extends () => void>(result: Result<unknown, unknown>, then: T) => {
-  const cb = useStaticCallback(then);
-  useEffect(() => {
-    if (result.state === ResultState.Pending) {
-      cb();
-    }
-  }, [result, cb]);
-};
-
-const useNotStarted = <T extends () => void>(result: Result<unknown, unknown>, then: T) => {
-  const cb = useStaticCallback(then);
-  useEffect(() => {
-    if (result.state === ResultState.NotStarted) {
-      cb();
-    }
-  }, [result, cb]);
-};
-
-export const fromResult = <V, E>(result: Result<V, E>) => ({
-  useValue: (then: (v: V) => void) => useValue(result, then),
-  useCatch: (then: (e: E) => void) => useCatch(result, then),
-  usePending: (then: () => void) => usePending(result, then),
-  useNotStarted: (then: () => void) => useNotStarted(result, then),
-});
 
 type UseResultValue<C extends () => Promise<unknown>> = C extends () => Promise<infer CResult>
   ? CResult
