@@ -18,9 +18,30 @@ type Result<T, U> =
 const pending: State<ResultState.Pending> = state(ResultState.Pending);
 const notStarted: State<ResultState.NotStarted> = state(ResultState.NotStarted);
 
+/**
+ * Return value of an async function.
+ */
 type UseResultValue<C extends () => Promise<unknown>> = C extends () => Promise<infer CResult>
   ? CResult
   : never;
+
+/**
+ * Turns an unknown error into an {@link Error}
+ *
+ * @param err unknown error
+ * @returns a valid error object
+ */
+function handleUnknownError(err: unknown): Error {
+  if (err instanceof Error) {
+    return err;
+  } else if (typeof err === 'string') {
+    return new Error(err);
+  } else if (typeof err === 'object') {
+    return new Error(`encountered error in useCallableResult: ${JSON.stringify(err)}`);
+  } else {
+    return new Error('encountered unknown error in useCallableResult');
+  }
+}
 
 /**
  * Function to get a result from an asynchronous function.
@@ -35,17 +56,33 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends UseRe
 ) => {
   const [result, setResult] = useState<Result<CValue, Error>>(notStarted);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const requestCb = useCallback(request, deps);
+  /**
+   * This CB should handle _all_ error cases. The error is wrapped into the result object
+   */
+  const requestCb = useCallback(async (): Promise<void> => {
+    setResult(pending);
+    try {
+      setResult(state(ResultState.Value, await request()));
+    } catch (err) {
+      setResult(state(ResultState.Error, handleUnknownError(err)));
+    }
+    // The caller is defining the dependencies to this so we intentionally
+    // want to ignore the exhaustive deps rule here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
   useEffect(() => {
     let isSubscribed = true;
 
-    isSubscribed && setResult(pending);
-    requestCb()
-      .then((t) => isSubscribed && setResult(state(ResultState.Value, t)))
-      .catch((err) => isSubscribed && setResult(state(ResultState.Error, err)));
+    // only set state and make requests as long as this hook is still "mounted" to the dom
+    // this is mostly just so we don't freak the tests out when things get unmounted
+    // istanbul ignore next
+    if (isSubscribed) {
+      requestCb();
+    }
 
+    // if the `useResult` hook is torn down, we want to make sure we don't have any
+    // lingering calls being made
     return () => {
       isSubscribed = false;
     };
@@ -74,22 +111,7 @@ export const useCallableResult = <CArgs extends unknown[], CResponse>(
 
         setResult(state(ResultState.Value, t));
       } catch (err) {
-        if (err instanceof Error) {
-          setResult(state(ResultState.Error, err));
-        } else if (typeof err === 'string') {
-          setResult(state(ResultState.Error, new Error(err)));
-        } else if (typeof err === 'object') {
-          setResult(
-            state(
-              ResultState.Error,
-              new Error(`encountered error in useCallableResult: ${JSON.stringify(err)}`),
-            ),
-          );
-        } else {
-          setResult(
-            state(ResultState.Error, new Error('encountered unknown error in useCallableResult')),
-          );
-        }
+        setResult(state(ResultState.Error, handleUnknownError(err)));
       }
     },
     [request],

@@ -1,4 +1,4 @@
-import { useResult } from './useResult';
+import { useResult } from './result';
 
 /**
  * Hook to register a service worker.

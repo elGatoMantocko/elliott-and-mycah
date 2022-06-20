@@ -1,31 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should call the onClick handler: navigate-with-onClick 1`] = `
+<a
+  class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+  data-testid="navigate-with-onClick"
+  role="button"
+  tabindex="0"
+>
+  Test
+  <span
+    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+  />
+</a>
+`;
+
+exports[`should handle a null onClick handler and null href: null-click-handler 1`] = `
+<a
+  class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+  data-testid="null-click-handler"
+  role="button"
+  tabindex="0"
+>
+  Test
+  <span
+    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+  />
+</a>
+`;
+
+exports[`should navigate to href when clicked: navigate-with-href 1`] = `
+<a
+  class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+  data-testid="navigate-with-href"
+  role="button"
+  tabindex="0"
+>
+  Test
+  <span
+    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+  />
+</a>
+`;
+
 exports[`should render a disabled link: disabled-link 1`] = `
-<div>
-  <a
-    aria-disabled="true"
-    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
-    data-testid="disabled-link"
-    role="button"
-    tabindex="-1"
-  >
-    Test
-  </a>
-</div>
+<a
+  aria-disabled="true"
+  class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+  data-testid="disabled-link"
+  role="button"
+  tabindex="-1"
+>
+  Test
+</a>
 `;
 
 exports[`should render a disabled link: disabled-link 2`] = `
-<div>
-  <a
-    aria-disabled="true"
-    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
-    data-testid="disabled-link"
-    role="button"
-    tabindex="-1"
-  >
-    Test
-  </a>
-</div>
+<a
+  aria-disabled="true"
+  class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+  data-testid="disabled-link"
+  role="button"
+  tabindex="-1"
+>
+  Test
+</a>
 `;
 
 exports[`should render a link 1`] = `

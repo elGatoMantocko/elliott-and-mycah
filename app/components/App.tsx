@@ -6,7 +6,7 @@ import GithubCorner from 'react-github-corner';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-import { useCustomTheme } from '../hooks/useCustomTheme';
+import { useCustomTheme } from '../hooks/theme';
 import { About } from './About';
 import { Accommodations } from './Accommodations';
 import { Menu } from './Menu';

@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { MemoryRouter, useNavigate } from 'react-router';
 
-import { useScrollToTop } from './useScrollToTop';
+import { useScrollToTop } from './scrollToTop';
 
 test('sets scroll position when path changes', () => {
   window.scrollTo = jest.fn();

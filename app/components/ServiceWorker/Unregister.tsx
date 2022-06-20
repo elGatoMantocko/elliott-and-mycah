@@ -2,8 +2,8 @@ import { ThumbUp as ThumbUpIcon } from '@mui/icons-material';
 import { Box, Snackbar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
-import { ResultState } from '../../hooks/useResult';
-import { useUnregisterServiceWorkers } from '../../hooks/useServiceWorker';
+import { ResultState } from '../../hooks/result';
+import { useUnregisterServiceWorkers } from '../../hooks/serviceWorker';
 
 type ServiceWorkerUnregistrationProps = {
   hideSnackbar?: boolean;

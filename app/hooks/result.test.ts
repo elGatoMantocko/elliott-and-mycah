@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { state } from '../models/state';
-import { ResultState, useCallableResult, useResult } from './useResult';
+import { ResultState, useCallableResult, useResult } from './result';
 
 describe('useResult', () => {
   it('should resolve to pending/value for value result', async () => {
@@ -17,22 +17,34 @@ describe('useResult', () => {
     expect(result.current).toEqual(state(ResultState.Value, 'test'));
   });
 
-  it('should resolve to pending/error for error result', async () => {
-    const asyncFn = jest.fn(async () => {
-      act(() => {
-        throw new Error('test');
+  it.each([
+    // errors just resolve to the error
+    [new Error('test'), new Error('test')],
+    // a thrown string resolves to an error
+    ['test', new Error('test')],
+    // a thrown object resolves to an error with some string metadata
+    [{ data: 'test' }, new Error('encountered error in useCallableResult: {"data":"test"}')],
+    // if its not a string, object, or error we don't really know what to do with it
+    [1, new Error('encountered unknown error in useCallableResult')],
+  ])(
+    'should resolve to pending/error for a called error result',
+    async (thrownError, expectedError) => {
+      const asyncFn = jest.fn(async () => {
+        act(() => {
+          throw thrownError;
+        });
       });
-    });
-    const { result, rerender } = renderHook(() => useResult(asyncFn, []));
+      const { result, rerender } = renderHook(() => useResult(asyncFn, []));
 
-    expect(result.current).toEqual(state(ResultState.Pending));
+      expect(result.current).toEqual(state(ResultState.Pending));
 
-    await waitFor(() => result.current.state !== ResultState.Pending);
-    rerender();
+      await waitFor(() => result.current.state !== ResultState.Pending);
+      rerender();
 
-    expect(asyncFn).toHaveBeenCalledTimes(1);
-    expect(result.current).toEqual(state(ResultState.Error, new Error('test')));
-  });
+      expect(asyncFn).toHaveBeenCalledTimes(1);
+      expect(result.current).toEqual(state(ResultState.Error, expectedError));
+    },
+  );
 
   it('should re-call the request if deps change', async () => {
     // initial render results in a pending state

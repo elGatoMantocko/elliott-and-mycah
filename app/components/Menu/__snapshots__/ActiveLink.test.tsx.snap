@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ActiveLink> should render a link 1`] = `
+exports[`should navigate when a link is clicked: with-href 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
+  data-testid="with-href"
+>
+  Some test link
+</a>
+`;
+
+exports[`should render a link 1`] = `
 <div>
   <a
     class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
@@ -10,17 +19,34 @@ exports[`<ActiveLink> should render a link 1`] = `
 </div>
 `;
 
-exports[`<ActiveLink> should render active on the current path 1`] = `
-<div>
-  <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
-  >
-    Some test link
-  </a>
-</div>
+exports[`should render a link with null href: null-href 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+  data-testid="null-href"
+>
+  Some test link
+</a>
 `;
 
-exports[`<ActiveLink> should render disabled link: disabled_link 1`] = `
+exports[`should render active on the current path: some-test-link 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
+  data-testid="some-test-link"
+>
+  Some test link
+</a>
+`;
+
+exports[`should render disabled link: disabled_link 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
+  data-testid="disabled-link"
+>
+  Some test link
+</a>
+`;
+
+exports[`should render disabled link: disabled_link 2`] = `
 <div>
   <a
     class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
@@ -28,16 +54,10 @@ exports[`<ActiveLink> should render disabled link: disabled_link 1`] = `
   >
     Some test link
   </a>
-</div>
-`;
-
-exports[`<ActiveLink> should render disabled link: disabled_link 2`] = `
-<div>
-  <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
-    data-testid="disabled-link"
+  <div
+    data-testid="route-location"
   >
-    Some test link
-  </a>
+    /
+  </div>
 </div>
 `;

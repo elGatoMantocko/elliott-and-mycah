@@ -3851,10 +3851,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.45":
-  version: 17.0.45
-  resolution: "@types/node@npm:17.0.45"
-  checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+"@types/node@npm:18.0.0":
+  version: 18.0.0
+  resolution: "@types/node@npm:18.0.0"
+  checksum: aab2b325727a2599f6d25ebe0dedf58c40fb66a51ce4ca9c0226ceb70fcda2d3afccdca29db5942eb48b158ee8585a274a1e3750c718bbd5399d7f41d62dfdcc
   languageName: node
   linkType: hard
 
@@ -6559,7 +6559,7 @@ __metadata:
     "@types/imagemin-gifsicle": ^7.0.1
     "@types/imagemin-svgo": ^10.0.1
     "@types/jest": ^28.1.2
-    "@types/node": 17.0.45
+    "@types/node": 18.0.0
     "@types/react": 18.0.14
     "@types/react-dom": 18.0.5
     "@types/react-router": ^5.1.18
