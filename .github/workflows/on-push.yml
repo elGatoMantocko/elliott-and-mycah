@@ -1,18 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: build_and_deploy
+name: Build and Deploy
 
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [main]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-env:
-  BUCKET_NAME: elliott-and-mycah
 
 permissions:
   id-token: write
@@ -23,31 +17,34 @@ permissions:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build_and_push:
+  build:
+    name: 📦 Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: 💍 Checkout code
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: ⚙️ Setup nodejs and yarn
+        uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
+          node-version-file: ".nvmrc"
+          cache: "yarn"
 
-      - name: Install yarn dependencies
+      - name: 💿 Install yarn dependencies
         run: yarn install --immutable
 
-      - name: Run lint
+      - name: 👖 Run lint
         run: yarn lint
 
-      - name: Audit licenses
+      - name: 🧑‍⚖️ Audit licenses
         run: yarn auditLicenses
 
-      - name: Run yarn tests
+      - name: 🧪 Run yarn tests
         env:
           CI: "true"
         run: yarn test
 
-      - name: Publish test results
+      - name: 👀 Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
@@ -55,21 +52,36 @@ jobs:
           # we don't need comment mode because this only runs on main for now
           comment_mode: off
 
-      - name: Build webapp
+      - name: 🕸 Build webapp bundle
         run: yarn build
 
-      - name: List build info
-        run: ls -alF dist
+      - name: 📤 Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: elliott-and-mycah-webapp-${{ github.sha }}
+          path: dist
 
-      - name: Configure AWS Credentials
+  deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: 📥 Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: elliott-and-mycah-webapp-${{ github.sha }}
+          path: dist
+
+      - name: 🔑 Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Copy app assets (exclude index.html)
-        run: aws s3 sync dist s3://${{ env.BUCKET_NAME }} --acl public-read --follow-symlinks --delete --exclude "index.html"
-
-      - name: Copy app assets (include non-cached index.html)
-        run: aws s3 sync dist s3://${{ env.BUCKET_NAME }} --acl public-read --follow-symlinks --cache-control no-cache --exclude "*" --include "index.html"
+      - name: 🚀 Copy app assets
+        # copy everything _except_ index first
+        # then copy the index file and make sure it has a no-cache cache control setting
+        run: |
+          aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --acl public-read --follow-symlinks --delete --exclude "index.html"
+          aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --acl public-read --follow-symlinks --cache-control no-cache --exclude "*" --include "index.html"
