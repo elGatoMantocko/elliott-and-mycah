@@ -3,9 +3,12 @@ import React from 'react';
 
 import { ScriptTypography } from './ScriptTypography';
 
-describe('<ScriptTypography />', () => {
-  it('should render', () => {
-    const el = render(<ScriptTypography>Test copy</ScriptTypography>);
-    expect(el.container).toMatchSnapshot();
-  });
+it('should render', () => {
+  const el = render(<ScriptTypography>Test copy</ScriptTypography>);
+  expect(el.container).toMatchSnapshot();
+});
+
+it('should render an h1 variant', () => {
+  const el = render(<ScriptTypography variant="h1">Test copy</ScriptTypography>);
+  expect(el.container).toMatchSnapshot();
 });

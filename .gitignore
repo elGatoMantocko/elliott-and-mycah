@@ -7,7 +7,9 @@
 .pnp.*
 
 .DS_STORE
+.ijwb
+
 dist
 node_modules
-.ijwb
 test-results
+coverage

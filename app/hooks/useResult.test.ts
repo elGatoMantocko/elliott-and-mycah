@@ -106,33 +106,45 @@ describe('useCallableResult', () => {
     expect(asyncFn).toHaveBeenCalledTimes(2);
   });
 
-  it('should resolve to pending/error for a called error result', async () => {
-    const asyncFn = jest.fn(async () => {
-      throw new Error('test');
-    });
-    const { result, rerender } = renderHook(() => useCallableResult(asyncFn));
+  it.each([
+    // errors just resolve to the error
+    [new Error('test'), new Error('test')],
+    // a thrown string resolves to an error
+    ['test', new Error('test')],
+    // a thrown object resolves to an error with some string metadata
+    [{ data: 'test' }, new Error('encountered error in useCallableResult: {"data":"test"}')],
+    // if its not a string, object, or error we don't really know what to do with it
+    [1, new Error('encountered unknown error in useCallableResult')],
+  ])(
+    'should resolve to pending/error for a called error result',
+    async (thrownError, expectedError) => {
+      const asyncFn = jest.fn(async () => {
+        throw thrownError;
+      });
+      const { result, rerender } = renderHook(() => useCallableResult(asyncFn));
 
-    expect(result.current[0]).toEqual(state(ResultState.NotStarted));
+      expect(result.current[0]).toEqual(state(ResultState.NotStarted));
 
-    // call once and rerender
-    act(() => {
-      const [, call] = result.current;
-      call();
-    });
-    rerender();
+      // call once and rerender
+      act(() => {
+        const [, call] = result.current;
+        call();
+      });
+      rerender();
 
-    expect(result.current[0]).toEqual(state(ResultState.Pending));
-    expect(asyncFn).toHaveBeenCalled();
+      expect(result.current[0]).toEqual(state(ResultState.Pending));
+      expect(asyncFn).toHaveBeenCalled();
 
-    // wait for the result to finish and rerender
-    await waitFor(() => {
-      const [data] = result.current;
-      return data.state !== ResultState.Pending;
-    });
-    rerender();
+      // wait for the result to finish and rerender
+      await waitFor(() => {
+        const [data] = result.current;
+        return data.state !== ResultState.Pending;
+      });
+      rerender();
 
-    expect(result.current[0]).toEqual(state(ResultState.Error, new Error('test')));
-  });
+      expect(result.current[0]).toEqual(state(ResultState.Error, expectedError));
+    },
+  );
 
   it('should reset state to not-started', async () => {
     const { result, rerender } = renderHook(() => useCallableResult(async (data: string) => data));

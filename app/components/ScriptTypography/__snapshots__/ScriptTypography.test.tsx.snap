@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScriptTypography /> should render 1`] = `
+exports[`should render 1`] = `
 <div>
   <p
     class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
   >
     Test copy
   </p>
+</div>
+`;
+
+exports[`should render an h1 variant 1`] = `
+<div>
+  <h1
+    class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+  >
+    Test copy
+  </h1>
 </div>
 `;

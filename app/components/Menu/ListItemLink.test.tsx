@@ -1,22 +1,27 @@
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 
 import { ListItemLink } from './ListItemLink';
 
-describe('<ListItemLink />', () => {
-  it('should render a link', () => {
-    const el = render(<ListItemLink href="/test">Test</ListItemLink>, { wrapper: MemoryRouter });
-    expect(el.container).toMatchSnapshot();
+it('should render a link', () => {
+  const el = render(<ListItemLink href="/test">Test</ListItemLink>, { wrapper: MemoryRouter });
+  expect(el.container).toMatchSnapshot();
+});
+
+it('should render a disabled link', async () => {
+  const el = render(
+    <ListItemLink data-testid="disabled-link" disabled href="/test">
+      Test
+    </ListItemLink>,
+    { wrapper: MemoryRouter },
+  );
+  expect(el.container).toMatchSnapshot('disabled-link');
+
+  await act(async () => {
+    const link = await el.findByTestId('disabled-link');
+    link.click();
   });
 
-  it('should render a disabled link', () => {
-    const el = render(
-      <ListItemLink disabled href="/test">
-        Test
-      </ListItemLink>,
-      { wrapper: MemoryRouter },
-    );
-    expect(el.container).toMatchSnapshot();
-  });
+  expect(el.container).toMatchSnapshot('disabled-link');
 });

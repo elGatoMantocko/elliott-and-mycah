@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ListItemLink /> should render a disabled link 1`] = `
+exports[`should render a disabled link: disabled-link 1`] = `
 <div>
   <a
     aria-disabled="true"
     class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+    data-testid="disabled-link"
     role="button"
     tabindex="-1"
   >
@@ -13,7 +14,21 @@ exports[`<ListItemLink /> should render a disabled link 1`] = `
 </div>
 `;
 
-exports[`<ListItemLink /> should render a link 1`] = `
+exports[`should render a disabled link: disabled-link 2`] = `
+<div>
+  <a
+    aria-disabled="true"
+    class="MuiListItemButton-root MuiListItemButton-gutters Mui-disabled MuiButtonBase-root Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
+    data-testid="disabled-link"
+    role="button"
+    tabindex="-1"
+  >
+    Test
+  </a>
+</div>
+`;
+
+exports[`should render a link 1`] = `
 <div>
   <a
     class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"

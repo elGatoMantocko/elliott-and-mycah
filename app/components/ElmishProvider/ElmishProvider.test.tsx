@@ -1,8 +1,8 @@
-import { act, render, RenderOptions, waitFor } from '@testing-library/react';
+import { act, render, RenderOptions, RenderResult, waitFor } from '@testing-library/react';
 import React from 'react';
 import { Effects, Reducer, StateEffectPair } from 'react-use-elmish';
 
-import { ElmishProvider, useElmishContext } from './ElmishProvider';
+import { ElmishProvider, useDispatch, useElmishContext } from './ElmishProvider';
 
 type TestState = 'test' | null;
 type TestActions = 'test';
@@ -25,7 +25,7 @@ interface CustomRenderOptions extends RenderOptions {
 const customRender = (
   ui: React.ReactElement,
   { reducer, initializer, ...options }: CustomRenderOptions,
-) => {
+): RenderResult => {
   return render(
     <ElmishProvider reducer={reducer} initializer={initializer}>
       {ui}
@@ -34,8 +34,22 @@ const customRender = (
   );
 };
 
+const customRenderOptions: CustomRenderOptions = {
+  reducer: (state: 'test' | null, action: 'test'): TestStateEffectPair => {
+    if (action === 'test') {
+      return ['test', Effects.none()];
+    }
+    return [state, Effects.none()];
+  },
+  initializer: (): TestStateEffectPair => [null, Effects.none()],
+};
+
 it('should hold elmish context', async () => {
-  // simple component that uses elmish context
+  /**
+   * Simple component that uses elmish context.
+   *
+   * @returns element
+   */
   const TestButton = () => {
     const [state, dispatch] = useElmishContext<TestState, TestActions>();
     return (
@@ -48,15 +62,7 @@ it('should hold elmish context', async () => {
     );
   };
 
-  const result = customRender(<TestButton />, {
-    reducer: (state: 'test' | null, action: 'test'): TestStateEffectPair => {
-      if (action === 'test') {
-        return ['test', Effects.none()];
-      }
-      return [state, Effects.none()];
-    },
-    initializer: (): TestStateEffectPair => [null, Effects.none()],
-  });
+  const result = customRender(<TestButton />, customRenderOptions);
 
   const getState = async () => {
     const state = await result.findByTestId('test-state');
@@ -76,4 +82,64 @@ it('should hold elmish context', async () => {
   });
 
   expect(await getState()).toEqual('test');
+});
+
+it('should fire dispatch events with the useDispatch hook', async () => {
+  const TestButton = () => {
+    const dispatch = useDispatch<TestActions>();
+    return (
+      <button data-testid="test-button" onClick={() => dispatch('test')}>
+        Press
+      </button>
+    );
+  };
+
+  const spy = jest.spyOn(customRenderOptions, 'reducer');
+
+  // the reducer should only be dispatched when the button is clicked
+  const result = customRender(<TestButton />, customRenderOptions);
+
+  expect(spy).not.toHaveBeenCalled();
+
+  // click the button
+  await act(async () => {
+    const button = await result.findByTestId('test-button');
+    button.click();
+  });
+
+  // after the button is clicked, we can verify that the event was dispatched
+  expect(spy).toHaveBeenCalledWith(null, 'test');
+});
+
+it('should use an elmish context outside of an elmish provider', () => {
+  /**
+   * Simple component that uses elmish context.
+   *
+   * @returns element
+   */
+  const TestButton = (): JSX.Element => {
+    try {
+      const [state, dispatch] = useElmishContext<TestState, TestActions>();
+      return (
+        <>
+          <span data-testid="test-state">{state}</span>
+          <button data-testid="test-button" onClick={() => dispatch('test')}>
+            Press
+          </button>
+        </>
+      );
+    } catch (err) {
+      if (err instanceof Error) {
+        return <span data-testid="error">{err.message}</span>;
+      }
+    }
+
+    return <></>;
+  };
+
+  const result = render(<TestButton />);
+
+  expect(result.getByTestId('error').textContent).toEqual(
+    'no elmish context found. make sure you have a <ElmishProvider>',
+  );
 });

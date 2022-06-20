@@ -1,6 +1,9 @@
 import React, { createContext, PropsWithChildren, useContext } from 'react';
 import useElmish, { Dispatch, Reducer, StateEffectPair } from 'react-use-elmish';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {};
+
 /**
  * Generic type for an elmish context.
  */
@@ -11,11 +14,7 @@ type ElmishContext<R extends Reducer<any, any>> = R extends Reducer<infer S, inf
 /**
  * Context for the reducer provider.
  */
-const ElmishContext = createContext<[any, Dispatch<any>]>([
-  null,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  () => {},
-]);
+const ElmishContext = createContext<[any, Dispatch<any>]>([null, noop]);
 
 interface ElmishProviderProps<State, Actions> {
   reducer: Reducer<State, Actions>;
@@ -50,7 +49,7 @@ export const ElmishProvider = <State, Actions>({
 export const useElmishContext = <State, Actions>(): [State, Dispatch<Actions>] => {
   const context = useContext(ElmishContext);
 
-  if (context == null) {
+  if (context[0] == null && context[1] === noop) {
     throw new Error('no elmish context found. make sure you have a <ElmishProvider>');
   }
 
@@ -62,4 +61,7 @@ export const useElmishContext = <State, Actions>(): [State, Dispatch<Actions>] =
  *
  * @returns dispatch function for the reducer
  */
-export const useDispatch = <Actions,>() => useElmishContext<unknown, Actions>()[1];
+export const useDispatch = <Actions,>() => {
+  const [, dispatch] = useElmishContext<unknown, Actions>();
+  return dispatch;
+};

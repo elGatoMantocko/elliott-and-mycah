@@ -20,10 +20,22 @@ exports[`<ActiveLink> should render active on the current path 1`] = `
 </div>
 `;
 
-exports[`<ActiveLink> should render disabled link 1`] = `
+exports[`<ActiveLink> should render disabled link: disabled_link 1`] = `
 <div>
   <a
     class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
+    data-testid="disabled-link"
+  >
+    Some test link
+  </a>
+</div>
+`;
+
+exports[`<ActiveLink> should render disabled link: disabled_link 2`] = `
+<div>
+  <a
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
+    data-testid="disabled-link"
   >
     Some test link
   </a>

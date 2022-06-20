@@ -23,7 +23,7 @@ export const useCustomTheme = () =>
             `,
           },
         },
-        spacing: (factor: number | string) =>
+        spacing: (factor: number | string): number | string =>
           typeof factor === 'number' ? `${0.5 * factor}rem` : factor,
         palette: {
           // TODO: play with dark mode but this site is designed for light mode

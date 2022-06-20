@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -13,9 +13,9 @@ describe('<ActiveLink>', () => {
     expect(el.container).toMatchSnapshot();
   });
 
-  it('should render disabled link', () => {
+  it('should render disabled link', async () => {
     const el = render(
-      <ActiveLink disabled href="/test">
+      <ActiveLink data-testid="disabled-link" disabled href="/test">
         Some test link
       </ActiveLink>,
       {
@@ -23,7 +23,15 @@ describe('<ActiveLink>', () => {
       },
     );
 
-    expect(el.container).toMatchSnapshot();
+    expect(el.container).toMatchSnapshot('disabled_link');
+
+    await act(async () => {
+      const link = await el.findByTestId('disabled-link');
+      link.click();
+    });
+
+    // nothing should change after clicking a disabled link
+    expect(el.container).toMatchSnapshot('disabled_link');
   });
 
   it('should render active on the current path', () => {

@@ -2,7 +2,13 @@ import { ListItemButton, ListItemButtonProps } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-export const ListItemLink = ({ disabled, href, onClick, children }: ListItemButtonProps<'a'>) => {
+export const ListItemLink = ({
+  disabled,
+  href,
+  onClick,
+  children,
+  ...props
+}: ListItemButtonProps<'a'>) => {
   const navigateTo = useNavigate();
 
   return (
@@ -16,6 +22,7 @@ export const ListItemLink = ({ disabled, href, onClick, children }: ListItemButt
         href != null && navigateTo(href);
         onClick != null && onClick(e);
       }}
+      {...props}
     >
       {children}
     </ListItemButton>
