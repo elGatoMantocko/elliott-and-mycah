@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { sub } from 'date-fns';
 import { act } from 'react-dom/test-utils';
 
@@ -31,6 +31,7 @@ it('should set the date on a new interval', async () => {
   });
 
   await act(() => {
+    // advance the time by a day
     jest.advanceTimersByTime(1000 * 60 * 60 * 24);
   });
   rerender();

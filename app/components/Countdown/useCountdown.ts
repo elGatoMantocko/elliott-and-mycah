@@ -16,7 +16,7 @@ export const useCountdown = (toDate: Date): CountdownDeltas => {
     const id = setInterval(() => {
       const duration = intervalToDuration({ start: toDate, end: new Date() });
       setDuration(duration);
-    }, 1000);
+    }, 3600000); // check once every hour
     return () => clearInterval(id);
   }, [setDuration, toDate]);
 
