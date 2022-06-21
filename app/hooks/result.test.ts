@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { state } from '../models/state';
-import { ResultState, useCallableResult, useResult } from './result';
+import { ResultState, useCallableResult, useResult } from '.';
 
 describe('useResult', () => {
   it('should resolve to pending/value for value result', async () => {

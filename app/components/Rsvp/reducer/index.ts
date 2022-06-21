@@ -1,6 +1,6 @@
 import { Effects, Reducer, StateEffectPair } from 'react-use-elmish';
 
-import { fromAsyncIterable } from '../../../effects/fromAsyncIterable';
+import { fromAsyncIterable } from '../../../effects';
 import { RsvpActions, RsvpActionTypes } from './actions';
 import { State } from './state';
 import { submitGuests } from './submitGuests';

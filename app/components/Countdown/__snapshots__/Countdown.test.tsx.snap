@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render null (0) deltas: null-like-deltas 1`] = `
+<div
+  data-testid="basic-countdown"
+>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="years-delta"
+      >
+        1
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        year
+      </h4>
+    </div>
+  </div>
+  ,
+</div>
+`;
+
+exports[`should render plural duration: plural-date 1`] = `
+<div
+  data-testid="basic-countdown"
+>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="years-delta"
+      >
+        2
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        years
+      </h4>
+    </div>
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="months-delta"
+      >
+        2
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        months
+      </h4>
+    </div>
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="days-delta"
+      >
+        2
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        days
+      </h4>
+    </div>
+  </div>
+  ,
+</div>
+`;
+
+exports[`should render: single-date 1`] = `
+<div
+  data-testid="basic-countdown"
+>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="years-delta"
+      >
+        1
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        year
+      </h4>
+    </div>
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="months-delta"
+      >
+        1
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        month
+      </h4>
+    </div>
+    <div
+      class="MuiBox-root css-17ixrrs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
+        data-testid="days-delta"
+      >
+        1
+      </h1>
+      <h4
+        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+      >
+        day
+      </h4>
+    </div>
+  </div>
+  ,
+</div>
+`;

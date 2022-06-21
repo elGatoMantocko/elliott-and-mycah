@@ -2,8 +2,8 @@ import { act, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 
-import { ListItemLink } from './ListItemLink';
-import { renderWithRouter, TestRouteLocation } from './testHelpers';
+import { renderWithRouter, TestRouteLocation } from '../../../testHelpers';
+import { ListItemLink } from '.';
 
 it('should render a link', () => {
   const el = render(<ListItemLink href="/test">Test</ListItemLink>, { wrapper: MemoryRouter });

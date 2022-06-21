@@ -1,7 +1,7 @@
 import robotstxt, { type Options } from 'generate-robotstxt';
 import { Compiler, sources, WebpackError, WebpackPluginInstance } from 'webpack';
 
-export default class RobotsTextWebpackPlugin implements WebpackPluginInstance {
+export class RobotsTextWebpackPlugin implements WebpackPluginInstance {
   private readonly options: Options & { filePath: 'robots.txt' };
 
   /**

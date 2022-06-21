@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useCustomTheme } from './theme';
+import { useCustomTheme } from '.';
 
 it('should match the custom theme', () => {
   const { result } = renderHook(() => useCustomTheme());

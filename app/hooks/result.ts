@@ -1,6 +1,6 @@
 import { DependencyList, useCallback, useEffect, useState } from 'react';
 
-import { State, state } from '../models/state';
+import { State, state } from '../models';
 
 export enum ResultState {
   NotStarted = 'not-started',

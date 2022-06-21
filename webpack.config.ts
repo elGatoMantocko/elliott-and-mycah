@@ -3,11 +3,21 @@ import 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import { join } from 'path';
-import { Configuration, DefinePlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
+import {
+  Configuration,
+  ContextReplacementPlugin,
+  DefinePlugin,
+  ProgressPlugin,
+  WebpackPluginInstance,
+} from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { GenerateSW } from 'workbox-webpack-plugin';
 
-import RobotsTextWebpackPlugin from './build/RobotsTextWebpackPlugin';
+import { RobotsTextWebpackPlugin } from './build';
+
+// configure supported locales for date-fns
+type SupportedLocales = 'en-US';
+const supportedLocales: SupportedLocales[] = ['en-US'];
 
 type Config = {
   /**
@@ -44,6 +54,11 @@ export const factory = ({
   noSW = false,
 }: Config): Configuration => {
   const plugins: WebpackPluginInstance[] = [
+    // https://date-fns.org/v2.28.0/docs/webpack
+    new ContextReplacementPlugin(
+      /date\-fns[\/\\]/,
+      new RegExp(`[/\\\\\](${supportedLocales.join('|')})[/\\\\\]index\.js$`),
+    ),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
       favicon: 'app/assets/favicon.ico',

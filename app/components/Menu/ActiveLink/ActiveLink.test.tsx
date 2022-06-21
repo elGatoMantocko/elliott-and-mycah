@@ -1,16 +1,17 @@
-import { act, render } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 
-import { ActiveLink } from './ActiveLink';
-import { renderWithRouter, TestRouteLocation } from './testHelpers';
+import { renderWithRouter, TestRouteLocation } from '../../../testHelpers';
+import { ActiveLink } from '.';
 
-it('should render a link', () => {
-  const el = render(<ActiveLink href="/test">Some test link</ActiveLink>, {
-    wrapper: MemoryRouter,
-  });
+it('should render a link', async () => {
+  const el = renderWithRouter(
+    <ActiveLink data-testid="basic-link" href="/test">
+      Some test link
+    </ActiveLink>,
+  );
 
-  expect(el.container).toMatchSnapshot();
+  expect(await el.findByTestId('basic-link')).toMatchSnapshot('basic-link');
 });
 
 it('should render disabled link', async () => {
@@ -20,7 +21,7 @@ it('should render disabled link', async () => {
     </ActiveLink>,
   );
 
-  expect(await el.findByTestId('disabled-link')).toMatchSnapshot('disabled_link');
+  expect(await el.findByTestId('disabled-link')).toMatchSnapshot('disabled-link');
 
   await act(async () => {
     const link = await el.findByTestId('disabled-link');
@@ -28,7 +29,7 @@ it('should render disabled link', async () => {
   });
 
   // nothing should change after clicking a disabled link
-  expect(el.container).toMatchSnapshot('disabled_link');
+  expect(el.container).toMatchSnapshot('disabled-link');
 });
 
 it('should render active on the current path', async () => {

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { ScriptTypography } from './ScriptTypography';
+import { ScriptTypography } from '.';
 
 it('should render', () => {
   const el = render(<ScriptTypography>Test copy</ScriptTypography>);
