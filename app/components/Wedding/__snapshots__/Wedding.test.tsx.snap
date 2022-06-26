@@ -50,7 +50,7 @@ exports[`should render a <Wedding /> page 1`] = `
                 <h1
                   class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
                 >
-                  13
+                  14
                 </h1>
                 <h4
                   class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
@@ -576,7 +576,7 @@ exports[`should render a small screen <Wedding /> page 1`] = `
                 <h1
                   class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
                 >
-                  13
+                  14
                 </h1>
                 <h4
                   class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"

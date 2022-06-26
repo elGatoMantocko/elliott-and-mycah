@@ -43,5 +43,6 @@
     "truetype",
     "Ubel",
     "webp"
-  ]
+  ],
+  "jest.jestCommandLine": "yarn jest -c jest.config.ts"
 }
