@@ -1,0 +1,1053 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a <Wedding /> page 1`] = `
+<div
+  data-testid="wedding-page"
+>
+  <div
+    class="MuiBox-root css-1kykfr"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+    >
+      <div
+        data-testid="layer-0"
+        style="background-image: url(test-file-stub); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
+      />
+      <div
+        class="MuiBox-root css-ald1q4"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
+        >
+          <div
+            class="MuiBox-root css-kr4k96"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  1
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  year
+                </h4>
+              </div>
+            </div>
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  13
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  days
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-1npg6dm"
+    >
+      <div
+        class="MuiBox-root css-1byc7kj"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          The Seattle Yacht Club
+        </h2>
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
+        >
+          <em>
+            6/12/21 @ 4pm
+          </em>
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+        >
+          Both our ceremony and reception will be held at the following address:
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+        >
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-7ratpe-MuiTypography-root-MuiLink-root"
+            href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
+            target="_blank"
+          >
+            1807 E. Hamlin St.
+            <br />
+            Seattle, WA 98112
+          </a>
+        </p>
+      </div>
+      <div
+        class="MuiBox-root css-1txa2c8"
+      >
+        <div
+          style="width: 100%; height: 500px;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Reception meal options
+      </h2>
+      <div
+        class="MuiBox-root css-brw1fa"
+      >
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Crab Stuffed Salmon
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Pancetta Chicken
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
+                <em>
+                  Gluten Free
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Spinach Tortellini
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Bridesmaids
+      </h2>
+      <div
+        class="MuiBox-root css-1nvf2ph"
+      >
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Paige Ubel"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Paige Ubel
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Fishers, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Rebecca Wiser"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Rebecca Wiser
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Greenwood, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Gina Sapienza"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Gina Sapienza
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Chicago, Illinois
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Groomsmen
+      </h2>
+      <div
+        class="MuiBox-root css-1nvf2ph"
+      >
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Billy Shank"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Billy Shank
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                South Bend, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Uses all of the beans.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Austin Sims"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Austin Sims
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Chicago, Illinois
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              A fellow man of of the Trombone.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Rob Mantock"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Rob Mantock
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Indianapolis, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Some guy.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Brent Mathis"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Brent Mathis
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                St. Louis, Missouri
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Beer santa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-16osax9"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Officiant
+      </h2>
+      <div
+        class="MuiBox-root css-k008qs"
+      >
+        <div
+          class="MuiBox-root css-n7lxis"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Chris Jacobus"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Chris Jacobus
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Kent, Washington
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Might actually be an airplane.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render a small screen <Wedding /> page 1`] = `
+<div
+  data-testid="small-wedding-page"
+>
+  <div
+    class="MuiBox-root css-1pw9y5c"
+  >
+    <div
+      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+    >
+      <div
+        data-testid="layer-0"
+        style="background-image: url(test-file-stub); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
+      />
+      <div
+        class="MuiBox-root css-ald1q4"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
+        >
+          <div
+            class="MuiBox-root css-kr4k96"
+          >
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  1
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  year
+                </h4>
+              </div>
+            </div>
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  13
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  days
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-1npg6dm"
+    >
+      <div
+        class="MuiBox-root css-1nyh40g"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          The Seattle Yacht Club
+        </h2>
+        <h3
+          class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
+        >
+          <em>
+            6/12/21 @ 4pm
+          </em>
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+        >
+          Both our ceremony and reception will be held at the following address:
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+        >
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-7ratpe-MuiTypography-root-MuiLink-root"
+            href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
+            target="_blank"
+          >
+            1807 E. Hamlin St.
+            <br />
+            Seattle, WA 98112
+          </a>
+        </p>
+      </div>
+      <div
+        class="MuiBox-root css-8ikxjz"
+      >
+        <div
+          style="width: 100%; height: 75vh;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Reception meal options
+      </h2>
+      <div
+        class="MuiBox-root css-1nvf2ph"
+      >
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Crab Stuffed Salmon
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Pancetta Chicken
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
+                <em>
+                  Gluten Free
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-tjslgt"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+          >
+            <div
+              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <h4
+                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              >
+                Spinach Tortellini
+              </h4>
+              <hr
+                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+              />
+              <p
+                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Bridesmaids
+      </h2>
+      <div
+        class="MuiBox-root css-ny86qu"
+      >
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Paige Ubel"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Paige Ubel
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Fishers, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Rebecca Wiser"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Rebecca Wiser
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Greenwood, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Gina Sapienza"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Gina Sapienza
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Chicago, Illinois
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Friend of the bride.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-i51og3"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Groomsmen
+      </h2>
+      <div
+        class="MuiBox-root css-ny86qu"
+      >
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Billy Shank"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Billy Shank
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                South Bend, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Uses all of the beans.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Austin Sims"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Austin Sims
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Chicago, Illinois
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              A fellow man of of the Trombone.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Rob Mantock"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Rob Mantock
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Indianapolis, Indiana
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Some guy.
+            </p>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root css-3nh5sl"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Brent Mathis"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Brent Mathis
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                St. Louis, Missouri
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Beer santa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-16osax9"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+      >
+        Officiant
+      </h2>
+      <div
+        class="MuiBox-root css-k008qs"
+      >
+        <div
+          class="MuiBox-root css-n7lxis"
+        >
+          <div
+            class="MuiBox-root css-hvj582"
+          >
+            <div
+              class="MuiBox-root css-1payvuv"
+            >
+              <img
+                alt="Chris Jacobus"
+                src="test-file-stub"
+                style="max-width: 100%;"
+              />
+            </div>
+            <h1
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-1kgxqm0-MuiTypography-root"
+            >
+              Chris Jacobus
+            </h1>
+            <p
+              class="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter MuiTypography-gutterBottom css-1m2cq0m-MuiTypography-root"
+            >
+              <em>
+                Kent, Washington
+              </em>
+            </p>
+            <p
+              class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1ypfif-MuiTypography-root"
+            >
+              Might actually be an airplane.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

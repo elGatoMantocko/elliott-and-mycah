@@ -49,6 +49,7 @@ import kissTheBridePortrait from './me (422 of 828).jpg';
 import downTheAisle from './me (429 of 828).jpg';
 import oneKissForTheRoad from './me (431 of 828).jpg';
 
+// istanbul ignore next
 export const pictureSources = [
   downTheAisle,
   eyesClosed,

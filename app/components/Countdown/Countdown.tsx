@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Hidden, Paper, Theme, useMediaQuery } from '@mui/material';
 import React from 'react';
 
 import { ScriptTypography } from '../ScriptTypography';
@@ -19,25 +19,30 @@ type CounterCardProps = Readonly<{ value: number | undefined; unit: Units }>;
 const CounterCard = ({ value, unit }: CounterCardProps) => (
   <>
     {value != null && value !== 0 && (
-      <Box textAlign="center" margin="0.5rem">
-        <ScriptTypography data-testid={`${unit}-delta`} variant="h1">
-          {value}
-        </ScriptTypography>
-        <ScriptTypography variant="h4">{pluralize(value, unit)}</ScriptTypography>
-      </Box>
+      <Paper elevation={5} sx={{ minWidth: 200 }}>
+        <Box sx={{ textAlign: 'center', mx: 2, my: 1 }}>
+          <ScriptTypography variant="h1" sx={{ lineHeight: 1 }}>
+            {value}
+          </ScriptTypography>
+          <ScriptTypography variant="h4">{pluralize(value, unit)}</ScriptTypography>
+        </Box>
+      </Paper>
     )}
   </>
 );
 
 type CountdownProps = Readonly<{ toDate: Date }>;
 export const Countdown = ({ toDate }: CountdownProps) => {
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
   const { years, months, days } = useCountdown(toDate);
 
   return (
     <Box display="flex" justifyContent="space-around" width="100%">
       <CounterCard value={years} unit="years" />
       <CounterCard value={months} unit="months" />
-      <CounterCard value={days} unit="days" />
+      <Hidden smDown={isSmallScreen}>
+        <CounterCard value={days} unit="days" />
+      </Hidden>
     </Box>
   );
 };

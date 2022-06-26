@@ -88,7 +88,7 @@ it('should fire dispatch events with the useDispatch hook', async () => {
   const TestButton = () => {
     const dispatch = useDispatch<TestActions>();
     return (
-      <button data-testid="test-button" onClick={() => dispatch('test')}>
+      <button data-testid="test-dispatch-button" onClick={() => dispatch('test')}>
         Press
       </button>
     );
@@ -103,7 +103,7 @@ it('should fire dispatch events with the useDispatch hook', async () => {
 
   // click the button
   await act(async () => {
-    const button = await result.findByTestId('test-button');
+    const button = await result.findByTestId('test-dispatch-button');
     button.click();
   });
 
@@ -123,7 +123,7 @@ it('should use an elmish context outside of an elmish provider', () => {
       return (
         <>
           <span data-testid="test-state">{state}</span>
-          <button data-testid="test-button" onClick={() => dispatch('test')}>
+          <button data-testid="test-error-button" onClick={() => dispatch('test')}>
             Press
           </button>
         </>

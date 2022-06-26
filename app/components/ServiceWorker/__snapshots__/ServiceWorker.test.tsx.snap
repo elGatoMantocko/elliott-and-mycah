@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a pending <Unregister />: pending-unregister 1`] = `
+<div
+  data-testid="unregister-sw-pending"
+/>
+`;
+
+exports[`should render a successful <Unregister /> with a snackbar: success-unregister 1`] = `
+<div
+  data-testid="unregister-sw-success-hide-snack"
+>
+  <div
+    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter css-1t20nyk-MuiSnackbar-root"
+    color="primary"
+    role="presentation"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
+      direction="up"
+      role="alert"
+      style="opacity: 1; transform: scale(1, 1); transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiSnackbarContent-message css-1exqwzz-MuiSnackbarContent-message"
+      >
+        <div
+          class="MuiBox-root css-1dhxv6h"
+        >
+          <div
+            class="MuiBox-root css-oq1jtl"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ThumbUpIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"
+              />
+            </svg>
+          </div>
+          <div
+            class="MuiBox-root css-1snmjsk"
+          >
+            Service worker loaded!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render a successful <Unregister /> with a snackbar: success-unregister-post-hide 1`] = `
+<div
+  data-testid="unregister-sw-success-hide-snack"
+>
+  <div
+    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter css-1t20nyk-MuiSnackbar-root"
+    color="primary"
+    role="presentation"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
+      direction="up"
+      role="alert"
+      style="opacity: 0; transform: scale(0.75, 0.5625); transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 130ms cubic-bezier(0.4, 0, 0.2, 1) 65ms;"
+    >
+      <div
+        class="MuiSnackbarContent-message css-1exqwzz-MuiSnackbarContent-message"
+      >
+        <div
+          class="MuiBox-root css-1dhxv6h"
+        >
+          <div
+            class="MuiBox-root css-oq1jtl"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ThumbUpIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"
+              />
+            </svg>
+          </div>
+          <div
+            class="MuiBox-root css-1snmjsk"
+          >
+            Service worker loaded!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render a successful <Unregister />: success-unregister 1`] = `
+<div
+  data-testid="unregister-sw-success"
+>
+  <div
+    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter css-1t20nyk-MuiSnackbar-root"
+    color="primary"
+    role="presentation"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiSnackbarContent-root css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root"
+      direction="up"
+      role="alert"
+      style="opacity: 1; transform: scale(1, 1); transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiSnackbarContent-message css-1exqwzz-MuiSnackbarContent-message"
+      >
+        <div
+          class="MuiBox-root css-1dhxv6h"
+        >
+          <div
+            class="MuiBox-root css-oq1jtl"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ThumbUpIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"
+              />
+            </svg>
+          </div>
+          <div
+            class="MuiBox-root css-1snmjsk"
+          >
+            Service worker loaded!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render an error <Unregister />: error-unregister 1`] = `
+<div
+  data-testid="unregister-sw-err"
+/>
+`;

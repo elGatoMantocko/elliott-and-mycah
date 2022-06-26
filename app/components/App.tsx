@@ -8,10 +8,8 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/theme';
 import { About } from './About';
-import { Accommodations } from './Accommodations';
 import { Menu } from './Menu';
 import { Pictures } from './Pictures';
-import { Registry } from './Registry';
 import { ScrollToTop } from './ScrollToTop';
 import { ServiceWorkerUnregistration } from './ServiceWorker';
 import { Wedding } from './Wedding';
@@ -30,8 +28,6 @@ export const App = () => (
                 <Route path="/" element={<Navigate to="/us" />} />
                 <Route path="/us" element={<About />} />
                 <Route path="/wedding" element={<Wedding />} />
-                <Route path="/registry" element={<Registry />} />
-                <Route path="/accommodations" element={<Accommodations />} />
                 <Route path="/pictures" element={<Pictures />} />
               </Routes>
             </Router>

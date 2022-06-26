@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 import React from 'react';
 
-import { renderWithRouter, TestRouteLocation } from '../../../testHelpers';
+import { renderWithRouter } from '../../../testHelpers';
 import { ActiveLink } from '.';
 
 it('should render a link', async () => {
@@ -43,14 +43,16 @@ it('should render active on the current path', async () => {
 });
 
 it('should render a link with null href', async () => {
-  const el = renderWithRouter(<ActiveLink data-testid="null-href">Some test link</ActiveLink>);
+  const el = renderWithRouter(<ActiveLink data-testid="null-href">Some test link</ActiveLink>, {
+    locationTestId: 'null-href-location',
+  });
 
   await act(async () => {
     const link = await el.findByTestId('null-href');
     link.click();
   });
 
-  const locationEl = await el.findByTestId(TestRouteLocation);
+  const locationEl = await el.findByTestId('null-href-location');
   expect(locationEl.textContent).toEqual('/');
 
   expect(await el.findByTestId('null-href')).toMatchSnapshot('null-href');
@@ -61,6 +63,7 @@ it('should navigate when a link is clicked', async () => {
     <ActiveLink data-testid="with-href" href="/test-path">
       Some test link
     </ActiveLink>,
+    { locationTestId: 'href-location' },
   );
 
   await act(async () => {
@@ -68,7 +71,7 @@ it('should navigate when a link is clicked', async () => {
     link.click();
   });
 
-  const locationEl = await el.findByTestId(TestRouteLocation);
+  const locationEl = await el.findByTestId('href-location');
   expect(locationEl.textContent).toEqual('/test-path');
 
   expect(await el.findByTestId('with-href')).toMatchSnapshot('with-href');

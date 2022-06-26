@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render an <App /> 1`] = `
+<div
+  data-testid="app"
+>
+  <div />
+  <div>
+    Loading...
+  </div>
+</div>
+`;

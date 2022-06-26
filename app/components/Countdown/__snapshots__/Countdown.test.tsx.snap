@@ -2,25 +2,28 @@
 
 exports[`should not render null (0) deltas: null-like-deltas 1`] = `
 <div
-  data-testid="basic-countdown"
+  data-testid="null-countdown"
 >
   <div
     class="MuiBox-root css-kr4k96"
   >
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="years-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        1
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        year
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
     </div>
   </div>
   ,
@@ -29,55 +32,64 @@ exports[`should not render null (0) deltas: null-like-deltas 1`] = `
 
 exports[`should render plural duration: plural-date 1`] = `
 <div
-  data-testid="basic-countdown"
+  data-testid="multiple-countdown"
 >
   <div
     class="MuiBox-root css-kr4k96"
   >
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="years-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        2
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        years
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          years
+        </h4>
+      </div>
     </div>
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="months-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        2
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        months
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          months
+        </h4>
+      </div>
     </div>
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="days-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        2
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        days
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          days
+        </h4>
+      </div>
     </div>
   </div>
   ,
@@ -92,49 +104,58 @@ exports[`should render: single-date 1`] = `
     class="MuiBox-root css-kr4k96"
   >
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="years-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        1
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        year
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
     </div>
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="months-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        1
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        month
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          month
+        </h4>
+      </div>
     </div>
     <div
-      class="MuiBox-root css-17ixrrs"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-1whdp8y-MuiTypography-root"
-        data-testid="days-delta"
+      <div
+        class="MuiBox-root css-1erotlu"
       >
-        1
-      </h1>
-      <h4
-        class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-      >
-        day
-      </h4>
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          day
+        </h4>
+      </div>
     </div>
   </div>
   ,

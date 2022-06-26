@@ -20,14 +20,11 @@ export const Wedding = () => {
 
   return (
     <>
-      <Banner
-        translateY={[-15, 15]}
-        height={isSmallScreen ? '90vh' : 650}
-        imageSource={yachtClub}
-      />
-      <Container maxWidth="md">
-        <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
-      </Container>
+      <Banner translateY={[-15, 15]} height={isSmallScreen ? '90vh' : 650} imageSource={yachtClub}>
+        <Container maxWidth="md">
+          <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
+        </Container>
+      </Banner>
       <Container>
         <Box display="flex" flexWrap="wrap" justifyContent="space-around" mt={4}>
           <Box mb={2} textAlign="center" px={1} width={isSmallScreen ? '100%' : '40%'}>

@@ -1,4 +1,4 @@
-import { useScrollToTop } from '../hooks/scrollToTop';
+import { useScrollToTop } from '../../hooks/scrollToTop';
 
 /**
  * A component that when mounted will force the window to scroll to the top of the page

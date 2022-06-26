@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a <Section />: basic-section 1`] = `
+<div
+  data-testid="test-section"
+>
+  <div
+    class="MuiBox-root css-1cgxlb6"
+  >
+    <div
+      class="MuiBox-root css-s3cama"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter css-npk0zx-MuiTypography-root"
+      >
+        Hello world
+      </h3>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter MuiTypography-gutterBottom css-1c3pd2j-MuiTypography-root"
+      >
+        This is a longer part of the section
+      </p>
+    </div>
+  </div>
+  ,
+</div>
+`;

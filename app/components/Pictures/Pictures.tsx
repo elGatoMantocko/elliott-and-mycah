@@ -1,14 +1,5 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import {
-  Box,
-  Container,
-  Dialog,
-  Grid,
-  IconButton,
-  Link,
-  Snackbar,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Dialog, Grid, IconButton, Link, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 import soundAndSea from '../../images/sound-and-sea.png';
@@ -45,7 +36,6 @@ export const Pictures = () => {
           </Typography>
         </Box>
       </Container>
-      <Snackbar />
       <Dialog
         open={inspectPicture != null}
         maxWidth="md"

@@ -10,6 +10,15 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleDirectories: ['node_modules'],
   testEnvironment: 'jsdom',
+  collectCoverageFrom: ['./app/**/*.ts', './app/**/*.tsx'],
+  coverageThreshold: {
+    global: {
+      statements: 80,
+      lines: 80,
+      branches: 80,
+      functions: 80,
+    },
+  },
   ci: process.env.CI === 'true',
   reporters:
     process.env.CI === 'true' ? [['jest-junit', { outputDirectory: 'test-results' }]] : undefined,
