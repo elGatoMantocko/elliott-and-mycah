@@ -18,6 +18,9 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
   );
 };
 
+// mock system clock
+jest.useFakeTimers().setSystemTime(new Date(2022, 6, 14));
+
 it('should render a <Wedding /> page', async () => {
   const el = render(
     <div data-testid="wedding-page">

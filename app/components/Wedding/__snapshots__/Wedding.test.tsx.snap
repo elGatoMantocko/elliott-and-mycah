@@ -50,12 +50,30 @@ exports[`should render a <Wedding /> page 1`] = `
                 <h1
                   class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
                 >
-                  14
+                  1
                 </h1>
                 <h4
                   class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
                 >
-                  days
+                  month
+                </h4>
+              </div>
+            </div>
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  1
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  day
                 </h4>
               </div>
             </div>
@@ -576,12 +594,30 @@ exports[`should render a small screen <Wedding /> page 1`] = `
                 <h1
                   class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
                 >
-                  14
+                  1
                 </h1>
                 <h4
                   class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
                 >
-                  days
+                  month
+                </h4>
+              </div>
+            </div>
+            <div
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+            >
+              <div
+                class="MuiBox-root css-1erotlu"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                >
+                  1
+                </h1>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                >
+                  day
                 </h4>
               </div>
             </div>
