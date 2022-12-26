@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match the custom theme 1`] = `
-Object {
-  "breakpoints": Object {
+{
+  "breakpoints": {
     "between": [Function],
     "down": [Function],
-    "keys": Array [
+    "keys": [
       "xs",
       "sm",
       "md",
@@ -16,7 +16,7 @@ Object {
     "only": [Function],
     "unit": "px",
     "up": [Function],
-    "values": Object {
+    "values": {
       "lg": 1200,
       "md": 900,
       "sm": 600,
@@ -24,8 +24,8 @@ Object {
       "xs": 0,
     },
   },
-  "components": Object {
-    "MuiCssBaseline": Object {
+  "components": {
+    "MuiCssBaseline": {
       "styleOverrides": "
               html, body, #root {
                 min-height: 100vh;
@@ -41,21 +41,21 @@ Object {
     },
   },
   "direction": "ltr",
-  "mixins": Object {
-    "toolbar": Object {
-      "@media (min-width:0px)": Object {
-        "@media (orientation: landscape)": Object {
+  "mixins": {
+    "toolbar": {
+      "@media (min-width:0px)": {
+        "@media (orientation: landscape)": {
           "minHeight": 48,
         },
       },
-      "@media (min-width:600px)": Object {
+      "@media (min-width:600px)": {
         "minHeight": 64,
       },
       "minHeight": 56,
     },
   },
-  "palette": Object {
-    "action": Object {
+  "palette": {
+    "action": {
       "activatedOpacity": 0.12,
       "active": "rgba(0, 0, 0, 0.54)",
       "activeChannel": "0 0 0",
@@ -71,24 +71,25 @@ Object {
       "selectedOpacity": 0.08,
     },
     "augmentColor": [Function],
-    "background": Object {
+    "background": {
       "default": "#fff",
+      "defaultChannel": "255 255 255",
       "paper": "#fff",
     },
-    "common": Object {
+    "common": {
       "black": "#000",
       "white": "#fff",
     },
     "contrastThreshold": 3,
     "divider": "rgba(0, 0, 0, 0.12)",
-    "error": Object {
+    "error": {
       "contrastText": "#000",
       "dark": "#d32f2f",
       "light": "#e57373",
       "main": "#f44336",
     },
     "getContrastText": [Function],
-    "grey": Object {
+    "grey": {
       "100": "#f5f5f5",
       "200": "#eeeeee",
       "300": "#e0e0e0",
@@ -104,32 +105,32 @@ Object {
       "A400": "#bdbdbd",
       "A700": "#616161",
     },
-    "info": Object {
+    "info": {
       "contrastText": "#fff",
       "dark": "#01579b",
       "light": "#03a9f4",
       "main": "#0288d1",
     },
     "mode": "light",
-    "primary": Object {
+    "primary": {
       "contrastText": "#fff",
       "dark": "rgba(114, 78, 135, 1)",
       "light": "rgba(175, 126, 203, 1)",
       "main": "rgba(139, 77, 174, 1)",
     },
-    "secondary": Object {
+    "secondary": {
       "contrastText": "#fff",
       "dark": "rgba(45, 92, 45, 1)",
       "light": "rgba(104, 177, 104, 1)",
       "main": "rgba(31, 134, 31, 1)",
     },
-    "success": Object {
+    "success": {
       "contrastText": "#fff",
       "dark": "#1b5e20",
       "light": "#4caf50",
       "main": "#2e7d32",
     },
-    "text": Object {
+    "text": {
       "disabled": "rgba(0, 0, 0, 0.38)",
       "primary": "rgba(0, 0, 0, 0.87)",
       "primaryChannel": "0 0 0",
@@ -137,14 +138,14 @@ Object {
       "secondaryChannel": "0 0 0",
     },
     "tonalOffset": 0.2,
-    "warning": Object {
+    "warning": {
       "contrastText": "#fff",
       "dark": "#e65100",
       "light": "#ff9800",
       "main": "#ed6c02",
     },
   },
-  "shadows": Array [
+  "shadows": [
     "none",
     "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
     "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
@@ -171,13 +172,13 @@ Object {
     "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
     "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
   ],
-  "shape": Object {
+  "shape": {
     "borderRadius": 4,
   },
   "spacing": [Function],
-  "transitions": Object {
+  "transitions": {
     "create": [Function],
-    "duration": Object {
+    "duration": {
       "complex": 375,
       "enteringScreen": 225,
       "leavingScreen": 195,
@@ -186,7 +187,7 @@ Object {
       "shortest": 150,
       "standard": 300,
     },
-    "easing": Object {
+    "easing": {
       "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
       "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
       "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
@@ -194,87 +195,87 @@ Object {
     },
     "getAutoHeightDuration": [Function],
   },
-  "typography": Object {
-    "body1": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+  "typography": {
+    "body1": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "1rem",
       "fontWeight": 400,
       "letterSpacing": "0.00938em",
       "lineHeight": 1.5,
     },
-    "body2": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "body2": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.875rem",
       "fontWeight": 400,
       "letterSpacing": "0.01071em",
       "lineHeight": 1.43,
     },
-    "button": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "button": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.875rem",
       "fontWeight": 500,
       "letterSpacing": "0.02857em",
       "lineHeight": 1.75,
       "textTransform": "uppercase",
     },
-    "caption": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "caption": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.75rem",
       "fontWeight": 400,
       "letterSpacing": "0.03333em",
       "lineHeight": 1.66,
     },
-    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
     "fontSize": 14,
     "fontWeightBold": 700,
     "fontWeightLight": 300,
     "fontWeightMedium": 500,
     "fontWeightRegular": 400,
-    "h1": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h1": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "6rem",
       "fontWeight": 300,
       "letterSpacing": "-0.01562em",
       "lineHeight": 1.167,
     },
-    "h2": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h2": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "3.75rem",
       "fontWeight": 300,
       "letterSpacing": "-0.00833em",
       "lineHeight": 1.2,
     },
-    "h3": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h3": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "3rem",
       "fontWeight": 400,
       "letterSpacing": "0em",
       "lineHeight": 1.167,
     },
-    "h4": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h4": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "2.125rem",
       "fontWeight": 400,
       "letterSpacing": "0.00735em",
       "lineHeight": 1.235,
     },
-    "h5": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h5": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "1.5rem",
       "fontWeight": 400,
       "letterSpacing": "0em",
       "lineHeight": 1.334,
     },
-    "h6": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "h6": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "1.25rem",
       "fontWeight": 500,
       "letterSpacing": "0.0075em",
       "lineHeight": 1.6,
     },
     "htmlFontSize": 16,
-    "overline": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "overline": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.75rem",
       "fontWeight": 400,
       "letterSpacing": "0.08333em",
@@ -282,22 +283,287 @@ Object {
       "textTransform": "uppercase",
     },
     "pxToRem": [Function],
-    "subtitle1": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "subtitle1": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "1rem",
       "fontWeight": 400,
       "letterSpacing": "0.00938em",
       "lineHeight": 1.75,
     },
-    "subtitle2": Object {
-      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+    "subtitle2": {
+      "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.875rem",
       "fontWeight": 500,
       "letterSpacing": "0.00714em",
       "lineHeight": 1.57,
     },
   },
-  "zIndex": Object {
+  "unstable_sx": [Function],
+  "unstable_sxConfig": {
+    "alignContent": {},
+    "alignItems": {},
+    "alignSelf": {},
+    "backgroundColor": {
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "bgcolor": {
+      "cssProperty": "backgroundColor",
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "border": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderBottom": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderBottomColor": {
+      "themeKey": "palette",
+    },
+    "borderColor": {
+      "themeKey": "palette",
+    },
+    "borderLeft": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderLeftColor": {
+      "themeKey": "palette",
+    },
+    "borderRadius": {
+      "style": [Function],
+      "themeKey": "shape.borderRadius",
+    },
+    "borderRight": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderRightColor": {
+      "themeKey": "palette",
+    },
+    "borderTop": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "borderTopColor": {
+      "themeKey": "palette",
+    },
+    "bottom": {},
+    "boxShadow": {
+      "themeKey": "shadows",
+    },
+    "boxSizing": {},
+    "color": {
+      "themeKey": "palette",
+      "transform": [Function],
+    },
+    "columnGap": {
+      "style": [Function],
+    },
+    "display": {},
+    "displayPrint": {
+      "cssProperty": false,
+      "transform": [Function],
+    },
+    "flex": {},
+    "flexBasis": {},
+    "flexDirection": {},
+    "flexGrow": {},
+    "flexShrink": {},
+    "flexWrap": {},
+    "fontFamily": {
+      "themeKey": "typography",
+    },
+    "fontSize": {
+      "themeKey": "typography",
+    },
+    "fontStyle": {
+      "themeKey": "typography",
+    },
+    "fontWeight": {
+      "themeKey": "typography",
+    },
+    "gap": {
+      "style": [Function],
+    },
+    "gridArea": {},
+    "gridAutoColumns": {},
+    "gridAutoFlow": {},
+    "gridAutoRows": {},
+    "gridColumn": {},
+    "gridRow": {},
+    "gridTemplateAreas": {},
+    "gridTemplateColumns": {},
+    "gridTemplateRows": {},
+    "height": {
+      "transform": [Function],
+    },
+    "justifyContent": {},
+    "justifyItems": {},
+    "justifySelf": {},
+    "left": {},
+    "letterSpacing": {},
+    "lineHeight": {},
+    "m": {
+      "style": [Function],
+    },
+    "margin": {
+      "style": [Function],
+    },
+    "marginBlock": {
+      "style": [Function],
+    },
+    "marginBlockEnd": {
+      "style": [Function],
+    },
+    "marginBlockStart": {
+      "style": [Function],
+    },
+    "marginBottom": {
+      "style": [Function],
+    },
+    "marginInline": {
+      "style": [Function],
+    },
+    "marginInlineEnd": {
+      "style": [Function],
+    },
+    "marginInlineStart": {
+      "style": [Function],
+    },
+    "marginLeft": {
+      "style": [Function],
+    },
+    "marginRight": {
+      "style": [Function],
+    },
+    "marginTop": {
+      "style": [Function],
+    },
+    "marginX": {
+      "style": [Function],
+    },
+    "marginY": {
+      "style": [Function],
+    },
+    "maxHeight": {
+      "transform": [Function],
+    },
+    "maxWidth": {
+      "style": [Function],
+    },
+    "mb": {
+      "style": [Function],
+    },
+    "minHeight": {
+      "transform": [Function],
+    },
+    "minWidth": {
+      "transform": [Function],
+    },
+    "ml": {
+      "style": [Function],
+    },
+    "mr": {
+      "style": [Function],
+    },
+    "mt": {
+      "style": [Function],
+    },
+    "mx": {
+      "style": [Function],
+    },
+    "my": {
+      "style": [Function],
+    },
+    "order": {},
+    "overflow": {},
+    "p": {
+      "style": [Function],
+    },
+    "padding": {
+      "style": [Function],
+    },
+    "paddingBlock": {
+      "style": [Function],
+    },
+    "paddingBlockEnd": {
+      "style": [Function],
+    },
+    "paddingBlockStart": {
+      "style": [Function],
+    },
+    "paddingBottom": {
+      "style": [Function],
+    },
+    "paddingInline": {
+      "style": [Function],
+    },
+    "paddingInlineEnd": {
+      "style": [Function],
+    },
+    "paddingInlineStart": {
+      "style": [Function],
+    },
+    "paddingLeft": {
+      "style": [Function],
+    },
+    "paddingRight": {
+      "style": [Function],
+    },
+    "paddingTop": {
+      "style": [Function],
+    },
+    "paddingX": {
+      "style": [Function],
+    },
+    "paddingY": {
+      "style": [Function],
+    },
+    "pb": {
+      "style": [Function],
+    },
+    "pl": {
+      "style": [Function],
+    },
+    "position": {},
+    "pr": {
+      "style": [Function],
+    },
+    "pt": {
+      "style": [Function],
+    },
+    "px": {
+      "style": [Function],
+    },
+    "py": {
+      "style": [Function],
+    },
+    "right": {},
+    "rowGap": {
+      "style": [Function],
+    },
+    "textAlign": {},
+    "textOverflow": {},
+    "textTransform": {},
+    "top": {},
+    "typography": {
+      "cssProperty": false,
+      "themeKey": "typography",
+    },
+    "visibility": {},
+    "whiteSpace": {},
+    "width": {
+      "transform": [Function],
+    },
+    "zIndex": {
+      "themeKey": "zIndex",
+    },
+  },
+  "zIndex": {
     "appBar": 1100,
     "drawer": 1200,
     "fab": 1050,

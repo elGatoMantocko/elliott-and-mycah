@@ -35,7 +35,7 @@ it('should return false when there are no service workers to unregister', async 
 
   const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());
 
-  await waitFor(() => result.current.state !== ResultState.Pending);
+  await waitFor(() => expect(result.current.state).not.toEqual(ResultState.Pending));
   await act(() => {
     rerender();
   });
