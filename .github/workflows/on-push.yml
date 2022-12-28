@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tasks: [lint, auditLicenses, test, build]
+        task: [lint, auditLicenses, test, build]
     name: 📦 ${{ matrix.task }}
     steps:
       - name: 💍 Checkout code
