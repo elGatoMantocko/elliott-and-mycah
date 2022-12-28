@@ -18,8 +18,11 @@ permissions:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    name: 📦 Build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tasks: [lint, auditLicenses, test, build]
+    name: 📦 ${{ matrix.task }}
     steps:
       - name: 💍 Checkout code
         uses: actions/checkout@v3
@@ -27,35 +30,27 @@ jobs:
       - name: ⚙️ Setup nodejs and yarn
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "yarn"
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: 💿 Install yarn dependencies
         run: yarn install --immutable
 
-      - name: 👖 Run lint
-        run: yarn lint
-
-      - name: 🧑‍⚖️ Audit licenses
-        run: yarn auditLicenses
-
-      - name: 🧪 Run yarn tests
+      - name: ⚙️ Run ${{ matrix.task }}
         env:
-          CI: "true"
-        run: yarn test
+          CI: 'true'
+        run: yarn ${{ matrix.task }}
 
       - name: 👀 Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()
+        if: always() && matrix.task == 'test'
         with:
           files: test-results/**/*.xml
           # we don't need comment mode because this only runs on main for now
           comment_mode: off
 
-      - name: 🕸 Build webapp bundle
-        run: yarn build
-
       - name: 📤 Upload build artifact
+        if: matrix.task == 'build'
         uses: actions/upload-artifact@v3
         with:
           name: webapp-bundle-${{ github.sha }}

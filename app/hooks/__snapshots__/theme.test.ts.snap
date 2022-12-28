@@ -58,7 +58,6 @@ exports[`should match the custom theme 1`] = `
     "action": {
       "activatedOpacity": 0.12,
       "active": "rgba(0, 0, 0, 0.54)",
-      "activeChannel": "0 0 0",
       "disabled": "rgba(159, 159, 159, 1)",
       "disabledBackground": "rgba(226, 226, 226, 1)",
       "disabledOpacity": 0.38,
@@ -67,13 +66,11 @@ exports[`should match the custom theme 1`] = `
       "hover": "rgba(0, 0, 0, 0.04)",
       "hoverOpacity": 0.04,
       "selected": "rgba(0, 0, 0, 0.08)",
-      "selectedChannel": "0 0 0",
       "selectedOpacity": 0.08,
     },
     "augmentColor": [Function],
     "background": {
       "default": "#fff",
-      "defaultChannel": "255 255 255",
       "paper": "#fff",
     },
     "common": {
@@ -133,9 +130,7 @@ exports[`should match the custom theme 1`] = `
     "text": {
       "disabled": "rgba(0, 0, 0, 0.38)",
       "primary": "rgba(0, 0, 0, 0.87)",
-      "primaryChannel": "0 0 0",
       "secondary": "rgba(0, 0, 0, 0.6)",
-      "secondaryChannel": "0 0 0",
     },
     "tonalOffset": 0.2,
     "warning": {
