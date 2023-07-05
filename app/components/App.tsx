@@ -6,6 +6,7 @@ import GithubCorner from 'react-github-corner';
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
   RouterProvider,
 } from 'react-router-dom';
@@ -31,7 +32,8 @@ export const App = () => (
                 createRoutesFromElements(
                   <Route element={<ScrollToTopOutlet />}>
                     <Route element={<MenuOutlet />}>
-                      <Route index path="us" element={<About />} />
+                      <Route index element={<Navigate to="/us" />} />
+                      <Route path="us" element={<About />} />
                       <Route path="wedding" element={<Wedding />} />
                       <Route path="pictures" element={<Pictures />} />
                     </Route>
