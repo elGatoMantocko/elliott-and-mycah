@@ -5,5 +5,7 @@ import { App } from './components/App';
 
 // istanbul ignore next
 ReactDOM.createRoot(document.getElementById('root') ?? document.createElement('div')).render(
-  <App />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );

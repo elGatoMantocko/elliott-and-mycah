@@ -163,6 +163,7 @@ export const config: Configuration = {
   optimization: {
     providedExports: true,
     removeAvailableModules: true,
+    splitChunks: { chunks: 'all' },
     minimizer: [
       // magic `...` to extend other plugins (DO NOT GET RID OF THIS, or you lose `TerserWebpackPlugin`)
       '...',

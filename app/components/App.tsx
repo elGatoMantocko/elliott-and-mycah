@@ -13,12 +13,9 @@ import {
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/theme';
-import { About } from './About';
 import { MenuOutlet } from './Menu';
-import { Pictures } from './Pictures';
 import { ScrollToTopOutlet } from './ScrollToTopOutlet';
 import { ServiceWorkerUnregistration } from './ServiceWorker';
-import { Wedding } from './Wedding';
 
 export const App = () => (
   <ParallaxProvider>
@@ -33,9 +30,31 @@ export const App = () => (
                   <Route element={<ScrollToTopOutlet />}>
                     <Route element={<MenuOutlet />}>
                       <Route index element={<Navigate to="/us" />} />
-                      <Route path="us" element={<About />} />
-                      <Route path="wedding" element={<Wedding />} />
-                      <Route path="pictures" element={<Pictures />} />
+                      <Route
+                        path="us"
+                        lazy={async () => {
+                          const { About } = await import(/* webpackChunkName: "about" */ './About');
+                          return { element: <About /> };
+                        }}
+                      />
+                      <Route
+                        path="wedding"
+                        lazy={async () => {
+                          const { Wedding } = await import(
+                            /* webpackChunkName: "wedding" */ './Wedding'
+                          );
+                          return { element: <Wedding /> };
+                        }}
+                      />
+                      <Route
+                        path="pictures"
+                        lazy={async () => {
+                          const { Pictures } = await import(
+                            /* webpackChunkName: "pictures" */ './Pictures'
+                          );
+                          return { element: <Pictures /> };
+                        }}
+                      />
                     </Route>
                   </Route>,
                 ),
