@@ -17,7 +17,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-0"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
@@ -30,7 +30,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-12x7e8k"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
@@ -43,7 +43,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-12x7e8k"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
           >
             <p
               class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"

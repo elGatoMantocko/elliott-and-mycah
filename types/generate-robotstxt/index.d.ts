@@ -15,7 +15,6 @@ declare module 'generate-robotstxt' {
 
   /**
    * Used to generate robots.txt file.
-   *
    * @param opts robotstxt options
    * @returns applied
    */

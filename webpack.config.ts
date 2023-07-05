@@ -39,7 +39,6 @@ type Config = {
 };
 /**
  * Function to generate a base webpack config
- *
  * @param config configuration object that abstracts webpack config
  * @param config.devtool to use for sourcemaps/dev utils (defaults to 'source-map')
  * @param config.mode mode to build the webpack bundle in (defaults to 'production')
@@ -127,7 +126,6 @@ enum BuildMode {
 }
 /**
  * Function to map an environment to a `BuildMode`.
- *
  * @param mode coerce this to a `BuildMode` enum
  * @returns enum describing the build mode
  */
@@ -144,7 +142,6 @@ const getEnvMode = (mode?: string): BuildMode | undefined => {
 
 /**
  * Function to check a boolean env flag.
- *
  * @param flag name of the flag to check
  * @returns boolean if the flag exists or undefined
  */

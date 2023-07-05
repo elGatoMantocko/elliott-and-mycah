@@ -112,7 +112,7 @@ exports[`should render a <Wedding /> page 1`] = `
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-7ratpe-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-c4gcgq-MuiTypography-root-MuiLink-root"
             href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
             target="_blank"
           >
@@ -656,7 +656,7 @@ exports[`should render a small screen <Wedding /> page 1`] = `
           class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-7ratpe-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-c4gcgq-MuiTypography-root-MuiLink-root"
             href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
             target="_blank"
           >

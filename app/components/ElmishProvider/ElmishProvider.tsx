@@ -28,7 +28,6 @@ interface ElmishProviderProps<State, Actions> {
 
 /**
  * Component to hold a context for the reducer.
- *
  * @param param0 props
  * @param param0.children children props to be rendered under this context
  * @param param0.reducer reducer to use in the elmish context
@@ -48,7 +47,6 @@ export const ElmishProvider = <State, Actions>({
 
 /**
  * Hook to get the state/dispatch tuple for the elmish reducer.
- *
  * @returns tuple of state/dispatch for the elmish reducer
  */
 export const useElmishContext = <State, Actions>(): [State, Dispatch<Actions>] => {
@@ -65,7 +63,6 @@ export const useElmishContext = <State, Actions>(): [State, Dispatch<Actions>] =
 
 /**
  * Hook to get the dispatch function of the reducer context.
- *
  * @returns dispatch function for the reducer
  */
 export const useDispatch = <Actions,>() => {

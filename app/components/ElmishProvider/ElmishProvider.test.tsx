@@ -15,7 +15,6 @@ interface CustomRenderOptions extends RenderOptions {
 
 /**
  * Custom render function to render the elmish provider.
- *
  * @param ui to render inside the provider
  * @param param1 options
  * @param param1.reducer passed to the elmish provider
@@ -47,7 +46,6 @@ const customRenderOptions: CustomRenderOptions = {
 it('should hold elmish context', async () => {
   /**
    * Simple component that uses elmish context.
-   *
    * @returns element
    */
   const TestButton = () => {
@@ -114,7 +112,6 @@ it('should fire dispatch events with the useDispatch hook', async () => {
 it('should use an elmish context outside of an elmish provider', () => {
   /**
    * Simple component that uses elmish context.
-   *
    * @returns element
    */
   const TestButton = (): JSX.Element => {

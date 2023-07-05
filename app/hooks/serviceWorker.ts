@@ -2,7 +2,6 @@ import { useResult } from './result';
 
 /**
  * Hook to register a service worker.
- *
  * @param scriptSrc source of the service-worker script
  * @returns result of the service worker registration
  */
@@ -11,7 +10,6 @@ export const useServiceWorker = (scriptSrc: string) =>
 
 /**
  * Hook to unregister all service workers.
- *
  * @returns true if any and all service workers were able to be unregistered
  */
 export const useUnregisterServiceWorkers = () =>

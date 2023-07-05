@@ -18,7 +18,6 @@ type BannerProps = PropsWithChildren<
 
 /**
  * Render a single image as a parallax banner
- *
  * @example
  * ```jsx
  * // for a "forward" scrolling banner

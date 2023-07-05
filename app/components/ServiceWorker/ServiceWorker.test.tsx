@@ -12,7 +12,6 @@ jest.mock('../../hooks/serviceWorker', () => ({
 
 /**
  * Helper to mock a sw unregister result.
- *
  * @param result that the unregister service worker hook returns
  */
 async function mockUnregisterResult(

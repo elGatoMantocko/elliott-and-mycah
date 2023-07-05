@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { renderWithRouter } from '../../testHelpers';
-import { Menu } from './Menu';
+import { MenuOutlet } from './MenuOutlet';
 
 it('should render a <Menu />', async () => {
   const el = renderWithRouter(
     <div data-testid="menu">
-      <Menu />
+      <MenuOutlet />
     </div>,
   );
   expect(await el.findByTestId('menu')).toMatchSnapshot();

@@ -7,7 +7,6 @@ type FoodChoice = 'chicken' | 'fish' | 'veg';
 
 /**
  * Determine if the user selected a valid food choice and type guard it.
- *
  * @param foodChoice the choice a user selected
  * @returns type guarded food choice
  */

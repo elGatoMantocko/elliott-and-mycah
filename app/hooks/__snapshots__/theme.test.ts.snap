@@ -269,6 +269,13 @@ exports[`should match the custom theme 1`] = `
       "lineHeight": 1.6,
     },
     "htmlFontSize": 16,
+    "inherit": {
+      "fontFamily": "inherit",
+      "fontSize": "inherit",
+      "fontWeight": "inherit",
+      "letterSpacing": "inherit",
+      "lineHeight": "inherit",
+    },
     "overline": {
       "fontFamily": ""Roboto", "Helvetica", "Arial", sans-serif",
       "fontSize": "0.75rem",

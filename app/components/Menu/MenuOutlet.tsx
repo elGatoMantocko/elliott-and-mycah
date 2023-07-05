@@ -12,12 +12,13 @@ import {
   Toolbar,
 } from '@mui/material';
 import React, { useState } from 'react';
+import { Outlet } from 'react-router';
 
 import { ScriptTypography } from '../ScriptTypography';
 import { ActiveLink } from './ActiveLink';
 import { ListItemLink } from './ListItemLink';
 
-export const Menu = () => {
+export const MenuOutlet = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const closeDrawer = () => setDrawerOpen(false);
 
@@ -75,6 +76,8 @@ export const Menu = () => {
           </List>
         </Drawer>
       </Hidden>
+
+      <Outlet />
     </>
   );
 };

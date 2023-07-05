@@ -11,7 +11,6 @@ type AsyncEffect<Action> = Array<(dispatch: Dispatch<Action>) => Promise<void>>;
  * Get an effect from an asynchronous iterator. This effect will dispatch each asynchronous action in order.
  *
  * Returns an `AsyncEffect<Action>` (`[(dispatch: Dispatch<Action>) => Promise<void>]`)
- *
  * @param iterator async iterable that can iterate over a set of actions
  * @returns effect for a given actions
  */

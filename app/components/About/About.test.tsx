@@ -9,7 +9,6 @@ import { About } from '.';
 /**
  * The About page uses a parallax banner and mui breakpoints. So we need to
  * provide a theme provider and parallax provider.
- *
  * @param param0 props
  * @param param0.children passed to the providers
  * @returns react element

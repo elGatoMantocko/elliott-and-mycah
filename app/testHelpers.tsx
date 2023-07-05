@@ -16,7 +16,6 @@ interface TestLocationProps {
 
 /**
  * Component that exposes the location path and search to the dom
- *
  * @param root0 props
  * @param root0.testId test id passed to the inner location element
  * @returns element
@@ -34,7 +33,6 @@ interface RouterRenderOptions extends RenderOptions {
 
 /**
  * Use to render UI with a react-router with the ability to search for a `route-location` test id.
- *
  * @example
  * ```typescriptreact
  * const el = renderWithRouter(<MyComponent />);
@@ -65,7 +63,6 @@ const noop = () => {};
 
 /**
  * Function to create a match media for mocking media queries.
- *
  * @param width to mock in the jsdom
  * @returns matchMedia options
  */

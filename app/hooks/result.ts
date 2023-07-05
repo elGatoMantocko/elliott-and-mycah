@@ -27,7 +27,6 @@ type UseResultValue<C extends () => Promise<unknown>> = C extends () => Promise<
 
 /**
  * Turns an unknown error into an {@link Error}
- *
  * @param err unknown error
  * @returns a valid error object
  */
@@ -45,7 +44,6 @@ function handleUnknownError(err: unknown): Error {
 
 /**
  * Function to get a result from an asynchronous function.
- *
  * @param request asynchronous function to map to a result state
  * @param deps list of deps used in the request
  * @returns result state object
@@ -92,8 +90,7 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends UseRe
 
 /**
  * Hook to get a callable function that sets the result state. Can be reset to `not-started`
- *  with the 3rd option in the tuple.
- *
+ * with the 3rd option in the tuple.
  * @param request function to call
  * @returns tuple representing the `[result-state, callable, reset]` options
  */

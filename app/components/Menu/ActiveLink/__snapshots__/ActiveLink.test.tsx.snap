@@ -2,7 +2,7 @@
 
 exports[`should navigate when a link is clicked: with-href 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-ur4oxz-MuiTypography-root-MuiLink-root"
   data-testid="with-href"
 >
   Some test link
@@ -11,7 +11,7 @@ exports[`should navigate when a link is clicked: with-href 1`] = `
 
 exports[`should render a link with null href: null-href 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
   data-testid="null-href"
 >
   Some test link
@@ -20,7 +20,7 @@ exports[`should render a link with null href: null-href 1`] = `
 
 exports[`should render a link: basic-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cep7cv-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
   data-testid="basic-link"
 >
   Some test link
@@ -29,7 +29,7 @@ exports[`should render a link: basic-link 1`] = `
 
 exports[`should render active on the current path: some-test-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-ur4oxz-MuiTypography-root-MuiLink-root"
   data-testid="some-test-link"
 >
   Some test link
@@ -38,7 +38,7 @@ exports[`should render active on the current path: some-test-link 1`] = `
 
 exports[`should render disabled link: disabled-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1tgc2fw-MuiTypography-root-MuiLink-root"
   data-testid="disabled-link"
 >
   Some test link
@@ -48,7 +48,7 @@ exports[`should render disabled link: disabled-link 1`] = `
 exports[`should render disabled link: disabled-link 2`] = `
 <div>
   <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-yh9o1u-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1tgc2fw-MuiTypography-root-MuiLink-root"
     data-testid="disabled-link"
   >
     Some test link
