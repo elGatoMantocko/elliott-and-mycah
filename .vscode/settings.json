@@ -40,8 +40,10 @@
     "Schoenschrift",
     "Slayter",
     "sonoma",
+    "testid",
     "truetype",
     "Ubel",
+    "Unregistration",
     "webp"
   ],
   "jest.jestCommandLine": "yarn jest -c jest.config.ts"

@@ -1,6 +1,9 @@
+import { enableFetchMocks } from 'jest-fetch-mock';
 import resizeObserverMock from 'resize-observer-polyfill';
 
 import { createMatchMedia } from './testHelpers';
+
+enableFetchMocks();
 
 // allows us to override the navigator and stub out the service worker api
 Object.defineProperty(global.navigator, 'serviceWorker', {
@@ -11,10 +14,10 @@ Object.defineProperty(global.navigator, 'serviceWorker', {
 });
 
 // mock window.location
-Object.defineProperty(window, 'location', {
-  writable: true,
-  value: { reload: jest.fn() },
-});
+Object.defineProperty(window, 'location', { writable: true, value: { reload: jest.fn() } });
+
+// mock window.scrollTo
+Object.defineProperty(window, 'scrollTo', { writable: true, value: jest.fn() });
 
 // setup resize observer so we don't get a bunch of warnings from the parallax provider
 global.ResizeObserver = resizeObserverMock;
