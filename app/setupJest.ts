@@ -29,5 +29,5 @@ global.matchMedia = createMatchMedia(1440);
 // would like to know about it or they will throw a bunch of warnings saying that
 // we are not in an "act" environment
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+// @ts-expect-error
 global.IS_REACT_ACT_ENVIRONMENT = true;

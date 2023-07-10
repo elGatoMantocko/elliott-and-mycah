@@ -21,7 +21,7 @@ async function mockUnregisterResult(
   // See line 7 in this file. We are setting up the module mock for this
   // and we want to override the implementation in each test
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+  // @ts-expect-error
   useUnregisterServiceWorkers.mockImplementation(() => result);
 }
 
@@ -91,7 +91,7 @@ it('should render a successful <Unregister /> with a snackbar', async () => {
     'success-unregister',
   );
 
-  await act(() => {
+  act(() => {
     jest.advanceTimersByTime(3000);
     el.rerender(ui);
   });
