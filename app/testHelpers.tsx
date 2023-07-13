@@ -72,5 +72,5 @@ export function createMatchMedia(width: number): (query: string) => MediaQueryLi
       matches: mediaQuery.match(query, { width }),
       addListener: noop,
       removeListener: noop,
-    } as unknown as MediaQueryList);
+    }) as unknown as MediaQueryList;
 }

@@ -1,5 +1,5 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Box, Container, Dialog, Grid, IconButton, Link, Typography } from '@mui/material';
+import { Box, Container, Dialog, IconButton, Link, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 import soundAndSea from '../../images/sound-and-sea.png';
@@ -12,17 +12,16 @@ export const Pictures = () => {
   return (
     <>
       <Container maxWidth="xl" sx={(theme) => ({ mt: theme.spacing(6), mb: theme.spacing(12) })}>
-        <Grid container spacing={3} justifyContent="space-around">
-          {pictureSources.map((src) => (
-            <Grid key={src} item>
-              <ImageRenderer
-                src={src}
-                onClick={() => setInspectPicture(src)}
-                onError={(e) => console.error('failed to load iamge', e)}
-              />
-            </Grid>
+        <Stack direction="row" spacing={3} useFlexGap flexWrap="wrap" justifyContent="space-around">
+          {pictureSources.map((image) => (
+            <ImageRenderer
+              sx={{ mb: 'auto' }}
+              key={image.src}
+              image={image}
+              onClick={() => setInspectPicture(image.src)}
+            />
           ))}
-        </Grid>
+        </Stack>
         <Box sx={{ maxWidth: '300px', mt: 3, mx: 'auto' }}>
           <Box sx={{ borderRadius: '50%', overflow: 'hidden' }}>
             <img src={soundAndSea} style={{ width: '100%', height: '100%' }} />
