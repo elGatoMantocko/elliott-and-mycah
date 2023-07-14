@@ -100,7 +100,9 @@ import oneKissForTheRoad from './me (431 of 828).jpg';
 import oneKissForTheRoadSmall from './me (431 of 828)-small.jpg';
 
 export interface Image {
+  /** The source image. */
   src: string;
+  /** The scaled down image (same aspect-ratio). */
   min: string;
 }
 

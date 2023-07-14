@@ -1,25 +1,40 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Box, Container, Dialog, IconButton, Link, Stack, Typography } from '@mui/material';
+import { Box, Card, Container, Dialog, IconButton, Link, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 import soundAndSea from '../../images/sound-and-sea.png';
-import { pictureSources } from '../../images/wedding-pics';
+import { Image, pictureSources } from '../../images/wedding-pics';
 import { ImageRenderer } from './ImageRenderer';
 
+interface OpenDialog {
+  open: true;
+  inspectPicture: Image;
+}
+
+interface ClosedDialog {
+  open: false;
+  inspectPicture: Image | null;
+}
+
+type DialogState = OpenDialog | ClosedDialog;
+
 export const Pictures = () => {
-  const [inspectPicture, setInspectPicture] = useState<string>();
+  const [dialogState, setDialogState] = useState<DialogState>({
+    open: false,
+    inspectPicture: null,
+  });
 
   return (
     <>
       <Container maxWidth="xl" sx={(theme) => ({ mt: theme.spacing(6), mb: theme.spacing(12) })}>
         <Stack direction="row" spacing={3} useFlexGap flexWrap="wrap" justifyContent="space-around">
           {pictureSources.map((image) => (
-            <ImageRenderer
-              sx={{ mb: 'auto' }}
-              key={image.src}
-              image={image}
-              onClick={() => setInspectPicture(image.src)}
-            />
+            <Card key={image.src} sx={{ mb: 'auto' }}>
+              <ImageRenderer
+                image={image}
+                onClick={() => setDialogState({ open: true, inspectPicture: image })}
+              />
+            </Card>
           ))}
         </Stack>
         <Box sx={{ maxWidth: '300px', mt: 3, mx: 'auto' }}>
@@ -36,16 +51,22 @@ export const Pictures = () => {
         </Box>
       </Container>
       <Dialog
-        open={inspectPicture != null}
+        open={dialogState.open}
+        fullWidth
         maxWidth="md"
-        onClose={() => setInspectPicture(undefined)}
+        onClose={() => setDialogState((prev) => ({ ...prev, open: false }))}
+        TransitionProps={{
+          onExited: () => setDialogState({ open: false, inspectPicture: null }),
+        }}
       >
         <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
-          <IconButton onClick={() => setInspectPicture(undefined)}>
+          <IconButton onClick={() => setDialogState((prev) => ({ ...prev, open: false }))}>
             <CloseIcon />
           </IconButton>
         </Box>
-        <img src={inspectPicture} style={{ maxHeight: '90vh' }} />
+        {dialogState.inspectPicture != null && (
+          <ImageRenderer image={dialogState.inspectPicture} fullWidth />
+        )}
       </Dialog>
     </>
   );

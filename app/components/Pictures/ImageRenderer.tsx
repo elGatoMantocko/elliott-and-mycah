@@ -1,25 +1,35 @@
-import { Card, Fade, SxProps, Theme, useMediaQuery } from '@mui/material';
+import { Box, Fade, SxProps, Theme, useMediaQuery } from '@mui/material';
 import React, { useState } from 'react';
 
 import { Image } from '../../images/wedding-pics';
 
 interface ImageRendererProps {
-  sx?: SxProps<Theme>;
+  /**
+   * The image to render.
+   */
   image: Image;
-  onClick(): void;
+  /**
+   * Fit the bounds of the current element.
+   */
+  fullWidth?: boolean;
+  /**
+   * Styles applied to the container.
+   */
+  sx?: SxProps<Theme>;
+  onClick?(): void;
 }
-export const ImageRenderer = ({ sx, image, onClick }: ImageRendererProps) => {
+export const ImageRenderer = ({ image, fullWidth, sx, onClick }: ImageRendererProps) => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
 
   const [isLoaded, setImageLoaded] = useState(false);
 
   return (
-    <Card
+    <Box
       sx={{
         ...sx,
         overflow: 'hidden',
         display: 'flex',
-        width: isSmallScreen ? '100%' : 420,
+        width: isSmallScreen || fullWidth ? '100%' : 420,
         backgroundImage: `url(${image.min})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -34,8 +44,8 @@ export const ImageRenderer = ({ sx, image, onClick }: ImageRendererProps) => {
           style={{
             display: !isLoaded ? 'none' : undefined,
             width: '100%',
-            cursor: 'pointer',
-            objectFit: 'cover',
+            cursor: onClick != null ? 'pointer' : undefined,
+            objectFit: 'contain',
             objectPosition: 'center',
           }}
         />
@@ -49,6 +59,6 @@ export const ImageRenderer = ({ sx, image, onClick }: ImageRendererProps) => {
           width: '100%',
         }}
       />
-    </Card>
+    </Box>
   );
 };
