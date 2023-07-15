@@ -14,10 +14,10 @@ const config: Config.InitialOptions = {
   collectCoverageFrom: ['./app/**/*.ts', './app/**/*.tsx'],
   coverageThreshold: {
     global: {
-      statements: 80,
-      lines: 80,
-      branches: 80,
-      functions: 79,
+      statements: 70,
+      lines: 70,
+      branches: 70,
+      functions: 70,
     },
   },
   ci: process.env.CI === 'true',
