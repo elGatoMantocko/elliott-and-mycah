@@ -1,6 +1,8 @@
 import { Button, Snackbar } from '@mui/material';
 import React, { useEffect, useMemo, useState } from 'react';
-import { Workbox, WorkboxLifecycleEvent, WorkboxLifecycleWaitingEvent } from 'workbox-window';
+import { Workbox, WorkboxLifecycleWaitingEvent } from 'workbox-window';
+
+const NOOP = () => {};
 
 export const ServiceWorker = () => {
   const [updateFound, setUpdateFound] = useState(false);
@@ -16,40 +18,40 @@ export const ServiceWorker = () => {
     // break out if no service worker
     if (wb == null) return undefined;
 
-    const handleRegistration = async (registration: Promise<unknown>) => {
-      try {
-        // if we get an error, then the service worker was removed and we should unregister it
-        await registration;
-      } catch (err) {
-        for (const reg of await navigator.serviceWorker.getRegistrations()) {
-          if (await reg.unregister()) {
-            console.log(`successfully unregistered sw ${reg}`);
-          }
-        }
-      }
-    };
+    const showSkipWaitingPrompt = (e: WorkboxLifecycleWaitingEvent) => {
+      // Assuming the user accepted the update, set up a listener
+      // that will reload the page as soon as the previously waiting
+      // service worker has taken control.
+      wb.addEventListener('controlling', () => {
+        // At this point, reloading will ensure that the current
+        // tab is loaded under the control of the new service worker.
+        // Depending on your web app, you may want to auto-save or
+        // persist transient state before triggering the reload.
+        window.location.reload();
+      });
 
-    const timer = setInterval(() => handleRegistration(wb.update()), 30000);
-
-    const triggerUpdate = (e: WorkboxLifecycleEvent) =>
-      setUpdateFound(e.isUpdate || e.isExternal || false);
-    const triggerWaitingUpdate = (e: WorkboxLifecycleWaitingEvent) => {
+      // When `event.wasWaitingBeforeRegister` is true, a previously
+      // updated service worker is still waiting.
+      // You may want to customize the UI prompt accordingly.
       if (e.wasWaitingBeforeRegister) {
-        wb.messageSkipWaiting();
-      } else {
-        triggerUpdate(e);
+        return wb.messageSkipWaiting();
       }
+
+      setUpdateFound(true);
     };
 
-    wb.addEventListener('installed', triggerUpdate);
-    wb.addEventListener('waiting', triggerWaitingUpdate);
+    // Add an event listener to detect when the registered
+    // service worker has installed but is waiting to activate.
+    wb.addEventListener('waiting', showSkipWaitingPrompt);
 
-    handleRegistration(wb.register());
+    const interval = setInterval(() => wb.update(), 5000);
+
+    wb.register();
 
     return () => {
-      wb.removeEventListener('installed', triggerUpdate);
-      wb.removeEventListener('waiting', triggerWaitingUpdate);
-      clearInterval(timer);
+      wb.removeEventListener('controlling', NOOP);
+      wb.removeEventListener('waiting', NOOP);
+      clearInterval(interval);
     };
   }, [wb]);
 
@@ -58,16 +60,7 @@ export const ServiceWorker = () => {
       open={updateFound}
       title="Update"
       message="A new version of the website is available."
-      action={
-        <Button
-          onClick={async () => {
-            await wb?.register();
-            window.location.reload();
-          }}
-        >
-          Update
-        </Button>
-      }
+      action={<Button onClick={() => wb?.messageSkipWaiting()}>Update</Button>}
     />
   );
 };

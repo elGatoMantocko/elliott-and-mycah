@@ -32,28 +32,15 @@ export const App = () => (
                       <Route index element={<Navigate to="/us" />} />
                       <Route
                         path="us"
-                        lazy={async () => {
-                          const { About } = await import(/* webpackChunkName: "about" */ './About');
-                          return { element: <About /> };
-                        }}
+                        lazy={() => import(/* webpackChunkName: "about" */ '../routes/About')}
                       />
                       <Route
                         path="wedding"
-                        lazy={async () => {
-                          const { Wedding } = await import(
-                            /* webpackChunkName: "wedding" */ './Wedding'
-                          );
-                          return { element: <Wedding /> };
-                        }}
+                        lazy={() => import(/* webpackChunkName: "wedding" */ '../routes/Wedding')}
                       />
                       <Route
                         path="pictures"
-                        lazy={async () => {
-                          const { Pictures } = await import(
-                            /* webpackChunkName: "pictures" */ './Pictures'
-                          );
-                          return { element: <Pictures /> };
-                        }}
+                        lazy={() => import(/* webpackChunkName: "pictures" */ '../routes/Pictures')}
                       />
                     </Route>
                   </Route>,

@@ -31,8 +31,8 @@
     }
   },
   "rules": {
-    // TODO: remove this
     "prettier/prettier": "error",
+    // TODO: remove this
     "@typescript-eslint/no-explicit-any": ["warn"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": ["warn", { "additionalHooks": "useResult" }],
