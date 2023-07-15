@@ -15,7 +15,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { useCustomTheme } from '../hooks/theme';
 import { MenuOutlet } from './Menu';
 import { ScrollToTopOutlet } from './ScrollToTopOutlet';
-import { ServiceWorkerUnregistration } from './ServiceWorker';
+import { ServiceWorker } from './ServiceWorker';
 
 export const App = () => (
   <ParallaxProvider>
@@ -65,7 +65,7 @@ export const App = () => (
               href="https://github.com/elGatoMantocko/elliott-and-mycah"
               target="_blank"
             />
-            <ServiceWorkerUnregistration hideSnackbar />
+            <ServiceWorker />
           </Paper>
         </LoadScript>
       </ThemeProvider>

@@ -32,10 +32,6 @@ type Config = {
    * if true, no output will be generated (defaults to false)
    */
   noOutput?: boolean;
-  /**
-   * if true, service worker is not included in the bundle (defaults to false)
-   */
-  noSW?: boolean;
 };
 /**
  * Function to generate a base webpack config
@@ -43,14 +39,12 @@ type Config = {
  * @param config.devtool to use for sourcemaps/dev utils (defaults to 'source-map')
  * @param config.mode mode to build the webpack bundle in (defaults to 'production')
  * @param config.noOutput if true, no output will be generated (defaults to false)
- * @param config.noSW if true, service-worker is not included in the bundle (defaults to false)
  * @returns webpack config
  */
 export const factory = ({
   devtool = 'source-map',
   mode = 'production',
   noOutput = false,
-  noSW = false,
 }: Config): Configuration => {
   const plugins: WebpackPluginInstance[] = [
     // https://date-fns.org/v2.28.0/docs/webpack
@@ -74,6 +68,7 @@ export const factory = ({
       scriptLoading: 'defer',
       inject: 'body',
     }),
+    new GenerateSW({ mode, clientsClaim: true, skipWaiting: true }),
     // default config will emit a basic robots.txt file to the dist
     new RobotsTextWebpackPlugin(),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
@@ -81,26 +76,43 @@ export const factory = ({
     new ProgressPlugin(),
   ];
 
-  !noSW &&
-    plugins.push(
-      new GenerateSW({
-        mode,
-        clientsClaim: true,
-        skipWaiting: true,
-        exclude: [/.html$/g, /.js.map$/g], // don't precache the html or sourcemaps
-      }),
-    );
-
   return {
     mode,
     devtool,
     devServer: {
       static: { directory: join('.', 'dist') },
       historyApiFallback: true,
-      client: { logging: 'info' },
+      client: { logging: 'info', overlay: { warnings: false } },
       compress: true,
+      hot: false,
+      liveReload: false,
+      devMiddleware: {
+        writeToDisk: true,
+      },
     },
     plugins,
+    optimization: {
+      providedExports: true,
+      removeAvailableModules: true,
+      splitChunks: { chunks: 'all' },
+      minimizer: [
+        // magic `...` to extend other plugins (DO NOT GET RID OF THIS, or you lose `TerserWebpackPlugin`)
+        '...',
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              // Lossy optimization with custom option
+              plugins: [
+                ['gifsicle', { interlaced: true }],
+                ['mozjpeg', { progressive: true, quality: 25 }],
+                ['pngquant', { optimizationLevel: 5 }],
+              ],
+            },
+          },
+        }),
+      ],
+    },
     module: {
       rules: [
         {
@@ -152,36 +164,15 @@ const checkEnvFlag = (flag: string): boolean | undefined => {
   return;
 };
 
+const baseConfig = factory({
+  devtool: process.env['WEBPACK_DEV_TOOL'] ?? 'source-map',
+  mode: getEnvMode(process.env['WEBPACK_MODE'] ?? process.env['NODE_ENV']),
+  noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
+});
+
 export const config: Configuration = {
-  ...factory({
-    devtool: process.env['WEBPACK_DEV_TOOL'] ?? 'source-map',
-    mode: getEnvMode(process.env['WEBPACK_MODE'] ?? process.env['NODE_ENV']),
-    noOutput: checkEnvFlag('WEBPACK_NO_OUTPUT'),
-    noSW: checkEnvFlag('WEBPACK_NO_SERVICE_WORKER'),
-  }),
+  ...baseConfig,
   entry: './app/index.tsx',
-  optimization: {
-    providedExports: true,
-    removeAvailableModules: true,
-    splitChunks: { chunks: 'all' },
-    minimizer: [
-      // magic `...` to extend other plugins (DO NOT GET RID OF THIS, or you lose `TerserWebpackPlugin`)
-      '...',
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            // Lossy optimization with custom option
-            plugins: [
-              ['gifsicle', { interlaced: true }],
-              ['mozjpeg', { progressive: true, quality: 25 }],
-              ['pngquant', { optimizationLevel: 5 }],
-            ],
-          },
-        },
-      }),
-    ],
-  },
 };
 
 export default config;

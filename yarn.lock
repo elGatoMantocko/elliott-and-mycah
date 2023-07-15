@@ -2975,14 +2975,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.14":
-  version: 18.2.14
-  resolution: "@types/react@npm:18.2.14"
+"@types/react@npm:*, @types/react@npm:18.2.15":
+  version: 18.2.15
+  resolution: "@types/react@npm:18.2.15"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: a6a5e8cc78f486b9020d1ad009aa6c56943c68c7c6376e0f8399e9cbcd950b7b8f5d73f00200f5379f5e58d31d57d8aed24357f301d8e86108cd438ce6c8b3dd
+  checksum: 36989f638201bfe2f4110b06c119180f6df9c0e13d7060481e82e7a745f81745a01ae543c478a25b61e0767cb52e82da2ad5b0dedacabf99339e523d06176705
   languageName: node
   linkType: hard
 
@@ -5563,7 +5563,7 @@ __metadata:
     "@types/imagemin-svgo": ^10.0.2
     "@types/jest": ^29.5.3
     "@types/node": 20.4.2
-    "@types/react": 18.2.14
+    "@types/react": 18.2.15
     "@types/react-dom": 18.2.7
     "@types/supercluster": ^7.1.0
     "@types/uuid": ^9.0.2
@@ -5575,12 +5575,12 @@ __metadata:
     babel-plugin-import: 1.13.6
     css-mediaquery: ^0.1.2
     date-fns: ^2.30.0
-    eslint: ^8.44.0
+    eslint: ^8.45.0
     eslint-config-google: ^0.14.0
     eslint-config-prettier: ^8.8.0
     eslint-import-resolver-webpack: ^0.13.2
     eslint-plugin-import: ^2.27.5
-    eslint-plugin-jest: ^27.2.2
+    eslint-plugin-jest: ^27.2.3
     eslint-plugin-jsdoc: ^46.4.3
     eslint-plugin-material-ui: ^1.0.1
     eslint-plugin-prettier: ^5.0.0
@@ -5617,6 +5617,7 @@ __metadata:
     webpack-cli: ^5.1.4
     webpack-dev-server: 4.15.1
     workbox-webpack-plugin: 7.0.0
+    workbox-window: ^7.0.0
   languageName: unknown
   linkType: soft
 
@@ -5947,13 +5948,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^27.2.2":
-  version: 27.2.2
-  resolution: "eslint-plugin-jest@npm:27.2.2"
+"eslint-plugin-jest@npm:^27.2.3":
+  version: 27.2.3
+  resolution: "eslint-plugin-jest@npm:27.2.3"
   dependencies:
     "@typescript-eslint/utils": ^5.10.0
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^5.0.0
+    "@typescript-eslint/eslint-plugin": ^5.0.0 || ^6.0.0
     eslint: ^7.0.0 || ^8.0.0
     jest: "*"
   peerDependenciesMeta:
@@ -5961,7 +5962,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: 98b63252d985f5dedf36ce9587dd4a0d24daf71ca8a997258343402c0d33ddd5070502378dafd9ac7fc0ef2e0d557b5c77f18e09ad73c71a52de8061db88293f
+  checksum: 4c7e07f52f17749ac6fd0ff5fcd5ce30b88983ba31eeee322e4d48859f55eaa112f06172e586ad2031c00ff28bb2dfdc3d35c83895251b9c0e860fa47dfc5ff4
   languageName: node
   linkType: hard
 
@@ -6080,9 +6081,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.44.0":
-  version: 8.44.0
-  resolution: "eslint@npm:8.44.0"
+"eslint@npm:^8.45.0":
+  version: 8.45.0
+  resolution: "eslint@npm:8.45.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.4.0
@@ -6109,7 +6110,6 @@ __metadata:
     globals: ^13.19.0
     graphemer: ^1.4.0
     ignore: ^5.2.0
-    import-fresh: ^3.0.0
     imurmurhash: ^0.1.4
     is-glob: ^4.0.0
     is-path-inside: ^3.0.3
@@ -6121,11 +6121,10 @@ __metadata:
     natural-compare: ^1.4.0
     optionator: ^0.9.3
     strip-ansi: ^6.0.1
-    strip-json-comments: ^3.1.0
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: d06309ce4aafb9d27d558c8e5e5aa5cba3bbec3ce8ceccbc7d4b7a35f2b67fd40189159155553270e2e6febeb69bd8a3b60d6241c8f5ddc2ef1702ccbd328501
+  checksum: 3e6dcce5cc43c5e301662db88ee26d1d188b22c177b9f104d7eefd1191236980bd953b3670fe2fac287114b26d7c5420ab48407d7ea1c3a446d6313c000009da
   languageName: node
   linkType: hard
 
@@ -7613,7 +7612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-fresh@npm:^3.0.0, import-fresh@npm:^3.1.0, import-fresh@npm:^3.2.1":
+"import-fresh@npm:^3.1.0, import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
   dependencies:
@@ -11952,7 +11951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strip-json-comments@npm:^3.1.0, strip-json-comments@npm:^3.1.1":
+"strip-json-comments@npm:^3.1.1":
   version: 3.1.1
   resolution: "strip-json-comments@npm:3.1.1"
   checksum: 492f73e27268f9b1c122733f28ecb0e7e8d8a531a6662efbd08e22cccb3f9475e90a1b82cab06a392f6afae6d2de636f977e231296400d0ec5304ba70f166443
@@ -13379,7 +13378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"workbox-window@npm:7.0.0":
+"workbox-window@npm:7.0.0, workbox-window@npm:^7.0.0":
   version: 7.0.0
   resolution: "workbox-window@npm:7.0.0"
   dependencies:
