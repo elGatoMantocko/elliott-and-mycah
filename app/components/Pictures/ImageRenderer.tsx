@@ -1,4 +1,4 @@
-import { Box, Fade, SxProps, Theme, useMediaQuery } from '@mui/material';
+import { Box, Fade, SxProps, Theme } from '@mui/material';
 import React, { useState } from 'react';
 
 import { Image } from '../../images/wedding-pics';
@@ -9,18 +9,12 @@ interface ImageRendererProps {
    */
   image: Image;
   /**
-   * Fit the bounds of the current element.
-   */
-  fullWidth?: boolean;
-  /**
    * Styles applied to the container.
    */
   sx?: SxProps<Theme>;
   onClick?(): void;
 }
-export const ImageRenderer = ({ image, fullWidth, sx, onClick }: ImageRendererProps) => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
-
+export const ImageRenderer = ({ image, sx, onClick }: ImageRendererProps) => {
   const [isLoaded, setImageLoaded] = useState(false);
 
   return (
@@ -28,8 +22,8 @@ export const ImageRenderer = ({ image, fullWidth, sx, onClick }: ImageRendererPr
       sx={{
         ...sx,
         overflow: 'hidden',
-        display: 'flex',
-        width: isSmallScreen || fullWidth ? '100%' : 420,
+        display: 'grid',
+        width: '100%',
         backgroundImage: `url(${image.min})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -42,6 +36,8 @@ export const ImageRenderer = ({ image, fullWidth, sx, onClick }: ImageRendererPr
           // TODO: support lazy loading of images
           onLoad={() => setImageLoaded(true)}
           style={{
+            gridColumn: 1,
+            gridRow: 1,
             display: !isLoaded ? 'none' : undefined,
             width: '100%',
             cursor: onClick != null ? 'pointer' : undefined,
@@ -53,6 +49,8 @@ export const ImageRenderer = ({ image, fullWidth, sx, onClick }: ImageRendererPr
       <img
         src={image.min}
         style={{
+          gridColumn: 1,
+          gridRow: 1,
           // don't actually draw this image, its only to preserve the aspect ratio of the main source
           opacity: 0,
           position: 'relative',

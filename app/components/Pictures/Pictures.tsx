@@ -1,5 +1,16 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Box, Card, Container, Dialog, IconButton, Link, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  Container,
+  Dialog,
+  IconButton,
+  Link,
+  Stack,
+  Theme,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import React, { useState } from 'react';
 
 import soundAndSea from '../../images/sound-and-sea.png';
@@ -24,12 +35,14 @@ export const Pictures = () => {
     inspectPicture: null,
   });
 
+  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
+
   return (
     <>
       <Container maxWidth="xl" sx={(theme) => ({ mt: theme.spacing(6), mb: theme.spacing(12) })}>
         <Stack direction="row" spacing={3} useFlexGap flexWrap="wrap" justifyContent="space-around">
           {pictureSources.map((image) => (
-            <Card key={image.src} sx={{ mb: 'auto' }}>
+            <Card key={image.src} sx={{ mb: 'auto', width: isSmallScreen ? '100%' : 420 }}>
               <ImageRenderer
                 image={image}
                 onClick={() => setDialogState({ open: true, inspectPicture: image })}
@@ -64,9 +77,7 @@ export const Pictures = () => {
             <CloseIcon />
           </IconButton>
         </Box>
-        {dialogState.inspectPicture != null && (
-          <ImageRenderer image={dialogState.inspectPicture} fullWidth />
-        )}
+        {dialogState.inspectPicture != null && <ImageRenderer image={dialogState.inspectPicture} />}
       </Dialog>
     </>
   );
