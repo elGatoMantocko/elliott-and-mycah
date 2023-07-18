@@ -31,6 +31,7 @@ export const ServiceWorker = () => {
       try {
         return await swResult;
       } catch (err) {
+        console.error(err);
         // because our app is a PWA - we respond to 404s with the `index.html` file
         // this will cause an error in the service worker registration, because
         // `service-worker.js` will resolve to the index.html file and be the wrong
@@ -74,12 +75,12 @@ export const ServiceWorker = () => {
     // periodically check for updates
     // if an update is found and installed successfully, it will put the SW in
     // the waiting state and trigger a `waiting` event
-    const interval = window.setInterval(() => handleSwError(wb.update()), 2000);
+    const interval = setInterval(() => handleSwError(wb.update()), 2000);
 
     return () => {
       wb.removeEventListener('controlling', onControlling);
       wb.removeEventListener('waiting', onWaiting);
-      window.clearInterval(interval);
+      clearInterval(interval);
     };
   }, [wb]);
 
