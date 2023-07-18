@@ -68,12 +68,7 @@ export const factory = ({
       scriptLoading: 'defer',
       inject: 'body',
     }),
-    new GenerateSW({
-      mode,
-      clientsClaim: true,
-      skipWaiting: false,
-      exclude: [/index\.html/, /\.map$/, /^manifest.*\.js$/],
-    }),
+    new GenerateSW({ mode, clientsClaim: true, skipWaiting: false }),
     // default config will emit a basic robots.txt file to the dist
     new RobotsTextWebpackPlugin(),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
