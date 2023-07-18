@@ -1,57 +1,85 @@
 import { Button, Snackbar } from '@mui/material';
-import React, { useEffect, useMemo, useState } from 'react';
-import { Workbox, WorkboxLifecycleWaitingEvent } from 'workbox-window';
-
-const NOOP = () => {};
+import React, { useEffect, useState } from 'react';
+import { Workbox } from 'workbox-window';
 
 export const ServiceWorker = () => {
   const [updateFound, setUpdateFound] = useState(false);
+  const [wb, setWb] = useState<Workbox>();
 
-  const wb = useMemo(() => {
-    if (!('serviceWorker' in navigator)) {
-      return undefined;
+  useEffect(() => {
+    /**
+     * import workbox and setup the service worker
+     */
+    async function setupWb() {
+      if ('serviceWorker' in navigator) {
+        const { Workbox } = await import(/* webpackChunkName: "workbox-window" */ 'workbox-window');
+        setWb(new Workbox('/service-worker.js'));
+      }
     }
-    return new Workbox('/service-worker.js');
+    setupWb();
   }, []);
 
+  // ripped from https://developer.chrome.com/docs/workbox/handling-service-worker-updates/
+  // more useful reading https://redfin.engineering/how-to-fix-the-refresh-button-when-using-service-workers-a8e27af6df68
+  // with a few small modifications
   useEffect(() => {
     // break out if no service worker
     if (wb == null) return undefined;
 
-    const showSkipWaitingPrompt = (e: WorkboxLifecycleWaitingEvent) => {
+    // if we fail to register or update the SW - lets just unregister it
+    const handleSwError = async <T,>(swResult: Promise<T>): Promise<T | undefined> => {
+      try {
+        return await swResult;
+      } catch (err) {
+        // because our app is a PWA - we respond to 404s with the `index.html` file
+        // this will cause an error in the service worker registration, because
+        // `service-worker.js` will resolve to the index.html file and be the wrong
+        // mime type for an allowed service worker.
+        if (err instanceof DOMException) {
+          const reg = await navigator.serviceWorker.getRegistration();
+          reg?.unregister();
+        }
+        return undefined;
+      }
+    };
+
+    const onControlling = () => window.location.reload();
+    const onWaiting = () => {
       // Assuming the user accepted the update, set up a listener
       // that will reload the page as soon as the previously waiting
       // service worker has taken control.
-      wb.addEventListener('controlling', () => {
-        // At this point, reloading will ensure that the current
-        // tab is loaded under the control of the new service worker.
-        // Depending on your web app, you may want to auto-save or
-        // persist transient state before triggering the reload.
-        window.location.reload();
-      });
+      wb.addEventListener('controlling', onControlling);
 
       // When `event.wasWaitingBeforeRegister` is true, a previously
       // updated service worker is still waiting.
       // You may want to customize the UI prompt accordingly.
-      if (e.wasWaitingBeforeRegister) {
-        return wb.messageSkipWaiting();
-      }
+      //
+      // The most likely scenario is that the user has the app open in another tab
 
       setUpdateFound(true);
     };
 
     // Add an event listener to detect when the registered
     // service worker has installed but is waiting to activate.
-    wb.addEventListener('waiting', showSkipWaitingPrompt);
+    wb.addEventListener('waiting', onWaiting);
 
-    const interval = setInterval(() => wb.update(), 5000);
+    // register the service worker - if the sw was updated before this,
+    // that means that we have a new version and need to figure out how to
+    // update. This will trigger a `waiting` event with `wasWaitingBeforeRegister === true`.
+    handleSwError(wb.register());
+    // FIXME: we should do an immediate check here to see if we are waiting - if so,
+    // lets skip waiting and _not_ reload because the user is likely on the latest bundle
 
-    wb.register();
+    // the service worker wont go check for updates on its own, we need to
+    // periodically check for updates
+    // if an update is found and installed successfully, it will put the SW in
+    // the waiting state and trigger a `waiting` event
+    const interval = window.setInterval(() => handleSwError(wb.update()), 2000);
 
     return () => {
-      wb.removeEventListener('controlling', NOOP);
-      wb.removeEventListener('waiting', NOOP);
-      clearInterval(interval);
+      wb.removeEventListener('controlling', onControlling);
+      wb.removeEventListener('waiting', onWaiting);
+      window.clearInterval(interval);
     };
   }, [wb]);
 
