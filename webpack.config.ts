@@ -72,7 +72,7 @@ export const factory = ({
       mode,
       clientsClaim: true,
       skipWaiting: false,
-      exclude: [/index.html/, /\.map$/, /^manifest.*\.js$/],
+      exclude: [/\.html$/, /\.map$/, /^manifest.*\.js$/],
       maximumFileSizeToCacheInBytes: 1024 * 1024,
     }),
     // default config will emit a basic robots.txt file to the dist
@@ -133,7 +133,7 @@ export const factory = ({
       modules: ['node_modules', './app'],
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    output: !noOutput ? { filename: '[id].bundle.js' } : undefined,
+    output: !noOutput ? { filename: '[id]-[contenthash].bundle.js' } : undefined,
   };
 };
 
