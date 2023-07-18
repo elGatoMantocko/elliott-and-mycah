@@ -75,7 +75,7 @@ export const ServiceWorker = () => {
     // periodically check for updates
     // if an update is found and installed successfully, it will put the SW in
     // the waiting state and trigger a `waiting` event
-    const interval = setInterval(() => handleSwError(wb.update()), 2000);
+    const interval = setInterval(() => handleSwError(wb.update()), 30000);
 
     return () => {
       wb.removeEventListener('controlling', onControlling);
