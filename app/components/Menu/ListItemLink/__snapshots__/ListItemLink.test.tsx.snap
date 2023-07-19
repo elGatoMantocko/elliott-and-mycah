@@ -4,21 +4,7 @@ exports[`should call the onClick handler: navigate-with-onClick 1`] = `
 <a
   class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
   data-testid="navigate-with-onClick"
-  role="button"
-  tabindex="0"
->
-  Test
-  <span
-    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-  />
-</a>
-`;
-
-exports[`should handle a null onClick handler and null href: null-click-handler 1`] = `
-<a
-  class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
-  data-testid="null-click-handler"
-  role="button"
+  href="/test"
   tabindex="0"
 >
   Test
@@ -32,7 +18,7 @@ exports[`should navigate to href when clicked: navigate-with-href 1`] = `
 <a
   class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
   data-testid="navigate-with-href"
-  role="button"
+  href="/test-path"
   tabindex="0"
 >
   Test
@@ -47,19 +33,7 @@ exports[`should render a disabled link: disabled-link 1`] = `
   aria-disabled="true"
   class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-disabled Mui-disabled MuiListItemButton-root MuiListItemButton-gutters Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
   data-testid="disabled-link"
-  role="button"
-  tabindex="-1"
->
-  Test
-</a>
-`;
-
-exports[`should render a disabled link: disabled-link 2`] = `
-<a
-  aria-disabled="true"
-  class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters Mui-disabled Mui-disabled MuiListItemButton-root MuiListItemButton-gutters Mui-disabled css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
-  data-testid="disabled-link"
-  role="button"
+  href="/test"
   tabindex="-1"
 >
   Test
@@ -67,10 +41,10 @@ exports[`should render a disabled link: disabled-link 2`] = `
 `;
 
 exports[`should render a link 1`] = `
-<div>
+<DocumentFragment>
   <a
     class="MuiButtonBase-root MuiListItemButton-root MuiListItemButton-gutters MuiListItemButton-root MuiListItemButton-gutters css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root"
-    role="button"
+    href="/test"
     tabindex="0"
   >
     Test
@@ -78,5 +52,5 @@ exports[`should render a link 1`] = `
       class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
     />
   </a>
-</div>
+</DocumentFragment>
 `;

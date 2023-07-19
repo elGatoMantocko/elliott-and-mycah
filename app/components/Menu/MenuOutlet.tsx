@@ -29,17 +29,17 @@ export const MenuOutlet = () => {
           <Container>
             <Toolbar>
               <Box>
-                <ActiveLink href="/us">
+                <ActiveLink to="/us">
                   <ScriptTypography>About us</ScriptTypography>
                 </ActiveLink>
               </Box>
               <Box ml={6}>
-                <ActiveLink href="/pictures">
+                <ActiveLink to="/pictures">
                   <ScriptTypography>Pictures</ScriptTypography>
                 </ActiveLink>
               </Box>
               <Box ml={6}>
-                <ActiveLink href="/wedding">
+                <ActiveLink to="/wedding">
                   <ScriptTypography>Wedding</ScriptTypography>
                 </ActiveLink>
               </Box>
@@ -55,19 +55,19 @@ export const MenuOutlet = () => {
         </Box>
         <Drawer anchor="bottom" open={drawerOpen} onClose={closeDrawer}>
           <List>
-            <ListItemLink href="/us" onClick={closeDrawer}>
+            <ListItemLink to="/us" onClick={closeDrawer}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="About us" />
             </ListItemLink>
-            <ListItemLink href="/pictures" onClick={closeDrawer}>
+            <ListItemLink to="/pictures" onClick={closeDrawer}>
               <ListItemIcon>
                 <CameraIcon />
               </ListItemIcon>
               <ListItemText primary="Pictures" />
             </ListItemLink>
-            <ListItemLink href="/wedding" onClick={closeDrawer}>
+            <ListItemLink to="/wedding" onClick={closeDrawer}>
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>

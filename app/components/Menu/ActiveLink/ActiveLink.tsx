@@ -1,29 +1,21 @@
-import { Link, LinkProps } from '@mui/material';
+import { Link } from '@mui/material';
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation } from 'react-router';
+import { Link as RouterLink, LinkProps } from 'react-router-dom';
 
 type ActiveLinkProps = {
   disabled?: boolean;
 } & LinkProps;
 export const ActiveLink = ({ disabled = false, ...linkProps }: ActiveLinkProps) => {
-  const navigateTo = useNavigate();
   const { pathname } = useLocation();
 
   return (
     <Link
       {...linkProps}
-      sx={{
-        cursor: disabled ? 'default' : 'pointer',
-      }}
-      href={undefined}
-      color={disabled ? 'textSecondary' : pathname === linkProps.href ? 'primary' : 'secondary'}
+      component={RouterLink}
+      sx={{ cursor: disabled ? 'default' : 'pointer' }}
+      color={disabled ? 'textSecondary' : pathname === linkProps.to ? 'primary' : 'secondary'}
       underline={disabled ? 'none' : undefined}
-      onClick={(e: React.MouseEvent) => {
-        if (disabled) {
-          return e.preventDefault();
-        }
-        linkProps.href != null && navigateTo(linkProps.href);
-      }}
     />
   );
 };
