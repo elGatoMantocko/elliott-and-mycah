@@ -10,6 +10,7 @@ Object.defineProperty(global.navigator, 'serviceWorker', {
   value: {
     getRegistrations: jest.fn(),
     register: jest.fn(),
+    addEventListener: jest.fn(),
   },
 });
 
