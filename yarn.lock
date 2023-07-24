@@ -2749,10 +2749,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:3.53.4, @types/google.maps@npm:^3.53.4":
+"@types/google.maps@npm:3.53.4":
   version: 3.53.4
   resolution: "@types/google.maps@npm:3.53.4"
   checksum: 389b782b548b9330038bd59d3a33ccc38d776410fd1d97894fb7b595714681310eb987c7e75eb5fbf47c221dffd65c6df004e672f5ad2bc41b030b6eca86ecc4
+  languageName: node
+  linkType: hard
+
+"@types/google.maps@npm:^3.53.5":
+  version: 3.53.5
+  resolution: "@types/google.maps@npm:3.53.5"
+  checksum: 57862d61435a523ae769d19ebcca99dc1d4a2ea976bbdf92da25bda3f2bed71871f8d78ef50b567bcbc54c8a78a55cfa16e8bd785e3d503fe2c3b5ef8fd76972
   languageName: node
   linkType: hard
 
@@ -2892,10 +2899,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.4.2":
-  version: 20.4.2
-  resolution: "@types/node@npm:20.4.2"
-  checksum: 99e544ea7560d51f01f95627fc40394c24a13da8f041121a0da13e4ef0a2aa332932eaf9a5e8d0e30d1c07106e96a183be392cbba62e8cf0bf6a085d5c0f4149
+"@types/node@npm:*, @types/node@npm:20.4.4":
+  version: 20.4.4
+  resolution: "@types/node@npm:20.4.4"
+  checksum: 43f3c4a8acc38ae753e15a0e79bae0447d255b3742fa87f8e065d7b9d20ecb0e03d6c5b46c00d5d26f4552160381a00255f49205595a8ee48c2423e00263c930
   languageName: node
   linkType: hard
 
@@ -5548,12 +5555,12 @@ __metadata:
     "@types/babel__plugin-transform-runtime": ^7.9.2
     "@types/babel__preset-env": ^7.9.2
     "@types/css-mediaquery": ^0.1.1
-    "@types/google.maps": ^3.53.4
+    "@types/google.maps": ^3.53.5
     "@types/imagemin": ^8.0.1
     "@types/imagemin-gifsicle": ^7.0.1
     "@types/imagemin-svgo": ^10.0.2
     "@types/jest": ^29.5.3
-    "@types/node": 20.4.2
+    "@types/node": 20.4.4
     "@types/react": 18.2.15
     "@types/react-dom": 18.2.7
     "@types/supercluster": ^7.1.0

@@ -133,7 +133,7 @@ export const factory = ({
       modules: ['node_modules', './app'],
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    output: !noOutput ? { filename: '[id]-[contenthash].bundle.js' } : undefined,
+    output: !noOutput ? { filename: '[name]-[contenthash].bundle.js' } : undefined,
   };
 };
 
