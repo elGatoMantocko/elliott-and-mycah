@@ -1,14 +1,17 @@
-import { Box } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import type { ParallaxElementConfig } from 'parallax-controller';
 import React, { CSSProperties, PropsWithChildren } from 'react';
-import { ParallaxBanner } from 'react-scroll-parallax';
+import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
+
+import type { Image } from '../../images/wedding-pics';
+import { ImageRenderer } from '../Pictures/ImageRenderer';
 
 type BannerProps = PropsWithChildren<
   {
     /**
      * Source of the image to render.
      */
-    imageSource: string;
+    image: Image;
     /**
      * Height of the banner component (required or else nothing is rendered)
      */
@@ -36,33 +39,27 @@ type BannerProps = PropsWithChildren<
  * ```
  * @param param0 banner props
  * @param param0.height height of the banner
+ * @param param0.image image to render
  * @param param0.imageSource source of the image on the banner
  * @param param0.children children to render inside the banner (justified and aligned _center_)
  * @returns component
  */
-export const Banner = ({ height, imageSource: image, children, ...layerConfig }: BannerProps) => (
+export const Banner = ({ height, image, children, ...layerConfig }: BannerProps) => (
   <Box sx={{ height }}>
     <ParallaxBanner
-      layers={[{ image, ...layerConfig }]}
       // for some reason images may not render on a pixel 4xl so let's set a background color here
       style={{ height: '100%', backgroundColor: '#ccc' }}
     >
-      {children != null && (
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          {children}
-        </Box>
-      )}
+      <ParallaxBannerLayer {...layerConfig}>
+        <ImageRenderer image={image} />
+      </ParallaxBannerLayer>
+      <ParallaxBannerLayer>
+        <Container sx={{ display: 'flex', justifyContent: 'center', height: '100%' }}>
+          <Stack my="auto" width="100%">
+            {children}
+          </Stack>
+        </Container>
+      </ParallaxBannerLayer>
     </ParallaxBanner>
   </Box>
 );

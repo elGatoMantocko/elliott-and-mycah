@@ -24,22 +24,7 @@ exports[`should match the custom theme 1`] = `
       "xs": 0,
     },
   },
-  "components": {
-    "MuiCssBaseline": {
-      "styleOverrides": "
-              html, body, #root {
-                min-height: 100vh;
-              }
-
-              @font-face {
-                font-family: 'Lucian Schoenschrift CAT';
-                font-style: normal;
-                font-display: swap;
-                src: url(test-file-stub) format('truetype');
-              }
-            ",
-    },
-  },
+  "components": {},
   "direction": "ltr",
   "mixins": {
     "toolbar": {

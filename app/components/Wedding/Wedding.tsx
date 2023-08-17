@@ -4,6 +4,7 @@ import React from 'react';
 
 import { austin, becca, billbo, brent, chris, gina, paige, rob } from '../../images/headshots';
 import yachtClub from '../../images/wedding-pics/me (202 of 828).jpg';
+import yachtClubSmall from '../../images/wedding-pics/me (202 of 828)-small.jpg';
 import { Banner } from '../Banner';
 import { Countdown } from '../Countdown';
 import { ScriptTypography } from '../ScriptTypography';
@@ -20,10 +21,12 @@ export const Wedding = () => {
 
   return (
     <>
-      <Banner translateY={[-15, 15]} height={isSmallScreen ? '90vh' : 650} imageSource={yachtClub}>
-        <Container maxWidth="md">
-          <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
-        </Container>
+      <Banner
+        image={{ src: yachtClub, min: yachtClubSmall }}
+        translateY={[-15, 15]}
+        height={isSmallScreen ? '90vh' : 650}
+      >
+        <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
       </Banner>
       <Container>
         <Box display="flex" flexWrap="wrap" justifyContent="space-around" mt={4}>

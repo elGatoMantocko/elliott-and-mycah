@@ -17,7 +17,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-0"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
             href="/us"
           >
             <p
@@ -31,7 +31,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-12x7e8k"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
             href="/pictures"
           >
             <p
@@ -45,7 +45,7 @@ exports[`should render a <Menu /> 1`] = `
           class="MuiBox-root css-12x7e8k"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
             href="/wedding"
           >
             <p

@@ -3,6 +3,7 @@ import React from 'react';
 
 import ellie from '../../images/ellie_and_rainier.jpg';
 import elliottAndMycah from '../../images/elliottandmycah.webp';
+import elliottAndMycahSmall from '../../images/elliottandmycah-small.webp';
 import onTheHill from '../../images/on_the_hill.jpg';
 import oneKnee from '../../images/one_knee.jpg';
 import { Banner } from '../Banner';
@@ -14,16 +15,14 @@ export const About = () => {
 
   return (
     <>
-      <Banner imageSource={elliottAndMycah} speed={-30} height={isSmallScreen ? '90vh' : 650}>
-        <Container maxWidth="md">
-          <Box display="flex">
-            <Box sx={{ mx: 'auto', my: 3, color: 'white' }}>
-              <ScriptTypography variant="h1" align="center">
-                Mycah &amp; Elliott
-              </ScriptTypography>
-            </Box>
-          </Box>
-        </Container>
+      <Banner
+        image={{ src: elliottAndMycah, min: elliottAndMycahSmall }}
+        translateY={[-130, 0]}
+        height={isSmallScreen ? '90vh' : 650}
+      >
+        <ScriptTypography color="white" variant="h1" align="center">
+          Mycah &amp; Elliott
+        </ScriptTypography>
       </Banner>
       <Container>
         <Box

@@ -28,18 +28,9 @@ export const App = () => (
               <Route element={<ScrollToTopOutlet />}>
                 <Route element={<MenuOutlet />}>
                   <Route index element={<Navigate replace to="/us" />} />
-                  <Route
-                    path="us"
-                    lazy={() => import(/* webpackChunkName: "about" */ '../routes/About')}
-                  />
-                  <Route
-                    path="wedding"
-                    lazy={() => import(/* webpackChunkName: "wedding" */ '../routes/Wedding')}
-                  />
-                  <Route
-                    path="pictures"
-                    lazy={() => import(/* webpackChunkName: "pictures" */ '../routes/Pictures')}
-                  />
+                  <Route path="us" lazy={() => import('../routes/About')} />
+                  <Route path="wedding" lazy={() => import('../routes/Wedding')} />
+                  <Route path="pictures" lazy={() => import('../routes/Pictures')} />
                 </Route>
               </Route>,
             ),

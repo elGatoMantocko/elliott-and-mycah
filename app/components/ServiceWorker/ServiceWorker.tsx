@@ -12,7 +12,7 @@ export const ServiceWorker = () => {
      */
     async function setupWb() {
       if ('serviceWorker' in navigator) {
-        const { Workbox } = await import(/* webpackChunkName: "workbox-window" */ 'workbox-window');
+        const { Workbox } = await import('workbox-window');
         setWb(new Workbox('/service-worker.js'));
       }
     }

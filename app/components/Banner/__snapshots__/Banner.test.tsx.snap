@@ -9,9 +9,32 @@ exports[`should render a <Banner /> 1`] = `
       style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
     >
       <div
-        data-testid="layer-0"
-        style="background-image: url(test-file); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
-      />
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+      >
+        <div
+          class="MuiBox-root css-1x0rhea"
+        >
+          <img
+            src="test-file"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+          />
+          <img
+            src="test-file-small"
+            style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
+          />
+        </div>
+      </div>
+      <div
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg css-du6ssd-MuiContainer-root"
+        >
+          <div
+            class="MuiStack-root css-1jl7z82-MuiStack-root"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -26,15 +49,35 @@ exports[`should render a <Banner>{child}</Banner> 1`] = `
       style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
     >
       <div
-        data-testid="layer-0"
-        style="background-image: url(test-image); background-position: center; background-size: cover; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
-      />
-      <div
-        class="MuiBox-root css-ald1q4"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
       >
-        <p>
-          Hello world
-        </p>
+        <div
+          class="MuiBox-root css-p00e"
+        >
+          <img
+            src="test-image"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+          />
+          <img
+            src="test-image-small"
+            style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
+          />
+        </div>
+      </div>
+      <div
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+      >
+        <div
+          class="MuiContainer-root MuiContainer-maxWidthLg css-du6ssd-MuiContainer-root"
+        >
+          <div
+            class="MuiStack-root css-1jl7z82-MuiStack-root"
+          >
+            <p>
+              Hello world
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

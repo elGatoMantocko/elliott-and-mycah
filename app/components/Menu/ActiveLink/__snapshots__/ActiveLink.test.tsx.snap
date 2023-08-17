@@ -2,7 +2,7 @@
 
 exports[`should navigate when a link is clicked: with-href 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-ur4oxz-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-10kyizu-MuiTypography-root-MuiLink-root"
   data-testid="with-href"
   href="/test-path"
 >
@@ -12,7 +12,7 @@ exports[`should navigate when a link is clicked: with-href 1`] = `
 
 exports[`should render a link: basic-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-qztcla-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
   data-testid="basic-link"
   href="/test"
 >
@@ -22,7 +22,7 @@ exports[`should render a link: basic-link 1`] = `
 
 exports[`should render active on the current path: some-test-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-ur4oxz-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-10kyizu-MuiTypography-root-MuiLink-root"
   data-testid="some-test-link"
   href="/"
 >
@@ -32,7 +32,7 @@ exports[`should render active on the current path: some-test-link 1`] = `
 
 exports[`should render disabled link: disabled-link 1`] = `
 <a
-  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1tgc2fw-MuiTypography-root-MuiLink-root"
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-q649bg-MuiTypography-root-MuiLink-root"
   data-testid="disabled-link"
   href="/test"
 >
@@ -43,7 +43,7 @@ exports[`should render disabled link: disabled-link 1`] = `
 exports[`should render disabled link: disabled-link 2`] = `
 <div>
   <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1tgc2fw-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-q649bg-MuiTypography-root-MuiLink-root"
     data-testid="disabled-link"
     href="/test"
   >

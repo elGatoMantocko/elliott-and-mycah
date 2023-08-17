@@ -1,28 +1,10 @@
 import { createTheme } from '@mui/material/styles';
 import { useMemo } from 'react';
 
-import lucianSchoenschrift from '../assets/Lucian Schoenschrift CAT.ttf';
-
 export const useCustomTheme = () =>
   useMemo(
     () =>
       createTheme({
-        components: {
-          MuiCssBaseline: {
-            styleOverrides: `
-              html, body, #root {
-                min-height: 100vh;
-              }
-
-              @font-face {
-                font-family: 'Lucian Schoenschrift CAT';
-                font-style: normal;
-                font-display: swap;
-                src: url(${lucianSchoenschrift}) format('truetype');
-              }
-            `,
-          },
-        },
         spacing: (factor: number | string): number | string =>
           typeof factor === 'number' ? `${0.5 * factor}rem` : factor,
         palette: {
