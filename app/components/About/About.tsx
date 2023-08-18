@@ -17,7 +17,7 @@ export const About = () => {
     <>
       <Banner
         image={{ src: elliottAndMycah, min: elliottAndMycahSmall }}
-        translateY={[-130, 0]}
+        speed={-30}
         height={isSmallScreen ? '90vh' : 650}
       >
         <ScriptTypography color="white" variant="h1" align="center">

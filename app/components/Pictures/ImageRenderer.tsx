@@ -27,21 +27,21 @@ export const ImageRenderer = ({ image, sx, onClick }: ImageRendererProps) => {
         backgroundImage: `url(${image.min})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        cursor: onClick != null ? 'pointer' : undefined,
       }}
+      onClick={onClick}
     >
       <Fade in={isLoaded}>
         <img
           src={image.src}
-          onClick={onClick}
-          // TODO: support lazy loading of images
           onLoad={() => setImageLoaded(true)}
           style={{
             gridColumn: 1,
             gridRow: 1,
             display: !isLoaded ? 'none' : undefined,
             width: '100%',
-            cursor: onClick != null ? 'pointer' : undefined,
-            objectFit: 'contain',
+            height: '100%',
+            objectFit: 'cover',
             objectPosition: 'center',
           }}
         />

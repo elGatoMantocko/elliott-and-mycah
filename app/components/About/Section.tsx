@@ -37,7 +37,6 @@ export const Section = ({ title, body, imageSource, imageAlt }: AboutSectionProp
         <Box
           sx={(theme) => ({
             display: 'flex',
-            maxHeight: '60vh',
             borderRadius: theme.spacing(2),
             overflow: 'hidden',
             boxShadow: theme.shadows[5],

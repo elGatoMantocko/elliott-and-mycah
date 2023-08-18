@@ -14,11 +14,11 @@ exports[`should render a <Wedding /> page 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
       >
         <div
-          class="MuiBox-root css-18uaqsq"
+          class="MuiBox-root css-1iblkkh"
         >
           <img
             src="test-file-stub"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
             src="test-file-stub"
@@ -574,11 +574,11 @@ exports[`should render a small screen <Wedding /> page 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
       >
         <div
-          class="MuiBox-root css-18uaqsq"
+          class="MuiBox-root css-1iblkkh"
         >
           <img
             src="test-file-stub"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
             src="test-file-stub"

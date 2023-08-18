@@ -46,12 +46,9 @@ type BannerProps = PropsWithChildren<
  */
 export const Banner = ({ height, image, children, ...layerConfig }: BannerProps) => (
   <Box sx={{ height }}>
-    <ParallaxBanner
-      // for some reason images may not render on a pixel 4xl so let's set a background color here
-      style={{ height: '100%', backgroundColor: '#ccc' }}
-    >
+    <ParallaxBanner style={{ height: '100%', backgroundColor: '#ccc' }}>
       <ParallaxBannerLayer {...layerConfig}>
-        <ImageRenderer image={image} />
+        <ImageRenderer sx={{ height: '100%' }} image={image} />
       </ParallaxBannerLayer>
       <ParallaxBannerLayer>
         <Container sx={{ display: 'flex', justifyContent: 'center', height: '100%' }}>

@@ -12,11 +12,11 @@ exports[`should render a <Banner /> 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
       >
         <div
-          class="MuiBox-root css-1x0rhea"
+          class="MuiBox-root css-1peeqr9"
         >
           <img
             src="test-file"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
             src="test-file-small"
@@ -52,11 +52,11 @@ exports[`should render a <Banner>{child}</Banner> 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
       >
         <div
-          class="MuiBox-root css-p00e"
+          class="MuiBox-root css-j7dlu1"
         >
           <img
             src="test-image"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; object-fit: contain; object-position: center;"
+            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
             src="test-image-small"

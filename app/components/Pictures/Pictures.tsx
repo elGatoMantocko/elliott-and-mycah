@@ -1,10 +1,8 @@
-import { Close as CloseIcon } from '@mui/icons-material';
 import {
   Box,
   Card,
   Container,
   Dialog,
-  IconButton,
   Link,
   Stack,
   Theme,
@@ -72,11 +70,6 @@ export const Pictures = () => {
           onExited: () => setDialogState({ open: false, inspectPicture: null }),
         }}
       >
-        <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
-          <IconButton onClick={() => setDialogState((prev) => ({ ...prev, open: false }))}>
-            <CloseIcon />
-          </IconButton>
-        </Box>
         {dialogState.inspectPicture != null && <ImageRenderer image={dialogState.inspectPicture} />}
       </Dialog>
     </>
