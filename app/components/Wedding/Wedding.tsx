@@ -1,4 +1,4 @@
-import { Box, Container, Link, Theme, Typography, useMediaQuery } from '@mui/material';
+import { Container, Link, Stack, Theme, Typography, useMediaQuery } from '@mui/material';
 import { GoogleMap } from '@react-google-maps/api';
 import React from 'react';
 
@@ -11,16 +11,19 @@ import { ScriptTypography } from '../ScriptTypography';
 import { MenuOptionCard } from './MenuOptionCard';
 import { PartyMember } from './PartyMember';
 
-const useGetMapStyles = (): React.CSSProperties => {
-  const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
-  return { width: '100%', height: isSmallScreen ? '75vh' : 500 };
-};
+interface UseGetMapStylesOptions {
+  isSmallScreen: boolean;
+}
+const useGetMapStyles = ({ isSmallScreen }: UseGetMapStylesOptions): React.CSSProperties => ({
+  width: '100%',
+  height: isSmallScreen ? '75vh' : 500,
+});
 
 export const Wedding = () => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
 
   return (
-    <>
+    <Stack spacing={3}>
       <Banner
         image={{ src: yachtClub, min: yachtClubSmall }}
         translateY={[-15, 15]}
@@ -29,8 +32,8 @@ export const Wedding = () => {
         <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
       </Banner>
       <Container>
-        <Box display="flex" flexWrap="wrap" justifyContent="space-around" mt={4}>
-          <Box mb={2} textAlign="center" px={1} width={isSmallScreen ? '100%' : '40%'}>
+        <Stack direction="row" spacing={1}>
+          <Stack textAlign="center" spacing={1} minWidth="40%">
             <ScriptTypography align="center" variant="h2">
               The Seattle Yacht Club
             </ScriptTypography>
@@ -47,29 +50,20 @@ export const Wedding = () => {
                 Seattle, WA 98112
               </Link>
             </Typography>
-          </Box>
-          <Box px={1} width={isSmallScreen ? '100%' : '40%'}>
-            <GoogleMap
-              center={{
-                lat: 47.6453105466125,
-                lng: -122.30854550197377,
-              }}
-              zoom={15}
-              mapContainerStyle={useGetMapStyles()}
-            />
-          </Box>
-        </Box>
+          </Stack>
+          <GoogleMap
+            center={{ lat: 47.6453105466125, lng: -122.30854550197377 }}
+            zoom={15}
+            mapContainerStyle={useGetMapStyles({ isSmallScreen })}
+          />
+        </Stack>
       </Container>
       <Container maxWidth="md">
-        <Box mt={4}>
+        <Stack mt={4} spacing={1}>
           <ScriptTypography align="center" variant="h2">
             Reception meal options
           </ScriptTypography>
-          <Box
-            display="flex"
-            justifyContent="space-around"
-            flexWrap={isSmallScreen ? 'wrap' : 'nowrap'}
-          >
+          <Stack direction="row" spacing={1}>
             <MenuOptionCard
               name="Crab Stuffed Salmon"
               description="Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables"
@@ -87,116 +81,97 @@ export const Wedding = () => {
               name="Spinach Tortellini"
               description="Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables"
             />
-          </Box>
-        </Box>
+          </Stack>
+        </Stack>
       </Container>
       <Container maxWidth="lg">
-        <Box mt={4}>
+        <Stack spacing={2}>
           <ScriptTypography variant="h2" align="center">
             Bridesmaids
           </ScriptTypography>
-          <Box
-            sx={
-              isSmallScreen
-                ? { display: 'inline-flex', overflowX: 'scroll', width: '100%' }
-                : {
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    flexWrap: 'wrap',
-                  }
-            }
+          <Stack
+            direction="row"
+            justifyContent={isSmallScreen ? undefined : 'space-around'}
+            display={isSmallScreen ? 'inline-flex' : 'flex'}
+            flexWrap={isSmallScreen ? undefined : 'wrap'}
+            sx={isSmallScreen ? { overflowX: 'scroll' } : { justifyContent: 'space-around' }}
           >
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Paige Ubel"
-                description="Friend of the bride."
-                location="Fishers, Indiana"
-                imgSrc={paige}
-              />
-            </Box>
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Rebecca Wiser"
-                description="Friend of the bride."
-                location="Greenwood, Indiana"
-                imgSrc={becca}
-              />
-            </Box>
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Gina Sapienza"
-                description="Friend of the bride."
-                location="Chicago, Illinois"
-                imgSrc={gina}
-              />
-            </Box>
-          </Box>
-        </Box>
-        <Box mt={4}>
+            <PartyMember
+              name="Paige Ubel"
+              description="Friend of the bride."
+              location="Fishers, Indiana"
+              imgSrc={paige}
+              width={33}
+            />
+            <PartyMember
+              name="Rebecca Wiser"
+              description="Friend of the bride."
+              location="Greenwood, Indiana"
+              imgSrc={becca}
+              width={33}
+            />
+            <PartyMember
+              name="Gina Sapienza"
+              description="Friend of the bride."
+              location="Chicago, Illinois"
+              imgSrc={gina}
+              width={33}
+            />
+          </Stack>
           <ScriptTypography variant="h2" align="center">
             Groomsmen
           </ScriptTypography>
-          <Box
-            sx={
-              isSmallScreen
-                ? { display: 'inline-flex', overflowX: 'scroll', width: '100%' }
-                : {
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    flexWrap: 'wrap',
-                  }
-            }
+          <Stack
+            spacing={1}
+            direction="row"
+            justifyContent={isSmallScreen ? undefined : 'space-around'}
+            display={isSmallScreen ? 'inline-flex' : 'flex'}
+            flexWrap={isSmallScreen ? undefined : 'wrap'}
+            sx={isSmallScreen ? { overflowX: 'scroll' } : { justifyContent: 'space-around' }}
           >
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Billy Shank"
-                description="Uses all of the beans."
-                location="South Bend, Indiana"
-                imgSrc={billbo}
-              />
-            </Box>
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Austin Sims"
-                description="A fellow man of of the Trombone."
-                location="Chicago, Illinois"
-                imgSrc={austin}
-              />
-            </Box>
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Rob Mantock"
-                description="Some guy."
-                location="Indianapolis, Indiana"
-                imgSrc={rob}
-              />
-            </Box>
-            <Box sx={{ minWidth: '16.5rem', maxWidth: '16.5rem' }}>
-              <PartyMember
-                name="Brent Mathis"
-                description="Beer santa."
-                location="St. Louis, Missouri"
-                imgSrc={brent}
-              />
-            </Box>
-          </Box>
-        </Box>
-        <Box mt={4} mb={6}>
+            <PartyMember
+              name="Billy Shank"
+              description="Uses all of the beans."
+              location="South Bend, Indiana"
+              imgSrc={billbo}
+              width={33}
+            />
+            <PartyMember
+              name="Austin Sims"
+              description="A fellow man of of the Trombone."
+              location="Chicago, Illinois"
+              imgSrc={austin}
+              width={33}
+            />
+            <PartyMember
+              name="Rob Mantock"
+              description="Some guy."
+              location="Indianapolis, Indiana"
+              imgSrc={rob}
+              width={33}
+            />
+            <PartyMember
+              name="Brent Mathis"
+              description="Beer santa."
+              location="St. Louis, Missouri"
+              imgSrc={brent}
+              width={33}
+            />
+          </Stack>
           <ScriptTypography variant="h2" align="center">
             Officiant
           </ScriptTypography>
-          <Box display="flex">
-            <Box mx="auto" width="16.5rem">
-              <PartyMember
-                name="Chris Jacobus"
-                description="Might actually be an airplane."
-                location="Kent, Washington"
-                imgSrc={chris}
-              />
-            </Box>
-          </Box>
-        </Box>
+          <Stack direction="row" justifyContent="space-around">
+            <PartyMember
+              name="Chris Jacobus"
+              description="Might actually be an airplane."
+              location="Kent, Washington"
+              imgSrc={chris}
+              width={33}
+            />
+          </Stack>
+        </Stack>
       </Container>
-    </>
+    </Stack>
   );
 };

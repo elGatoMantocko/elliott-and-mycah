@@ -49,7 +49,7 @@ it('should navigate to href when clicked', async () => {
 });
 
 it('should call the onClick handler', async () => {
-  const onClickMock = jest.fn();
+  const onClickMock = vi.fn();
   const el = renderWithRouter(
     <ListItemLink to="/test" data-testid="navigate-with-onClick" onClick={onClickMock}>
       Test

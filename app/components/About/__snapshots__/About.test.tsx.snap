@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render an <About />: basic-about 1`] = `
+exports[`should render an <About /> > basic-about 1`] = `
 <div
   data-testid="basic-about"
 >
@@ -14,14 +14,14 @@ exports[`should render an <About />: basic-about 1`] = `
         style="position: absolute; top: -300px; left: 0px; right: 0px; bottom: -300px; will-change: transform; transform: translateY(300px);"
       >
         <div
-          class="MuiBox-root css-1iblkkh"
+          class="MuiBox-root css-1opgm91"
         >
           <img
-            src="test-file-stub"
+            src="/app/images/elliottandmycah.webp"
             style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
-            src="test-file-stub"
+            src="/app/images/elliottandmycah-small.webp"
             style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
           />
         </div>
@@ -78,7 +78,7 @@ exports[`should render an <About />: basic-about 1`] = `
           >
             <img
               alt="Mycah and Elliott attend a Slayter concert on the hill"
-              src="test-file-stub"
+              src="/app/images/on_the_hill.jpg"
               style="max-width: 100%;"
             />
           </div>
@@ -112,7 +112,7 @@ exports[`should render an <About />: basic-about 1`] = `
           >
             <img
               alt="Ellie strikes a pose in front of 14000ft Mt. Rainier"
-              src="test-file-stub"
+              src="/app/images/ellie_and_rainier.jpg"
               style="max-width: 100%;"
             />
           </div>
@@ -149,7 +149,7 @@ exports[`should render an <About />: basic-about 1`] = `
           >
             <img
               alt="Elliott pops the question in front of the Mendenhall glacier"
-              src="test-file-stub"
+              src="/app/images/one_knee.jpg"
               style="max-width: 100%;"
             />
           </div>

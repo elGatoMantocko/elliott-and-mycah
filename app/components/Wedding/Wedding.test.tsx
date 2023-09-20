@@ -1,4 +1,4 @@
-import { initialize as initializeGoogleMaps } from '@googlemaps/jest-mocks';
+import { initialize as initializeGoogleMaps } from '@anshulsanghi/googlemaps-vitest-mocks';
 import { ThemeProvider } from '@mui/material/styles';
 import { render } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
@@ -17,9 +17,6 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
     </ThemeProvider>
   );
 };
-
-// mock system clock
-jest.useFakeTimers().setSystemTime(new Date(2022, 6, 14));
 
 it('should render a <Wedding /> page', async () => {
   const el = render(

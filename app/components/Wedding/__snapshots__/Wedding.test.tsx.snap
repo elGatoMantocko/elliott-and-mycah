@@ -1,95 +1,81 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render a <Wedding /> page 1`] = `
 <div
   data-testid="wedding-page"
 >
   <div
-    class="MuiBox-root css-1kykfr"
+    class="MuiStack-root css-10mf0av-MuiStack-root"
   >
     <div
-      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+      class="MuiBox-root css-1kykfr"
     >
       <div
-        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
+        style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
       >
         <div
-          class="MuiBox-root css-1iblkkh"
-        >
-          <img
-            src="test-file-stub"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
-          />
-          <img
-            src="test-file-stub"
-            style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
-          />
-        </div>
-      </div>
-      <div
-        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
-      >
-        <div
-          class="MuiContainer-root MuiContainer-maxWidthLg css-1jyc5fq-MuiContainer-root"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
         >
           <div
-            class="MuiStack-root css-1jl7z82-MuiStack-root"
+            class="MuiBox-root css-1xqr8li"
+          >
+            <img
+              src="/app/images/wedding-pics/me (202 of 828).jpg"
+              style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
+            />
+            <img
+              src="/app/images/wedding-pics/me (202 of 828)-small.jpg"
+              style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
+            />
+          </div>
+        </div>
+        <div
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+        >
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-1jyc5fq-MuiContainer-root"
           >
             <div
-              class="MuiBox-root css-kr4k96"
+              class="MuiStack-root css-1jl7z82-MuiStack-root"
             >
               <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+                class="MuiBox-root css-kr4k96"
               >
                 <div
-                  class="MuiBox-root css-1erotlu"
+                  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
                 >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                  <div
+                    class="MuiBox-root css-1erotlu"
                   >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    year
-                  </h4>
+                    <h1
+                      class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                    >
+                      2
+                    </h1>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                    >
+                      years
+                    </h4>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
-              >
                 <div
-                  class="MuiBox-root css-1erotlu"
+                  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
                 >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                  <div
+                    class="MuiBox-root css-1erotlu"
                   >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    month
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
-              >
-                <div
-                  class="MuiBox-root css-1erotlu"
-                >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
-                  >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    day
-                  </h4>
+                    <h1
+                      class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                    >
+                      3
+                    </h1>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                    >
+                      months
+                    </h4>
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,177 +83,169 @@ exports[`should render a <Wedding /> page 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-1npg6dm"
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
     >
       <div
-        class="MuiBox-root css-1byc7kj"
+        class="MuiStack-root css-1bq9h67-MuiStack-root"
       >
-        <h2
-          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        <div
+          class="MuiStack-root css-rk15aq-MuiStack-root"
         >
-          The Seattle Yacht Club
-        </h2>
-        <h3
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
-        >
-          <em>
-            6/12/21 @ 4pm
-          </em>
-        </h3>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
-        >
-          Both our ceremony and reception will be held at the following address:
-        </p>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-n490qp-MuiTypography-root-MuiLink-root"
-            href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
-            target="_blank"
+          <h2
+            class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
           >
-            1807 E. Hamlin St.
-            <br />
-            Seattle, WA 98112
-          </a>
-        </p>
-      </div>
-      <div
-        class="MuiBox-root css-1txa2c8"
-      >
+            The Seattle Yacht Club
+          </h2>
+          <h3
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
+          >
+            <em>
+              6/12/21 @ 4pm
+            </em>
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+          >
+            Both our ceremony and reception will be held at the following address:
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-n490qp-MuiTypography-root-MuiLink-root"
+              href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
+              target="_blank"
+            >
+              1807 E. Hamlin St.
+              <br />
+              Seattle, WA 98112
+            </a>
+          </p>
+        </div>
         <div
           style="width: 100%; height: 500px;"
         />
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-i51og3"
+      class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
     >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Reception meal options
-      </h2>
       <div
-        class="MuiBox-root css-brw1fa"
+        class="MuiStack-root css-121v0ow-MuiStack-root"
       >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Reception meal options
+        </h2>
         <div
-          class="MuiBox-root css-tjslgt"
+          class="MuiStack-root css-1bq9h67-MuiStack-root"
         >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Crab Stuffed Salmon
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Crab Stuffed Salmon
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-tjslgt"
-        >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Pancetta Chicken
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
-                <em>
-                  Gluten Free
-                </em>
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Pancetta Chicken
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
+                  <em>
+                    Gluten Free
+                  </em>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-tjslgt"
-        >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Spinach Tortellini
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Spinach Tortellini
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-i51og3"
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
     >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Bridesmaids
-      </h2>
       <div
-        class="MuiBox-root css-1nvf2ph"
+        class="MuiStack-root css-199pn0s-MuiStack-root"
       >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Bridesmaids
+        </h2>
         <div
-          class="MuiBox-root css-3nh5sl"
+          class="MuiStack-root css-11j8yzy-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Paige Ubel"
-                src="test-file-stub"
+                src="/app/images/headshots/paige.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -289,19 +267,15 @@ exports[`should render a <Wedding /> page 1`] = `
               Friend of the bride.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Rebecca Wiser"
-                src="test-file-stub"
+                src="/app/images/headshots/becca.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -323,19 +297,15 @@ exports[`should render a <Wedding /> page 1`] = `
               Friend of the bride.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Gina Sapienza"
-                src="test-file-stub"
+                src="/app/images/headshots/gina.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -358,31 +328,23 @@ exports[`should render a <Wedding /> page 1`] = `
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="MuiBox-root css-i51og3"
-    >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Groomsmen
-      </h2>
-      <div
-        class="MuiBox-root css-1nvf2ph"
-      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Groomsmen
+        </h2>
         <div
-          class="MuiBox-root css-3nh5sl"
+          class="MuiStack-root css-g383co-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Billy Shank"
-                src="test-file-stub"
+                src="/app/images/headshots/billbo.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -404,19 +366,15 @@ exports[`should render a <Wedding /> page 1`] = `
               Uses all of the beans.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Austin Sims"
-                src="test-file-stub"
+                src="/app/images/headshots/austin.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -438,19 +396,15 @@ exports[`should render a <Wedding /> page 1`] = `
               A fellow man of of the Trombone.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Rob Mantock"
-                src="test-file-stub"
+                src="/app/images/headshots/rob.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -472,19 +426,15 @@ exports[`should render a <Wedding /> page 1`] = `
               Some guy.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Brent Mathis"
-                src="test-file-stub"
+                src="/app/images/headshots/brent.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -507,31 +457,23 @@ exports[`should render a <Wedding /> page 1`] = `
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="MuiBox-root css-16osax9"
-    >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Officiant
-      </h2>
-      <div
-        class="MuiBox-root css-k008qs"
-      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Officiant
+        </h2>
         <div
-          class="MuiBox-root css-n7lxis"
+          class="MuiStack-root css-48anut-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Chris Jacobus"
-                src="test-file-stub"
+                src="/app/images/headshots/chris.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -565,91 +507,95 @@ exports[`should render a small screen <Wedding /> page 1`] = `
   data-testid="small-wedding-page"
 >
   <div
-    class="MuiBox-root css-1pw9y5c"
+    class="MuiStack-root css-10mf0av-MuiStack-root"
   >
     <div
-      style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
+      class="MuiBox-root css-1pw9y5c"
     >
       <div
-        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
+        style="position: relative; overflow: hidden; width: 100%; height: 100%; background-color: rgb(204, 204, 204);"
       >
         <div
-          class="MuiBox-root css-1iblkkh"
-        >
-          <img
-            src="test-file-stub"
-            style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
-          />
-          <img
-            src="test-file-stub"
-            style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
-          />
-        </div>
-      </div>
-      <div
-        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
-      >
-        <div
-          class="MuiContainer-root MuiContainer-maxWidthLg css-1jyc5fq-MuiContainer-root"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
         >
           <div
-            class="MuiStack-root css-1jl7z82-MuiStack-root"
+            class="MuiBox-root css-1xqr8li"
+          >
+            <img
+              src="/app/images/wedding-pics/me (202 of 828).jpg"
+              style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
+            />
+            <img
+              src="/app/images/wedding-pics/me (202 of 828)-small.jpg"
+              style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
+            />
+          </div>
+        </div>
+        <div
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform;"
+        >
+          <div
+            class="MuiContainer-root MuiContainer-maxWidthLg css-1jyc5fq-MuiContainer-root"
           >
             <div
-              class="MuiBox-root css-kr4k96"
+              class="MuiStack-root css-1jl7z82-MuiStack-root"
             >
               <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+                class="MuiBox-root css-kr4k96"
               >
                 <div
-                  class="MuiBox-root css-1erotlu"
+                  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
                 >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                  <div
+                    class="MuiBox-root css-1erotlu"
                   >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    year
-                  </h4>
+                    <h1
+                      class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                    >
+                      2
+                    </h1>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                    >
+                      years
+                    </h4>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
-              >
                 <div
-                  class="MuiBox-root css-1erotlu"
+                  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
                 >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                  <div
+                    class="MuiBox-root css-1erotlu"
                   >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    month
-                  </h4>
+                    <h1
+                      class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                    >
+                      3
+                    </h1>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                    >
+                      months
+                    </h4>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
-              >
                 <div
-                  class="MuiBox-root css-1erotlu"
+                  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
                 >
-                  <h1
-                    class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                  <div
+                    class="MuiBox-root css-1erotlu"
                   >
-                    1
-                  </h1>
-                  <h4
-                    class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
-                  >
-                    day
-                  </h4>
+                    <h1
+                      class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+                    >
+                      7
+                    </h1>
+                    <h4
+                      class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+                    >
+                      days
+                    </h4>
+                  </div>
                 </div>
               </div>
             </div>
@@ -657,177 +603,169 @@ exports[`should render a small screen <Wedding /> page 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-1npg6dm"
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
     >
       <div
-        class="MuiBox-root css-1nyh40g"
+        class="MuiStack-root css-1bq9h67-MuiStack-root"
       >
-        <h2
-          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        <div
+          class="MuiStack-root css-rk15aq-MuiStack-root"
         >
-          The Seattle Yacht Club
-        </h2>
-        <h3
-          class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
-        >
-          <em>
-            6/12/21 @ 4pm
-          </em>
-        </h3>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
-        >
-          Both our ceremony and reception will be held at the following address:
-        </p>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-n490qp-MuiTypography-root-MuiLink-root"
-            href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
-            target="_blank"
+          <h2
+            class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
           >
-            1807 E. Hamlin St.
-            <br />
-            Seattle, WA 98112
-          </a>
-        </p>
-      </div>
-      <div
-        class="MuiBox-root css-8ikxjz"
-      >
+            The Seattle Yacht Club
+          </h2>
+          <h3
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter MuiTypography-gutterBottom css-eelqez-MuiTypography-root"
+          >
+            <em>
+              6/12/21 @ 4pm
+            </em>
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+          >
+            Both our ceremony and reception will be held at the following address:
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+          >
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-n490qp-MuiTypography-root-MuiLink-root"
+              href="https://goo.gl/maps/uMvTrj6rJoa62nz97"
+              target="_blank"
+            >
+              1807 E. Hamlin St.
+              <br />
+              Seattle, WA 98112
+            </a>
+          </p>
+        </div>
         <div
           style="width: 100%; height: 75vh;"
         />
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-i51og3"
+      class="MuiContainer-root MuiContainer-maxWidthMd css-l841sg-MuiContainer-root"
     >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Reception meal options
-      </h2>
       <div
-        class="MuiBox-root css-1nvf2ph"
+        class="MuiStack-root css-121v0ow-MuiStack-root"
       >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Reception meal options
+        </h2>
         <div
-          class="MuiBox-root css-tjslgt"
+          class="MuiStack-root css-1bq9h67-MuiStack-root"
         >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Crab Stuffed Salmon
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Crab Stuffed Salmon
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Dungeness Crab Stuffed Salmon with Citrus Beurre Blanc, Rice Pilaf and Seasonal Vegetables
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-tjslgt"
-        >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Pancetta Chicken
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
-                <em>
-                  Gluten Free
-                </em>
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Pancetta Chicken
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Oven Roasted with Pancetta, Fresh Sage and Roasted Garlic, Rice Pilaf and Seasonal Vegetables - 
+                  <em>
+                    Gluten Free
+                  </em>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-tjslgt"
-        >
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
+            class="MuiBox-root css-tjslgt"
           >
             <div
-              class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-zwt9xa-MuiPaper-root-MuiCard-root"
             >
-              <h4
-                class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+              <div
+                class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
               >
-                Spinach Tortellini
-              </h4>
-              <hr
-                class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
-              />
-              <p
-                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-              >
-                Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
-              </p>
+                <h4
+                  class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom css-12zyd64-MuiTypography-root"
+                >
+                  Spinach Tortellini
+                </h4>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+                />
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                >
+                  Spinach and Roasted Garlic with a Creamy Pesto Sauce and Seasonal Vegetables
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
-  >
     <div
-      class="MuiBox-root css-i51og3"
+      class="MuiContainer-root MuiContainer-maxWidthLg css-1iin24e-MuiContainer-root"
     >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Bridesmaids
-      </h2>
       <div
-        class="MuiBox-root css-ny86qu"
+        class="MuiStack-root css-199pn0s-MuiStack-root"
       >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Bridesmaids
+        </h2>
         <div
-          class="MuiBox-root css-3nh5sl"
+          class="MuiStack-root css-y7kiup-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Paige Ubel"
-                src="test-file-stub"
+                src="/app/images/headshots/paige.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -849,19 +787,15 @@ exports[`should render a small screen <Wedding /> page 1`] = `
               Friend of the bride.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Rebecca Wiser"
-                src="test-file-stub"
+                src="/app/images/headshots/becca.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -883,19 +817,15 @@ exports[`should render a small screen <Wedding /> page 1`] = `
               Friend of the bride.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Gina Sapienza"
-                src="test-file-stub"
+                src="/app/images/headshots/gina.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -918,31 +848,23 @@ exports[`should render a small screen <Wedding /> page 1`] = `
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="MuiBox-root css-i51og3"
-    >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Groomsmen
-      </h2>
-      <div
-        class="MuiBox-root css-ny86qu"
-      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Groomsmen
+        </h2>
         <div
-          class="MuiBox-root css-3nh5sl"
+          class="MuiStack-root css-1vj0eih-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Billy Shank"
-                src="test-file-stub"
+                src="/app/images/headshots/billbo.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -964,19 +886,15 @@ exports[`should render a small screen <Wedding /> page 1`] = `
               Uses all of the beans.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Austin Sims"
-                src="test-file-stub"
+                src="/app/images/headshots/austin.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -998,19 +916,15 @@ exports[`should render a small screen <Wedding /> page 1`] = `
               A fellow man of of the Trombone.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Rob Mantock"
-                src="test-file-stub"
+                src="/app/images/headshots/rob.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -1032,19 +946,15 @@ exports[`should render a small screen <Wedding /> page 1`] = `
               Some guy.
             </p>
           </div>
-        </div>
-        <div
-          class="MuiBox-root css-3nh5sl"
-        >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Brent Mathis"
-                src="test-file-stub"
+                src="/app/images/headshots/brent.webp"
                 style="max-width: 100%;"
               />
             </div>
@@ -1067,31 +977,23 @@ exports[`should render a small screen <Wedding /> page 1`] = `
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="MuiBox-root css-16osax9"
-    >
-      <h2
-        class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
-      >
-        Officiant
-      </h2>
-      <div
-        class="MuiBox-root css-k008qs"
-      >
+        <h2
+          class="MuiTypography-root MuiTypography-h2 MuiTypography-alignCenter css-u0e2wp-MuiTypography-root"
+        >
+          Officiant
+        </h2>
         <div
-          class="MuiBox-root css-n7lxis"
+          class="MuiStack-root css-48anut-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-hvj582"
+            class="MuiBox-root css-1nu8inj"
           >
             <div
               class="MuiBox-root css-1payvuv"
             >
               <img
                 alt="Chris Jacobus"
-                src="test-file-stub"
+                src="/app/images/headshots/chris.webp"
                 style="max-width: 100%;"
               />
             </div>

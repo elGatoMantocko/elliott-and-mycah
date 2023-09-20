@@ -6,9 +6,13 @@ type PartyMemberProps = {
   description?: string;
   location?: string;
   imgSrc: string;
+  /**
+   * The number applied to the width style of the box. Passed to mui spacing controls.
+   */
+  width: number;
 };
-export const PartyMember = ({ name, description, location, imgSrc }: PartyMemberProps) => (
-  <Box m={3}>
+export const PartyMember = ({ name, description, location, imgSrc, width }: PartyMemberProps) => (
+  <Box m={3} width={width}>
     <Box
       sx={(theme) => ({
         display: 'flex',

@@ -92,7 +92,7 @@ it('should fire dispatch events with the useDispatch hook', async () => {
     );
   };
 
-  const spy = jest.spyOn(customRenderOptions, 'reducer');
+  const spy = vi.spyOn(customRenderOptions, 'reducer');
 
   // the reducer should only be dispatched when the button is clicked
   const result = customRender(<TestButton />, customRenderOptions);

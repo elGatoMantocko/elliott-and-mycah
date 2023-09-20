@@ -1,7 +1,7 @@
-import { UserConfig } from 'vite';
+import { defineConfig, UserConfig } from 'vite';
 import { VitePWA as vitePwa } from 'vite-plugin-pwa';
 
-const config: UserConfig = {
+const config: UserConfig = defineConfig({
   // 5kb asset inline limit
   build: { sourcemap: true, assetsInlineLimit: 1024 * 5 },
   plugins: [
@@ -12,6 +12,6 @@ const config: UserConfig = {
       workbox: { skipWaiting: false, clientsClaim: true },
     }),
   ],
-};
+});
 
 export default config;

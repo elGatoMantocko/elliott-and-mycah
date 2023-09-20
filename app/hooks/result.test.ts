@@ -5,7 +5,7 @@ import { ResultState, useCallableResult, useResult } from '.';
 
 describe('useResult', () => {
   it('should resolve to pending/value for value result', async () => {
-    const asyncFn = jest.fn(async () => 'test');
+    const asyncFn = vi.fn(async () => 'test');
     const { result, rerender } = renderHook(() => useResult(asyncFn, []));
 
     expect(result.current).toEqual(state(ResultState.Pending));
@@ -29,7 +29,7 @@ describe('useResult', () => {
   ])(
     'should resolve to pending/error for a called error result',
     async (thrownError, expectedError) => {
-      const asyncFn = jest.fn(async () => {
+      const asyncFn = vi.fn(async () => {
         act(() => {
           throw thrownError;
         });
@@ -72,7 +72,7 @@ describe('useResult', () => {
 
 describe('useCallableResult', () => {
   it('should resolve to pending/value for a called value result', async () => {
-    const asyncFn = jest.fn(async (data: string) => data);
+    const asyncFn = vi.fn(async (data: string) => data);
     const { result, rerender } = renderHook(() => useCallableResult(asyncFn));
 
     expect(result.current[0]).toEqual(state(ResultState.NotStarted));
@@ -130,7 +130,7 @@ describe('useCallableResult', () => {
   ])(
     'should resolve to pending/error for a called error result',
     async (thrownError, expectedError) => {
-      const asyncFn = jest.fn(async () => {
+      const asyncFn = vi.fn(async () => {
         throw thrownError;
       });
       const { result, rerender } = renderHook(() => useCallableResult(asyncFn));

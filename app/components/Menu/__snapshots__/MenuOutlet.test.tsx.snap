@@ -1,62 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render a <Menu /> 1`] = `
 <div
   data-testid="menu"
->
-  <header
-    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionStatic css-pivuyh-MuiPaper-root-MuiAppBar-root"
-  >
-    <div
-      class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
-    >
-      <div
-        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
-      >
-        <div
-          class="MuiBox-root css-0"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
-            href="/us"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
-            >
-              About us
-            </p>
-          </a>
-        </div>
-        <div
-          class="MuiBox-root css-12x7e8k"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
-            href="/pictures"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
-            >
-              Pictures
-            </p>
-          </a>
-        </div>
-        <div
-          class="MuiBox-root css-12x7e8k"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
-            href="/wedding"
-          >
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-1vt3dvp-MuiTypography-root"
-            >
-              Wedding
-            </p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
+/>
 `;

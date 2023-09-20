@@ -39,7 +39,7 @@ it('should dispatch effects for a useElmish pattern', async () => {
 });
 
 it('should call the dispatch functions in the correct order', async () => {
-  const func = jest.fn();
+  const func = vi.fn();
 
   /**
    * should return an effect tuple

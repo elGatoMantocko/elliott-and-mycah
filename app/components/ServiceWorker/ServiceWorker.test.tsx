@@ -1,14 +1,16 @@
-import { act, render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { ResultState } from '../../hooks';
 import { State, state } from '../../models';
 import { ServiceWorkerUnregistration } from '.';
 
-jest.mock('../../hooks/serviceWorker', () => ({
+vi.mock('../../hooks/serviceWorker', () => ({
   __esModule: true,
-  useUnregisterServiceWorkers: jest.fn(),
+  useUnregisterServiceWorkers: vi.fn(),
 }));
+
+vi.stubGlobal('location', { reload: vi.fn() });
 
 /**
  * Helper to mock a sw unregister result.
@@ -73,7 +75,7 @@ it('should render an error <Unregister />', async () => {
 });
 
 it('should render a successful <Unregister /> with a snackbar', async () => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   await mockUnregisterResult(state(ResultState.Value, true));
 
@@ -83,20 +85,17 @@ it('should render a successful <Unregister /> with a snackbar', async () => {
     </div>
   );
 
-  const el = render(ui);
+  const { rerender } = render(ui);
 
   expect(window.location.reload).toHaveBeenCalled();
-
-  expect(await el.findByTestId('unregister-sw-success-hide-snack')).toMatchSnapshot(
+  expect(screen.getByTestId('unregister-sw-success-hide-snack')).toMatchSnapshot(
     'success-unregister',
   );
 
-  act(() => {
-    jest.advanceTimersByTime(3000);
-    el.rerender(ui);
-  });
+  vi.advanceTimersByTime(3000);
+  rerender(ui);
 
-  expect(await el.findByTestId('unregister-sw-success-hide-snack')).toMatchSnapshot(
+  expect(screen.getByTestId('unregister-sw-success-hide-snack')).toMatchSnapshot(
     'success-unregister-post-hide',
   );
 });

@@ -17,7 +17,7 @@ it('should get a time delta', () => {
 });
 
 it('should set the date on a new interval', async () => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   const { result, rerender } = renderHook(() => useCountdown(sub(new Date(), { years: 1 })));
 
@@ -32,7 +32,7 @@ it('should set the date on a new interval', async () => {
 
   await act(() => {
     // advance the time by a day
-    jest.advanceTimersByTime(1000 * 60 * 60 * 24);
+    vi.advanceTimersByTime(1000 * 60 * 60 * 24);
   });
   rerender();
 

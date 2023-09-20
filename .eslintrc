@@ -8,8 +8,7 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "plugin:import/react",
-    "plugin:jest/recommended"
+    "plugin:import/react"
   ],
   "plugins": [
     "@typescript-eslint",
@@ -18,8 +17,7 @@
     "simple-import-sort",
     "jsdoc",
     "import",
-    "material-ui",
-    "jest"
+    "material-ui"
   ],
   "parserOptions": {
     "ecmaVersion": 2021,

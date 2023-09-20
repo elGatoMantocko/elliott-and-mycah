@@ -2,6 +2,17 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { ResultState, useServiceWorker, useUnregisterServiceWorkers } from '.';
 
+// allows us to override the navigator and stub out the service worker api
+Object.defineProperty(global, 'navigator', {
+  value: {
+    serviceWorker: {
+      getRegistrations: vi.fn(),
+      register: vi.fn(),
+      addEventListener: vi.fn(),
+    },
+  },
+});
+
 it('should register a service worker', async () => {
   const { result } = renderHook(() => useServiceWorker('/test.js'));
 
@@ -12,11 +23,9 @@ it('should register a service worker', async () => {
 
 it('should unregister all service workers', async () => {
   // stub out getRegistrations to return registrations that can be unregistered
-  jest
-    .spyOn(global.navigator.serviceWorker, 'getRegistrations')
-    .mockResolvedValue([
-      { unregister: jest.fn(async () => await true) },
-    ] as unknown as ServiceWorkerRegistration[]);
+  vi.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([
+    { unregister: vi.fn(async () => await true) },
+  ] as unknown as ServiceWorkerRegistration[]);
 
   const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());
 
@@ -31,7 +40,7 @@ it('should unregister all service workers', async () => {
 
 it('should return false when there are no service workers to unregister', async () => {
   // stub out getRegistrations to return registrations that can be unregistered
-  jest.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([]);
+  vi.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([]);
 
   const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());
 

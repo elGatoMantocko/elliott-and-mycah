@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@mui/material/styles';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -23,12 +23,12 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
 };
 
 it('should render an <About />', async () => {
-  const el = render(
+  render(
     <div data-testid="basic-about">
       <About />
     </div>,
     { wrapper: MockProviders },
   );
 
-  expect(await el.findByTestId('basic-about')).toMatchSnapshot('basic-about');
+  expect(screen.getByTestId('basic-about')).toMatchSnapshot('basic-about');
 });

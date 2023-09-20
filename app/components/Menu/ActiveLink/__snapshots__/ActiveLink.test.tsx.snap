@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should navigate when a link is clicked: with-href 1`] = `
+exports[`should navigate when a link is clicked > with-href 1`] = `
 <a
   class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-10kyizu-MuiTypography-root-MuiLink-root"
   data-testid="with-href"
@@ -10,7 +10,7 @@ exports[`should navigate when a link is clicked: with-href 1`] = `
 </a>
 `;
 
-exports[`should render a link: basic-link 1`] = `
+exports[`should render a link > basic-link 1`] = `
 <a
   class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-5fap85-MuiTypography-root-MuiLink-root"
   data-testid="basic-link"
@@ -20,7 +20,7 @@ exports[`should render a link: basic-link 1`] = `
 </a>
 `;
 
-exports[`should render active on the current path: some-test-link 1`] = `
+exports[`should render active on the current path > some-test-link 1`] = `
 <a
   class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-10kyizu-MuiTypography-root-MuiLink-root"
   data-testid="some-test-link"
@@ -30,7 +30,7 @@ exports[`should render active on the current path: some-test-link 1`] = `
 </a>
 `;
 
-exports[`should render disabled link: disabled-link 1`] = `
+exports[`should render disabled link > disabled-link 1`] = `
 <a
   class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-q649bg-MuiTypography-root-MuiLink-root"
   data-testid="disabled-link"
@@ -40,7 +40,7 @@ exports[`should render disabled link: disabled-link 1`] = `
 </a>
 `;
 
-exports[`should render disabled link: disabled-link 2`] = `
+exports[`should render disabled link > disabled-link 2`] = `
 <div>
   <a
     class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-q649bg-MuiTypography-root-MuiLink-root"

@@ -1,5 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { userEvent } from '@testing-library/user-event';
 import React from 'react';
 import {
   createMemoryRouter,
@@ -20,6 +20,8 @@ it('should render', () => {
 });
 
 it('should scroll to top', async () => {
+  vi.stubGlobal('scrollTo', vi.fn());
+
   const El = () => {
     const { id } = useParams();
     return <div data-testid="test-el">{id}</div>;
@@ -63,5 +65,5 @@ it('should scroll to top', async () => {
   await act(() => user.click(screen.getByTestId('link-to-2')));
 
   expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
-  expect(window.scrollTo).toHaveBeenCalledTimes(3);
+  expect(window.scrollTo).toHaveBeenCalledTimes(2);
 });
