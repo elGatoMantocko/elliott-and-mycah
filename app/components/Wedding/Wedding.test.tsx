@@ -1,6 +1,6 @@
 import { initialize as initializeGoogleMaps } from '@anshulsanghi/googlemaps-vitest-mocks';
 import { ThemeProvider } from '@mui/material/styles';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -19,25 +19,27 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
 };
 
 it('should render a <Wedding /> page', async () => {
-  const el = render(
+  vi.useFakeTimers().runAllTimers();
+  render(
     <div data-testid="wedding-page">
       <Wedding />
     </div>,
     { wrapper: MockProviders },
   );
 
-  expect(await el.findByTestId('wedding-page')).toMatchSnapshot();
+  expect(screen.getByTestId('wedding-page')).toMatchSnapshot();
 });
 
 it('should render a small screen <Wedding /> page', async () => {
+  vi.useFakeTimers().runAllTimers();
   global.matchMedia = createMatchMedia(764);
 
-  const el = render(
+  render(
     <div data-testid="small-wedding-page">
       <Wedding />
     </div>,
     { wrapper: MockProviders },
   );
 
-  expect(await el.findByTestId('small-wedding-page')).toMatchSnapshot();
+  expect(screen.getByTestId('small-wedding-page')).toMatchSnapshot();
 });
