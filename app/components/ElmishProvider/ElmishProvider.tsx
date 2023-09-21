@@ -1,5 +1,5 @@
 import React, { createContext, PropsWithChildren, useContext } from 'react';
-import useElmish, { Dispatch, Reducer, StateEffectPair } from 'react-use-elmish';
+import { Dispatch, Reducer, StateEffectPair, useElmish } from 'react-use-elmish';
 
 // This `noop` function is only used as an initializer for the original
 // react context that we create but as soon as someone pulls in the `<ElmishProvider>` component,

@@ -24,6 +24,12 @@
     "warnOnUnsupportedTypeScriptVersion": false // if it's bad enough it should just fail
   },
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+    },
+    "import/resolver": {
+      "typescript": true
+    },
     "react": {
       "version": "detect"
     }

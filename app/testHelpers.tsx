@@ -1,5 +1,5 @@
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
-import mediaQuery from 'css-mediaquery';
+import { match } from 'css-mediaquery';
 import React from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 
@@ -69,7 +69,7 @@ const noop = () => {};
 export function createMatchMedia(width: number): (query: string) => MediaQueryList {
   return (query: string) =>
     ({
-      matches: mediaQuery.match(query, { width }),
+      matches: match(query, { width }),
       addListener: noop,
       removeListener: noop,
     }) as unknown as MediaQueryList;

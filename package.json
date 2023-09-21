@@ -23,13 +23,14 @@
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "@vitejs/plugin-react": "^4.0.4",
-    "@vitest/coverage-v8": "^0.34.4",
+    "@vitest/coverage-istanbul": "^0.34.5",
     "css-mediaquery": "^0.1.2",
     "eslint": "^8.49.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jsdoc": "^46.8.1",
+    "eslint-plugin-jsdoc": "^46.8.2",
     "eslint-plugin-material-ui": "^1.0.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
@@ -45,7 +46,7 @@
     "vite-bundle-visualizer": "^0.10.0",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-pwa": "^0.16.5",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   },
   "scripts": {
     "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.js",
@@ -54,7 +55,7 @@
     "preview": "vite preview --port 8080",
     "lint": "eslint vite.config.ts app/**/*.tsx app/**/*.ts",
     "nuke": "rm -rf node_modules dist",
-    "test": "vitest run --globals --coverage --environment jsdom",
+    "test": "vitest run",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "dependencies": {

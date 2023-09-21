@@ -4,6 +4,6 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    coverage: { provider: 'istanbul' },
+    coverage: { provider: 'istanbul', enabled: true },
   },
 });
