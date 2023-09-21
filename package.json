@@ -55,7 +55,7 @@
     "preview": "vite preview --port 8080",
     "lint": "eslint vite.config.ts app/**/*.tsx app/**/*.ts",
     "nuke": "rm -rf node_modules dist",
-    "test": "vitest run",
+    "test": "TZ=UTC vitest run",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "dependencies": {

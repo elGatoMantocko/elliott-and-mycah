@@ -19,7 +19,6 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
 };
 
 it('should render a <Wedding /> page', async () => {
-  vi.useFakeTimers().runAllTimers();
   render(
     <div data-testid="wedding-page">
       <Wedding />
@@ -31,7 +30,6 @@ it('should render a <Wedding /> page', async () => {
 });
 
 it('should render a small screen <Wedding /> page', async () => {
-  vi.useFakeTimers().runAllTimers();
   global.matchMedia = createMatchMedia(764);
 
   render(
