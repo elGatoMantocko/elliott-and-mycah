@@ -23,7 +23,7 @@ export const Wedding = () => {
   const isSmallScreen = useMediaQuery<Theme>((theme) => theme.breakpoints.down('md'));
 
   return (
-    <Stack spacing={3}>
+    <>
       <Banner
         image={{ src: yachtClub, min: yachtClubSmall }}
         translateY={[-15, 15]}
@@ -31,7 +31,7 @@ export const Wedding = () => {
       >
         <Countdown toDate={new Date(2021, 5, 12, 16, 0, 0)} />
       </Banner>
-      <Container>
+      <Container sx={{ my: 4 }}>
         <Stack direction="row" spacing={1}>
           <Stack textAlign="center" spacing={1} minWidth="40%">
             <ScriptTypography align="center" variant="h2">
@@ -58,7 +58,7 @@ export const Wedding = () => {
           />
         </Stack>
       </Container>
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{ mb: 4 }}>
         <Stack mt={4} spacing={1}>
           <ScriptTypography align="center" variant="h2">
             Reception meal options
@@ -84,17 +84,17 @@ export const Wedding = () => {
           </Stack>
         </Stack>
       </Container>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mb: 10 }}>
         <Stack spacing={2}>
           <ScriptTypography variant="h2" align="center">
             Bridesmaids
           </ScriptTypography>
           <Stack
+            spacing={2}
             direction="row"
-            justifyContent={isSmallScreen ? undefined : 'space-around'}
-            display={isSmallScreen ? 'inline-flex' : 'flex'}
+            useFlexGap
             flexWrap={isSmallScreen ? undefined : 'wrap'}
-            sx={isSmallScreen ? { overflowX: 'scroll' } : { justifyContent: 'space-around' }}
+            justifyContent="space-around"
           >
             <PartyMember
               name="Paige Ubel"
@@ -122,12 +122,11 @@ export const Wedding = () => {
             Groomsmen
           </ScriptTypography>
           <Stack
-            spacing={1}
+            spacing={2}
             direction="row"
-            justifyContent={isSmallScreen ? undefined : 'space-around'}
-            display={isSmallScreen ? 'inline-flex' : 'flex'}
+            useFlexGap
             flexWrap={isSmallScreen ? undefined : 'wrap'}
-            sx={isSmallScreen ? { overflowX: 'scroll' } : { justifyContent: 'space-around' }}
+            justifyContent="space-around"
           >
             <PartyMember
               name="Billy Shank"
@@ -161,7 +160,13 @@ export const Wedding = () => {
           <ScriptTypography variant="h2" align="center">
             Officiant
           </ScriptTypography>
-          <Stack direction="row" justifyContent="space-around">
+          <Stack
+            spacing={2}
+            direction="row"
+            useFlexGap
+            flexWrap={isSmallScreen ? undefined : 'wrap'}
+            justifyContent="space-around"
+          >
             <PartyMember
               name="Chris Jacobus"
               description="Might actually be an airplane."
@@ -172,6 +177,6 @@ export const Wedding = () => {
           </Stack>
         </Stack>
       </Container>
-    </Stack>
+    </>
   );
 };

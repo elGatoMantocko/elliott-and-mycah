@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 type PartyMemberProps = {
@@ -7,12 +7,12 @@ type PartyMemberProps = {
   location?: string;
   imgSrc: string;
   /**
-   * The number applied to the width style of the box. Passed to mui spacing controls.
+   * The number applied to the width style of the item. Passed to mui spacing controls.
    */
   width: number;
 };
 export const PartyMember = ({ name, description, location, imgSrc, width }: PartyMemberProps) => (
-  <Box m={3} width={width}>
+  <Stack width={(theme) => theme.spacing(width)}>
     <Box
       sx={(theme) => ({
         display: 'flex',
@@ -35,5 +35,5 @@ export const PartyMember = ({ name, description, location, imgSrc, width }: Part
         {description}
       </Typography>
     )}
-  </Box>
+  </Stack>
 );
