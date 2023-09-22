@@ -14,14 +14,16 @@ import { Link } from 'react-router-dom';
 
 import { ScrollToTopOutlet } from '.';
 
+beforeEach(() => {
+  vi.stubGlobal('scrollTo', vi.fn());
+});
+
 it('should render', () => {
   const el = render(<ScrollToTopOutlet />, { wrapper: MemoryRouter });
   expect(el.container).toMatchSnapshot();
 });
 
 it('should scroll to top', async () => {
-  vi.stubGlobal('scrollTo', vi.fn());
-
   const El = () => {
     const { id } = useParams();
     return <div data-testid="test-el">{id}</div>;

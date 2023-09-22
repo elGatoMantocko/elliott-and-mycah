@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { ResultState } from '../../hooks';
@@ -92,8 +92,10 @@ it('should render a successful <Unregister /> with a snackbar', async () => {
     'success-unregister',
   );
 
-  vi.advanceTimersByTime(3000);
-  rerender(ui);
+  act(() => {
+    vi.advanceTimersByTime(3000);
+    rerender(ui);
+  });
 
   expect(screen.getByTestId('unregister-sw-success-hide-snack')).toMatchSnapshot(
     'success-unregister-post-hide',

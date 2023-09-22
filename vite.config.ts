@@ -1,8 +1,20 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig, UserConfig } from 'vite';
+import { defineConfig as viteDefineConfig, mergeConfig } from 'vite';
 import { VitePWA as vitePwa } from 'vite-plugin-pwa';
+import { defineConfig as vitestDefineConfig } from 'vitest/config';
 
-const config: UserConfig = defineConfig({
+// test config options
+const testConfig = vitestDefineConfig({
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    coverage: { provider: 'istanbul', enabled: true },
+    setupFiles: './setupTests.ts',
+  },
+});
+
+// build config options
+const buildConfig = viteDefineConfig({
   // 5kb asset inline limit
   build: { sourcemap: true, assetsInlineLimit: 1024 * 5 },
   plugins: [
@@ -16,4 +28,4 @@ const config: UserConfig = defineConfig({
   ],
 });
 
-export default config;
+export default mergeConfig(buildConfig, testConfig);
