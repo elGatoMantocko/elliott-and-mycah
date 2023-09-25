@@ -1,3 +1,5 @@
+// components for unit tests. don't need hmr here
+/* eslint-disable react-refresh/only-export-components */
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { match } from 'css-mediaquery';
 import React from 'react';

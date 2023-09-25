@@ -18,6 +18,10 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
   );
 };
 
+beforeEach(() => {
+  vi.useFakeTimers({ now: new Date(2023, 8, 22, 17, 0, 0, 0) });
+});
+
 it('should render a <Wedding /> page', async () => {
   render(
     <div data-testid="wedding-page">

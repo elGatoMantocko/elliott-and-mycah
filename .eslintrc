@@ -17,7 +17,8 @@
     "simple-import-sort",
     "jsdoc",
     "import",
-    "material-ui"
+    "material-ui",
+    "react-refresh"
   ],
   "parserOptions": {
     "ecmaVersion": 2021,
@@ -44,6 +45,10 @@
     "sort-imports": "off",
     "import/order": "off",
     "react/prop-types": "off",
+
+    // wont refresh react components in dev mode unless the exports are all components
+    "react-refresh/only-export-components": "warn",
+
     "no-restricted-imports": [
       "error",
       {

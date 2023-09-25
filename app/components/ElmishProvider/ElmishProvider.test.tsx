@@ -1,4 +1,4 @@
-import { act, render, RenderOptions, RenderResult, waitFor } from '@testing-library/react';
+import { act, render, RenderOptions, RenderResult, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { Effects, Reducer, StateEffectPair } from 'react-use-elmish';
 
@@ -60,22 +60,22 @@ it('should hold elmish context', async () => {
     );
   };
 
-  const result = customRender(<TestButton />, customRenderOptions);
+  customRender(<TestButton />, customRenderOptions);
 
   const getState = async () => {
-    const state = await result.findByTestId('test-state');
+    const state = await screen.findByTestId('test-state');
     return state.innerHTML;
   };
 
   expect(await getState()).toEqual('');
 
   await act(async () => {
-    const button = await result.findByTestId('test-button');
+    const button = await screen.findByTestId('test-button');
     button.click();
   });
 
   await waitFor(async () => {
-    const state = await result.findByTestId('test-state');
+    const state = await screen.findByTestId('test-state');
     return state.innerText != null;
   });
 
@@ -95,13 +95,13 @@ it('should fire dispatch events with the useDispatch hook', async () => {
   const spy = vi.spyOn(customRenderOptions, 'reducer');
 
   // the reducer should only be dispatched when the button is clicked
-  const result = customRender(<TestButton />, customRenderOptions);
+  customRender(<TestButton />, customRenderOptions);
 
   expect(spy).not.toHaveBeenCalled();
 
   // click the button
   await act(async () => {
-    const button = await result.findByTestId('test-dispatch-button');
+    const button = await screen.findByTestId('test-dispatch-button');
     button.click();
   });
 
@@ -134,9 +134,9 @@ it('should use an elmish context outside of an elmish provider', () => {
     return <></>;
   };
 
-  const result = render(<TestButton />);
+  render(<TestButton />);
 
-  expect(result.getByTestId('error').textContent).toEqual(
+  expect(screen.getByTestId('error').textContent).toEqual(
     'no elmish context found. make sure you have a <ElmishProvider>',
   );
 });

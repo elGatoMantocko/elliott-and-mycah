@@ -1,3 +1,7 @@
+// I'm not sure how context definition works with react-refresh
+// we define a context, but then want to expose that context in hooks
+// exported by this file
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, PropsWithChildren, useContext } from 'react';
 import { Dispatch, Reducer, StateEffectPair, useElmish } from 'react-use-elmish';
 
@@ -12,14 +16,14 @@ const noop = () => {};
 /**
  * Generic type for an elmish context.
  */
-type ElmishContext<R extends Reducer<any, any>> = R extends Reducer<infer S, infer A>
+type ElmishContext<R extends Reducer<unknown, unknown>> = R extends Reducer<infer S, infer A>
   ? [S, Dispatch<A>]
   : never;
 
 /**
  * Context for the reducer provider.
  */
-const ElmishContext = createContext<[any, Dispatch<any>]>([null, noop]);
+const ElmishContext = createContext<[unknown, Dispatch<unknown>]>([null, noop]);
 
 interface ElmishProviderProps<State, Actions> {
   reducer: Reducer<State, Actions>;
@@ -42,7 +46,12 @@ export const ElmishProvider = <State, Actions>({
   const ctx = useElmish(reducer, initializer);
 
   // initialize the reducer and return the provider
-  return <ElmishContext.Provider value={ctx}>{children}</ElmishContext.Provider>;
+  return (
+    // this type doesn't actually matter because it gets overridden by
+    <ElmishContext.Provider value={ctx as [unknown, Dispatch<unknown>]}>
+      {children}
+    </ElmishContext.Provider>
+  );
 };
 
 /**
@@ -58,7 +67,7 @@ export const useElmishContext = <State, Actions>(): [State, Dispatch<Actions>] =
     throw new Error('no elmish context found. make sure you have a <ElmishProvider>');
   }
 
-  return context;
+  return context as [State, Dispatch<Actions>];
 };
 
 /**
