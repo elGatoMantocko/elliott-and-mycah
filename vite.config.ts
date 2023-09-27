@@ -9,7 +9,6 @@ const testConfig = vitestDefineConfig({
     environment: 'jsdom',
     globals: true,
     coverage: { provider: 'istanbul', enabled: true },
-    setupFiles: './setupTests.ts',
   },
 });
 
