@@ -1,40 +1,34 @@
 import { act, renderHook } from '@testing-library/react';
-import { Effects, Reducer, useElmish } from 'react-use-elmish';
+import { Effects, Reducer, ReducerStateEffectPair, useElmish } from 'react-use-elmish';
 
 import { fromAsyncIterable } from '.';
 
 const testIterator = {
-  async *[Symbol.asyncIterator]() {
+  async *[Symbol.asyncIterator](): AsyncGenerator<'foo' | 'bar' | 'baz'> {
     yield 'foo';
     yield 'bar';
     yield 'baz';
   },
 };
 
-type TestActions = 'foo' | 'bar' | 'baz' | 'test';
-
+// ensure `fromAsyncIterable` is compatible with elmish
 it('should dispatch effects for a useElmish pattern', async () => {
-  const { result } = renderHook(() =>
-    useElmish<Reducer<string, TestActions>>(
-      (state, action) => {
-        if (action === 'foo' || action === 'bar' || action === 'baz') {
-          return [state + action, Effects.none()];
-        }
-        // basic action that yields both foo and bar
-        if (action === 'test') {
-          return [state, fromAsyncIterable(testIterator)];
-        }
-        return [state, Effects.none()];
-      },
-      () => ['', Effects.none()],
-    ),
-  );
+  // bootstrapped logic for reducer + initializer
+  const reducer: Reducer<string, string> = (state, action) => {
+    if (action === 'test') {
+      return [state, fromAsyncIterable(testIterator)];
+    }
+    return [state + action, Effects.none()];
+  };
+  const initializer: () => ReducerStateEffectPair<typeof reducer> = () => ['', Effects.none()];
+
+  const { result } = renderHook(() => useElmish<Reducer<string, string>>(reducer, initializer));
 
   // after the initial render we should just get ''
   expect(result.current[0]).toEqual('');
 
   // dispatching this action will yield 3 other actions
-  await act(() => result.current[1]('test'));
+  await act(async () => result.current[1]('test'));
   expect(result.current[0]).toEqual('foobarbaz');
 });
 

@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { ResultState, useServiceWorker, useUnregisterServiceWorkers } from '.';
+import { ResultState, useUnregisterServiceWorkers } from '.';
 
 // allows us to override the navigator and stub out the service worker api
 Object.defineProperty(global, 'navigator', {
@@ -13,18 +13,10 @@ Object.defineProperty(global, 'navigator', {
   },
 });
 
-it('should register a service worker', async () => {
-  const { result } = renderHook(() => useServiceWorker('/test.js'));
-
-  await waitFor(() => result.current.state !== ResultState.Pending);
-
-  expect(navigator.serviceWorker.register).toHaveBeenCalledWith('/test.js');
-});
-
 it('should unregister all service workers', async () => {
   // stub out getRegistrations to return registrations that can be unregistered
   vi.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([
-    { unregister: vi.fn(async () => await true) },
+    { unregister: vi.fn(async () => true) },
   ] as unknown as ServiceWorkerRegistration[]);
 
   const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());

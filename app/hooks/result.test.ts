@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { state } from '../models/state';
-import { ResultState, useCallableResult, useResult } from '.';
+import { Result, ResultState, useCallableResult, useResult } from '.';
 
 describe('useResult', () => {
   it('should resolve to pending/value for value result', async () => {
@@ -15,6 +15,34 @@ describe('useResult', () => {
 
     expect(asyncFn).toHaveBeenCalledTimes(1);
     expect(result.current).toEqual(state(ResultState.Value, 'test'));
+  });
+
+  it('should not call when unmounted', async () => {
+    const asyncFn = vi.fn(async (data: string) => data);
+    const { result, unmount } = renderHook(
+      (data: string) => useResult(() => asyncFn(data), [data]),
+      { initialProps: 'test-1' },
+    );
+
+    await waitFor(() => expect(result.current.state !== ResultState.Pending));
+    expect(asyncFn).toHaveBeenCalled();
+    expect(result.current.value).eq('test-1');
+
+    // rerender the hook, and unmount it - effect cleanup should prevent
+    // calling the async fn
+    asyncFn.mockClear();
+    unmount();
+
+    await waitFor(() => expect(result.current.state !== ResultState.Pending));
+    expect(asyncFn).not.toHaveBeenCalled();
+    expect(result.current.value).eq('test-1');
+  });
+
+  it('should match type assertions', async () => {
+    const asyncFn = vi.fn<[], Promise<string>>();
+    const { result } = renderHook(() => useResult(asyncFn, []));
+    await waitFor(() => expect(result.current.state !== ResultState.Pending));
+    assertType<Result<string, Error>>(result.current);
   });
 
   it.each([

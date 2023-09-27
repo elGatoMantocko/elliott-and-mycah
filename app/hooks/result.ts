@@ -9,21 +9,14 @@ export enum ResultState {
   Error = 'error',
 }
 
-type Result<T, U> =
+export type Result<T, U> =
   | State<ResultState.NotStarted>
   | State<ResultState.Pending>
   | State<ResultState.Value, T>
   | State<ResultState.Error, U>;
 
-const pending: State<ResultState.Pending> = state(ResultState.Pending);
-const notStarted: State<ResultState.NotStarted> = state(ResultState.NotStarted);
-
-/**
- * Return value of an async function.
- */
-type UseResultValue<C extends () => Promise<unknown>> = C extends () => Promise<infer CResult>
-  ? CResult
-  : never;
+const PENDING: State<ResultState.Pending> = state(ResultState.Pending);
+const NOT_STARTED: State<ResultState.NotStarted> = state(ResultState.NotStarted);
 
 /**
  * Turns an unknown error into an {@link Error}
@@ -48,17 +41,17 @@ function handleUnknownError(err: unknown): Error {
  * @param deps list of deps used in the request
  * @returns result state object
  */
-export const useResult = <C extends () => Promise<unknown>, CValue extends UseResultValue<C>>(
+export const useResult = <C extends () => Promise<unknown>, CValue extends Awaited<ReturnType<C>>>(
   request: C extends () => Promise<CValue> ? C : never,
   deps: DependencyList,
 ) => {
-  const [result, setResult] = useState<Result<CValue, Error>>(notStarted);
+  const [result, setResult] = useState<Result<CValue, Error>>(NOT_STARTED);
 
   /**
    * This CB should handle _all_ error cases. The error is wrapped into the result object
    */
   const requestCb = useCallback(async (): Promise<void> => {
-    setResult(pending);
+    setResult(PENDING);
     try {
       setResult(state(ResultState.Value, await request()));
     } catch (err) {
@@ -97,11 +90,11 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends UseRe
 export const useCallableResult = <CArgs extends unknown[], CResponse>(
   request: (...args: CArgs) => Promise<CResponse>,
 ): [Result<CResponse, Error>, (...args: CArgs) => void, () => void] => {
-  const [result, setResult] = useState<Result<CResponse, Error>>(notStarted);
+  const [result, setResult] = useState<Result<CResponse, Error>>(NOT_STARTED);
 
   const call = useCallback(
     async (...args: CArgs) => {
-      setResult(pending);
+      setResult(PENDING);
 
       try {
         const t = await request(...args);
@@ -114,5 +107,5 @@ export const useCallableResult = <CArgs extends unknown[], CResponse>(
     [request],
   );
 
-  return [result, call, () => setResult(notStarted)];
+  return [result, call, () => setResult(NOT_STARTED)];
 };

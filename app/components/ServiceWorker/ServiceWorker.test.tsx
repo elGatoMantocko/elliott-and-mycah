@@ -30,7 +30,7 @@ async function mockUnregisterResult(
 it('should render a successful <Unregister />', async () => {
   await mockUnregisterResult(state(ResultState.Value, true));
 
-  const el = render(
+  render(
     <div data-testid="unregister-sw-success">
       <ServiceWorkerUnregistration />
     </div>,
@@ -38,14 +38,14 @@ it('should render a successful <Unregister />', async () => {
 
   expect(window.location.reload).toHaveBeenCalled();
 
-  const unregistration = await el.findByTestId('unregister-sw-success');
+  const unregistration = await screen.findByTestId('unregister-sw-success');
   expect(unregistration).toMatchSnapshot('success-unregister');
 });
 
 it('should render a pending <Unregister />', async () => {
   await mockUnregisterResult(state(ResultState.Pending));
 
-  const el = render(
+  render(
     <div data-testid="unregister-sw-pending">
       <ServiceWorkerUnregistration />
     </div>,
@@ -53,7 +53,7 @@ it('should render a pending <Unregister />', async () => {
 
   expect(window.location.reload).toHaveBeenCalled();
 
-  const unregistration = await el.findByTestId('unregister-sw-pending');
+  const unregistration = await screen.findByTestId('unregister-sw-pending');
   expect(unregistration).toMatchSnapshot('pending-unregister');
 });
 
@@ -62,7 +62,7 @@ it('should render an error <Unregister />', async () => {
   // logger to be injected into components
   await mockUnregisterResult(state(ResultState.Error, new Error('oops')));
 
-  const el = render(
+  render(
     <div data-testid="unregister-sw-err">
       <ServiceWorkerUnregistration />
     </div>,
@@ -70,7 +70,7 @@ it('should render an error <Unregister />', async () => {
 
   expect(window.location.reload).toHaveBeenCalled();
 
-  const unregistration = await el.findByTestId('unregister-sw-err');
+  const unregistration = await screen.findByTestId('unregister-sw-err');
   expect(unregistration).toMatchSnapshot('error-unregister');
 });
 
