@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { defineConfig as viteDefineConfig, mergeConfig } from 'vite';
 import { VitePWA as vitePwa } from 'vite-plugin-pwa';
 import { defineConfig as vitestDefineConfig } from 'vitest/config';

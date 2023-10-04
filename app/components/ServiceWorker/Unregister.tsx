@@ -24,7 +24,7 @@ export const ServiceWorkerUnregistration = ({ hideSnackbar }: ServiceWorkerUnreg
     }
 
     if (swResult.state === ResultState.Error) {
-      console.error(`I'm sorry you have to deal with my shit: ${swResult.value}`);
+      console.error(`I'm sorry you have to deal with my shit: ${swResult.value.message}`);
     }
   }, [swResult]);
 

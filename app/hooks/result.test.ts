@@ -5,12 +5,12 @@ import { Result, ResultState, useCallableResult, useResult } from '.';
 
 describe('useResult', () => {
   it('should resolve to pending/value for value result', async () => {
-    const asyncFn = vi.fn(async () => 'test');
+    const asyncFn = vi.fn(() => Promise.resolve('test'));
     const { result, rerender } = renderHook(() => useResult(asyncFn, []));
 
     expect(result.current).toEqual(state(ResultState.Pending));
 
-    await waitFor(() => result.current.state !== ResultState.Pending);
+    await waitFor(() => expect(result.current).toEqual(state(ResultState.Pending)));
     rerender();
 
     expect(asyncFn).toHaveBeenCalledTimes(1);
@@ -18,13 +18,13 @@ describe('useResult', () => {
   });
 
   it('should not call when unmounted', async () => {
-    const asyncFn = vi.fn(async (data: string) => data);
+    const asyncFn = vi.fn((data: string) => Promise.resolve(data));
     const { result, unmount } = renderHook(
       (data: string) => useResult(() => asyncFn(data), [data]),
       { initialProps: 'test-1' },
     );
 
-    await waitFor(() => expect(result.current.state !== ResultState.Pending));
+    await waitFor(() => expect(result.current).not.toEqual(state(ResultState.Pending)));
     expect(asyncFn).toHaveBeenCalled();
     expect(result.current.value).eq('test-1');
 
@@ -39,9 +39,9 @@ describe('useResult', () => {
   });
 
   it('should match type assertions', async () => {
-    const asyncFn = vi.fn<[], Promise<string>>();
+    const asyncFn = vi.fn(() => Promise.resolve('test'));
     const { result } = renderHook(() => useResult(asyncFn, []));
-    await waitFor(() => expect(result.current.state !== ResultState.Pending));
+    await waitFor(() => expect(result.current).not.toEqual(state(ResultState.Pending)));
     assertType<Result<string, Error>>(result.current);
   });
 
@@ -58,16 +58,12 @@ describe('useResult', () => {
     'should resolve to pending/error for a called error result',
     async (thrownError, expectedError) => {
       const asyncFn = vi.fn(async () => {
-        act(() => {
-          throw thrownError;
-        });
+        await act(() => Promise.reject(thrownError));
       });
-      const { result, rerender } = renderHook(() => useResult(asyncFn, []));
+      const { result } = renderHook(() => useResult(asyncFn, []));
 
       expect(result.current).toEqual(state(ResultState.Pending));
-
-      await waitFor(() => result.current.state !== ResultState.Pending);
-      rerender();
+      await waitFor(() => expect(result.current).not.toEqual(state(ResultState.Pending)));
 
       expect(asyncFn).toHaveBeenCalledTimes(1);
       expect(result.current).toEqual(state(ResultState.Error, expectedError));
@@ -76,11 +72,12 @@ describe('useResult', () => {
 
   it('should re-call the request if deps change', async () => {
     // initial render results in a pending state
-    const { result, rerender } = renderHook((data: string) => useResult(async () => data, [data]), {
-      initialProps: 'test',
-    });
+    const { result, rerender } = renderHook(
+      (data: string) => useResult(() => Promise.resolve(data), [data]),
+      { initialProps: 'test' },
+    );
     expect(result.current).toEqual(state(ResultState.Pending));
-    await waitFor(() => result.current.state !== ResultState.Pending);
+    await waitFor(() => expect(result.current).not.toEqual(state(ResultState.Pending)));
 
     // rerender with the same initial props (but resolves to a value now after waiting)
     rerender('test');
@@ -100,7 +97,7 @@ describe('useResult', () => {
 
 describe('useCallableResult', () => {
   it('should resolve to pending/value for a called value result', async () => {
-    const asyncFn = vi.fn(async (data: string) => data);
+    const asyncFn = vi.fn((data: string) => Promise.resolve(data));
     const { result, rerender } = renderHook(() => useCallableResult(asyncFn));
 
     expect(result.current[0]).toEqual(state(ResultState.NotStarted));
@@ -158,9 +155,7 @@ describe('useCallableResult', () => {
   ])(
     'should resolve to pending/error for a called error result',
     async (thrownError, expectedError) => {
-      const asyncFn = vi.fn(async () => {
-        throw thrownError;
-      });
+      const asyncFn = vi.fn(() => Promise.reject(thrownError));
       const { result, rerender } = renderHook(() => useCallableResult(asyncFn));
 
       expect(result.current[0]).toEqual(state(ResultState.NotStarted));
@@ -187,7 +182,9 @@ describe('useCallableResult', () => {
   );
 
   it('should reset state to not-started', async () => {
-    const { result, rerender } = renderHook(() => useCallableResult(async (data: string) => data));
+    const { result, rerender } = renderHook(() =>
+      useCallableResult((data: string) => Promise.resolve(data)),
+    );
 
     expect(result.current[0]).toEqual(state(ResultState.NotStarted));
 

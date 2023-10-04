@@ -16,7 +16,7 @@ export const ServiceWorker = () => {
         setWb(new Workbox('/service-worker.js'));
       }
     }
-    setupWb();
+    setupWb().catch((err: unknown) => console.error(err));
   }, []);
 
   // ripped from https://developer.chrome.com/docs/workbox/handling-service-worker-updates/
@@ -27,21 +27,17 @@ export const ServiceWorker = () => {
     if (wb == null) return undefined;
 
     // if we fail to register or update the SW - lets just unregister it
-    const handleSwError = async <T,>(swResult: Promise<T>): Promise<T | undefined> => {
-      try {
-        return await swResult;
-      } catch (err) {
-        console.error(err);
-        // because our app is a PWA - we respond to 404s with the `index.html` file
-        // this will cause an error in the service worker registration, because
-        // `service-worker.js` will resolve to the index.html file and be the wrong
-        // mime type for an allowed service worker.
-        if (err instanceof DOMException) {
-          const reg = await navigator.serviceWorker.getRegistration();
-          reg?.unregister();
-        }
-        return undefined;
+    const registrationErrorHandler = async <T,>(err: unknown): Promise<T | undefined> => {
+      console.error(err);
+      // because our app is a PWA - we respond to 404s with the `index.html` file
+      // this will cause an error in the service worker registration, because
+      // `service-worker.js` will resolve to the index.html file and be the wrong
+      // mime type for an allowed service worker.
+      if (err instanceof DOMException) {
+        const reg = await navigator.serviceWorker.getRegistration();
+        await reg?.unregister();
       }
+      return undefined;
     };
 
     const onControlling = () => window.location.reload();
@@ -67,7 +63,7 @@ export const ServiceWorker = () => {
     // register the service worker - if the sw was updated before this,
     // that means that we have a new version and need to figure out how to
     // update. This will trigger a `waiting` event with `wasWaitingBeforeRegister === true`.
-    handleSwError(wb.register());
+    wb.register().catch(registrationErrorHandler);
     // FIXME: we should do an immediate check here to see if we are waiting - if so,
     // lets skip waiting and _not_ reload because the user is likely on the latest bundle
 
@@ -75,7 +71,9 @@ export const ServiceWorker = () => {
     // periodically check for updates
     // if an update is found and installed successfully, it will put the SW in
     // the waiting state and trigger a `waiting` event
-    const interval = setInterval(() => handleSwError(wb.update()), 30000);
+    const interval = setInterval(() => {
+      wb.update().catch(registrationErrorHandler);
+    }, 30000);
 
     return () => {
       wb.removeEventListener('controlling', onControlling);

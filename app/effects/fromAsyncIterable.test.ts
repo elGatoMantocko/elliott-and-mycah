@@ -1,13 +1,13 @@
-import { act, renderHook } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import { Effects, Reducer, ReducerStateEffectPair, useElmish } from 'react-use-elmish';
 
 import { fromAsyncIterable } from '.';
 
 const testIterator = {
   async *[Symbol.asyncIterator](): AsyncGenerator<'foo' | 'bar' | 'baz'> {
-    yield 'foo';
-    yield 'bar';
-    yield 'baz';
+    yield await Promise.resolve('foo');
+    yield await Promise.resolve('bar');
+    yield await Promise.resolve('baz');
   },
 };
 
@@ -28,8 +28,9 @@ it('should dispatch effects for a useElmish pattern', async () => {
   expect(result.current[0]).toEqual('');
 
   // dispatching this action will yield 3 other actions
-  await act(async () => result.current[1]('test'));
-  expect(result.current[0]).toEqual('foobarbaz');
+  act(() => result.current[1]('test'));
+  // this should eventually match - but it happens on a react re-render cycle
+  await waitFor(() => expect(result.current[0]).toEqual('foobarbaz'));
 });
 
 it('should call the dispatch functions in the correct order', async () => {

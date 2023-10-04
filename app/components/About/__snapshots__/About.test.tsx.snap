@@ -65,9 +65,7 @@ exports[`should render an <About /> > basic-about 1`] = `
           <p
             class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter MuiTypography-gutterBottom css-1c3pd2j-MuiTypography-root"
           >
-            We met through the band program while attending Purdue University. We remained
-              friends until our final year when we had our first date at a farm to table
-              restaurant in downtown Lafayette.
+            We met through the band program while attending Purdue University. We remained friends until our final year when we had our first date at a farm to table restaurant in downtown Lafayette.
           </p>
         </div>
         <div
@@ -98,10 +96,7 @@ exports[`should render an <About /> > basic-about 1`] = `
           <p
             class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter MuiTypography-gutterBottom css-1c3pd2j-MuiTypography-root"
           >
-            We both, coincidentally, had already planned to move to Chicago, IL after graduation In
-              August 2018, we moved to Seattle, WA. We lived in the South Lake Union area until we
-              bought our house in Burien in September 2019. In May 2019, we added our chocolate lab,
-              Ellie, to our family.
+            We both, coincidentally, had already planned to move to Chicago, IL after graduation In August 2018, we moved to Seattle, WA. We lived in the South Lake Union area until we bought our house in Burien in September 2019. In May 2019, we added our chocolate lab, Ellie, to our family.
           </p>
         </div>
         <div
@@ -132,13 +127,7 @@ exports[`should render an <About /> > basic-about 1`] = `
           <p
             class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter MuiTypography-gutterBottom css-1c3pd2j-MuiTypography-root"
           >
-            In August 2019, we took an Alaskan cruise. While ported in Juneau, AK, we had planned
-              to hike to a view of Mendenhall glacier followed by a humpback whale watching tour.
-              After nearly missing the bus ride to the glacier, losing our group as soon as we
-              arrived, and with the rain pouring down, we hiked a mile and half to a gravel beach
-              framed by Mendenhall Glacier, a turquoise lake, and a glacier-fed waterfall. Elliott
-              asked our tour guide to take a photo of us and after a few snapshots, got down on one
-              knee to pop the question.
+            In August 2019, we took an Alaskan cruise. While ported in Juneau, AK, we had planned to hike to a view of Mendenhall glacier followed by a humpback whale watching tour. After nearly missing the bus ride to the glacier, losing our group as soon as we arrived, and with the rain pouring down, we hiked a mile and half to a gravel beach framed by Mendenhall Glacier, a turquoise lake, and a glacier-fed waterfall. Elliott asked our tour guide to take a photo of us and after a few snapshots, got down on one knee to pop the question.
           </p>
         </div>
         <div

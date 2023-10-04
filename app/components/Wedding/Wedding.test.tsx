@@ -22,7 +22,7 @@ beforeEach(() => {
   vi.useFakeTimers({ now: new Date(2023, 8, 22, 17, 0, 0, 0) });
 });
 
-it('should render a <Wedding /> page', async () => {
+it('should render a <Wedding /> page', () => {
   render(
     <div data-testid="wedding-page">
       <Wedding />
@@ -33,7 +33,7 @@ it('should render a <Wedding /> page', async () => {
   expect(screen.getByTestId('wedding-page')).toMatchSnapshot();
 });
 
-it('should render a small screen <Wedding /> page', async () => {
+it('should render a small screen <Wedding /> page', () => {
   global.matchMedia = createMatchMedia(764);
 
   render(

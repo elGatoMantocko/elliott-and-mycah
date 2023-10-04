@@ -16,7 +16,7 @@ it('should get a time delta', () => {
   });
 });
 
-it('should set the date on a new interval', async () => {
+it('should set the date on a new interval', () => {
   vi.useFakeTimers();
 
   const { result, rerender } = renderHook(() => useCountdown(sub(new Date(), { years: 1 })));
@@ -30,7 +30,7 @@ it('should set the date on a new interval', async () => {
     years: 1,
   });
 
-  await act(() => {
+  act(() => {
     // advance the time by a day
     vi.advanceTimersByTime(1000 * 60 * 60 * 24);
   });

@@ -1,46 +1,49 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
+import { state } from '../models';
 import { ResultState, useUnregisterServiceWorkers } from '.';
 
-// allows us to override the navigator and stub out the service worker api
-Object.defineProperty(global, 'navigator', {
-  value: {
-    serviceWorker: {
-      getRegistrations: vi.fn(),
-      register: vi.fn(),
-      addEventListener: vi.fn(),
-    },
-  },
-});
+beforeEach(() => {});
 
 it('should unregister all service workers', async () => {
   // stub out getRegistrations to return registrations that can be unregistered
-  vi.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([
-    { unregister: vi.fn(async () => true) },
-  ] as unknown as ServiceWorkerRegistration[]);
-
-  const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());
-
-  await waitFor(() => result.current.state !== ResultState.Pending);
-  await act(() => {
-    rerender();
+  vi.stubGlobal('navigator', {
+    serviceWorker: {
+      getRegistrations: vi.fn(() =>
+        Promise.resolve([
+          {
+            unregister: vi.fn(() => Promise.resolve(true)),
+          } as unknown as ServiceWorkerRegistration,
+        ]),
+      ),
+    } satisfies Partial<ServiceWorkerContainer>,
   });
 
+  const { result } = renderHook(() => useUnregisterServiceWorkers());
+
+  await waitFor(() => expect(result.current).not.toEqual(state(ResultState.Pending)));
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   expect(navigator.serviceWorker.getRegistrations).toHaveBeenCalled();
   expect(result.current).toEqual({ state: ResultState.Value, value: true });
 });
 
 it('should return false when there are no service workers to unregister', async () => {
   // stub out getRegistrations to return registrations that can be unregistered
-  vi.spyOn(global.navigator.serviceWorker, 'getRegistrations').mockResolvedValue([]);
+  vi.stubGlobal('navigator', {
+    serviceWorker: {
+      getRegistrations: vi.fn(() => Promise.resolve([])),
+    } satisfies Partial<ServiceWorkerContainer>,
+  });
 
   const { result, rerender } = renderHook(() => useUnregisterServiceWorkers());
 
   await waitFor(() => expect(result.current.state).not.toEqual(ResultState.Pending));
-  await act(() => {
+  act(() => {
     rerender();
   });
 
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   expect(navigator.serviceWorker.getRegistrations).toHaveBeenCalled();
   expect(result.current).toEqual({ state: ResultState.Value, value: false });
 });

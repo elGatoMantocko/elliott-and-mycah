@@ -22,7 +22,7 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
   );
 };
 
-it('should render an <About />', async () => {
+it('should render an <About />', () => {
   render(
     <div data-testid="basic-about">
       <About />

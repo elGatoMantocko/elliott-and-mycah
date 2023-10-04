@@ -9,8 +9,6 @@ import { Dispatch, Reducer, StateEffectPair, useElmish } from 'react-use-elmish'
 // react context that we create but as soon as someone pulls in the `<ElmishProvider>` component,
 // it immediately gets overwritten by the dispatch function given by `useElmish` so it's not actually
 // possible to be used because we don't expose the `ElmishContext` outside of the provider itself.
-// istanbul ignore next
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
 /**

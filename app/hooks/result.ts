@@ -47,29 +47,16 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends Await
 ) => {
   const [result, setResult] = useState<Result<CValue, Error>>(NOT_STARTED);
 
-  /**
-   * This CB should handle _all_ error cases. The error is wrapped into the result object
-   */
-  const requestCb = useCallback(async (): Promise<void> => {
-    setResult(PENDING);
-    try {
-      setResult(state(ResultState.Value, await request()));
-    } catch (err) {
-      setResult(state(ResultState.Error, handleUnknownError(err)));
-    }
-    // The caller is defining the dependencies to this so we intentionally
-    // want to ignore the exhaustive deps rule here.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps);
-
   useEffect(() => {
     let isSubscribed = true;
 
     // only set state and make requests as long as this hook is still "mounted" to the dom
     // this is mostly just so we don't freak the tests out when things get unmounted
-    // istanbul ignore next
     if (isSubscribed) {
-      requestCb();
+      setResult(PENDING);
+      request()
+        .then((data) => setResult(state(ResultState.Value, data)))
+        .catch((err: unknown) => setResult(state(ResultState.Error, handleUnknownError(err))));
     }
 
     // if the `useResult` hook is torn down, we want to make sure we don't have any
@@ -77,7 +64,10 @@ export const useResult = <C extends () => Promise<unknown>, CValue extends Await
     return () => {
       isSubscribed = false;
     };
-  }, [requestCb]);
+    // The caller is defining the dependencies to this so we intentionally
+    // want to ignore the exhaustive deps rule here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [...deps]);
   return result;
 };
 

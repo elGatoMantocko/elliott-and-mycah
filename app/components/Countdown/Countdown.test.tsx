@@ -11,7 +11,7 @@ const MockProviders = ({ children }: PropsWithChildren<unknown>) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-it('should render', async () => {
+it('should render', () => {
   render(
     <div data-testid="basic-countdown">
       <Countdown toDate={sub(new Date(), { years: 1, months: 1, days: 1 })} />,
@@ -22,7 +22,7 @@ it('should render', async () => {
   expect(screen.getByTestId('basic-countdown')).toMatchSnapshot('single-date');
 });
 
-it('should render plural duration', async () => {
+it('should render plural duration', () => {
   render(
     <div data-testid="multiple-countdown">
       <Countdown toDate={sub(new Date(), { years: 2, months: 2, days: 2 })} />,
@@ -33,7 +33,7 @@ it('should render plural duration', async () => {
   expect(screen.getByTestId('multiple-countdown')).toMatchSnapshot('plural-date');
 });
 
-it('should not render null (0) deltas', async () => {
+it('should not render null (0) deltas', () => {
   render(
     <div data-testid="null-countdown">
       <Countdown toDate={sub(new Date(), { years: 1 })} />,

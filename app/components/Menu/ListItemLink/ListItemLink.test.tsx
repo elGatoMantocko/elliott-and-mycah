@@ -12,7 +12,7 @@ it('should render a link', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-it('should render a disabled link', async () => {
+it('should render a disabled link', () => {
   renderWithRouter(
     <ListItemLink data-testid="disabled-link" disabled to="/test">
       Test
@@ -28,7 +28,7 @@ it('should render a disabled link', async () => {
   expect(routeEl.textContent).toEqual('/');
 });
 
-it('should navigate to href when clicked', async () => {
+it('should navigate to href when clicked', () => {
   const el = renderWithRouter(
     <ListItemLink data-testid="navigate-with-href" to="/test-path" onClick={undefined}>
       Test
@@ -36,7 +36,7 @@ it('should navigate to href when clicked', async () => {
     { locationTestId: 'navigate-with-href-location' },
   );
 
-  await act(async () => {
+  act(() => {
     const link = el.getByTestId('navigate-with-href');
     link.click();
   });
@@ -48,7 +48,7 @@ it('should navigate to href when clicked', async () => {
   expect(el.getByTestId('navigate-with-href')).toMatchSnapshot('navigate-with-href');
 });
 
-it('should call the onClick handler', async () => {
+it('should call the onClick handler', () => {
   const onClickMock = vi.fn();
   const el = renderWithRouter(
     <ListItemLink to="/test" data-testid="navigate-with-onClick" onClick={onClickMock}>
@@ -57,7 +57,7 @@ it('should call the onClick handler', async () => {
     { locationTestId: 'call-onclick-location' },
   );
 
-  await act(async () => {
+  act(() => {
     const link = el.getByTestId('navigate-with-onClick');
     link.click();
   });
