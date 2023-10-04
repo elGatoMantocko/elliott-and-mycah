@@ -51,7 +51,7 @@
     "vitest": "^0.34.6"
   },
   "scripts": {
-    "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.js",
+    "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.cjs",
     "build": "vite build",
     "clean": "rm -rf dist test-results",
     "preview": "vite preview --port 8080",
@@ -78,5 +78,5 @@
     "uuid": "^9.0.1",
     "workbox-window": "^7.0.0"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@3.6.4"
 }
