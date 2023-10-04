@@ -51,7 +51,7 @@
     "vitest": "^0.34.6"
   },
   "scripts": {
-    "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.cjs",
+    "auditLicenses": "yarn licenses audit --output-file=test-results/licenses.xml --config=licenses.config.cjs --summary",
     "build": "vite build",
     "clean": "rm -rf dist test-results",
     "preview": "vite preview --port 8080",
