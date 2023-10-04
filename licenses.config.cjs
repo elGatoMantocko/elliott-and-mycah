@@ -17,6 +17,6 @@ module.exports = {
    * @returns {boolean} true if the package should be ignored
    */
   ignorePackages(packageName) {
-    return /\@esbuild|\@swc/i.test(packageName);
+    return /\@esbuild|\@swc|fsevents/i.test(packageName);
   },
 };
