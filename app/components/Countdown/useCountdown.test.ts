@@ -1,25 +1,22 @@
 import { renderHook } from '@testing-library/react';
-import { sub } from 'date-fns';
+import { add, differenceInMilliseconds, sub } from 'date-fns';
 import { act } from 'react-dom/test-utils';
 
 import { useCountdown } from './useCountdown';
 
-it('should get a time delta', () => {
-  const { result } = renderHook(() => useCountdown(sub(new Date(), { years: 1 })));
-  expect(result.current).toEqual({
-    years: 1,
-    days: 0,
-    months: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+it.each([
+  [{ years: 1 }, { years: 1, days: 0, months: 0, hours: 0, minutes: 0, seconds: 0 }],
+  [{ years: 2 }, { years: 2, days: 0, months: 0, hours: 0, minutes: 0, seconds: 0 }],
+])('should get countdown from $diff as $expected', (diff, expected) => {
+  const { result } = renderHook(() => useCountdown(sub(new Date(), diff)));
+  expect(result.current).toEqual(expected);
 });
 
 it('should set the date on a new interval', () => {
-  vi.useFakeTimers();
+  const now = new Date();
+  vi.useFakeTimers({ now });
 
-  const { result, rerender } = renderHook(() => useCountdown(sub(new Date(), { years: 1 })));
+  const { result, rerender } = renderHook(() => useCountdown(sub(now, { years: 1 })));
 
   expect(result.current).toEqual({
     days: 0,
@@ -31,17 +28,25 @@ it('should set the date on a new interval', () => {
   });
 
   act(() => {
-    // advance the time by a day
-    vi.advanceTimersByTime(1000 * 60 * 60 * 24);
+    vi.advanceTimersByTime(
+      differenceInMilliseconds(
+        add(now, {
+          months: 1,
+          days: 1,
+          hours: 1,
+        }),
+        now,
+      ),
+    );
   });
   rerender();
 
   expect(result.current).toEqual({
-    days: 1,
-    hours: 0,
-    minutes: 0,
-    months: 0,
-    seconds: 0,
     years: 1,
+    months: 1,
+    days: 1,
+    hours: 1,
+    minutes: 0,
+    seconds: 0,
   });
 });

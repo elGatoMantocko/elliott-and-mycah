@@ -1,9 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should not render null (0) deltas > null-like-deltas 1`] = `
-<div
-  data-testid="null-countdown"
->
+exports[`should render countdown 1 year : 1 month : 1 day for screen-size 764 1`] = `
+<DocumentFragment>
   <div
     class="MuiBox-root css-kr4k96"
   >
@@ -25,15 +23,111 @@ exports[`should not render null (0) deltas > null-like-deltas 1`] = `
         </h4>
       </div>
     </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          month
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          day
+        </h4>
+      </div>
+    </div>
   </div>
-  ,
-</div>
+</DocumentFragment>
 `;
 
-exports[`should render > single-date 1`] = `
-<div
-  data-testid="basic-countdown"
->
+exports[`should render countdown 1 year : 1 month : 1 day for screen-size 1024 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          month
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          day
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 1 year : 1 month : undefined day for screen-size 764 1`] = `
+<DocumentFragment>
   <div
     class="MuiBox-root css-kr4k96"
   >
@@ -74,14 +168,110 @@ exports[`should render > single-date 1`] = `
       </div>
     </div>
   </div>
-  ,
-</div>
+</DocumentFragment>
 `;
 
-exports[`should render plural duration > plural-date 1`] = `
-<div
-  data-testid="multiple-countdown"
->
+exports[`should render countdown 1 year : 1 month : undefined day for screen-size 1024 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          month
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 1 year : undefined month : undefined day for screen-size 764 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 1 year : undefined month : undefined day for screen-size 1024 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          1
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          year
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 2 year : 2 month : 2 day for screen-size 764 1`] = `
+<DocumentFragment>
   <div
     class="MuiBox-root css-kr4k96"
   >
@@ -121,7 +311,213 @@ exports[`should render plural duration > plural-date 1`] = `
         </h4>
       </div>
     </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          days
+        </h4>
+      </div>
+    </div>
   </div>
-  ,
-</div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 2 year : 2 month : 2 day for screen-size 1024 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          years
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          months
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          2
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          days
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 3 year : 3 month : 3 day for screen-size 764 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          years
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          months
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          days
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should render countdown 3 year : 3 month : 3 day for screen-size 1024 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-kr4k96"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          years
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          months
+        </h4>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation5 css-30kr64-MuiPaper-root"
+    >
+      <div
+        class="MuiBox-root css-1erotlu"
+      >
+        <h1
+          class="MuiTypography-root MuiTypography-h1 css-tatl18-MuiTypography-root"
+        >
+          3
+        </h1>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-g8o2ax-MuiTypography-root"
+        >
+          days
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

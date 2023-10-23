@@ -34,7 +34,7 @@ it('should render a <Wedding /> page', () => {
 });
 
 it('should render a small screen <Wedding /> page', () => {
-  global.matchMedia = createMatchMedia(764);
+  vi.stubGlobal('matchMedia', createMatchMedia(764));
 
   render(
     <div data-testid="small-wedding-page">
