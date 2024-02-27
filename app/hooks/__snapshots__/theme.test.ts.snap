@@ -2,6 +2,7 @@
 
 exports[`should match the custom theme 1`] = `
 {
+  "applyStyles": [Function],
   "breakpoints": {
     "between": [Function],
     "down": [Function],
@@ -467,6 +468,13 @@ exports[`should match the custom theme 1`] = `
       "style": [Function],
     },
     "order": {},
+    "outline": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "outlineColor": {
+      "themeKey": "palette",
+    },
     "overflow": {},
     "p": {
       "style": [Function],
@@ -565,6 +573,7 @@ exports[`should match the custom theme 1`] = `
 
 exports[`should render $variant mode > dark 1`] = `
 {
+  "applyStyles": [Function],
   "breakpoints": {
     "between": [Function],
     "down": [Function],
@@ -1031,6 +1040,13 @@ exports[`should render $variant mode > dark 1`] = `
       "style": [Function],
     },
     "order": {},
+    "outline": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "outlineColor": {
+      "themeKey": "palette",
+    },
     "overflow": {},
     "p": {
       "style": [Function],
@@ -1129,6 +1145,7 @@ exports[`should render $variant mode > dark 1`] = `
 
 exports[`should render $variant mode > light 1`] = `
 {
+  "applyStyles": [Function],
   "breakpoints": {
     "between": [Function],
     "down": [Function],
@@ -1594,6 +1611,13 @@ exports[`should render $variant mode > light 1`] = `
       "style": [Function],
     },
     "order": {},
+    "outline": {
+      "themeKey": "borders",
+      "transform": [Function],
+    },
+    "outlineColor": {
+      "themeKey": "palette",
+    },
     "overflow": {},
     "p": {
       "style": [Function],

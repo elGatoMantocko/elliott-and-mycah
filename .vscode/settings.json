@@ -1,22 +1,21 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
-  "eslint.packageManager": "yarn",
   "npm.packageManager": "yarn",
   "files.eol": "\n",
   "eslint.validate": ["typescript", "typescriptreact"],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "always"
     }
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "always"
     }
   },
   "cSpell.words": [
@@ -52,5 +51,10 @@
     "Unregistration",
     "webp"
   ],
-  "jest.jestCommandLine": "yarn jest -c jest.config.ts"
+  "jest.jestCommandLine": "yarn jest -c jest.config.ts",
+  "[typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  }
 }
