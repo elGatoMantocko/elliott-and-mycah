@@ -14,9 +14,8 @@ const noop = () => {};
 /**
  * Generic type for an elmish context.
  */
-type ElmishContext<R extends Reducer<unknown, unknown>> = R extends Reducer<infer S, infer A>
-  ? [S, Dispatch<A>]
-  : never;
+type ElmishContext<R extends Reducer<unknown, unknown>> =
+  R extends Reducer<infer S, infer A> ? [S, Dispatch<A>] : never;
 
 /**
  * Context for the reducer provider.

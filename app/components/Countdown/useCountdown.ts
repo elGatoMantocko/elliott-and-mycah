@@ -1,3 +1,4 @@
+import type { Duration } from 'date-fns';
 import { intervalToDuration } from 'date-fns';
 import { useEffect, useState } from 'react';
 
