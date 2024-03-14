@@ -1,19 +1,10 @@
+import 'vitest/config';
+
 import react from '@vitejs/plugin-react-swc';
-import { defineConfig as viteDefineConfig, mergeConfig } from 'vite';
+import { defineConfig as viteDefineConfig } from 'vite';
 import { VitePWA as vitePwa } from 'vite-plugin-pwa';
-import { defineConfig as vitestDefineConfig } from 'vitest/config';
 
-// test config options
-const testConfig = vitestDefineConfig({
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    coverage: { provider: 'istanbul', enabled: true },
-  },
-});
-
-// build config options
-const buildConfig = viteDefineConfig({
+export default viteDefineConfig({
   // 5kb asset inline limit
   build: {
     sourcemap: true,
@@ -38,6 +29,9 @@ const buildConfig = viteDefineConfig({
       workbox: { skipWaiting: false, clientsClaim: true },
     }),
   ],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    coverage: { provider: 'istanbul', enabled: true },
+  },
 });
-
-export default mergeConfig(buildConfig, testConfig);
