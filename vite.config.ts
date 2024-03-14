@@ -15,7 +15,20 @@ const testConfig = vitestDefineConfig({
 // build config options
 const buildConfig = viteDefineConfig({
   // 5kb asset inline limit
-  build: { sourcemap: true, assetsInlineLimit: 1024 * 5 },
+  build: {
+    sourcemap: true,
+    assetsInlineLimit: 1024 * 5,
+    rollupOptions: {
+      onwarn(warn, handler) {
+        // ignore sourcemaps error due to terrible noise from MUI esbuild
+        // https://github.com/vitejs/vite/issues/15012
+        if (warn.code === 'SOURCEMAP_ERROR') {
+          return;
+        }
+        handler(warn);
+      },
+    },
+  },
   plugins: [
     react({ jsxImportSource: '@emotion/react' }),
     vitePwa({
