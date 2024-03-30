@@ -51,7 +51,7 @@ jobs:
 
       - name: 📤 Upload build artifact
         if: matrix.task == 'build'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: webapp-bundle-${{ github.sha }}
           path: dist
@@ -63,7 +63,7 @@ jobs:
     environment: production
     steps:
       - name: 📥 Download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: webapp-bundle-${{ github.sha }}
           path: dist
