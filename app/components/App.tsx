@@ -15,6 +15,7 @@ import {
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { useCustomTheme } from '../hooks/theme';
+import { AppMetricsOutlet } from './AppMetricsOutlet';
 import { MenuOutlet } from './Menu';
 import { ScrollToTopOutlet } from './ScrollToTopOutlet';
 import { ServiceWorker } from './ServiceWorker';
@@ -30,10 +31,12 @@ export const App = () => (
               createRoutesFromElements(
                 <Route element={<ScrollToTopOutlet />}>
                   <Route element={<MenuOutlet />}>
-                    <Route index element={<Navigate replace to="/us" />} />
-                    <Route path="us" lazy={() => import('../routes/About')} />
-                    <Route path="wedding" lazy={() => import('../routes/Wedding')} />
-                    <Route path="pictures" lazy={() => import('../routes/Pictures')} />
+                    <Route element={<AppMetricsOutlet />}>
+                      <Route index element={<Navigate replace to="/us" />} />
+                      <Route path="us" lazy={() => import('../routes/About')} />
+                      <Route path="wedding" lazy={() => import('../routes/Wedding')} />
+                      <Route path="pictures" lazy={() => import('../routes/Pictures')} />
+                    </Route>
                   </Route>
                 </Route>,
               ),
