@@ -23,6 +23,7 @@
   "parserOptions": {
     "ecmaVersion": 2021,
     "warnOnUnsupportedTypeScriptVersion": false, // if it's bad enough it should just fail
+    "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "settings": {
