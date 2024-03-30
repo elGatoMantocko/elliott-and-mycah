@@ -57,9 +57,7 @@ describe('useResult', () => {
   ])(
     'should resolve to pending/error for a called error result',
     async (thrownError, expectedError) => {
-      const asyncFn = vi.fn(async () => {
-        await act(() => Promise.reject(thrownError));
-      });
+      const asyncFn = vi.fn(() => Promise.reject(thrownError));
       const { result } = renderHook(() => useResult(asyncFn, []));
 
       expect(result.current).toEqual(state(ResultState.Pending));

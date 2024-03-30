@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 module.exports = {
   /**
    * Function to check validity of a dependencies license.

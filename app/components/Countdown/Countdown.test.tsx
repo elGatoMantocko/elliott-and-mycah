@@ -26,9 +26,11 @@ it.each([
 ])(
   'should render countdown $years year : $months month : $days day for screen-size $size',
   ({ years, months, days, size }) => {
+    const d = new Date(2021, 5, 12, 16, 0, 0);
     vi.stubGlobal('matchMedia', createMatchMedia(size));
+    vi.setSystemTime(d);
 
-    const { asFragment } = render(<Countdown toDate={sub(new Date(), { years, months, days })} />, {
+    const { asFragment } = render(<Countdown toDate={sub(d, { years, months, days })} />, {
       wrapper: MockProviders,
     });
 

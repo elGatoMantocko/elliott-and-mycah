@@ -26,20 +26,12 @@
     "project": "./tsconfig.json"
   },
   "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
-    },
-    "import/resolver": {
-      "typescript": true
-    },
     "react": {
       "version": "detect"
     }
   },
   "rules": {
     "prettier/prettier": "error",
-    // TODO: remove this
-    "@typescript-eslint/no-explicit-any": ["warn"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": ["warn", { "additionalHooks": "useResult" }],
     "simple-import-sort/imports": "error",

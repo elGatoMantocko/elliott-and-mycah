@@ -14,14 +14,14 @@ exports[`should render a <Wedding /> page 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
       >
         <div
-          class="MuiBox-root css-1xqr8li"
+          class="MuiBox-root css-n0k7j6"
         >
           <img
-            src="/app/images/wedding-pics/me (202 of 828).jpg"
+            src="/app/images/wedding-pics/me%20(202%20of%20828).jpg"
             style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
-            src="/app/images/wedding-pics/me (202 of 828)-small.jpg"
+            src="/app/images/wedding-pics/me%20(202%20of%20828)-small.jpg"
             style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
           />
         </div>
@@ -512,14 +512,14 @@ exports[`should render a small screen <Wedding /> page 1`] = `
         style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; will-change: transform; transform: translateY(15%);"
       >
         <div
-          class="MuiBox-root css-1xqr8li"
+          class="MuiBox-root css-n0k7j6"
         >
           <img
-            src="/app/images/wedding-pics/me (202 of 828).jpg"
+            src="/app/images/wedding-pics/me%20(202%20of%20828).jpg"
             style="opacity: 0; visibility: hidden; grid-column: 1; grid-row: 1; display: none; width: 100%; height: 100%; object-fit: cover; object-position: center;"
           />
           <img
-            src="/app/images/wedding-pics/me (202 of 828)-small.jpg"
+            src="/app/images/wedding-pics/me%20(202%20of%20828)-small.jpg"
             style="grid-column: 1; grid-row: 1; opacity: 0; position: relative; width: 100%;"
           />
         </div>

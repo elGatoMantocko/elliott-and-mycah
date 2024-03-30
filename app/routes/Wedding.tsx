@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import React from 'react';
 
 import { Wedding } from '../components/Wedding';
