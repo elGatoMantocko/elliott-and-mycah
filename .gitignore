@@ -6,6 +6,8 @@
 !.yarn/versions
 .pnp.*
 
+.vercel
+
 .DS_STORE
 .ijwb
 

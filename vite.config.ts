@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig as viteDefineConfig } from 'vite';
 import { VitePWA as vitePwa } from 'vite-plugin-pwa';
+import vercel from 'vite-plugin-vercel';
 
 export default viteDefineConfig({
   // 5kb asset inline limit
@@ -32,6 +33,7 @@ export default viteDefineConfig({
       filename: 'service-worker.js',
       workbox: { clientsClaim: true, skipWaiting: true },
     }),
+    vercel(),
   ],
   test: {
     environment: 'jsdom',
