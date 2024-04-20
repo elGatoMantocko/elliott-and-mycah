@@ -31,7 +31,13 @@ export default viteDefineConfig({
     react({ jsxImportSource: '@emotion/react' }),
     vitePwa({
       filename: 'service-worker.js',
-      workbox: { clientsClaim: true, skipWaiting: true },
+      workbox: {
+        // includes default node_modules `globIgnores` pattern from vite-pwa's workbox settings
+        globIgnores: ['**/node_modules/**/*', 'index.html'],
+        // since we aren't pre-caching index.html, it can't be used as a fallback navigation
+        // https://github.com/vite-pwa/vite-plugin-pwa/issues/120#issuecomment-1202579983
+        navigateFallback: null,
+      },
     }),
     vercel(),
   ],

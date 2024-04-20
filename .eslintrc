@@ -1,7 +1,8 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "google",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:prettier/recommended",
     "plugin:jsdoc/recommended",
@@ -21,9 +22,7 @@
     "react-refresh"
   ],
   "parserOptions": {
-    "ecmaVersion": 2021,
-    "warnOnUnsupportedTypeScriptVersion": false, // if it's bad enough it should just fail
-    "sourceType": "module",
+    "ecmaVersion": "latest",
     "project": "./tsconfig.json"
   },
   "settings": {

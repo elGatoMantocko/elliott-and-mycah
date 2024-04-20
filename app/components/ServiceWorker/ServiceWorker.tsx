@@ -8,6 +8,7 @@ export const ServiceWorker = () => {
     needRefresh: [needRefresh],
     updateServiceWorker,
   } = useRegisterSW({
+    immediate: true,
     onRegisteredSW(_, r) {
       r &&
         setInterval(() => {
